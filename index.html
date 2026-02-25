@@ -1,19 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meditation Bell Timer is a free, simple mindfulness app featuring immersive nature sounds, ambient soundscapes, authentic Tibetan singing bowls, and custom intervals for focus, sleep, and meditation.">
-    <meta name="keywords" content="meditation timer, mindfulness app, tibetan bell, nature sounds, ambient sounds, sleep timer, brown noise, adhd focus, singing bowl app, free meditation app">
+    <meta name="description" content="Meditation Bell Timer is a simple mindfulness app featuring immersive nature sounds, ambient soundscapes, authentic Tibetan singing bowls, and custom intervals for focus, sleep, and meditation. No ads, no subscriptions.">
+    <meta name="keywords" content="meditation timer, mindfulness app, tibetan bell, nature sounds, ambient sounds, sleep timer, brown noise, adhd focus, lifetime access, pay once meditation app">
     <title>Meditation Bell Timer | Nature Sounds, Focus & Sleep</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    
+    <link rel="icon" type="image/png" href="assets/app_icon.png">
     
     <style>
         :root {
@@ -177,7 +174,7 @@
         }
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
         }
         .benefit-card {
@@ -226,17 +223,17 @@
         .sound-item h4 { margin: 0 0 5px 0; font-size: 18px; }
         .sound-item p { margin: 0; color: var(--text-muted); font-size: 14px; }
 
-        /* --- CAROUSEL SECTION (UPDATED 9:16) --- */
+        /* --- CAROUSEL SECTION (9:16) --- */
         .carousel-container {
             position: relative;
             width: 100%;
-            max-width: 360px; /* Fixed phone width on desktop */
-            aspect-ratio: 9 / 16; /* Force 9:16 aspect ratio */
+            max-width: 360px;
+            aspect-ratio: 9 / 16;
             margin: 0 auto;
             border-radius: 30px;
             overflow: hidden;
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            border: 4px solid #333; /* Simulates phone bezel */
+            border: 4px solid #333;
             background: #000;
         }
         .carousel-track {
@@ -256,7 +253,7 @@
         .carousel-slide img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ensures 100% of image is visible */
+            object-fit: contain;
             display: block;
         }
         .carousel-caption {
@@ -265,7 +262,6 @@
             left: 0;
             right: 0;
             padding: 60px 20px 30px 20px;
-            /* Gradient fade for readability over full images */
             background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
             z-index: 2;
         }
@@ -319,7 +315,7 @@
             transform: scale(1.3);
         }
 
-        /* --- SCREENSHOT GALLERY (UPDATED WITH 6TH) --- */
+        /* --- SCREENSHOT GALLERY --- */
         .gallery-bg {
             background: #0a0a0a;
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -374,7 +370,7 @@
             .hero-content h1 { font-size: 42px; }
             .hero-image { margin-top: 40px; }
             .nav-links { display: none; }
-            .carousel-container { max-width: 80%; } /* Slightly wider on tablet/mobile */
+            .carousel-container { max-width: 80%; }
             .carousel-caption h3 { font-size: 20px; }
         }
     </style>
@@ -402,7 +398,7 @@
             <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: flex-start;">
                 <a href="#" class="btn btn-primary">
                     <span class="material-icons">shop</span>
-                    Get it on Google Play
+                    Get Lifetime Access
                 </a>
                 <a href="timer.html" class="btn btn-secondary">
                     <span class="material-icons">web</span>
@@ -420,14 +416,19 @@
     <section id="benefits" class="section">
         <div class="section-header">
             <h2>Why Choose Meditation Bell Timer?</h2>
-            <p>Built for practitioners who are tired of bloated, subscription-heavy mindfulness apps. We focused purely on providing the perfect environment for focus, sleep, and zen.</p>
+            <p>Built for practitioners who are tired of bloated, expensive mindfulness apps. We focused purely on providing the perfect environment for focus, sleep, and zen.</p>
         </div>
         
         <div class="benefits-grid">
             <div class="benefit-card">
+                <span class="material-icons">verified</span>
+                <h3>Pay Once, Yours Forever</h3>
+                <p>One small upfront payment gives you lifetime access to everything. No advertisements interrupting your meditation, no premium subscriptions to cancel, and no intrusive account sign-ups required.</p>
+            </div>
+            <div class="benefit-card">
                 <span class="material-icons">headphones</span>
-                <h3>Immersive Nature & Ambient Sounds</h3>
-                <p>Drift away to high-fidelity rainstorms, crashing ocean waves, and deep space frequencies. Whether you need to block out distractions, calm your ADHD, or fall into a deep sleep, our curated soundscapes create the perfect acoustic environment.</p>
+                <h3>Immersive Ambient Sounds</h3>
+                <p>Drift away to high-fidelity rainstorms, crashing ocean waves, and deep space frequencies. Whether you need to block out distractions, calm your ADHD, or fall into a deep sleep, our soundscapes are perfect.</p>
             </div>
             <div class="benefit-card">
                 <span class="material-icons">notifications_active</span>
@@ -563,7 +564,8 @@
             <img src="assets/screenshot2.jpg" alt="Meditation Soundscapes Screen" class="gallery-img" onerror="this.style.display='none'">
             <img src="assets/screenshot3.jpg" alt="Custom Interval Timer" class="gallery-img" onerror="this.style.display='none'">
             <img src="assets/screenshot4.jpg" alt="Dark Mode UI" class="gallery-img" onerror="this.style.display='none'">
-            <img src="assets/Screenshot6.jpg" alt="Additional App View" class="gallery-img" onerror="this.style.display='none'">
+            <img src="assets/screenshot5.jpg" alt="Volume and Play Controls" class="gallery-img" onerror="this.style.display='none'">
+            <img src="assets/screenshot6.jpg" alt="Additional App View" class="gallery-img" onerror="this.style.display='none'">
         </div>
     </section>
 
@@ -572,7 +574,7 @@
         <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
             <a href="#" class="btn btn-primary">
                 <span class="material-icons">shop</span>
-                Download Free App
+                Get Lifetime Access
             </a>
             <a href="timer.html" class="btn btn-secondary">
                 Test in Browser
@@ -586,7 +588,7 @@
             <a href="#" target="_blank">
                 <span class="material-icons">photo_camera</span> Instagram
             </a>
-            <a href="https://www.tiktok.com/@meditationbelltimer" target="_blank">
+            <a href="#" target="_blank">
                 <span class="material-icons">music_video</span> TikTok
             </a>
         </div>
@@ -595,7 +597,6 @@
     </footer>
 
     <script>
-        // Array of backgrounds that live in your assets folder
         const carouselData = [
             { img: "assets/bowl_bg.webp", title: "Tibetan Singing Bowl" },
             { img: "assets/rain_bg.webp", title: "Soothing Rain Storm" },
@@ -613,9 +614,7 @@
         const track = document.getElementById('carousel-track');
         const dotsContainer = document.getElementById('carousel-dots');
         
-        // Build Slides and Dots
         carouselData.forEach((data, index) => {
-            // Slide
             const slide = document.createElement('div');
             slide.className = 'carousel-slide';
             slide.innerHTML = `
@@ -626,7 +625,6 @@
             `;
             track.appendChild(slide);
 
-            // Dot
             const dot = document.createElement('div');
             dot.className = `dot ${index === 0 ? 'active' : ''}`;
             dot.onclick = () => moveToSlide(index);
@@ -661,10 +659,9 @@
             autoPlayInterval = setInterval(() => {
                 let nextIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
                 moveToSlide(nextIndex);
-            }, 4000); // Rotates every 4 seconds
+            }, 4000);
         }
 
-        // Start AutoPlay
         resetAutoPlay();
     </script>
 </body>
