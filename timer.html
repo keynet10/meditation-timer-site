@@ -268,6 +268,57 @@
             z-index: 10;
             display: none;
         }
+        /* Premium Lock Modal */
+        #premium-modal {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: #1e1e1e;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            width: 80%;
+            max-width: 320px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px; right: 15px;
+            background: none; border: none; color: rgba(255,255,255,0.5);
+            cursor: pointer; padding: 0;
+        }
+
+        .close-btn:hover { color: #fff; }
+
+        .lock-icon {
+            font-size: 48px;
+            color: #ffc107; /* Matches your amber interval text */
+            margin-bottom: 10px;
+        }
+
+        .modal-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .modal-content p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
     </style>
 </head>
 <body>
@@ -312,10 +363,23 @@
             </div>
 
             <div id="black-screen" onclick="toggleBlackScreen()"></div>
+            <div id="premium-modal">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal()">
+                        <span class="material-icons">close</span>
+                    </button>
+                    <span class="material-icons lock-icon">lock</span>
+                    <h3>Premium Feature</h3>
+                    <p>Extended durations and unlimited gapless audio are exclusively available in the full app. Pay once, yours forever.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer" target="_blank" rel="noopener noreferrer">
+                        <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" style="height: 54px; width: auto;" />
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="promo-side">
-           <a href="YOUR_PLAY_STORE_LINK_HERE" target="_blank" rel="noopener noreferrer" style="display: inline-block; transition: transform 0.2s ease-in-out;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+           <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer" target="_blank" rel="noopener noreferrer" style="display: inline-block; transition: transform 0.2s ease-in-out;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
     <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" style="height: 68px; width: auto;" />
 </a>
         </div>
