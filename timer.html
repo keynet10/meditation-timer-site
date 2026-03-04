@@ -336,7 +336,7 @@
                     <h1>MEDITATION BELL TIMER</h1>
                     <div style="width: 24px;"></div> </div>
 
-                <div id="timer-display">10:00</div>
+                <div id="timer-display">05:00</div>
 
                 <div id="fade-wrapper">
                     <div id="sound-grid"></div>
@@ -408,7 +408,7 @@
         // --- STATE ---
         let currentProfile = sounds[0];
         let isPlaying = false;
-        let remainingSeconds = 10 * 60;
+        let remainingSeconds = 5 * 60; // Default to 5 minutes
         let timerInterval;
         let volume = 0.5;
 
@@ -445,10 +445,19 @@
             durations.forEach(d => durationSelect.add(new Option(formatDropdown(d), d)));
             intervals.forEach(i => intervalSelect.add(new Option(formatDropdown(i), i)));
             
-            durationSelect.value = 10;
+            durationSelect.value = 5; // Set dropdown default to 5
             intervalSelect.value = 1;
 
-            durationSelect.addEventListener('change', updateTimerDisplay);
+            // Intercept duration changes to trigger modal
+            durationSelect.addEventListener('change', (e) => {
+                if (e.target.value !== "5") {
+                    e.target.value = "5"; // Force dropdown back to 5 visually
+                    showModal(); // Trigger the upsell popup
+                } else {
+                    updateTimerDisplay();
+                }
+            });
+
             intervalSelect.addEventListener('change', (e) => {
                 intervalSelect.style.color = e.target.value == 0 ? "rgba(255,255,255,0.54)" : "#ffc107";
             });
@@ -461,6 +470,15 @@
             });
 
             updateTimerDisplay();
+        }
+
+        // --- MODAL LOGIC ---
+        function showModal() {
+            document.getElementById('premium-modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('premium-modal').style.display = 'none';
         }
 
         // --- LOGIC ---
@@ -574,6 +592,5 @@
 
         window.onload = init;
     </script>
-    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b448b569267c44c2b0ce85f99a149e61"}'></script><!-- End Cloudflare Web Analytics -->
-</body>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b448b569267c44c2b0ce85f99a149e61"}'></script></body>
 </html>
