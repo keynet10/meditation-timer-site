@@ -347,9 +347,9 @@
                             <select id="duration-select" class="dropdown"></select>
                         </div>
                         <div class="dropdown-group">
-                            <label style="text-align: right;">Bell Interval</label>
-                            <select id="interval-select" class="dropdown"></select>
-                        </div>
+    <label>Bell Interval</label>
+    <select id="interval-select" class="dropdown"></select>
+</div>
                     </div>
                 </div>
 
@@ -463,10 +463,7 @@
                 }
             });
 
-            intervalSelect.addEventListener('change', (e) => {
-                intervalSelect.style.color = e.target.value == 0 ? "rgba(255,255,255,0.54)" : "#ffc107";
-            });
-            intervalSelect.style.color = "#ffc107"; // default amber
+        
 
             volumeSlider.addEventListener('input', (e) => {
                 volume = e.target.value;
