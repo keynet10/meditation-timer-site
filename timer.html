@@ -442,7 +442,12 @@
             });
 
             // Build Dropdowns
-            durations.forEach(d => durationSelect.add(new Option(formatDropdown(d), d)));
+            // Build Dropdowns with Lock Icons for Premium
+            durations.forEach(d => {
+                let label = formatDropdown(d);
+                if (d > 5) label += " 🔒"; // Visually locks the premium durations
+                durationSelect.add(new Option(label, d));
+            });
             intervals.forEach(i => intervalSelect.add(new Option(formatDropdown(i), i)));
             
             durationSelect.value = 5; // Set dropdown default to 5
