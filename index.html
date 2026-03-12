@@ -62,7 +62,7 @@
             gap: 20px;
             align-items: center;
         }
-        .nav-links a {
+        .nav-links a.nav-item {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 14px;
@@ -71,13 +71,23 @@
             display: flex;
             align-items: center;
         }
-        .nav-links a:hover { color: var(--primary); }
+        .nav-links a.nav-item:hover { color: var(--primary); }
 
         /* --- DROPDOWN MENU (DESKTOP) --- */
         .dropdown {
             position: relative;
             display: inline-block;
         }
+        .dropdown-toggle {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+        .dropdown-toggle:hover { color: var(--primary); }
         .dropdown-content {
             display: none;
             position: absolute;
@@ -109,6 +119,7 @@
             text-align: left;
             transition: all 0.2s;
             font-weight: 400;
+            font-size: 14px;
         }
         .dropdown-content a:hover {
             background-color: rgba(255, 255, 255, 0.05);
@@ -461,16 +472,19 @@
                 padding: 0;
             }
             .nav-links.active {
-                max-height: calc(100vh - 80px); /* Dynamically scales to phone height */
-                overflow-y: auto; /* Adds scrollbar inside menu if content is too long */
+                max-height: calc(100vh - 80px); 
+                overflow-y: auto; 
                 padding: 10px 0 20px 0;
             }
-            .nav-links > a, .dropdown {
+            .nav-links > a.nav-item, .dropdown {
                 width: 100%;
                 padding: 15px 5%;
                 font-size: 18px;
                 box-sizing: border-box;
                 border-bottom: 1px solid rgba(255,255,255,0.05);
+            }
+            .dropdown-toggle {
+                font-size: 18px;
             }
             .dropdown-content {
                 position: static; 
@@ -496,7 +510,7 @@
 </head>
 <body>
 
-        <header>
+    <header>
         <a href="/" class="logo">
             <img src="android-chrome-512x512.png" alt="Meditation Bell Timer Logo" style="width: 24px; height: 24px; border-radius: 4px;">
             MEDITATION BELL TIMER
@@ -507,6 +521,11 @@
         </button>
 
         <nav class="nav-links" id="nav-links">
+            <a href="#benefits" class="nav-item">Benefits</a>
+            <a href="#sounds" class="nav-item">Soundscapes</a>
+            <a href="#themes" class="nav-item">Themes</a>
+            <a href="#gallery" class="nav-item">Interface</a>
+            
             <div class="dropdown">
                 <a href="#" class="dropdown-toggle" style="cursor: pointer; justify-content: space-between; width: 100%;">
                     Resources <span class="material-icons" style="font-size: 18px;">expand_more</span>
@@ -721,7 +740,7 @@
     <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" style="height: 68px; width: auto;" />
 </a>
             <a href="timer.html" class="btn btn-secondary">
-                Try Web Version
+                <span class="material-icons">web</span> Try Web Version
             </a>
         </div>
 
@@ -745,15 +764,15 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const navLinks = document.getElementById('nav-links');
         const navItems = document.querySelectorAll('.nav-item');
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdown = document.querySelector('.dropdown');
-        const dropdownIcon = document.getElementById('dropdown-icon');
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
+        // Toggle entire menu open/close
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             mobileMenuBtn.querySelector('.material-icons').innerText = navLinks.classList.contains('active') ? 'close' : 'menu';
         });
 
+        // Close menu when a standard anchor link is clicked
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -761,13 +780,20 @@
             });
         });
 
-        dropdownToggle.addEventListener('click', (e) => {
-            if (window.innerWidth <= 900) {
-                e.preventDefault();
-                dropdown.classList.toggle('mobile-active');
-                dropdownIcon.innerText = dropdown.classList.contains('mobile-active') ? 'expand_less' : 'expand_more';
-            }
+        // Accordion multiple dropdowns safely for mobile touch
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    const parentDropdown = toggle.closest('.dropdown');
+                    parentDropdown.classList.toggle('mobile-active');
+                    
+                    const icon = toggle.querySelector('.material-icons');
+                    icon.innerText = parentDropdown.classList.contains('mobile-active') ? 'expand_less' : 'expand_more';
+                }
+            });
         });
+
 
         // --- CAROUSEL LOGIC ---
         const carouselData = [
@@ -839,31 +865,5 @@
     </script>
 
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b448b569267c44c2b0ce85f99a149e61"}'></script>
-    <script>
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.getElementById('nav-links');
-        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-        // Toggle mobile menu open/close
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.querySelector('.material-icons').innerText = navLinks.classList.contains('active') ? 'close' : 'menu';
-        });
-
-        // Handle multiple accordion dropdowns safely
-        dropdownToggles.forEach(toggle => {
-            toggle.addEventListener('click', (e) => {
-                if (window.innerWidth <= 900) {
-                    e.preventDefault();
-                    const parentDropdown = toggle.closest('.dropdown');
-                    parentDropdown.classList.toggle('mobile-active');
-                    
-                    const icon = toggle.querySelector('.material-icons');
-                    icon.innerText = parentDropdown.classList.contains('mobile-active') ? 'expand_less' : 'expand_more';
-                }
-            });
-        });
-    </script>
-
     </body>
 </html>
