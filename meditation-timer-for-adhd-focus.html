@@ -121,7 +121,7 @@
 </head>
 <body>
 
-    <header>
+        <header>
         <a href="/" class="logo">
             <img src="android-chrome-512x512.png" alt="Meditation Bell Timer Logo" style="width: 24px; height: 24px; border-radius: 4px;">
             MEDITATION BELL TIMER
@@ -160,6 +160,7 @@
             </div>
         </nav>
     </header>
+
 
     <div class="article-container">
         <h1>Meditation Timer for ADHD Focus: Structure Your Wandering Mind</h1>
@@ -222,16 +223,18 @@
         <p>&copy; 2026 Meditation Bell Timer. Built for focus, without the bloat.</p>
     </footer>
 
-    <script>
+        <script>
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const navLinks = document.getElementById('nav-links');
         const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
+        // Toggle mobile menu open/close
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             mobileMenuBtn.querySelector('.material-icons').innerText = navLinks.classList.contains('active') ? 'close' : 'menu';
         });
 
+        // Handle multiple accordion dropdowns safely
         dropdownToggles.forEach(toggle => {
             toggle.addEventListener('click', (e) => {
                 if (window.innerWidth <= 900) {
@@ -245,6 +248,7 @@
             });
         });
     </script>
+
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b448b569267c44c2b0ce85f99a149e61"}'></script>
 </body>
 </html>
