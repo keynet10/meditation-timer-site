@@ -73,7 +73,7 @@
         }
         .nav-links a:hover { color: var(--primary); }
 
-        /* --- DROPDOWN MENU --- */
+        /* --- DROPDOWN MENU (DESKTOP) --- */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -93,7 +93,6 @@
             padding: 10px 0;
             margin-top: 10px;
         }
-        /* Invisible bridge to prevent hover drop-off */
         .dropdown::after {
             content: '';
             position: absolute;
@@ -115,13 +114,28 @@
             background-color: rgba(255, 255, 255, 0.05);
             color: var(--text-main);
         }
-        .dropdown:hover .dropdown-content {
-            display: block;
-            animation: fadeIn 0.3s ease;
+
+        /* Desktop specific hover rules */
+        @media (min-width: 901px) {
+            .dropdown:hover .dropdown-content {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
         }
+        
         @keyframes fadeIn {
             from { opacity: 0; transform: translate(-50%, -10px); }
             to { opacity: 1; transform: translate(-50%, 0); }
+        }
+
+        /* Mobile Menu Toggle Button (Hidden on Desktop) */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            cursor: pointer;
+            padding: 5px;
         }
 
         /* --- BUTTONS --- */
@@ -421,14 +435,64 @@
         .social-links a:hover { color: var(--primary); }
         .copyright { color: rgba(255,255,255,0.3); font-size: 12px; }
 
-        /* --- RESPONSIVE --- */
+        /* --- RESPONSIVE MOBILE MENU OVERRIDES --- */
         @media (max-width: 900px) {
             .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
             .hero-content h1 { font-size: 42px; }
             .hero-image { margin-top: 40px; }
-            .nav-links { display: none; }
             .carousel-container { max-width: 80%; }
             .carousel-caption h3 { font-size: 20px; }
+
+            /* Mobile Nav Logic */
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(18, 18, 18, 0.98);
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-out;
+                align-items: flex-start;
+                padding: 0;
+            }
+            .nav-links.active {
+                max-height: 500px; /* Big enough to fit menu */
+                padding: 10px 0 20px 0;
+            }
+            .nav-links > a, .dropdown {
+                width: 100%;
+                padding: 15px 5%;
+                font-size: 18px;
+                box-sizing: border-box;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+            }
+            .dropdown-content {
+                position: static; /* Flow with document */
+                display: none;
+                background: transparent;
+                box-shadow: none;
+                border: none;
+                transform: none;
+                min-width: 100%;
+                margin-top: 0;
+                padding: 10px 0 0 15px; /* Indent sub-links */
+            }
+            /* Override desktop hover, use Javascript class for touch */
+            .dropdown.mobile-active .dropdown-content {
+                display: block;
+            }
+            .dropdown-content a {
+                padding: 10px 0;
+                font-size: 16px;
+                border-bottom: none;
+            }
         }
     </style>
 </head>
@@ -439,14 +503,21 @@
             <span class="material-icons" style="color: var(--primary);">self_improvement</span>
             MEDITATION BELL TIMER
         </a>
-        <nav class="nav-links">
-            <a href="#benefits">Benefits</a>
-            <a href="#sounds">Soundscapes</a>
-            <a href="#themes">Themes</a>
-            <a href="#gallery">Interface</a>
+        
+        <button class="menu-toggle" id="mobile-menu-btn">
+            <span class="material-icons">menu</span>
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="#benefits" class="nav-item">Benefits</a>
+            <a href="#sounds" class="nav-item">Soundscapes</a>
+            <a href="#themes" class="nav-item">Themes</a>
+            <a href="#gallery" class="nav-item">Interface</a>
             
             <div class="dropdown">
-                <a href="#" style="cursor: default;">Resources <span class="material-icons" style="font-size: 16px; margin-left: 2px;">expand_more</span></a>
+                <a href="#" class="dropdown-toggle" style="cursor: pointer; justify-content: space-between; width: 100%;">
+                    Resources <span class="material-icons" id="dropdown-icon" style="font-size: 18px;">expand_more</span>
+                </a>
                 <div class="dropdown-content">
                     <a href="/brown-noise-for-adhd-focus">Brown Noise for ADHD Focus</a>
                     <a href="/meditation-timer-for-adhd">Meditation Timer for ADHD</a>
@@ -662,6 +733,39 @@
     </footer>
 
     <script>
+        // --- MOBILE MENU LOGIC ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const navItems = document.querySelectorAll('.nav-item');
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownIcon = document.getElementById('dropdown-icon');
+
+        // Toggle entire menu open/close
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.querySelector('.material-icons').innerText = navLinks.classList.contains('active') ? 'close' : 'menu';
+        });
+
+        // Close menu when a standard anchor link is clicked
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('.material-icons').innerText = 'menu';
+            });
+        });
+
+        // Accordion dropdown for mobile touch
+        dropdownToggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 900) {
+                e.preventDefault();
+                dropdown.classList.toggle('mobile-active');
+                dropdownIcon.innerText = dropdown.classList.contains('mobile-active') ? 'expand_less' : 'expand_more';
+            }
+        });
+
+
+        // --- CAROUSEL LOGIC ---
         const carouselData = [
             { img: "assets/bowl_bg.webp", title: "Tibetan Singing Bowl" },
             { img: "assets/rain_bg.webp", title: "Soothing Rain Storm" },
