@@ -6,15 +6,15 @@
     <meta name="description" content="Meditation Bell Timer is a simple mindfulness app featuring immersive nature sounds, ambient soundscapes, authentic Tibetan singing bowls, and custom intervals for focus, sleep, and meditation. No ads, no subscriptions.">
     <meta name="keywords" content="meditation timer, mindfulness app, tibetan bell, nature sounds, ambient sounds, sleep timer, brown noise, adhd focus, lifetime access, pay once meditation app">
     <title>Meditation Bell Timer – Free Timer With Interval Bells & Nature Sounds</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon16x16.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    
+
     <style>
         :root {
             --bg-dark: #121212;
@@ -60,6 +60,7 @@
         .nav-links {
             display: flex;
             gap: 20px;
+            align-items: center;
         }
         .nav-links a {
             color: var(--text-muted);
@@ -67,8 +68,61 @@
             font-size: 14px;
             font-weight: 700;
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
         }
         .nav-links a:hover { color: var(--primary); }
+
+        /* --- DROPDOWN MENU --- */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--bg-card);
+            min-width: 240px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            z-index: 101;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+        /* Invisible bridge to prevent hover drop-off */
+        .dropdown::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 15px;
+        }
+        .dropdown-content a {
+            color: var(--text-muted);
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, -10px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
 
         /* --- BUTTONS --- */
         .btn {
@@ -390,6 +444,16 @@
             <a href="#sounds">Soundscapes</a>
             <a href="#themes">Themes</a>
             <a href="#gallery">Interface</a>
+            
+            <div class="dropdown">
+                <a href="#" style="cursor: default;">Resources <span class="material-icons" style="font-size: 16px; margin-left: 2px;">expand_more</span></a>
+                <div class="dropdown-content">
+                    <a href="/brown-noise-for-adhd-focus">Brown Noise for ADHD Focus</a>
+                    <a href="/meditation-timer-for-adhd">Meditation Timer for ADHD</a>
+                    <a href="/white-noise-meditation-timer">White Noise Timer</a>
+                    <a href="/sleep-meditation-sounds">Sleep Meditation Sounds</a>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -397,7 +461,7 @@
         <div class="hero-content">
             <h1>Find your center with immersive soundscapes.</h1>
             <p>A beautifully simple mindfulness app featuring high-fidelity nature sounds, authentic Tibetan singing bowls, and customizable interval chimes. Designed to help you focus on your breath, not your screen.</p>
-            
+
             <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: flex-start;">
                <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer" target="_blank" rel="noopener noreferrer" style="display: inline-block; transition: transform 0.2s ease-in-out;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
     <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" style="height: 68px; width: auto;" />
@@ -420,7 +484,7 @@
             <h2>Why Choose Meditation Bell Timer?</h2>
             <p>Built for practitioners who are tired of bloated, expensive mindfulness apps. We focused purely on providing the perfect environment for focus, sleep, and zen.</p>
         </div>
-        
+
         <div class="benefits-grid">
             <div class="benefit-card">
                 <span class="material-icons">lock_open</span>
@@ -548,7 +612,7 @@
         <div class="carousel-container">
             <button class="carousel-btn prev-btn"><span class="material-icons">chevron_left</span></button>
             <button class="carousel-btn next-btn"><span class="material-icons">chevron_right</span></button>
-            
+
             <div class="carousel-track" id="carousel-track">
                 </div>
         </div>
@@ -560,7 +624,7 @@
             <h2>App Interface</h2>
             <p>Clean, distraction-free, and designed to stay out of your way.</p>
         </div>
-        
+
         <div class="gallery-container-flex">
             <img src="assets/Screenshot1.jpg" alt="Timer App Screenshot 1" class="gallery-img" onerror="this.style.display='none'">
             <img src="assets/Screenshot2.jpg" alt="Meditation Soundscapes Screen" class="gallery-img" onerror="this.style.display='none'">
@@ -614,7 +678,7 @@
 
         const track = document.getElementById('carousel-track');
         const dotsContainer = document.getElementById('carousel-dots');
-        
+
         carouselData.forEach((data, index) => {
             const slide = document.createElement('div');
             slide.className = 'carousel-slide';
