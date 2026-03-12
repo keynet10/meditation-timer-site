@@ -115,7 +115,6 @@
             color: var(--text-main);
         }
 
-        /* Desktop specific hover rules */
         @media (min-width: 901px) {
             .dropdown:hover .dropdown-content {
                 display: block;
@@ -128,7 +127,6 @@
             to { opacity: 1; transform: translate(-50%, 0); }
         }
 
-        /* Mobile Menu Toggle Button (Hidden on Desktop) */
         .menu-toggle {
             display: none;
             background: none;
@@ -457,13 +455,14 @@
                 background: rgba(18, 18, 18, 0.98);
                 border-bottom: 1px solid rgba(255,255,255,0.1);
                 max-height: 0;
-                overflow: hidden;
+                overflow-y: hidden;
                 transition: max-height 0.4s ease-out;
                 align-items: flex-start;
                 padding: 0;
             }
             .nav-links.active {
-                max-height: 500px; /* Big enough to fit menu */
+                max-height: calc(100vh - 80px); /* Dynamically scales to phone height */
+                overflow-y: auto; /* Adds scrollbar inside menu if content is too long */
                 padding: 10px 0 20px 0;
             }
             .nav-links > a, .dropdown {
@@ -474,7 +473,7 @@
                 border-bottom: 1px solid rgba(255,255,255,0.05);
             }
             .dropdown-content {
-                position: static; /* Flow with document */
+                position: static; 
                 display: none;
                 background: transparent;
                 box-shadow: none;
@@ -482,9 +481,8 @@
                 transform: none;
                 min-width: 100%;
                 margin-top: 0;
-                padding: 10px 0 0 15px; /* Indent sub-links */
+                padding: 10px 0 0 15px; 
             }
-            /* Override desktop hover, use Javascript class for touch */
             .dropdown.mobile-active .dropdown-content {
                 display: block;
             }
@@ -741,13 +739,11 @@
         const dropdown = document.querySelector('.dropdown');
         const dropdownIcon = document.getElementById('dropdown-icon');
 
-        // Toggle entire menu open/close
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             mobileMenuBtn.querySelector('.material-icons').innerText = navLinks.classList.contains('active') ? 'close' : 'menu';
         });
 
-        // Close menu when a standard anchor link is clicked
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -755,7 +751,6 @@
             });
         });
 
-        // Accordion dropdown for mobile touch
         dropdownToggle.addEventListener('click', (e) => {
             if (window.innerWidth <= 900) {
                 e.preventDefault();
@@ -763,7 +758,6 @@
                 dropdownIcon.innerText = dropdown.classList.contains('mobile-active') ? 'expand_less' : 'expand_more';
             }
         });
-
 
         // --- CAROUSEL LOGIC ---
         const carouselData = [
