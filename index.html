@@ -496,31 +496,41 @@
 </head>
 <body>
 
-    <header>
-                <a href="/" class="logo">
+        <header>
+        <a href="/" class="logo">
             <img src="android-chrome-512x512.png" alt="Meditation Bell Timer Logo" style="width: 24px; height: 24px; border-radius: 4px;">
             MEDITATION BELL TIMER
         </a>
-
+        
         <button class="menu-toggle" id="mobile-menu-btn">
             <span class="material-icons">menu</span>
         </button>
 
         <nav class="nav-links" id="nav-links">
-            <a href="#benefits" class="nav-item">Benefits</a>
-            <a href="#sounds" class="nav-item">Soundscapes</a>
-            <a href="#themes" class="nav-item">Themes</a>
-            <a href="#gallery" class="nav-item">Interface</a>
-            
             <div class="dropdown">
                 <a href="#" class="dropdown-toggle" style="cursor: pointer; justify-content: space-between; width: 100%;">
-                    Resources <span class="material-icons" id="dropdown-icon" style="font-size: 18px;">expand_more</span>
+                    Resources <span class="material-icons" style="font-size: 18px;">expand_more</span>
                 </a>
                 <div class="dropdown-content">
                     <a href="/brown-noise-for-adhd-focus">Brown Noise for ADHD Focus</a>
                     <a href="/meditation-timer-for-adhd">Meditation Timer for ADHD</a>
                     <a href="/white-noise-meditation-timer">White Noise Timer</a>
                     <a href="/sleep-meditation-sounds">Sleep Meditation Sounds</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle" style="cursor: pointer; justify-content: space-between; width: 100%;">
+                    Articles <span class="material-icons" style="font-size: 18px;">expand_more</span>
+                </a>
+                <div class="dropdown-content">
+                    <a href="/how-to-use-a-meditation-timer">How To Use A Meditation Timer</a>
+                    <a href="/meditation-timer-vs-guided-meditation">Timer vs Guided Meditation</a>
+                    <a href="/how-long-should-you-meditate">How Long Should You Meditate</a>
+                    <a href="/best-meditation-sounds">Best Meditation Sounds</a>
+                    <a href="/meditation-timer-for-adhd-focus">Meditation Timer For ADHD Focus</a>
+                    <a href="/pomodoro-meditation-method">Pomodoro Meditation Method</a>
+                    <a href="/how-tibetan-singing-bowls-work">How Tibetan Singing Bowls Work</a>
                 </div>
             </div>
         </nav>
@@ -829,5 +839,31 @@
     </script>
 
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b448b569267c44c2b0ce85f99a149e61"}'></script>
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+        // Toggle mobile menu open/close
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.querySelector('.material-icons').innerText = navLinks.classList.contains('active') ? 'close' : 'menu';
+        });
+
+        // Handle multiple accordion dropdowns safely
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    const parentDropdown = toggle.closest('.dropdown');
+                    parentDropdown.classList.toggle('mobile-active');
+                    
+                    const icon = toggle.querySelector('.material-icons');
+                    icon.innerText = parentDropdown.classList.contains('mobile-active') ? 'expand_less' : 'expand_more';
+                }
+            });
+        });
+    </script>
+
     </body>
 </html>
