@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Timer for ADHD: A Distraction-Free Mindfulness Tool</title>
+    <meta name="description" content="Traditional meditation can be overwhelming for ADHD brains. Discover how interval bells and gapless ambient sounds can help you build a sustainable mindfulness practice.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #e0e0e0;
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 28px;
+            font-weight: 400;
+            color: #fff;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #b0b0b0;
+        }
+        ul {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            color: #81D4FA;
+            margin-bottom: 40px;
+        }
+
+        /* Screenshot Carousel */
+        .carousel-wrapper {
+            margin: 40px 0;
+            position: relative;
+        }
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE/Edge */
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 240px;
+            scroll-snap-align: center;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            background-color: #121212;
+            overflow: hidden;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* CTA Section */
+        .cta-box {
+            background-color: #121212;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .cta-box h3 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 24px;
+        }
+        
+        /* Button Alignments */
+        .btn-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 28px;
+            height: 54px; /* Matches the Play Store badge height exactly */
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .btn-primary {
+            background-color: #81D4FA;
+            color: #121212;
+        }
+        .btn-primary:hover {
+            background-color: #4fc3f7;
+            transform: translateY(-2px);
+        }
+        .play-store-badge img {
+            height: 54px;
+            width: auto;
+            display: block;
+            transition: transform 0.2s ease-in-out;
+        }
+        .play-store-badge:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">MEDITATION BELL TIMER</a>
+    </nav>
+
+    <div class="article-container">
+        <h1>Meditation Timer for ADHD: A Distraction-Free Mindfulness Tool</h1>
+        <div class="subtitle">Why the standard "sit in silence" approach fails neurodivergent brains, and how to build a practice that actually works.</div>
+
+        <p>For an ADHD brain, the instruction to "just sit in silence and empty your mind" often sounds like a cruel joke. Without external stimulation, a quiet room becomes incredibly loud. Your internal monologue takes over, mental checklists multiply, and within minutes, you feel more restless and anxious than when you started.</p>
+
+        <p>But mindfulness is incredibly beneficial for executive dysfunction. The trick isn't forcing your brain to endure pure silence—it's giving your brain the right kind of acoustic anchors to keep it from drifting.</p>
+
+        <div class="carousel-wrapper">
+            <div class="carousel-container">
+                <div class="carousel-item"><img src="assets/Screenshot1.jpg" alt="Meditation Bell Timer App Interface"></div>
+                <div class="carousel-item"><img src="assets/Screenshot2.jpg" alt="Pitch Black UI Mode"></div>
+                <div class="carousel-item"><img src="assets/Screenshot3.jpg" alt="Brown Noise and Ambient Sounds"></div>
+                <div class="carousel-item"><img src="assets/Screenshot4.jpg" alt="Offline Gapless Meditation Timer"></div>
+            </div>
+        </div>
+
+        <h2>Why Traditional Meditation Apps Fail ADHD Users</h2>
+        <p>Most popular meditation apps are actively hostile to neurodivergent focus. They are packed with daily streaks, push notifications, social leaderboards, and complex home screens. If you forget to meditate for a day, you lose your "streak," triggering rejection sensitive dysphoria (RSD) and making you want to abandon the app entirely.</p>
+        <p>Furthermore, many apps force you to listen to guided vocal tracks. For someone with ADHD, listening to someone speak can feel like a chore or a podcast, completely ruining the opportunity to disconnect.</p>
+
+        <div class="cta-box">
+            <h3>Try Our ADHD-Friendly Timer</h3>
+            <p>No streaks, no vocal guides, no subscriptions. Just pure ambient sound and interval bells to keep you grounded. Try it completely free.</p>
+            <div class="btn-container">
+                <a href="timer.html" class="btn btn-primary">
+                    <span class="material-icons">timer</span> Try Free Web Timer
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer" target="_blank" rel="noopener noreferrer" class="play-store-badge">
+                    <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"/>
+                </a>
+            </div>
+        </div>
+
+        <h2>The Solution: Audio Masking and Interval Bells</h2>
+        <p>To build a successful mindfulness routine with ADHD, you need to swap the silence for structure. Here is how to hack your meditation sessions:</p>
+        
+        <h3>1. Use Constant Ambient Sound (Audio Masking)</h3>
+        <p>Instead of silence, run a constant background track like Brown Noise, heavy rain, or crashing waves. This occupies the "background processor" of your brain, satisfying its need for stimulation without distracting your primary focus. It also drowns out sudden household noises that would normally break your concentration.</p>
+
+        <h3>2. Set Recurring Interval Bells</h3>
+        <p>Time blindness is a core symptom of ADHD. Sitting with your eyes closed for 15 minutes can feel like an eternity. By setting a Tibetan Bell to strike every 3 or 5 minutes, you give your brain a gentle, recurring anchor. When your mind inevitably wanders, the bell serves as a non-judgmental cue to return to your breath. It breaks a daunting session into manageable, bite-sized pieces.</p>
+
+        <h2>Why We Built Meditation Bell Timer</h2>
+        <p>We built <strong>Meditation Bell Timer</strong> because we were exhausted by the bloated, subscription-heavy wellness industry. We wanted a tool, not a lifestyle brand.</p>
+        
+        <p>Our app is specifically designed to eliminate distractions. It features a deep-black, AMOLED-friendly interface so your screen won't light up the room. It operates 100% offline, meaning you can put your phone in airplane mode and completely detach from notifications. Most importantly, our audio engine is entirely gapless—meaning there are no jarring clicks or pauses when the audio loops.</p>
+
+        <p>We firmly believe in a "Try for free, pay once" model. You can download the app and use it completely free. If you find it helpful and want infinite session durations, it's a single, one-time payment to unlock it permanently. No $10/month subscriptions, ever.</p>
+
+        <div class="cta-box">
+            <h3>Stop Renting Your Peace of Mind</h3>
+            <p>Build a sustainable practice with a tool designed to respect your focus and your wallet.</p>
+            <div class="btn-container">
+                <a href="timer.html" class="btn btn-primary">
+                    <span class="material-icons">timer</span> Try Free Web Timer
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer" target="_blank" rel="noopener noreferrer" class="play-store-badge">
+                    <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"/>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Meditation Bell Timer. Built for focus, without the bloat.</p>
+    </footer>
+
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b448b569267c44c2b0ce85f99a149e61"}'></script>
+</body>
+</html>
