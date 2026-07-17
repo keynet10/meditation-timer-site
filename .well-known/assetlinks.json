@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.futurehometek.solfeggiohealingfrequencies",
+      "sha256_cert_fingerprints": [
+        "E9:B6:12:53:86:21:45:04:F3:BB:DC:40:1C:CD:0B:95:AA:1D:9E:18:C9:FB:D1:7F:81:36:AA:A4:A7:F7:FE:06"
+      ]
+    }
+  }
+]
