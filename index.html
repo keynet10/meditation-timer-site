@@ -1,756 +1,2174 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>
     Meditation Bell Timer | Meditation, Sleep & Focus App
-</title>
-
-<meta name="description"
-      content="Meditation Bell Timer is a beautifully simple meditation timer for mindfulness, sleep, focus and relaxation. Tibetan bells, immersive nature sounds, Brown Noise and a distraction-free dark interface.">
+</title><meta name="description"
+content="Meditation Bell Timer is a beautifully simple meditation timer for mindfulness, sleep, focus and relaxation. Tibetan bells, immersive nature sounds, Brown Noise and a distraction-free dark interface.">
 
 <link rel="canonical"
-      href="https://meditationbelltimer.com/">
-
-<!-- Open Graph -->
-
-<meta property="og:type"
-      content="website">
+      href="https://meditationbelltimer.com/"><meta property="og:type"
+content="website">
 
 <meta property="og:title"
-      content="Meditation Bell Timer | Meditation, Sleep & Focus">
+content="Meditation Bell Timer | Meditation, Sleep & Focus">
 
 <meta property="og:description"
-      content="A beautifully simple meditation timer with Tibetan bells, immersive soundscapes, focus sounds and a distraction-free dark interface.">
+content="A beautifully simple meditation timer with Tibetan bells, immersive soundscapes, focus sounds and a distraction-free dark interface.">
 
 <meta property="og:url"
-      content="https://meditationbelltimer.com/">
+content="https://meditationbelltimer.com/">
 
 <meta property="og:image"
-      content="https://meditationbelltimer.com/assets/hero-meditation-bowl.webp">
-
-
-<!-- Twitter -->
+content="https://meditationbelltimer.com/assets/hero-meditation-bowl.webp">
 
 <meta name="twitter:card"
-      content="summary_large_image">
+content="summary_large_image">
 
 <meta name="twitter:title"
-      content="Meditation Bell Timer">
+content="Meditation Bell Timer">
 
 <meta name="twitter:description"
-      content="A simple meditation timer for mindfulness, sleep, focus and relaxation.">
+content="A simple meditation timer for mindfulness, sleep, focus and relaxation.">
 
 <meta name="twitter:image"
-      content="https://meditationbelltimer.com/assets/hero-meditation-bowl.webp">
+content="https://meditationbelltimer.com/assets/hero-meditation-bowl.webp">
 
-
-<!-- Favicon -->
-
-<link rel="icon"
+<!-- FAVICONS --><link rel="icon"
       type="image/x-icon"
-      href="/favicon.ico">
-
-<link rel="icon"
+      href="/favicon.ico"><link rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/favicon-32x32.png">
-
-<link rel="icon"
+      href="/favicon-32x32.png"><link rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/favicon-16x16.png">
-
-<link rel="apple-touch-icon"
-      href="/apple-touch-icon.png">
-
-
-<!-- Fonts -->
-
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
+      href="/favicon-16x16.png"><link rel="apple-touch-icon"
+      href="/apple-touch-icon.png"><!-- FONTS --><link rel="preconnect"
+      href="https://fonts.googleapis.com"><link rel="preconnect"
       href="https://fonts.gstatic.com"
-      crossorigin>
+      crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"><style>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;700&display=swap"
-      rel="stylesheet">
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --black: #070909;
+    --navy: #0b1113;
+    --gold: #d4af5a;
+    --gold-light: #f2d78f;
+    --cream: #f7f1e5;
+    --white: #ffffff;
+    --muted: rgba(255,255,255,0.68);
+    --border: rgba(255,255,255,0.08);
+
+    --max-width: 1180px;
+
+}
 
 
-<style>
+/* =========================================================
+   RESET
+========================================================= */
 
-    /* =========================================================
-       ROOT
-    ========================================================= */
+* {
+    box-sizing: border-box;
+}
 
-    :root {
 
-        --black: #070909;
+html {
+    scroll-behavior: smooth;
+}
 
-        --navy: #0b1113;
 
-        --gold: #d4af5a;
+body {
 
-        --gold-light: #f2d78f;
+    margin: 0;
+    padding: 0;
 
-        --cream: #f7f1e5;
+    background: var(--black);
+    color: var(--white);
 
-        --white: #ffffff;
+    font-family: 'Lato', sans-serif;
 
-        --muted: rgba(255,255,255,0.68);
+    line-height: 1.65;
 
-        --border: rgba(255,255,255,0.08);
+    overflow-x: hidden;
 
-        --max-width: 1180px;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   SITEWIDE HEADER
+========================================================= */
+
+header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1000;
+
+    height: 74px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    background:
+        rgba(7,9,9,0.94);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.06);
+
+}
+
+
+/* =========================================================
+   SITEWIDE BRAND
+========================================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.6px;
+
+    white-space: nowrap;
+
+}
+
+
+.logo img {
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 7px;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================================================
+   SITEWIDE DESKTOP NAVIGATION
+========================================================= */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+.nav-links > a,
+.dropdown-toggle {
+
+    color:
+        rgba(255,255,255,0.72);
+
+    text-decoration: none;
+
+    font-family:
+        'DM Sans', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    transition:
+        color 0.25s ease;
+
+}
+
+
+.nav-links > a:hover,
+.dropdown-toggle:hover {
+
+    color:
+        var(--gold-light);
+
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.dropdown {
+
+    position: relative;
+
+}
+
+
+.dropdown-toggle {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+
+}
+
+
+.dropdown-arrow {
+
+    font-size: 9px;
+
+    opacity: 0.65;
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+.dropdown:hover
+.dropdown-arrow {
+
+    transform:
+        rotate(180deg);
+
+}
+
+
+.dropdown-content {
+
+    position: absolute;
+
+    top: calc(100% + 17px);
+
+    right: 0;
+
+    min-width: 270px;
+
+    padding: 9px;
+
+    background:
+        rgba(10,13,14,0.98);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.55);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-8px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+}
+
+
+.dropdown:hover
+.dropdown-content {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.dropdown-content a {
+
+    display: block;
+
+    padding: 10px 12px;
+
+    border-radius: 8px;
+
+    color:
+        rgba(255,255,255,0.68);
+
+    text-decoration: none;
+
+    font-family:
+        'DM Sans', sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+
+}
+
+
+.dropdown-content a:hover {
+
+    background:
+        rgba(212,175,90,0.08);
+
+    color:
+        var(--gold-light);
+
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle {
+
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: white;
+
+    font-family:
+        'DM Sans', sans-serif;
+
+    font-size: 27px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height:
+        min(820px, 92vh);
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        #101516;
+
+}
+
+
+.hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    z-index: 0;
+
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(4,8,9,0.94) 0%,
+            rgba(4,8,9,0.82) 22%,
+            rgba(4,8,9,0.52) 44%,
+            rgba(4,8,9,0.16) 70%,
+            rgba(4,8,9,0.05) 100%
+        );
+
+}
+
+
+.hero-overlay::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 180px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(7,9,9,0.95)
+        );
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width:
+        var(--max-width);
+
+    margin:
+        0 auto;
+
+    padding:
+        145px 30px 115px;
+
+}
+
+
+.hero-copy {
+
+    max-width:
+        610px;
+
+}
+
+
+.hero-eyebrow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 24px;
+
+    color:
+        var(--gold-light);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+.hero-eyebrow::before {
+
+    content: "";
+
+    width: 38px;
+
+    height: 1px;
+
+    background:
+        var(--gold);
+
+}
+
+
+.hero h1 {
+
+    margin: 0 0 24px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(58px, 7vw, 92px);
+
+    font-weight: 600;
+
+    line-height: 0.91;
+
+    letter-spacing: -1.5px;
+
+    color:
+        var(--cream);
+
+    text-shadow:
+        0 5px 30px rgba(0,0,0,0.35);
+
+}
+
+
+.hero h1 span {
+
+    color:
+        var(--gold-light);
+
+}
+
+
+.hero-description {
+
+    max-width:
+        560px;
+
+    margin:
+        0 0 32px;
+
+    color:
+        rgba(255,255,255,0.82);
+
+    font-size:
+        17px;
+
+    font-weight: 300;
+
+    line-height:
+        1.8;
+
+    text-shadow:
+        0 2px 12px rgba(0,0,0,0.8);
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-buttons {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    flex-wrap:
+        wrap;
+
+    margin-bottom:
+        22px;
+
+}
+
+
+.btn {
+
+    min-height:
+        52px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        0 26px;
+
+    border-radius:
+        999px;
+
+    text-decoration:
+        none;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.btn-primary {
+
+    background:
+        var(--gold);
+
+    color:
+        #101010;
+
+    box-shadow:
+        0 10px 35px
+        rgba(212,175,90,0.2);
+
+}
+
+
+.btn-primary:hover {
+
+    background:
+        var(--gold-light);
+
+}
+
+
+.btn-secondary {
+
+    color:
+        white;
+
+    background:
+        rgba(5,8,8,0.35);
+
+    border:
+        1px solid
+        rgba(242,215,143,0.55);
+
+    backdrop-filter:
+        blur(8px);
+
+}
+
+
+.btn-secondary:hover {
+
+    background:
+        rgba(212,175,90,0.12);
+
+    border-color:
+        var(--gold-light);
+
+}
+
+
+.hero-meta {
+
+    color:
+        rgba(255,255,255,0.5);
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        0.3px;
+
+}
+
+
+/* =========================================================
+   USP STRIP
+========================================================= */
+
+.usp-strip {
+
+    position: relative;
+
+    z-index: 5;
+
+    background:
+        #0b0e0f;
+
+    border-top:
+        1px solid rgba(255,255,255,0.05);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.05);
+
+}
+
+
+.usp-inner {
+
+    max-width:
+        var(--max-width);
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+}
+
+
+.usp-item {
+
+    padding:
+        24px 18px;
+
+    text-align:
+        center;
+
+    border-right:
+        1px solid rgba(255,255,255,0.05);
+
+}
+
+
+.usp-item:last-child {
+
+    border-right:
+        0;
+
+}
+
+
+.usp-item strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        3px;
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        0.5px;
+
+}
+
+
+.usp-item span {
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size:
+        11px;
+
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.section {
+
+    max-width:
+        var(--max-width);
+
+    margin:
+        0 auto;
+
+    padding:
+        100px 30px;
+
+}
+
+
+.section-header {
+
+    max-width:
+        760px;
+
+    margin:
+        0 auto 55px;
+
+    text-align:
+        center;
+
+}
+
+
+.section-label {
+
+    display:
+        block;
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--gold);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        3px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.section-header h2 {
+
+    margin:
+        0 0 16px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(40px,5vw,60px);
+
+    font-weight:
+        600;
+
+    line-height:
+        1.02;
+
+}
+
+
+.section-header p {
+
+    margin:
+        0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        16px;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+
+    max-width:
+        850px;
+
+    margin:
+        0 auto;
+
+    padding:
+        110px 30px 50px;
+
+    text-align:
+        center;
+
+}
+
+
+.intro h2 {
+
+    margin:
+        0 0 18px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(40px,5vw,58px);
+
+    line-height:
+        1.05;
+
+}
+
+
+.intro p {
+
+    margin:
+        0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        16px;
+
+    line-height:
+        1.9;
+
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.feature-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.feature-card {
+
+    padding:
+        34px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.035),
+            rgba(255,255,255,0.012)
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        20px;
+
+}
+
+
+.feature-number {
+
+    margin-bottom:
+        20px;
+
+    color:
+        var(--gold);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.feature-card h3 {
+
+    margin:
+        0 0 10px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        30px;
+
+}
+
+
+.feature-card p {
+
+    margin:
+        0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* =========================================================
+   SOUNDS
+========================================================= */
+
+.sound-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        16px;
+
+}
+
+
+.sound-card {
+
+    min-height:
+        190px;
+
+    padding:
+        28px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        18px;
+
+    background:
+        #101415;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
+
+}
+
+
+.sound-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(212,175,90,0.35);
+
+}
+
+
+.sound-icon {
+
+    margin-bottom:
+        18px;
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        23px;
+
+}
+
+
+.sound-card h3 {
+
+    margin:
+        0 0 8px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        25px;
+
+}
+
+
+.sound-card p {
+
+    margin:
+        0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.65;
+
+}
+
+
+/* =========================================================
+   VISUAL SECTION
+========================================================= */
+
+.visual-section {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        26px;
+
+    background:
+        #101415;
+
+    border:
+        1px solid
+        var(--border);
+
+}
+
+
+.visual-section-content {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        0.9fr 1.1fr;
+
+    align-items:
+        center;
+
+}
+
+
+.visual-copy {
+
+    padding:
+        60px;
+
+}
+
+
+.visual-copy h2 {
+
+    margin:
+        0 0 18px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(40px,5vw,58px);
+
+    line-height:
+        1;
+
+}
+
+
+.visual-copy p {
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.8;
+
+}
+
+
+.visual-image {
+
+    min-height:
+        480px;
+
+    background:
+        #0b0e0f;
+
+}
+
+
+.visual-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    min-height:
+        480px;
+
+    object-fit:
+        cover;
+
+}
+
+
+/* =========================================================
+   THREE STEPS
+========================================================= */
+
+.steps {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        20px;
+
+}
+
+
+.step {
+
+    padding:
+        30px;
+
+    border-top:
+        1px solid
+        rgba(212,175,90,0.35);
+
+}
+
+
+.step-number {
+
+    margin-bottom:
+        15px;
+
+    color:
+        var(--gold);
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        44px;
+
+    line-height:
+        1;
+
+}
+
+
+.step h3 {
+
+    margin:
+        0 0 10px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        28px;
+
+}
+
+
+.step p {
+
+    margin:
+        0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+}
+
+
+/* =========================================================
+   USE CASES
+========================================================= */
+
+.use-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.use-card {
+
+    padding:
+        30px;
+
+    border-radius:
+        18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.01)
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+}
+
+
+.use-card h3 {
+
+    margin:
+        0 0 10px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        29px;
+
+}
+
+
+.use-card p {
+
+    margin:
+        0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* =========================================================
+   APP COLLECTION
+========================================================= */
+
+.app-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.app-card {
+
+    padding:
+        32px;
+
+    background:
+        #101415;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        20px;
+
+}
+
+
+.app-card.featured {
+
+    border-color:
+        rgba(212,175,90,0.32);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(212,175,90,0.07),
+            rgba(255,255,255,0.015)
+        );
+
+}
+
+
+.app-tag {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        15px;
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.app-card h3 {
+
+    margin:
+        0 0 12px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        31px;
+
+    line-height:
+        1.05;
+
+}
+
+
+.app-card p {
+
+    margin:
+        0 0 20px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.app-card ul {
+
+    margin:
+        0 0 25px;
+
+    padding:
+        0;
+
+    list-style:
+        none;
+
+}
+
+
+.app-card li {
+
+    margin-bottom:
+        8px;
+
+    color:
+        rgba(255,255,255,0.65);
+
+    font-size:
+        13px;
+
+}
+
+
+.app-card li::before {
+
+    content:
+        "✓";
+
+    margin-right:
+        8px;
+
+    color:
+        var(--gold);
+
+}
+
+
+.text-link {
+
+    color:
+        var(--gold-light);
+
+    text-decoration:
+        none;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* =========================================================
+   SCREENSHOT GALLERY
+========================================================= */
+
+.gallery {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(6,1fr);
+
+    gap:
+        14px;
+
+}
+
+
+.gallery img {
+
+    width:
+        100%;
+
+    aspect-ratio:
+        9 / 16;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        16px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.06);
+
+    background:
+        #101212;
+
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq {
+
+    max-width:
+        850px;
+
+    margin:
+        0 auto;
+
+}
+
+
+details {
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+
+}
+
+
+summary {
+
+    padding:
+        22px 0;
+
+    cursor:
+        pointer;
+
+    color:
+        rgba(255,255,255,0.9);
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        24px;
+
+    list-style:
+        none;
+
+}
+
+
+summary::-webkit-details-marker {
+
+    display:
+        none;
+
+}
+
+
+summary::after {
+
+    content:
+        "+";
+
+    float:
+        right;
+
+    color:
+        var(--gold);
+
+    font-family:
+        Lato,
+        sans-serif;
+
+}
+
+
+details[open] summary::after {
+
+    content:
+        "−";
+
+}
+
+
+details p {
+
+    margin:
+        0 0 22px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-cta {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    margin:
+        30px auto 100px;
+
+    max-width:
+        1100px;
+
+    padding:
+        90px 30px;
+
+    text-align:
+        center;
+
+    border:
+        1px solid
+        rgba(212,175,90,0.18);
+
+    border-radius:
+        28px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(212,175,90,0.13),
+            transparent 55%
+        ),
+        #0d1112;
+
+}
+
+
+.final-cta h2 {
+
+    margin:
+        0 0 15px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(44px,5vw,64px);
+
+    line-height:
+        1;
+
+}
+
+
+.final-cta p {
+
+    max-width:
+        650px;
+
+    margin:
+        0 auto 30px;
+
+    color:
+        var(--muted);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        60px 5% 30px;
+
+    background:
+        #060808;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.05);
+
+}
+
+
+.footer-inner {
+
+    max-width:
+        var(--max-width);
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1fr;
+
+    gap:
+        40px;
+
+}
+
+
+.footer-brand p {
+
+    max-width:
+        310px;
+
+    color:
+        rgba(255,255,255,0.42);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.footer-column h4 {
+
+    margin:
+        0 0 15px;
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.footer-column a {
+
+    display:
+        block;
+
+    margin-bottom:
+        9px;
+
+    color:
+        rgba(255,255,255,0.5);
+
+    text-decoration:
+        none;
+
+    font-size:
+        13px;
+
+    transition:
+        color .2s ease;
+
+}
+
+
+.footer-column a:hover {
+
+    color:
+        var(--gold-light);
+
+}
+
+
+.footer-bottom {
+
+    max-width:
+        var(--max-width);
+
+    margin:
+        45px auto 0;
+
+    padding-top:
+        22px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.05);
+
+    color:
+        rgba(255,255,255,0.3);
+
+    font-size:
+        12px;
+
+    text-align:
+        center;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .nav-links {
+
+        gap:
+            18px;
 
     }
 
 
-    /* =========================================================
-       RESET
-    ========================================================= */
+    .sound-grid {
 
-    * {
-        box-sizing: border-box;
-    }
-
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-
-    body {
-
-        margin: 0;
-
-        padding: 0;
-
-        background: var(--black);
-
-        color: var(--white);
-
-        font-family: 'Lato', sans-serif;
-
-        line-height: 1.65;
-
-        overflow-x: hidden;
+        grid-template-columns:
+            repeat(2,1fr);
 
     }
 
 
-    img {
-        max-width: 100%;
-        display: block;
+    .app-grid {
+
+        grid-template-columns:
+            1fr;
+
     }
 
 
-    a {
-        color: inherit;
+    .gallery {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
     }
 
 
-    /* =========================================================
-       HEADER
-    ========================================================= */
+    .visual-section-content {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .visual-image {
+
+        order:
+            -1;
+
+    }
+
+
+    .footer-inner {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
 
     header {
 
-        position: fixed;
+        position:
+            sticky;
 
-        top: 0;
-        left: 0;
-        right: 0;
+        top:
+            0;
 
-        z-index: 1000;
+        height:
+            74px;
 
-        height: 78px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        padding: 0 5%;
-
-        background:
-            linear-gradient(
-                to bottom,
-                rgba(5,8,8,0.92),
-                rgba(5,8,8,0.72)
-            );
-
-        backdrop-filter: blur(14px);
-
-        -webkit-backdrop-filter: blur(14px);
-
-        border-bottom:
-            1px solid rgba(255,255,255,0.055);
+        padding:
+            0 5%;
 
     }
 
 
     .logo {
 
-        display: flex;
+        font-family:
+            'DM Sans',
+            sans-serif;
 
-        align-items: center;
+        font-size:
+            12px;
 
-        gap: 10px;
+        font-weight:
+            600;
 
-        color: white;
-
-        text-decoration: none;
-
-        font-size: 15px;
-
-        font-weight: 700;
-
-        letter-spacing: 2px;
-
-        white-space: nowrap;
+        letter-spacing:
+            1.6px;
 
     }
 
 
     .logo img {
 
-        width: 28px;
-        height: 28px;
+        width:
+            30px;
 
-        border-radius: 6px;
+        height:
+            30px;
+
+        border-radius:
+            7px;
+
+        object-fit:
+            cover;
 
     }
 
 
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
+    .menu-toggle {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+    }
+
+
+    /* =====================================================
+       MOBILE NAV
+    ===================================================== */
 
     .nav-links {
 
-        display: flex;
+        position:
+            absolute;
 
-        align-items: center;
+        top:
+            74px;
 
-        gap: 30px;
+        left:
+            0;
+
+        width:
+            100%;
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            0;
+
+        max-height:
+            0;
+
+        overflow:
+            hidden;
+
+        padding:
+            0;
+
+        background:
+            rgba(7,9,9,0.98);
+
+        border-bottom:
+            1px solid rgba(255,255,255,0.08);
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,0.35);
+
+        transition:
+            max-height .35s ease,
+            padding .2s ease;
+
+    }
+
+
+    .nav-links.active {
+
+        max-height:
+            calc(100vh - 74px);
+
+        overflow-y:
+            auto;
+
+        padding:
+            10px 0 20px;
 
     }
 
 
     .nav-links > a,
-    .dropdown-toggle {
+    .nav-links .dropdown {
 
-        color: rgba(255,255,255,0.72);
-
-        text-decoration: none;
-
-        font-size: 14px;
-
-        font-weight: 700;
-
-        transition: color 0.25s ease;
-
-    }
-
-
-    .nav-links > a:hover,
-    .dropdown-toggle:hover {
-
-        color: var(--gold-light);
-
-    }
-
-
-    .dropdown {
-
-        position: relative;
-
-    }
-
-
-    .dropdown-toggle {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 5px;
-
-        cursor: pointer;
-
-    }
-
-
-    .dropdown-content {
-
-        position: absolute;
-
-        top: calc(100% + 15px);
-
-        right: 0;
-
-        min-width: 245px;
-
-        padding: 10px;
-
-        background:
-            rgba(12,15,16,0.98);
-
-        border:
-            1px solid rgba(255,255,255,0.08);
-
-        border-radius: 12px;
-
-        box-shadow:
-            0 25px 70px rgba(0,0,0,0.5);
-
-        opacity: 0;
-
-        visibility: hidden;
-
-        transform: translateY(-8px);
-
-        transition:
-            opacity 0.2s ease,
-            transform 0.2s ease,
-            visibility 0.2s ease;
-
-    }
-
-
-    .dropdown:hover .dropdown-content {
-
-        opacity: 1;
-
-        visibility: visible;
-
-        transform: translateY(0);
-
-    }
-
-
-    .dropdown-content a {
-
-        display: block;
-
-        padding: 10px 12px;
-
-        border-radius: 8px;
-
-        color: rgba(255,255,255,0.68);
-
-        text-decoration: none;
-
-        font-size: 13px;
-
-        transition:
-            background 0.2s ease,
-            color 0.2s ease;
-
-    }
-
-
-    .dropdown-content a:hover {
-
-        background:
-            rgba(212,175,90,0.08);
-
-        color:
-            var(--gold-light);
-
-    }
-
-
-    /* =========================================================
-       MOBILE MENU BUTTON
-    ========================================================= */
-
-    .menu-toggle {
-
-        display: none;
-
-        border: 0;
-
-        background: transparent;
-
-        color: white;
-
-        font-size: 28px;
-
-        cursor: pointer;
-
-    }
-
-
-    /* =========================================================
-       HERO
-       
-       IMPORTANT:
-       Full-width image.
-       NO Screenshot1 overlay.
-    ========================================================= */
-
-    .hero {
-
-        position: relative;
-
-        width: 100%;
-
-        min-height: min(820px, 92vh);
-
-        display: flex;
-
-        align-items: center;
-
-        overflow: hidden;
-
-        background:
-            #101516;
-
-    }
-
-
-    /* =========================================================
-       HERO IMAGE
-    ========================================================= */
-
-    .hero-background {
-
-        position: absolute;
-
-        inset: 0;
-
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-
-        object-position: center center;
-
-        z-index: 0;
-
-    }
-
-
-    /* =========================================================
-       HERO IMAGE DARKENING
-       
-       Left side is deliberately darker so the text remains
-       readable without destroying the image.
-    ========================================================= */
-
-    .hero-overlay {
-
-        position: absolute;
-
-        inset: 0;
-
-        z-index: 1;
-
-        background:
-
-            linear-gradient(
-                90deg,
-                rgba(4,8,9,0.94) 0%,
-                rgba(4,8,9,0.82) 22%,
-                rgba(4,8,9,0.52) 44%,
-                rgba(4,8,9,0.16) 70%,
-                rgba(4,8,9,0.05) 100%
-            );
-
-    }
-
-
-    /* Bottom fade */
-
-    .hero-overlay::after {
-
-        content: "";
-
-        position: absolute;
-
-        left: 0;
-        right: 0;
-        bottom: 0;
-
-        height: 180px;
-
-        background:
-            linear-gradient(
-                to bottom,
-                transparent,
-                rgba(7,9,9,0.95)
-            );
-
-    }
-
-
-    /* =========================================================
-       HERO CONTENT
-    ========================================================= */
-
-    .hero-content {
-
-        position: relative;
-
-        z-index: 2;
-
-        width: 100%;
-
-        max-width: var(--max-width);
-
-        margin: 0 auto;
+        width:
+            100%;
 
         padding:
-            145px 30px 115px;
-
-    }
-
-
-    .hero-copy {
-
-        max-width: 610px;
-
-    }
-
-
-    .hero-eyebrow {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 12px;
-
-        margin-bottom: 24px;
-
-        color:
-            var(--gold-light);
-
-        font-size: 12px;
-
-        font-weight: 700;
-
-        letter-spacing: 3px;
-
-        text-transform: uppercase;
-
-    }
-
-
-    .hero-eyebrow::before {
-
-        content: "";
-
-        width: 38px;
-
-        height: 1px;
-
-        background:
-            var(--gold);
-
-    }
-
-
-    .hero h1 {
-
-        margin: 0 0 24px;
-
-        font-family:
-            'Cormorant Garamond',
-            serif;
-
-        font-size:
-            clamp(58px, 7vw, 92px);
-
-        font-weight: 600;
-
-        line-height: 0.91;
-
-        letter-spacing: -1.5px;
-
-        color:
-            var(--cream);
-
-        text-shadow:
-            0 5px 30px rgba(0,0,0,0.35);
-
-    }
-
-
-    .hero h1 span {
-
-        color:
-            var(--gold-light);
-
-    }
-
-
-    .hero-description {
-
-        max-width: 560px;
-
-        margin: 0 0 32px;
-
-        color:
-            rgba(255,255,255,0.82);
-
-        font-size: 17px;
-
-        font-weight: 300;
-
-        line-height: 1.8;
-
-        text-shadow:
-            0 2px 12px rgba(0,0,0,0.8);
-
-    }
-
-
-    /* =========================================================
-       HERO BUTTONS
-    ========================================================= */
-
-    .hero-buttons {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 14px;
-
-        flex-wrap: wrap;
-
-        margin-bottom: 22px;
-
-    }
-
-
-    .btn {
-
-        min-height: 52px;
-
-        display: inline-flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        padding: 0 26px;
-
-        border-radius: 999px;
-
-        text-decoration: none;
-
-        font-size: 14px;
-
-        font-weight: 700;
-
-        transition:
-            transform 0.25s ease,
-            background 0.25s ease,
-            border-color 0.25s ease;
-
-    }
-
-
-    .btn:hover {
-
-        transform:
-            translateY(-2px);
-
-    }
-
-
-    .btn-primary {
-
-        background:
-            var(--gold);
-
-        color:
-            #101010;
-
-        box-shadow:
-            0 10px 35px
-            rgba(212,175,90,0.2);
-
-    }
-
-
-    .btn-primary:hover {
-
-        background:
-            var(--gold-light);
-
-    }
-
-
-    .btn-secondary {
-
-        color:
-            white;
-
-        background:
-            rgba(5,8,8,0.35);
-
-        border:
-            1px solid
-            rgba(242,215,143,0.55);
-
-        backdrop-filter:
-            blur(8px);
-
-    }
-
-
-    .btn-secondary:hover {
-
-        background:
-            rgba(212,175,90,0.12);
-
-        border-color:
-            var(--gold-light);
-
-    }
-
-
-    .hero-meta {
-
-        color:
-            rgba(255,255,255,0.5);
-
-        font-size: 12px;
-
-        letter-spacing: 0.3px;
-
-    }
-
-
-    /* =========================================================
-       USP STRIP
-    ========================================================= */
-
-    .usp-strip {
-
-        position: relative;
-
-        z-index: 5;
-
-        background:
-            #0b0e0f;
-
-        border-top:
-            1px solid rgba(255,255,255,0.05);
+            15px 5%;
 
         border-bottom:
             1px solid rgba(255,255,255,0.05);
@@ -758,177 +2176,226 @@
     }
 
 
-    .usp-inner {
+    .nav-links > a {
 
-        max-width:
-            var(--max-width);
+        color:
+            #bfc2bb;
 
-        margin:
-            0 auto;
+        font-family:
+            'DM Sans',
+            sans-serif;
 
-        display:
-            grid;
+        font-size:
+            14px;
 
-        grid-template-columns:
-            repeat(4,1fr);
+        font-weight:
+            500;
 
     }
 
 
-    .usp-item {
+    .dropdown-toggle {
+
+        width:
+            100%;
+
+        justify-content:
+            space-between;
 
         padding:
-            24px 18px;
-
-        text-align:
-            center;
-
-        border-right:
-            1px solid rgba(255,255,255,0.05);
-
-    }
-
-
-    .usp-item:last-child {
-
-        border-right:
             0;
 
+        color:
+            #bfc2bb;
+
+        font-family:
+            'DM Sans',
+            sans-serif;
+
+        font-size:
+            14px;
+
+        font-weight:
+            500;
+
     }
 
 
-    .usp-item strong {
+    .dropdown-arrow {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .dropdown-content {
+
+        position:
+            static;
+
+        display:
+            none;
+
+        min-width:
+            0;
+
+        padding:
+            8px 0 0 12px;
+
+        background:
+            transparent;
+
+        border:
+            0;
+
+        box-shadow:
+            none;
+
+        opacity:
+            1;
+
+        visibility:
+            visible;
+
+        transform:
+            none;
+
+    }
+
+
+    .dropdown.mobile-active
+    .dropdown-content {
 
         display:
             block;
 
-        margin-bottom:
-            3px;
+    }
+
+
+    .dropdown-content a {
+
+        display:
+            block;
+
+        padding:
+            11px 10px;
 
         color:
-            var(--gold-light);
+            #969a93;
+
+        font-family:
+            'DM Sans',
+            sans-serif;
 
         font-size:
             13px;
 
-        letter-spacing:
-            0.5px;
+        border-radius:
+            8px;
 
     }
 
 
-    .usp-item span {
+    /* =====================================================
+       HERO MOBILE
+    ===================================================== */
 
-        color:
-            rgba(255,255,255,0.45);
+    .hero {
 
-        font-size:
-            11px;
+        min-height:
+            0;
 
-    }
-
-
-    /* =========================================================
-       GENERAL
-    ========================================================= */
-
-    .section {
-
-        max-width:
-            var(--max-width);
-
-        margin:
-            0 auto;
-
-        padding:
-            100px 30px;
-
-    }
-
-
-    .section-header {
-
-        max-width:
-            760px;
-
-        margin:
-            0 auto 55px;
-
-        text-align:
-            center;
-
-    }
-
-
-    .section-label {
+        height:
+            auto;
 
         display:
             block;
 
-        margin-bottom:
-            10px;
+        aspect-ratio:
+            auto;
 
-        color:
-            var(--gold);
+        overflow:
+            hidden;
 
-        font-size:
-            11px;
-
-        font-weight:
-            700;
-
-        letter-spacing:
-            3px;
-
-        text-transform:
-            uppercase;
+        background:
+            #070908;
 
     }
 
 
-    .section-header h2 {
+    .hero-background {
 
-        margin:
-            0 0 16px;
+        position:
+            relative;
 
-        font-family:
-            'Cormorant Garamond',
-            serif;
+        inset:
+            auto;
 
-        font-size:
-            clamp(40px,5vw,60px);
+        display:
+            block;
 
-        font-weight:
-            600;
+        width:
+            100%;
 
-        line-height:
-            1.02;
+        height:
+            auto;
+
+        aspect-ratio:
+            16 / 10;
+
+        object-fit:
+            cover;
+
+        object-position:
+            center center;
+
+        z-index:
+            0;
 
     }
 
 
-    .section-header p {
+    .hero-overlay {
+
+        display:
+            none;
+
+    }
+
+
+    .hero-content {
+
+        position:
+            relative;
+
+        z-index:
+            2;
+
+        width:
+            100%;
+
+        max-width:
+            none;
 
         margin:
             0;
 
-        color:
-            var(--muted);
+        padding:
+            76px 5% 64px;
 
-        font-size:
-            16px;
-
-        line-height:
-            1.8;
+        background:
+            radial-gradient(
+                circle at 50% 0%,
+                rgba(216,189,120,0.08),
+                transparent 48%
+            ),
+            #070908;
 
     }
 
 
-    /* =========================================================
-       INTRO
-    ========================================================= */
-
-    .intro {
+    .hero-copy {
 
         max-width:
             850px;
@@ -936,277 +2403,198 @@
         margin:
             0 auto;
 
-        padding:
-            110px 30px 50px;
-
         text-align:
             center;
 
     }
 
 
-    .intro h2 {
+    .hero-eyebrow {
 
-        margin:
-            0 0 18px;
-
-        font-family:
-            'Cormorant Garamond',
-            serif;
-
-        font-size:
-            clamp(40px,5vw,58px);
-
-        line-height:
-            1.05;
-
-    }
-
-
-    .intro p {
-
-        margin:
-            0;
-
-        color:
-            var(--muted);
-
-        font-size:
-            16px;
-
-        line-height:
-            1.9;
-
-    }
-
-
-    /* =========================================================
-       FEATURES
-    ========================================================= */
-
-    .feature-grid {
-
-        display:
-            grid;
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-        gap:
-            18px;
-
-    }
-
-
-    .feature-card {
-
-        padding:
-            34px;
-
-        background:
-            linear-gradient(
-                145deg,
-                rgba(255,255,255,0.035),
-                rgba(255,255,255,0.012)
-            );
-
-        border:
-            1px solid
-            var(--border);
-
-        border-radius:
-            20px;
-
-    }
-
-
-    .feature-number {
+        justify-content:
+            center;
 
         margin-bottom:
-            20px;
+            18px;
 
-        color:
-            var(--gold);
+        font-family:
+            'DM Sans',
+            sans-serif;
 
         font-size:
             11px;
 
-        font-weight:
-            700;
-
         letter-spacing:
-            2px;
+            3px;
 
     }
 
 
-    .feature-card h3 {
+    .hero-eyebrow::before {
 
-        margin:
-            0 0 10px;
+        display:
+            none;
+
+    }
+
+
+    .hero h1 {
 
         font-family:
-            'Cormorant Garamond',
+            'Playfair Display',
             serif;
 
         font-size:
-            30px;
+            clamp(40px,11vw,58px);
+
+        line-height:
+            1.08;
+
+        letter-spacing:
+            -0.5px;
+
+        margin:
+            0 0 24px;
+
+        text-shadow:
+            none;
 
     }
 
 
-    .feature-card p {
+    .hero-description {
+
+        max-width:
+            720px;
 
         margin:
-            0;
+            0 auto 30px;
 
         color:
-            var(--muted);
+            #d1cec4;
+
+        font-family:
+            'DM Sans',
+            sans-serif;
 
         font-size:
-            14px;
+            16px;
+
+        font-weight:
+            400;
 
         line-height:
             1.75;
 
-    }
-
-
-    /* =========================================================
-       SOUNDS
-    ========================================================= */
-
-    .sound-grid {
-
-        display:
-            grid;
-
-        grid-template-columns:
-            repeat(3,1fr);
-
-        gap:
-            16px;
+        text-shadow:
+            none;
 
     }
 
 
-    .sound-card {
+    .hero-buttons {
 
-        min-height:
-            190px;
-
-        padding:
-            28px;
-
-        border:
-            1px solid
-            var(--border);
-
-        border-radius:
-            18px;
-
-        background:
-            #101415;
-
-        transition:
-            transform .25s ease,
-            border-color .25s ease;
-
-    }
-
-
-    .sound-card:hover {
-
-        transform:
-            translateY(-4px);
-
-        border-color:
-            rgba(212,175,90,0.35);
-
-    }
-
-
-    .sound-icon {
-
-        margin-bottom:
-            18px;
-
-        color:
-            var(--gold-light);
-
-        font-size:
-            23px;
-
-    }
-
-
-    .sound-card h3 {
-
-        margin:
-            0 0 8px;
-
-        font-family:
-            'Cormorant Garamond',
-            serif;
-
-        font-size:
-            25px;
-
-    }
-
-
-    .sound-card p {
-
-        margin:
-            0;
-
-        color:
-            var(--muted);
-
-        font-size:
-            13px;
-
-        line-height:
-            1.65;
-
-    }
-
-
-    /* =========================================================
-       VISUAL SECTION
-    ========================================================= */
-
-    .visual-section {
-
-        position:
-            relative;
-
-        overflow:
-            hidden;
-
-        border-radius:
-            26px;
-
-        background:
-            #101415;
-
-        border:
-            1px solid
-            var(--border);
-
-    }
-
-
-    .visual-section-content {
-
-        display:
-            grid;
-
-        grid-template-columns:
-            0.9fr 1.1fr;
+        flex-direction:
+            column;
 
         align-items:
-            center;
+            stretch;
+
+        gap:
+            12px;
+
+        max-width:
+            420px;
+
+        margin:
+            0 auto;
+
+    }
+
+
+    .hero-buttons .btn {
+
+        width:
+            100%;
+
+        min-height:
+            52px;
+
+        font-size:
+            14px;
+
+    }
+
+
+    .hero-meta {
+
+        margin-top:
+            20px;
+
+        color:
+            #969a93;
+
+        font-size:
+            12px;
+
+    }
+
+
+    /* =====================================================
+       USP MOBILE
+    ===================================================== */
+
+    .usp-inner {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .usp-item {
+
+        border-bottom:
+            1px solid rgba(255,255,255,0.05);
+
+    }
+
+
+    .usp-item:nth-child(2) {
+
+        border-right:
+            0;
+
+    }
+
+
+    /* =====================================================
+       GENERAL MOBILE
+    ===================================================== */
+
+    .section {
+
+        padding:
+            75px 5%;
+
+    }
+
+
+    .intro {
+
+        padding:
+            75px 5% 60px;
+
+    }
+
+
+    .feature-grid,
+    .sound-grid,
+    .use-grid,
+    .steps {
+
+        grid-template-columns:
+            1fr;
 
     }
 
@@ -1214,3044 +2602,916 @@
     .visual-copy {
 
         padding:
-            60px;
+            40px 28px;
 
     }
 
 
-    .visual-copy h2 {
-
-        margin:
-            0 0 18px;
-
-        font-family:
-            'Cormorant Garamond',
-            serif;
-
-        font-size:
-            clamp(40px,5vw,58px);
-
-        line-height:
-            1;
-
-    }
-
-
-    .visual-copy p {
-
-        color:
-            var(--muted);
-
-        line-height:
-            1.8;
-
-    }
-
-
-    .visual-image {
-
-        min-height:
-            480px;
-
-        background:
-            #0b0e0f;
-
-    }
-
-
+    .visual-image,
     .visual-image img {
 
-        width:
-            100%;
-
-        height:
-            100%;
-
         min-height:
-            480px;
-
-        object-fit:
-            cover;
+            350px;
 
     }
 
-
-    /* =========================================================
-       THREE STEPS
-    ========================================================= */
-
-    .steps {
-
-        display:
-            grid;
-
-        grid-template-columns:
-            repeat(3,1fr);
-
-        gap:
-            20px;
-
-    }
-
-
-    .step {
-
-        padding:
-            30px;
-
-        border-top:
-            1px solid
-            rgba(212,175,90,0.35);
-
-    }
-
-
-    .step-number {
-
-        margin-bottom:
-            15px;
-
-        color:
-            var(--gold);
-
-        font-family:
-            'Cormorant Garamond',
-            serif;
-
-        font-size:
-            44px;
-
-        line-height:
-            1;
-
-    }
-
-
-    .step h3 {
-
-        margin:
-            0 0 10px;
-
-        font-family:
-            'Cormorant Garamond',
-            serif;
-
-        font-size:
-            28px;
-
-    }
-
-
-    .step p {
-
-        margin:
-            0;
-
-        color:
-            var(--muted);
-
-        font-size:
-            14px;
-
-    }
-
-
-    /* =========================================================
-       USE CASES
-    ========================================================= */
-
-    .use-grid {
-
-        display:
-            grid;
-
-        grid-template-columns:
-            repeat(3,1fr);
-
-        gap:
-            18px;
-
-    }
-
-
-    .use-card {
-
-        padding:
-            30px;
-
-        border-radius:
-            18px;
-
-        background:
-            linear-gradient(
-                145deg,
-                rgba(255,255,255,0.03),
-                rgba(255,255,255,0.01)
-            );
-
-        border:
-            1px solid
-            var(--border);
-
-    }
-
-
-    .use-card h3 {
-
-        margin:
-            0 0 10px;
-
-        font-family:
-            'Cormorant Garamond',
-            serif;
-
-        font-size:
-            29px;
-
-    }
-
-
-    .use-card p {
-
-        margin:
-            0;
-
-        color:
-            var(--muted);
-
-        font-size:
-            14px;
-
-        line-height:
-            1.75;
-
-    }
-
-
-    /* =========================================================
-       APP COLLECTION
-    ========================================================= */
-
-    .app-grid {
-
-        display:
-            grid;
-
-        grid-template-columns:
-            repeat(3,1fr);
-
-        gap:
-            18px;
-
-    }
-
-
-    .app-card {
-
-        padding:
-            32px;
-
-        background:
-            #101415;
-
-        border:
-            1px solid
-            var(--border);
-
-        border-radius:
-            20px;
-
-    }
-
-
-    .app-card.featured {
-
-        border-color:
-            rgba(212,175,90,0.32);
-
-        background:
-            linear-gradient(
-                145deg,
-                rgba(212,175,90,0.07),
-                rgba(255,255,255,0.015)
-            );
-
-    }
-
-
-    .app-tag {
-
-        display:
-            inline-block;
-
-        margin-bottom:
-            15px;
-
-        color:
-            var(--gold-light);
-
-        font-size:
-            10px;
-
-        font-weight:
-            700;
-
-        letter-spacing:
-            2px;
-
-        text-transform:
-            uppercase;
-
-    }
-
-
-    .app-card h3 {
-
-        margin:
-            0 0 12px;
-
-        font-family:
-            'Cormorant Garamond',
-            serif;
-
-        font-size:
-            31px;
-
-        line-height:
-            1.05;
-
-    }
-
-
-    .app-card p {
-
-        margin:
-            0 0 20px;
-
-        color:
-            var(--muted);
-
-        font-size:
-            14px;
-
-        line-height:
-            1.7;
-
-    }
-
-
-    .app-card ul {
-
-        margin:
-            0 0 25px;
-
-        padding:
-            0;
-
-        list-style:
-            none;
-
-    }
-
-
-    .app-card li {
-
-        margin-bottom:
-            8px;
-
-        color:
-            rgba(255,255,255,0.65);
-
-        font-size:
-            13px;
-
-    }
-
-
-    .app-card li::before {
-
-        content:
-            "✓";
-
-        margin-right:
-            8px;
-
-        color:
-            var(--gold);
-
-    }
-
-
-    .text-link {
-
-        color:
-            var(--gold-light);
-
-        text-decoration:
-            none;
-
-        font-size:
-            13px;
-
-        font-weight:
-            700;
-
-    }
-
-
-    /* =========================================================
-       SCREENSHOT GALLERY
-    ========================================================= */
 
     .gallery {
 
-        display:
-            grid;
-
         grid-template-columns:
-            repeat(6,1fr);
-
-        gap:
-            14px;
+            repeat(2,1fr);
 
     }
 
-
-    .gallery img {
-
-        width:
-            100%;
-
-        aspect-ratio:
-            9 / 16;
-
-        object-fit:
-            cover;
-
-        border-radius:
-            16px;
-
-        border:
-            1px solid
-            rgba(255,255,255,0.06);
-
-        background:
-            #101212;
-
-    }
-
-
-    /* =========================================================
-       FAQ
-    ========================================================= */
-
-    .faq {
-
-        max-width:
-            850px;
-
-        margin:
-            0 auto;
-
-    }
-
-
-    details {
-
-        border-bottom:
-            1px solid
-            rgba(255,255,255,0.08);
-
-    }
-
-
-    summary {
-
-        padding:
-            22px 0;
-
-        cursor:
-            pointer;
-
-        color:
-            rgba(255,255,255,0.9);
-
-        font-family:
-            'Cormorant Garamond',
-            serif;
-
-        font-size:
-            24px;
-
-        list-style:
-            none;
-
-    }
-
-
-    summary::-webkit-details-marker {
-
-        display:
-            none;
-
-    }
-
-
-    summary::after {
-
-        content:
-            "+";
-
-        float:
-            right;
-
-        color:
-            var(--gold);
-
-        font-family:
-            Lato,
-            sans-serif;
-
-    }
-
-
-    details[open] summary::after {
-
-        content:
-            "−";
-
-    }
-
-
-    details p {
-
-        margin:
-            0 0 22px;
-
-        color:
-            var(--muted);
-
-        font-size:
-            14px;
-
-        line-height:
-            1.8;
-
-    }
-
-
-    /* =========================================================
-       FINAL CTA
-    ========================================================= */
 
     .final-cta {
 
-        position:
-            relative;
-
-        overflow:
-            hidden;
-
         margin:
-            30px auto 100px;
-
-        max-width:
-            1100px;
+            10px 20px 70px;
 
         padding:
-            90px 30px;
-
-        text-align:
-            center;
-
-        border:
-            1px solid
-            rgba(212,175,90,0.18);
-
-        border-radius:
-            28px;
-
-        background:
-            radial-gradient(
-                circle at 50% 0%,
-                rgba(212,175,90,0.13),
-                transparent 55%
-            ),
-            #0d1112;
-
-    }
-
-
-    .final-cta h2 {
-
-        margin:
-            0 0 15px;
-
-        font-family:
-            'Cormorant Garamond',
-            serif;
-
-        font-size:
-            clamp(44px,5vw,64px);
-
-        line-height:
-            1;
-
-    }
-
-
-    .final-cta p {
-
-        max-width:
-            650px;
-
-        margin:
-            0 auto 30px;
-
-        color:
-            var(--muted);
-
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-
-        padding:
-            60px 5% 30px;
-
-        background:
-            #060808;
-
-        border-top:
-            1px solid
-            rgba(255,255,255,0.05);
+            70px 24px;
 
     }
 
 
     .footer-inner {
 
-        max-width:
-            var(--max-width);
-
-        margin:
-            0 auto;
-
-        display:
-            grid;
-
         grid-template-columns:
-            1.5fr 1fr 1fr 1fr;
-
-        gap:
-            40px;
+            1fr;
 
     }
 
 
-    .footer-brand p {
+    footer {
 
-        max-width:
-            310px;
+        padding-left:
+            5%;
 
-        color:
-            rgba(255,255,255,0.42);
-
-        font-size:
-            13px;
-
-        line-height:
-            1.7;
+        padding-right:
+            5%;
 
     }
 
-
-    .footer-column h4 {
-
-        margin:
-            0 0 15px;
-
-        color:
-            var(--gold-light);
-
-        font-size:
-            11px;
-
-        letter-spacing:
-            2px;
-
-        text-transform:
-            uppercase;
-
-    }
-
-
-    .footer-column a {
-
-        display:
-            block;
-
-        margin-bottom:
-            9px;
-
-        color:
-            rgba(255,255,255,0.5);
-
-        text-decoration:
-            none;
-
-        font-size:
-            13px;
-
-        transition:
-            color .2s ease;
-
-    }
-
-
-    .footer-column a:hover {
-
-        color:
-            var(--gold-light);
-
-    }
-
-
-    .footer-bottom {
-
-        max-width:
-            var(--max-width);
-
-        margin:
-            45px auto 0;
-
-        padding-top:
-            22px;
-
-        border-top:
-            1px solid
-            rgba(255,255,255,0.05);
-
-        color:
-            rgba(255,255,255,0.3);
-
-        font-size:
-            12px;
-
-        text-align:
-            center;
-
-    }
-
-
-    /* =========================================================
-       TABLET
-    ========================================================= */
-
-    @media (max-width: 950px) {
-
-        .sound-grid {
-
-            grid-template-columns:
-                repeat(2,1fr);
-
-        }
-
-
-        .app-grid {
-
-            grid-template-columns:
-                1fr;
-
-        }
-
-
-        .gallery {
-
-            grid-template-columns:
-                repeat(3,1fr);
-
-        }
-
-
-        .visual-section-content {
-
-            grid-template-columns:
-                1fr;
-
-        }
-
-
-        .visual-image {
-
-            order:
-                -1;
-
-        }
-
-
-        .footer-inner {
-
-            grid-template-columns:
-                1fr 1fr;
-
-        }
-
-    }
-
-
-    /* =========================================================
-       MOBILE
-    ========================================================= */
-
-    @media (max-width: 700px) {
-
-        header {
-
-            height:
-                68px;
-
-            padding:
-                0 5%;
-
-        }
-
-
-        .logo {
-
-            font-size:
-                12px;
-
-            letter-spacing:
-                1.6px;
-
-        }
-
-
-        .menu-toggle {
-
-            display:
-                block;
-
-        }
-
-
-        .nav-links {
-
-            position:
-                absolute;
-
-            top:
-                68px;
-
-            left:
-                0;
-
-            width:
-                100%;
-
-            display:
-                flex;
-
-            flex-direction:
-                column;
-
-            align-items:
-                stretch;
-
-            gap:
-                0;
-
-            background:
-                rgba(7,9,9,0.98);
-
-            max-height:
-                0;
-
-            overflow:
-                hidden;
-
-            transition:
-                max-height .35s ease;
-
-        }
-
-
-        .nav-links.active {
-
-            max-height:
-                calc(100vh - 68px);
-
-            overflow-y:
-                auto;
-
-            padding-bottom:
-                15px;
-
-        }
-
-
-        .nav-links > a,
-        .dropdown {
-
-            width:
-                100%;
-
-            padding:
-                15px 5%;
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.05);
-
-        }
-
-
-        .dropdown-toggle {
-
-            width:
-                100%;
-
-            justify-content:
-                space-between;
-
-        }
-
-
-        .dropdown-content {
-
-            position:
-                static;
-
-            display:
-                none;
-
-            min-width:
-                0;
-
-            padding:
-                8px 0 0 12px;
-
-            background:
-                transparent;
-
-            border:
-                0;
-
-            box-shadow:
-                none;
-
-            opacity:
-                1;
-
-            visibility:
-                visible;
-
-            transform:
-                none;
-
-        }
-
-
-        .dropdown.mobile-active
-        .dropdown-content {
-
-            display:
-                block;
-
-        }
-
-
-        /* HERO MOBILE */
-
-        .hero {
-
-            min-height:
-                720px;
-
-        }
-
-
-        .hero-background {
-
-            object-position:
-                62% center;
-
-        }
-
-
-        .hero-overlay {
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    rgba(4,8,9,0.93) 0%,
-                    rgba(4,8,9,0.74) 55%,
-                    rgba(4,8,9,0.30) 100%
-                );
-
-        }
-
-
-        .hero-content {
-
-            padding:
-                120px 24px 90px;
-
-        }
-
-
-        .hero-copy {
-
-            max-width:
-                520px;
-
-        }
-
-
-        .hero h1 {
-
-            font-size:
-                clamp(54px,15vw,76px);
-
-            line-height:
-                0.9;
-
-        }
-
-
-        .hero-description {
-
-            font-size:
-                15px;
-
-            line-height:
-                1.7;
-
-        }
-
-
-        .hero-buttons {
-
-            flex-direction:
-                column;
-
-            align-items:
-                flex-start;
-
-        }
-
-
-        .btn {
-
-            width:
-                auto;
-
-            min-height:
-                50px;
-
-        }
-
-
-        .usp-inner {
-
-            grid-template-columns:
-                repeat(2,1fr);
-
-        }
-
-
-        .usp-item {
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.05);
-
-        }
-
-
-        .usp-item:nth-child(2) {
-
-            border-right:
-                0;
-
-        }
-
-
-        .section {
-
-            padding:
-                75px 20px;
-
-        }
-
-
-        .intro {
-
-            padding:
-                80px 22px 25px;
-
-        }
-
-
-        .feature-grid,
-        .sound-grid,
-        .use-grid,
-        .steps {
-
-            grid-template-columns:
-                1fr;
-
-        }
-
-
-        .visual-copy {
-
-            padding:
-                40px 28px;
-
-        }
-
-
-        .visual-image,
-        .visual-image img {
-
-            min-height:
-                350px;
-
-        }
-
-
-        .gallery {
-
-            grid-template-columns:
-                repeat(2,1fr);
-
-        }
-
-
-        .final-cta {
-
-            margin:
-                10px 20px 70px;
-
-            padding:
-                70px 24px;
-
-        }
-
-
-        .footer-inner {
-
-            grid-template-columns:
-                1fr;
-
-        }
-
-    }
-
-
-    /* =========================================================
-       REDUCED MOTION
-    ========================================================= */
-
-    @media (prefers-reduced-motion: reduce) {
-
-        html {
-
-            scroll-behavior:
-                auto;
-
-        }
-
-        * {
-
-            transition-duration:
-                0.01ms !important;
-
-        }
-
-    }
+}
 
 
 /* =========================================================
-   MOBILE UX — MATCH OUR APPS LAYOUT
-   Image first, content second. Designed for one-hand mobile
-   browsing with generous spacing and clear CTAs.
+   SMALL MOBILE
 ========================================================= */
-@media (max-width: 700px) {
-    header {
-        position: sticky !important;
-        top: 0;
-        height: 74px !important;
-        padding: 0 5% !important;
-    }
-
-    .logo {
-        font-family: "DM Sans", sans-serif !important;
-        font-size: 12px !important;
-        font-weight: 600 !important;
-        letter-spacing: 1.6px !important;
-    }
-
-    .logo img {
-        width: 30px !important;
-        height: 30px !important;
-        border-radius: 7px !important;
-        object-fit: cover;
-    }
-
-    .menu-toggle {
-        display: block !important;
-        font-family: "DM Sans", sans-serif;
-        font-size: 28px !important;
-        line-height: 1;
-        padding: 8px;
-    }
-
-    .nav-links {
-        position: absolute !important;
-        top: 74px !important;
-        left: 0 !important;
-        width: 100% !important;
-        max-height: 0 !important;
-        overflow: hidden !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 0 !important;
-        padding: 0 !important;
-        background: rgba(7,9,8,0.98) !important;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-        transition: max-height .35s ease, padding .2s ease !important;
-    }
-
-    .nav-links.active {
-        max-height: calc(100vh - 74px) !important;
-        overflow-y: auto !important;
-        padding: 10px 0 20px !important;
-    }
-
-    .nav-links > a,
-    .nav-links .dropdown {
-        width: 100% !important;
-        padding: 15px 5% !important;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .nav-links > a {
-        color: #bfc2bb !important;
-        font-size: 14px !important;
-        font-weight: 500 !important;
-    }
-
-    .dropdown-toggle {
-        width: 100% !important;
-        justify-content: space-between !important;
-        font-size: 14px !important;
-        font-weight: 500 !important;
-        padding: 0 !important;
-    }
-
-    .dropdown-content {
-        position: static !important;
-        display: none !important;
-        min-width: 0 !important;
-        padding: 8px 0 0 12px !important;
-        background: transparent !important;
-        border: 0 !important;
-        box-shadow: none !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: none !important;
-    }
-
-    .dropdown.mobile-active .dropdown-content {
-        display: block !important;
-    }
-
-    .dropdown-content a {
-        display: block;
-        padding: 11px 10px;
-        color: #969a93;
-        font-size: 13px;
-        border-radius: 8px;
-    }
-
-    /* The important UX change: image first, copy below it. */
-    .hero {
-        min-height: 0 !important;
-        height: auto !important;
-        display: block !important;
-        aspect-ratio: auto !important;
-        overflow: hidden;
-        background: #070908 !important;
-    }
-
-    .hero-background {
-        position: relative !important;
-        inset: auto !important;
-        display: block !important;
-        width: 100% !important;
-        height: auto !important;
-        aspect-ratio: 16 / 10 !important;
-        object-fit: cover !important;
-        object-position: center center !important;
-        z-index: 0 !important;
-    }
-
-    .hero-overlay {
-        display: none !important;
-    }
-
-    .hero-content {
-        position: relative !important;
-        z-index: 2 !important;
-        width: 100% !important;
-        max-width: none !important;
-        margin: 0 !important;
-        padding: 76px 5% 64px !important;
-        background:
-            radial-gradient(circle at 50% 0%, rgba(216,189,120,0.08), transparent 48%),
-            #070908 !important;
-    }
-
-    .hero-copy {
-        max-width: 850px !important;
-        margin: 0 auto !important;
-        text-align: center !important;
-    }
-
-    .hero-eyebrow {
-        justify-content: center !important;
-        margin-bottom: 18px !important;
-        font-family: "DM Sans", sans-serif !important;
-        font-size: 11px !important;
-        letter-spacing: 3px !important;
-    }
-
-    .hero-eyebrow::before {
-        display: none !important;
-    }
-
-    .hero h1 {
-        font-family: "Playfair Display", serif !important;
-        font-size: clamp(40px, 11vw, 58px) !important;
-        line-height: 1.08 !important;
-        letter-spacing: -0.5px !important;
-        margin: 0 0 24px !important;
-        text-shadow: none !important;
-    }
-
-    .hero-description {
-        max-width: 720px !important;
-        margin: 0 auto 30px !important;
-        color: #d1cec4 !important;
-        font-family: "DM Sans", sans-serif !important;
-        font-size: 16px !important;
-        font-weight: 400 !important;
-        line-height: 1.75 !important;
-        text-shadow: none !important;
-    }
-
-    .hero-buttons {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 12px !important;
-        max-width: 420px !important;
-        margin: 0 auto !important;
-    }
-
-    .hero-buttons .btn {
-        width: 100% !important;
-        min-height: 52px !important;
-        font-size: 14px !important;
-    }
-
-    .hero-meta {
-        margin-top: 20px !important;
-        color: #969a93 !important;
-        font-size: 12px !important;
-    }
-
-    .hero-usp {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 14px 5% !important;
-        background: #0b0e0f !important;
-        border-top: 1px solid rgba(255,255,255,.05);
-    }
-
-    .hero-usp-inner {
-        gap: 12px 22px !important;
-        justify-content: center !important;
-    }
-
-    .hero-usp-item {
-        font-size: 10px !important;
-    }
-
-    .section,
-    .intro {
-        padding-left: 5% !important;
-        padding-right: 5% !important;
-    }
-
-    .intro {
-        padding-top: 75px !important;
-        padding-bottom: 60px !important;
-    }
-
-    .section-header h2,
-    .intro h2 {
-        font-family: "Playfair Display", serif !important;
-    }
-
-    footer {
-        padding-left: 5% !important;
-        padding-right: 5% !important;
-    }
-}
 
 @media (max-width: 480px) {
+
     .hero-background {
-        aspect-ratio: 16 / 10 !important;
+
+        aspect-ratio:
+            16 / 10;
+
     }
+
 
     .hero-content {
-        padding-top: 68px !important;
-        padding-bottom: 58px !important;
+
+        padding-top:
+            68px;
+
+        padding-bottom:
+            58px;
+
     }
+
 
     .hero h1 {
-        font-size: clamp(39px, 11vw, 52px) !important;
+
+        font-size:
+            clamp(39px,11vw,52px);
+
     }
+
 
     .hero-description {
-        font-size: 15.5px !important;
+
+        font-size:
+            15.5px;
+
     }
+
 }
 
-</style>
 
-</head>
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
-<body>
+@media (prefers-reduced-motion: reduce) {
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+    html {
 
-<header>
+        scroll-behavior:
+            auto;
 
-<a href="/" class="logo">
-
-    <img
-        src="android-chrome-512x512.png"
-        alt="Meditation Bell Timer">
-
-    MEDITATION BELL TIMER
-
-</a>
+    }
 
 
-<button
-    class="menu-toggle"
-    id="mobile-menu-btn"
-    aria-label="Open navigation menu"
-    aria-expanded="false"
-    aria-controls="nav-links">
+    * {
 
-    ☰
+        transition-duration:
+            0.01ms !important;
 
-</button>
+    }
 
+}
 
-<nav
-    class="nav-links"
-    id="nav-links">
-
-
-    <a href="/our-apps.html">
-        Our Apps
-    </a>
-
-
-    <a href="/solfeggio-healing-frequencies.html">
-        Solfeggio Frequencies
-    </a>
-
-
-    <div class="dropdown">
-
-        <a
-            href="#"
-            class="dropdown-toggle">
-
-            Resources
-            <span>▼</span>
-
-        </a>
-
-
-        <div class="dropdown-content">
-
-            <a href="/brown-noise-for-adhd-focus">
-                Brown Noise for ADHD Focus
-            </a>
-
-            <a href="/meditation-timer-for-adhd">
-                Meditation Timer for ADHD
-            </a>
-
-            <a href="/white-noise-meditation-timer">
-                White Noise Timer
-            </a>
-
-            <a href="/sleep-meditation-sounds">
-                Sleep Meditation Sounds
-            </a>
-
-            <a href="/solfeggio-healing-frequencies.html">
-                Solfeggio Frequencies
-            </a>
-
-            <a href="/our-apps.html">
-                Our Apps
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="dropdown">
-
-        <a
-            href="#"
-            class="dropdown-toggle">
-
-            Articles
-            <span>▼</span>
-
-        </a>
-
-
-        <div class="dropdown-content">
-
-            <a href="/how-to-use-a-meditation-timer">
-                How To Use A Meditation Timer
-            </a>
-
-            <a href="/meditation-timer-vs-guided-meditation">
-                Timer vs Guided Meditation
-            </a>
-
-            <a href="/how-long-should-you-meditate">
-                How Long Should You Meditate
-            </a>
-
-            <a href="/best-meditation-sounds">
-                Best Meditation Sounds
-            </a>
-
-            <a href="/meditation-timer-for-adhd-focus">
-                Meditation Timer For ADHD Focus
-            </a>
-
-            <a href="/pomodoro-meditation-method">
-                Pomodoro Meditation Method
-            </a>
-
-            <a href="/how-tibetan-singing-bowls-work">
-                How Tibetan Singing Bowls Work
-            </a>
-
-        </div>
-
-    </div>
-
-</nav>
-
-</header>
-
-<!-- =========================================================
-     CINEMATIC FULL-WIDTH HERO
+</style></head><body><!-- =========================================================
+     SITEWIDE HEADER
      
-     NO Screenshot1.png
-     
-     The hero artwork fills the entire section.
-     Text is positioned directly over the image.
-========================================================= -->
-
-<section class="hero">
+     THIS IS NOW THE MASTER HEADER FOR THE WEBSITE.
+========================================================= --><header><a href="/"
+class="logo">
 
 <img
-    class="hero-background"
-    src="assets/hero-meditation-bowl.webp"
-    alt="Tibetan singing bowl in a peaceful mountain landscape"
-    fetchpriority="high"
->
-
-
-<div class="hero-overlay"></div>
-
-
-<div class="hero-content">
-
-    <div class="hero-copy">
-
-
-        <div class="hero-eyebrow">
-            A simpler way to slow down
-        </div>
-
-
-        <h1>
-
-            Meditation,
-            <br>
-
-            <span>
-                without the noise.
-            </span>
-
-        </h1>
-
-
-        <p class="hero-description">
-
-            A beautifully simple meditation timer for mindfulness,
-            sleep, focus and quiet moments. Set your time, choose
-            your sound and let the screen disappear.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-
-            <a
-                href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-primary">
-
-                Get the App
-
-            </a>
-
-
-            <a
-                href="timer.html"
-                class="btn btn-secondary">
-
-                Try the Web Timer →
-
-            </a>
-
-
-        </div>
-
-
-        <div class="hero-meta">
-
-            Simple. Private. Offline.
-            Designed to stay out of your way.
-
-        </div>
-
-
-    </div>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     USP STRIP
-========================================================= -->
-
-<section class="usp-strip">
-
-<div class="usp-inner">
-
-
-    <div class="usp-item">
-
-        <strong>
-            ✓ No Ads
-        </strong>
-
-        <span>
-            No advertising interruptions
-        </span>
-
-    </div>
-
-
-    <div class="usp-item">
-
-        <strong>
-           ✓ No Monthly Subscription
-        </strong>
-
-        <span>
-            Simple one-time upgrade
-        </span>
-
-    </div>
-
-
-    <div class="usp-item">
-
-        <strong>
-            ✓ No Account
-        </strong>
-
-        <span>
-            Just open and use
-        </span>
-
-    </div>
-
-
-    <div class="usp-item">
-
-        <strong>
-            ✓ 100% Offline
-        </strong>
-
-        <span>
-            Listen without connectivity
-        </span>
-
-    </div>
-
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     INTRO
-========================================================= -->
-
-<section class="intro">
-
-<span class="section-label">
-    The idea
+    src="/android-chrome-192x192.png"
+    alt="Meditation Bell Timer">
+
+<span>
+    MEDITATION BELL TIMER
 </span>
 
+</a><button
+class="menu-toggle"
+id="mobile-menu-btn"
+type="button"
+aria-label="Open navigation menu"
+aria-expanded="false"
+aria-controls="nav-links">
 
-<h2>
-    A quieter approach to meditation.
-</h2>
+☰
 
+</button><nav
+    class="nav-links"
+    id="nav-links"
+    aria-label="Main navigation"><!-- HOME -->
 
-<p>
+<a href="/">
+    Home
+</a>
 
-    Meditation doesn't need another complicated app competing
-    for your attention. Meditation Bell Timer was created around
-    a simple idea: give you a reliable timer, beautiful sounds
-    and gentle bells — then get out of the way.
 
-    Whether you're sitting for five minutes, settling down for
-    the night, studying, practising mindfulness or simply taking
-    a quiet break, the experience is designed to remain calm,
-    focused and distraction-free.
+<!-- TIMER -->
 
-</p>
+<a href="/timer.html">
+    Free Timer
+</a>
 
-</section>
 
-<!-- =========================================================
-     FEATURES
-========================================================= -->
+<!-- OUR APPS -->
 
-<section class="section">
+<a href="/our-apps.html">
+    Our Apps
+</a>
 
-<div class="section-header">
 
-    <span class="section-label">
-        Built around simplicity
-    </span>
+<!-- SOLFEGGIO -->
 
-    <h2>
-        Everything you need.
-        <br>
-        Nothing you don't.
-    </h2>
+<a href="/solfeggio-healing-frequencies.html">
+    Solfeggio
+</a>
 
-    <p>
 
-        A focused collection of tools for meditation,
-        mindfulness, relaxation, sleep, study and quiet
-        concentration.
+<!-- SOUNDS -->
 
-    </p>
+<a href="/best-meditation-sounds">
+    Sounds
+</a>
 
-</div>
 
+<!-- RESOURCES -->
 
-<div class="feature-grid">
+<div class="dropdown">
 
-
-    <article class="feature-card">
-
-        <div class="feature-number">
-            01 / TIMER
-        </div>
-
-        <h3>
-            Simple Meditation Timer
-        </h3>
-
-        <p>
-
-            Choose your session length and let the timer
-            quietly guide the beginning and end of your
-            practice.
-
-        </p>
-
-    </article>
-
-
-    <article class="feature-card">
-
-        <div class="feature-number">
-            02 / BELLS
-        </div>
-
-        <h3>
-            Gentle Interval Bells
-        </h3>
-
-        <p>
-
-            Set recurring Tibetan bell intervals to bring
-            your attention gently back to the present moment.
-
-        </p>
-
-    </article>
-
-
-    <article class="feature-card">
-
-        <div class="feature-number">
-            03 / SOUND
-        </div>
-
-        <h3>
-            Immersive Soundscapes
-        </h3>
-
-        <p>
-
-            Choose from rain, ocean waves, nature ambience,
-            Tibetan bowls, Brown Noise and atmospheric sounds.
-
-        </p>
-
-    </article>
-
-
-    <article class="feature-card">
-
-        <div class="feature-number">
-            04 / DARK
-        </div>
-
-        <h3>
-            Distraction-Free Dark Mode
-        </h3>
-
-        <p>
-
-            A deep-black interface and Black Screen mode keep
-            your phone from becoming the focus of your session.
-
-        </p>
-
-    </article>
-
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     SOUND LIBRARY
-========================================================= -->
-
-<section class="section">
-
-<div class="section-header">
-
-    <span class="section-label">
-        The sound library
-    </span>
-
-    <h2>
-        Choose the atmosphere.
-    </h2>
-
-    <p>
-
-        From complete silence and Tibetan bells to rain,
-        ocean waves, Brown Noise and atmospheric ambience,
-        choose a sound that suits the moment.
-
-    </p>
-
-</div>
-
-
-<div class="sound-grid">
-
-
-    <article class="sound-card">
-
-        <div class="sound-icon">◉</div>
-
-        <h3>
-            Silence &amp; Tibetan Bell
-        </h3>
-
-        <p>
-            Pure timing with a resonant bell marking your session.
-        </p>
-
-    </article>
-
-
-    <article class="sound-card">
-
-        <div class="sound-icon">≈</div>
-
-        <h3>
-            Soothing Rain Storm
-        </h3>
-
-        <p>
-            Continuous rainfall for a calm and immersive atmosphere.
-        </p>
-
-    </article>
-
-
-    <article class="sound-card">
-
-        <div class="sound-icon">∿</div>
-
-        <h3>
-            Crashing Waves
-        </h3>
-
-        <p>
-            Rhythmic ocean ambience for meditation and relaxation.
-        </p>
-
-    </article>
-
-
-    <article class="sound-card">
-
-        <div class="sound-icon">≋</div>
-
-        <h3>
-            Brown Noise
-        </h3>
-
-        <p>
-            Deep, warm noise suitable for focus, study and
-            background listening.
-        </p>
-
-    </article>
-
-
-    <article class="sound-card">
-
-        <div class="sound-icon">◌</div>
-
-        <h3>
-            Tibetan Singing Bowl
-        </h3>
-
-        <p>
-            Long resonant tones inspired by traditional
-            singing bowls.
-        </p>
-
-    </article>
-
-
-    <article class="sound-card">
-
-        <div class="sound-icon">✦</div>
-
-        <h3>
-            Rain Forest
-        </h3>
-
-        <p>
-            A rich natural atmosphere inspired by the sounds
-            of the forest.
-        </p>
-
-    </article>
-
-
-    <article class="sound-card">
-
-        <div class="sound-icon">⌁</div>
-
-        <h3>
-            Bird Song
-        </h3>
-
-        <p>
-            A gentle outdoor atmosphere for mornings and
-            mindful moments.
-        </p>
-
-    </article>
-
-
-    <article class="sound-card">
-
-        <div class="sound-icon">◎</div>
-
-        <h3>
-            Deep Om Chant
-        </h3>
-
-        <p>
-            A continuous vocal ambience for meditation and
-            quiet reflection.
-        </p>
-
-    </article>
-
-
-    <article class="sound-card">
-
-        <div class="sound-icon">✧</div>
-
-        <h3>
-            Calming Campfire
-        </h3>
-
-        <p>
-            Warm crackling ambience for evening relaxation
-            and reading.
-        </p>
-
-    </article>
-
-
-    <article class="sound-card">
-
-        <div class="sound-icon">→</div>
-
-        <h3>
-            Soothing Steam Train
-        </h3>
-
-        <p>
-            A nostalgic rhythmic ambience with a gentle
-            mechanical character.
-        </p>
-
-    </article>
-
-
-    <article class="sound-card">
-
-        <div class="sound-icon">☾</div>
-
-        <h3>
-            Cicadas in the Evening
-        </h3>
-
-        <p>
-            A warm summer-night ambience for relaxation
-            and sleep.
-        </p>
-
-    </article>
-
-
-    <article class="sound-card">
-
-        <div class="sound-icon">✦</div>
-
-        <h3>
-            Deep Space Ambient
-        </h3>
-
-        <p>
-            A spacious atmospheric drone for concentration
-            and quiet listening.
-        </p>
-
-    </article>
-
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     VISUAL / DARK SCREEN
-========================================================= -->
-
-<section class="section">
-
-<div class="visual-section">
-
-
-    <div class="visual-section-content">
-
-
-        <div class="visual-copy">
-
-            <span class="section-label">
-                A calmer screen
-            </span>
-
-
-            <h2>
-                Designed to disappear.
-            </h2>
-
-
-            <p>
-
-                Your phone doesn't need to become another source
-                of distraction. Meditation Bell Timer uses a
-                deliberately minimal interface, with a deep-black
-                screen designed for low-light and night-time
-                sessions.
-
-            </p>
-
-
-            <p>
-
-                Choose your sound, start your timer and let the
-                experience become part of the background.
-
-            </p>
-
-
-            <a
-                href="timer.html"
-                class="btn btn-secondary">
-
-                Try the Web Version
-
-            </a>
-
-        </div>
-
-
-        <div class="visual-image">
-
-            <img
-                src="assets/Screenshot1.png"
-                alt="Meditation Bell Timer app interface"
-                loading="lazy"
-            >
-
-        </div>
-
-
-    </div>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     THREE STEPS
-========================================================= -->
-
-<section class="section">
-
-<div class="section-header">
-
-    <span class="section-label">
-        Three simple steps
-    </span>
-
-    <h2>
-        Start. Settle. Breathe.
-    </h2>
-
-    <p>
-        No courses to complete. No social feed.
-        No complicated setup.
-    </p>
-
-</div>
-
-
-<div class="steps">
-
-
-    <article class="step">
-
-        <div class="step-number">
-            01
-        </div>
-
-        <h3>
-            Choose your session
-        </h3>
-
-        <p>
-
-            Select the timer duration that suits your practice,
-            whether that's a short reset or a longer session.
-
-        </p>
-
-    </article>
-
-
-    <article class="step">
-
-        <div class="step-number">
-            02
-        </div>
-
-        <h3>
-            Choose your sound
-        </h3>
-
-        <p>
-
-            Start with silence and a Tibetan bell, or choose
-            from rain, waves, nature, Brown Noise and other
-            soundscapes.
-
-        </p>
-
-    </article>
-
-
-    <article class="step">
-
-        <div class="step-number">
-            03
-        </div>
-
-        <h3>
-            Put the screen away
-        </h3>
-
-        <p>
-
-            Use the distraction-free interface or Black Screen
-            mode and let the timer quietly do its job.
-
-        </p>
-
-    </article>
-
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     USE CASES
-========================================================= -->
-
-<section class="section">
-
-<div class="section-header">
-
-    <span class="section-label">
-        One app, many moments
-    </span>
-
-    <h2>
-        Made for real life.
-    </h2>
-
-</div>
-
-
-<div class="use-grid">
-
-
-    <article class="use-card">
-
-        <span class="section-label">
-            Mindfulness
-        </span>
-
-        <h3>
-            Meditation &amp; reflection
-        </h3>
-
-        <p>
-
-            Create a quiet space for unguided meditation,
-            breathwork, mindfulness or personal reflection.
-
-        </p>
-
-    </article>
-
-
-    <article class="use-card">
-
-        <span class="section-label">
-            Sleep
-        </span>
-
-        <h3>
-            Evening &amp; night
-        </h3>
-
-        <p>
-
-            Choose a calming soundscape, set a timer and
-            use the dark interface without a bright screen
-            dominating the room.
-
-        </p>
-
-    </article>
-
-
-    <article class="use-card">
-
-        <span class="section-label">
-            Focus
-        </span>
-
-        <h3>
-            Study &amp; concentration
-        </h3>
-
-        <p>
-
-            Use the timer with silence, Brown Noise or
-            atmospheric sounds to create a focused working
-            environment.
-
-        </p>
-
-    </article>
-
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     APP COLLECTION
-========================================================= -->
-
-<section class="section">
-
-<div class="section-header">
-
-    <span class="section-label">
-        The Meditation Bell Timer collection
-    </span>
-
-    <h2>
-        Three apps.
-        <br>
-        One calmer ecosystem.
-    </h2>
-
-    <p>
-
-        Different tools for different moments — from simple
-        meditation timing to frequency listening and fully
-        custom sound baths.
-
-    </p>
-
-</div>
-
-
-<div class="app-grid">
-
-
-    <!-- APP 1 -->
-
-    <article class="app-card featured">
-
-        <span class="app-tag">
-            Meditation · Focus · Sleep
-        </span>
-
-
-        <h3>
-            Meditation Bell &amp; Zen Timer
-        </h3>
-
-
-        <p>
-
-            Our original minimalist meditation timer,
-            combining custom session timing, Tibetan bells
-            and immersive ambient soundscapes.
-
-        </p>
-
-
-        <ul>
-
-            <li>
-                Custom meditation timer
-            </li>
-
-            <li>
-                Tibetan bell intervals
-            </li>
-
-            <li>
-                12 immersive soundscapes
-            </li>
-
-            <li>
-                Brown Noise &amp; focus sounds
-            </li>
-
-            <li>
-                Dark Screen mode
-            </li>
-
-            <li>
-                Offline listening
-            </li>
-
-        </ul>
-
-
-        <a
-            href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-link">
-
-            Explore Meditation Bell Timer →
-
-        </a>
-
-    </article>
-
-
-
-    <!-- APP 2 -->
-
-    <article class="app-card">
-
-        <span class="app-tag">
-            Frequencies · Meditation · Focus
-        </span>
-
-
-        <h3>
-            Solfeggio Frequencies Healing
-        </h3>
-
-
-        <p>
-
-            Explore a dedicated collection of Solfeggio
-            frequencies, including the traditional scale
-            alongside 432 Hz, 4 Hz Delta and 40 Hz Gamma.
-
-        </p>
-
-
-        <ul>
-
-            <li>
-                12 frequency options
-            </li>
-
-            <li>
-                174 Hz – 963 Hz
-            </li>
-
-            <li>
-                432 Hz
-            </li>
-
-            <li>
-                4 Hz Delta
-            </li>
-
-            <li>
-                40 Hz Gamma
-            </li>
-
-            <li>
-                Minimalist black interface
-            </li>
-
-        </ul>
-
-
-        <a
-            href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-link">
-
-            Explore Solfeggio Frequencies →
-
-        </a>
-
-    </article>
-
-
-
-    <!-- APP 3 -->
-
-    <article class="app-card">
-
-        <span class="app-tag">
-            Custom Sound Bath
-        </span>
-
-
-        <h3>
-            Sound Bath Zen
-        </h3>
-
-
-        <p>
-
-            Build your own sound bath by combining frequency
-            audio with calming ambient soundscapes and
-            controlling the two layers independently.
-
-        </p>
-
-
-        <ul>
-
-            <li>
-                Two independent audio layers
-            </li>
-
-            <li>
-                Solfeggio &amp; brainwave frequencies
-            </li>
-
-            <li>
-                Nature &amp; ambient sounds
-            </li>
-
-            <li>
-                Independent volume controls
-            </li>
-
-            <li>
-                Saved presets
-            </li>
-
-            <li>
-                Long-form sessions
-            </li>
-
-        </ul>
-
-
-        <a
-            href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-link">
-
-            Explore Sound Bath Zen →
-
-        </a>
-
-    </article>
-
-
-</div>
-
-
-<div style="text-align:center; margin-top:35px;">
 
     <a
-        href="/our-apps.html"
-        class="text-link">
+        href="#"
+        class="dropdown-toggle"
+        aria-haspopup="true">
 
-        View All Three Apps →
+        Resources
+
+        <span
+            class="dropdown-arrow">
+            ▼
+        </span>
 
     </a>
 
-</div>
 
-</section>
+    <div class="dropdown-content">
 
-<!-- =========================================================
-     APP SCREENSHOTS
-========================================================= -->
-
-<section class="section">
-
-<div class="section-header">
-
-    <span class="section-label">
-        Inside the app
-    </span>
-
-    <h2>
-        Clean by design.
-    </h2>
-
-    <p>
-
-        The interface is deliberately simple so the app can
-        become part of your routine without becoming the
-        centre of it.
-
-    </p>
-
-</div>
-
-
-<div class="gallery">
-
-
-    <img
-        src="assets/Screenshot1.png"
-        alt="Meditation Bell Timer main timer interface"
-        loading="lazy"
-    >
-
-
-    <img
-        src="assets/Screenshot2.png"
-        alt="Meditation Bell Timer offline use interface"
-        loading="lazy"
-    >
-
-
-    <img
-        src="assets/Screenshot3.png"
-        alt="Meditation Bell Timer ambient soundscapes"
-        loading="lazy"
-    >
-
-
-    <img
-        src="assets/Screenshot4.png"
-        alt="Meditation Bell Timer custom timer and bell intervals"
-        loading="lazy"
-    >
-
-
-    <img
-        src="assets/Screenshot5.png"
-        alt="Meditation Bell Timer dark screen mode"
-        loading="lazy"
-    >
-
-
-    <img
-        src="assets/Screenshot6.png"
-        alt="Meditation Bell Timer focus and study interface"
-        loading="lazy"
-    >
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     FAQ
-========================================================= -->
-
-<section class="section">
-
-<div class="section-header">
-
-    <span class="section-label">
-        Frequently asked
-    </span>
-
-    <h2>
-        Questions, answered.
-    </h2>
-
-</div>
-
-
-<div class="faq">
-
-
-    <details>
-
-        <summary>
-            What is Meditation Bell Timer?
-        </summary>
-
-        <p>
-
-            Meditation Bell Timer is a simple timer for
-            meditation, mindfulness, focus, study, relaxation
-            and sleep. It combines timed sessions with Tibetan
-            bell sounds, interval chimes and immersive ambient
-            soundscapes.
-
-        </p>
-
-    </details>
-
-
-    <details>
-
-        <summary>
-            Can I use Meditation Bell Timer without an account?
-        </summary>
-
-        <p>
-
-            Yes. The app is designed without requiring an
-            account or social profile, keeping the experience
-            simple and private.
-
-        </p>
-
-    </details>
-
-
-    <details>
-
-        <summary>
-            Does it work offline?
-        </summary>
-
-        <p>
-
-            Yes. Meditation Bell Timer is designed for offline
-            use, making it useful when you want your meditation
-            session to remain free from notifications and
-            connectivity issues.
-
-        </p>
-
-    </details>
-
-
-    <details>
-
-        <summary>
-            What sounds are included?
-        </summary>
-
-        <p>
-
-            The sound library includes Tibetan bells, Tibetan
-            singing bowls, rain, ocean waves, Brown Noise,
-            rainforest ambience, birds, Om chant, campfire,
-            steam train, evening cicadas and deep space ambience.
-
-        </p>
-
-    </details>
-
-
-    <details>
-
-        <summary>
-            Can I set recurring meditation bells?
-        </summary>
-
-        <p>
-
-            Yes. You can configure recurring bell intervals
-            so a gentle Tibetan bell can mark points throughout
-            your session.
-
-        </p>
-
-    </details>
-
-
-    <details>
-
-        <summary>
-            Are there other apps in the collection?
-        </summary>
-
-        <p>
-
-            Yes. The Meditation Bell Timer collection also
-            includes Solfeggio Frequencies Healing and Sound
-            Bath Zen. Each app has a different focus while
-            sharing the same minimalist approach to digital
-            wellness.
-
-        </p>
-
-    </details>
-
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     FINAL CTA
-========================================================= -->
-
-<section class="final-cta">
-
-<h2>
-    Make a little room for stillness.
-</h2>
-
-
-<p>
-
-    Whether you're meditating, studying, relaxing or getting
-    ready for sleep, Meditation Bell Timer gives you the tools
-    to create a calmer session — without filling the experience
-    with clutter.
-
-</p>
-
-
-<a
-    href="timer.html"
-    class="btn btn-primary">
-
-    Try the Web Timer →
-
-</a>
-
-</section>
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
-
-<div class="footer-inner">
-
-
-    <div class="footer-brand">
-
-        <a href="/" class="logo">
-
-            <img
-                src="android-chrome-512x512.png"
-                alt="Meditation Bell Timer">
-
-            MEDITATION BELL TIMER
-
-        </a>
-
-
-        <p>
-
-            Simple digital tools for meditation,
-            mindfulness, sleep, focus and quiet moments.
-
-        </p>
-
-    </div>
-
-
-    <div class="footer-column">
-
-        <h4>
-            Apps
-        </h4>
-
-        <a href="/our-apps.html">
-            Our Apps
-        </a>
-
-        <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
-           target="_blank"
-           rel="noopener noreferrer">
-
-            Meditation Bell &amp; Zen Timer
-
-        </a>
-
-        <a href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
-           target="_blank"
-           rel="noopener noreferrer">
-
-            Solfeggio Frequencies
-
-        </a>
-
-        <a href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
-           target="_blank"
-           rel="noopener noreferrer">
-
-            Sound Bath Zen
-
-        </a>
-
-    </div>
-
-
-    <div class="footer-column">
-
-        <h4>
-            Resources
-        </h4>
-
-        <a href="/solfeggio-healing-frequencies.html">
-            Solfeggio Frequencies
-        </a>
-
-        <a href="/brown-noise-for-adhd-focus">
-            Brown Noise &amp; Focus
-        </a>
 
         <a href="/sleep-meditation-sounds">
             Sleep Meditation Sounds
         </a>
 
-        <a href="/best-meditation-sounds">
-            Best Meditation Sounds
+
+        <a href="/brown-noise-for-adhd-focus">
+            Brown Noise for ADHD Focus
         </a>
+
+
+        <a href="/white-noise-meditation-timer">
+            White Noise Meditation Timer
+        </a>
+
+
+        <a href="/meditation-timer-for-adhd">
+            Meditation Timer for ADHD
+        </a>
+
+
+        <a href="/meditation-timer-for-adhd-focus">
+            Meditation Timer for ADHD Focus
+        </a>
+
 
         <a href="/how-to-use-a-meditation-timer">
             How To Use A Meditation Timer
         </a>
 
-    </div>
 
-
-    <div class="footer-column">
-
-        <h4>
-            Company
-        </h4>
-
-        <a href="/our-apps.html">
-            Our Apps
+        <a href="/how-long-should-you-meditate">
+            How Long Should You Meditate?
         </a>
 
-        <a href="privacy.html">
-            Privacy Policy
+
+        <a href="/meditation-timer-vs-guided-meditation">
+            Timer vs Guided Meditation
         </a>
 
-        <a href="timer.html">
-            Web Timer
+
+        <a href="/pomodoro-meditation-method">
+            Pomodoro Meditation Method
         </a>
 
-        <a
-            href="https://www.youtube.com/@MeditationBellTimer"
-            target="_blank"
-            rel="noopener noreferrer">
 
-            YouTube
-
+        <a href="/how-tibetan-singing-bowls-work">
+            How Tibetan Singing Bowls Work
         </a>
 
-        <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            Instagram
-
-        </a>
 
     </div>
 
-
 </div>
 
+</nav></header><!-- =========================================================
+     HERO
+========================================================= --><section class="hero"><img
+class="hero-background"
+src="assets/hero-meditation-bowl.webp"
+alt="Tibetan singing bowl in a peaceful mountain landscape"
+fetchpriority="high"
 
-<div class="footer-bottom">
+«»
 
-    © 2026 Meditation Bell Timer. All rights reserved.
+<div class="hero-overlay"></div><div class="hero-content"><div class="hero-copy"><div class="hero-eyebrow">
+    A simpler way to slow down
+</div><h1>Meditation,
+<br>
 
-</div>
+<span>
+    without the noise.
+</span>
 
-</footer>
+</h1><p class="hero-description">A beautifully simple meditation timer for mindfulness,
+sleep, focus and quiet moments. Set your time, choose
+your sound and let the screen disappear.
 
-<!-- =========================================================
-     MOBILE NAVIGATION
-========================================================= -->
+</p><div class="hero-buttons"><a
+href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-primary">
 
-<script>
+Get the App
+
+</a><a
+href="/timer.html"
+class="btn btn-secondary">
+
+Try the Web Timer →
+
+</a></div><div class="hero-meta">Simple. Private. Offline.
+Designed to stay out of your way.
+
+</div></div></div></section><!-- =========================================================
+     USP STRIP
+========================================================= --><section class="usp-strip"><div class="usp-inner"><div class="usp-item"><strong>
+    ✓ No Ads
+</strong><span>
+    No advertising interruptions
+</span></div><div class="usp-item"><strong>
+    ✓ No Monthly Subscription
+</strong><span>
+    Simple one-time upgrade
+</span></div><div class="usp-item"><strong>
+    ✓ No Account
+</strong><span>
+    Just open and use
+</span></div><div class="usp-item"><strong>
+    ✓ 100% Offline
+</strong><span>
+    Listen without connectivity
+</span></div></div></section><!-- =========================================================
+     INTRO
+========================================================= --><section class="intro"><span class="section-label">
+    The idea
+</span><h2>
+    A quieter approach to meditation.
+</h2><p>Meditation doesn't need another complicated app competing
+for your attention. Meditation Bell Timer was created around
+a simple idea: give you a reliable timer, beautiful sounds
+and gentle bells — then get out of the way.
+
+Whether you're sitting for five minutes, settling down for
+the night, studying, practising mindfulness or simply taking
+a quiet break, the experience is designed to remain calm,
+focused and distraction-free.
+
+</p></section><!-- =========================================================
+     FEATURES
+========================================================= --><section class="section"><div class="section-header"><span class="section-label">
+    Built around simplicity
+</span><h2>
+    Everything you need.
+    <br>
+    Nothing you don't.
+</h2><p>A focused collection of tools for meditation,
+mindfulness, relaxation, sleep, study and quiet
+concentration.
+
+</p></div><div class="feature-grid"><article class="feature-card"><div class="feature-number">
+    01 / TIMER
+</div><h3>
+    Simple Meditation Timer
+</h3><p>Choose your session length and let the timer
+quietly guide the beginning and end of your
+practice.
+
+</p></article><article class="feature-card"><div class="feature-number">
+    02 / BELLS
+</div><h3>
+    Gentle Interval Bells
+</h3><p>Set recurring Tibetan bell intervals to bring
+your attention gently back to the present moment.
+
+</p></article><article class="feature-card"><div class="feature-number">
+    03 / SOUND
+</div><h3>
+    Immersive Soundscapes
+</h3><p>Choose from rain, ocean waves, nature ambience,
+Tibetan bowls, Brown Noise and atmospheric sounds.
+
+</p></article><article class="feature-card"><div class="feature-number">
+    04 / DARK
+</div><h3>
+    Distraction-Free Dark Mode
+</h3><p>A deep-black interface and Black Screen mode keep
+your phone from becoming the focus of your session.
+
+</p></article></div></section><!-- =========================================================
+     SOUND LIBRARY
+========================================================= --><section class="section"><div class="section-header"><span class="section-label">
+    The sound library
+</span><h2>
+    Choose the atmosphere.
+</h2><p>From complete silence and Tibetan bells to rain,
+ocean waves, Brown Noise and atmospheric ambience,
+choose a sound that suits the moment.
+
+</p></div><div class="sound-grid"><article class="sound-card"><div class="sound-icon">◉</div><h3>
+    Silence &amp; Tibetan Bell
+</h3><p>
+    Pure timing with a resonant bell marking your session.
+</p></article><article class="sound-card"><div class="sound-icon">≈</div><h3>
+    Soothing Rain Storm
+</h3><p>
+    Continuous rainfall for a calm and immersive atmosphere.
+</p></article><article class="sound-card"><div class="sound-icon">∿</div><h3>
+    Crashing Waves
+</h3><p>
+    Rhythmic ocean ambience for meditation and relaxation.
+</p></article><article class="sound-card"><div class="sound-icon">≋</div><h3>
+    Brown Noise
+</h3><p>
+    Deep, warm noise suitable for focus, study and
+    background listening.
+</p></article><article class="sound-card"><div class="sound-icon">◌</div><h3>
+    Tibetan Singing Bowl
+</h3><p>
+    Long resonant tones inspired by traditional
+    singing bowls.
+</p></article><article class="sound-card"><div class="sound-icon">✦</div><h3>
+    Rain Forest
+</h3><p>
+    A rich natural atmosphere inspired by the sounds
+    of the forest.
+</p></article><article class="sound-card"><div class="sound-icon">⌁</div><h3>
+    Bird Song
+</h3><p>
+    A gentle outdoor atmosphere for mornings and
+    mindful moments.
+</p></article><article class="sound-card"><div class="sound-icon">◎</div><h3>
+    Deep Om Chant
+</h3><p>
+    A continuous vocal ambience for meditation and
+    quiet reflection.
+</p></article><article class="sound-card"><div class="sound-icon">✧</div><h3>
+    Calming Campfire
+</h3><p>
+    Warm crackling ambience for evening relaxation
+    and reading.
+</p></article><article class="sound-card"><div class="sound-icon">→</div><h3>
+    Soothing Steam Train
+</h3><p>
+    A nostalgic rhythmic ambience with a gentle
+    mechanical character.
+</p></article><article class="sound-card"><div class="sound-icon">☾</div><h3>
+    Cicadas in the Evening
+</h3><p>
+    A warm summer-night ambience for relaxation
+    and sleep.
+</p></article><article class="sound-card"><div class="sound-icon">✦</div><h3>
+    Deep Space Ambient
+</h3><p>
+    A spacious atmospheric drone for concentration
+    and quiet listening.
+</p></article></div></section><!-- =========================================================
+     VISUAL / DARK SCREEN
+========================================================= --><section class="section"><div class="visual-section"><div class="visual-section-content"><div class="visual-copy"><span class="section-label">
+    A calmer screen
+</span><h2>
+    Designed to disappear.
+</h2><p>Your phone doesn't need to become another source
+of distraction. Meditation Bell Timer uses a
+deliberately minimal interface, with a deep-black
+screen designed for low-light and night-time
+sessions.
+
+</p><p>Choose your sound, start your timer and let the
+experience become part of the background.
+
+</p><a
+href="/timer.html"
+class="btn btn-secondary">
+
+Try the Web Version
+
+</a></div><div class="visual-image"><img
+src="assets/Screenshot1.png"
+alt="Meditation Bell Timer app interface"
+loading="lazy"
+
+«»
+
+</div></div></div></section><!-- =========================================================
+     THREE STEPS
+========================================================= --><section class="section"><div class="section-header"><span class="section-label">
+    Three simple steps
+</span><h2>
+    Start. Settle. Breathe.
+</h2><p>
+    No courses to complete. No social feed.
+    No complicated setup.
+</p></div><div class="steps"><article class="step"><div class="step-number">
+    01
+</div><h3>
+    Choose your session
+</h3><p>Select the timer duration that suits your practice,
+whether that's a short reset or a longer session.
+
+</p></article><article class="step"><div class="step-number">
+    02
+</div><h3>
+    Choose your sound
+</h3><p>Start with silence and a Tibetan bell, or choose
+from rain, waves, nature, Brown Noise and other
+soundscapes.
+
+</p></article><article class="step"><div class="step-number">
+    03
+</div><h3>
+    Put the screen away
+</h3><p>Use the distraction-free interface or Black Screen
+mode and let the timer quietly do its job.
+
+</p></article></div></section><!-- =========================================================
+     USE CASES
+========================================================= --><section class="section"><div class="section-header"><span class="section-label">
+    One app, many moments
+</span><h2>
+    Made for real life.
+</h2></div><div class="use-grid"><article class="use-card"><span class="section-label">
+    Mindfulness
+</span><h3>
+    Meditation &amp; reflection
+</h3><p>Create a quiet space for unguided meditation,
+breathwork, mindfulness or personal reflection.
+
+</p></article><article class="use-card"><span class="section-label">
+    Sleep
+</span><h3>
+    Evening &amp; night
+</h3><p>Choose a calming soundscape, set a timer and
+use the dark interface without a bright screen
+dominating the room.
+
+</p></article><article class="use-card"><span class="section-label">
+    Focus
+</span><h3>
+    Study &amp; concentration
+</h3><p>Use the timer with silence, Brown Noise or
+atmospheric sounds to create a focused working
+environment.
+
+</p></article></div></section><!-- =========================================================
+     APP COLLECTION
+========================================================= --><section class="section"><div class="section-header"><span class="section-label">
+    The Meditation Bell Timer collection
+</span><h2>
+    Three apps.
+    <br>
+    One calmer ecosystem.
+</h2><p>Different tools for different moments — from simple
+meditation timing to frequency listening and fully
+custom sound baths.
+
+</p></div><div class="app-grid"><article class="app-card featured"><span class="app-tag">
+    Meditation · Focus · Sleep
+</span><h3>
+    Meditation Bell &amp; Zen Timer
+</h3><p>Our original minimalist meditation timer,
+combining custom session timing, Tibetan bells
+and immersive ambient soundscapes.
+
+</p><ul><li>
+    Custom meditation timer
+</li><li>
+    Tibetan bell intervals
+</li><li>
+    12 immersive soundscapes
+</li><li>
+    Brown Noise &amp; focus sounds
+</li><li>
+    Dark Screen mode
+</li><li>
+    Offline listening
+</li></ul><a
+href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+target="_blank"
+rel="noopener noreferrer"
+class="text-link">
+
+Explore Meditation Bell Timer →
+
+</a></article><article class="app-card"><span class="app-tag">
+    Frequencies · Meditation · Focus
+</span><h3>
+    Solfeggio Frequencies Healing
+</h3><p>Explore a dedicated collection of Solfeggio
+frequencies, including the traditional scale
+alongside 432 Hz, 4 Hz Delta and 40 Hz Gamma.
+
+</p><ul><li>
+    12 frequency options
+</li><li>
+    174 Hz – 963 Hz
+</li><li>
+    432 Hz
+</li><li>
+    4 Hz Delta
+</li><li>
+    40 Hz Gamma
+</li><li>
+    Minimalist black interface
+</li></ul><a
+href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+target="_blank"
+rel="noopener noreferrer"
+class="text-link">
+
+Explore Solfeggio Frequencies →
+
+</a></article><article class="app-card"><span class="app-tag">
+    Custom Sound Bath
+</span><h3>
+    Sound Bath Zen
+</h3><p>Build your own sound bath by combining frequency
+audio with calming ambient soundscapes and
+controlling the two layers independently.
+
+</p><ul><li>
+    Two independent audio layers
+</li><li>
+    Solfeggio &amp; brainwave frequencies
+</li><li>
+    Nature &amp; ambient sounds
+</li><li>
+    Independent volume controls
+</li><li>
+    Saved presets
+</li><li>
+    Long-form sessions
+</li></ul><a
+href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
+target="_blank"
+rel="noopener noreferrer"
+class="text-link">
+
+Explore Sound Bath Zen →
+
+</a></article></div><div style="text-align:center; margin-top:35px;"><a
+href="/our-apps.html"
+class="text-link">
+
+View All Three Apps →
+
+</a></div></section><!-- =========================================================
+     APP SCREENSHOTS
+========================================================= --><section class="section"><div class="section-header"><span class="section-label">
+    Inside the app
+</span><h2>
+    Clean by design.
+</h2><p>The interface is deliberately simple so the app can
+become part of your routine without becoming the
+centre of it.
+
+</p></div><div class="gallery"><img
+src="assets/Screenshot1.png"
+alt="Meditation Bell Timer main timer interface"
+loading="lazy"
+
+«»
+
+<img
+src="assets/Screenshot2.png"
+alt="Meditation Bell Timer offline use interface"
+loading="lazy"
+
+«»
+
+<img
+src="assets/Screenshot3.png"
+alt="Meditation Bell Timer ambient soundscapes"
+loading="lazy"
+
+«»
+
+<img
+src="assets/Screenshot4.png"
+alt="Meditation Bell Timer custom timer and bell intervals"
+loading="lazy"
+
+«»
+
+<img
+src="assets/Screenshot5.png"
+alt="Meditation Bell Timer dark screen mode"
+loading="lazy"
+
+«»
+
+<img
+src="assets/Screenshot6.png"
+alt="Meditation Bell Timer focus and study interface"
+loading="lazy"
+
+«»
+
+</div></section><!-- =========================================================
+     FAQ
+========================================================= --><section class="section"><div class="section-header"><span class="section-label">
+    Frequently asked
+</span><h2>
+    Questions, answered.
+</h2></div><div class="faq"><details><summary>
+    What is Meditation Bell Timer?
+</summary><p>Meditation Bell Timer is a simple timer for
+meditation, mindfulness, focus, study, relaxation
+and sleep. It combines timed sessions with Tibetan
+bell sounds, interval chimes and immersive ambient
+soundscapes.
+
+</p></details><details><summary>
+    Can I use Meditation Bell Timer without an account?
+</summary><p>Yes. The app is designed without requiring an
+account or social profile, keeping the experience
+simple and private.
+
+</p></details><details><summary>
+    Does it work offline?
+</summary><p>Yes. Meditation Bell Timer is designed for offline
+use, making it useful when you want your meditation
+session to remain free from notifications and
+connectivity issues.
+
+</p></details><details><summary>
+    What sounds are included?
+</summary><p>The sound library includes Tibetan bells, Tibetan
+singing bowls, rain, ocean waves, Brown Noise,
+rainforest ambience, birds, Om chant, campfire,
+steam train, evening cicadas and deep space ambience.
+
+</p></details><details><summary>
+    Can I set recurring meditation bells?
+</summary><p>Yes. You can configure recurring bell intervals
+so a gentle Tibetan bell can mark points throughout
+your session.
+
+</p></details><details><summary>
+    Are there other apps in the collection?
+</summary><p>Yes. The Meditation Bell Timer collection also
+includes Solfeggio Frequencies Healing and Sound
+Bath Zen. Each app has a different focus while
+sharing the same minimalist approach to digital
+wellness.
+
+</p></details></div></section><!-- =========================================================
+     FINAL CTA
+========================================================= --><section class="final-cta"><h2>
+    Make a little room for stillness.
+</h2><p>Whether you're meditating, studying, relaxing or getting
+ready for sleep, Meditation Bell Timer gives you the tools
+to create a calmer session — without filling the experience
+with clutter.
+
+</p><a
+href="/timer.html"
+class="btn btn-primary">
+
+Try the Web Timer →
+
+</a></section><!-- =========================================================
+     SITEWIDE FOOTER
+========================================================= --><footer><div class="footer-inner"><div class="footer-brand"><a href="/"
+class="logo">
+
+<img
+src="/android-chrome-192x192.png"
+alt="Meditation Bell Timer">
+
+<span>
+    MEDITATION BELL TIMER
+</span></a><p>Simple digital tools for meditation,
+mindfulness, sleep, focus and quiet moments.
+
+</p></div><div class="footer-column"><h4>
+    Apps
+</h4><a href="/our-apps.html">
+    Our Apps
+</a><a
+href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+target="_blank"
+rel="noopener noreferrer">
+
+Meditation Bell &amp; Zen Timer
+
+</a><a
+href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+target="_blank"
+rel="noopener noreferrer">
+
+Solfeggio Frequencies
+
+</a><a
+href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
+target="_blank"
+rel="noopener noreferrer">
+
+Sound Bath Zen
+
+</a></div><div class="footer-column"><h4>
+    Resources
+</h4><a href="/best-meditation-sounds">
+    Best Meditation Sounds
+</a><a href="/sleep-meditation-sounds">
+    Sleep Meditation Sounds
+</a><a href="/brown-noise-for-adhd-focus">
+    Brown Noise &amp; Focus
+</a><a href="/white-noise-meditation-timer">
+    White Noise Timer
+</a><a href="/solfeggio-healing-frequencies.html">
+    Solfeggio Frequencies
+</a></div><div class="footer-column"><h4>
+    Guides
+</h4><a href="/how-to-use-a-meditation-timer">
+    How To Use A Meditation Timer
+</a><a href="/how-long-should-you-meditate">
+    How Long Should You Meditate?
+</a><a href="/meditation-timer-vs-guided-meditation">
+    Timer vs Guided Meditation
+</a><a href="/pomodoro-meditation-method">
+    Pomodoro Meditation Method
+</a><a href="/how-tibetan-singing-bowls-work">
+    How Tibetan Singing Bowls Work
+</a></div></div><div class="footer-bottom">© 2026 Meditation Bell Timer. All rights reserved.
+
+</div></footer><!-- =========================================================
+     SITEWIDE NAVIGATION JAVASCRIPT
+========================================================= --><script>
+
+(function () {
+
 
     const mobileMenuButton =
         document.getElementById('mobile-menu-btn');
+
 
     const navigation =
         document.getElementById('nav-links');
 
 
+    const dropdowns =
+        document.querySelectorAll('.dropdown');
+
+
+    if (!mobileMenuButton || !navigation) {
+        return;
+    }
+
+
+    /* =====================================================
+       OPEN / CLOSE MOBILE MENU
+    ===================================================== */
+
     mobileMenuButton.addEventListener(
         'click',
         function () {
 
-            const active =
+            const isOpen =
                 navigation.classList.toggle('active');
+
 
             mobileMenuButton.setAttribute(
                 'aria-expanded',
-                active ? 'true' : 'false'
+                isOpen ? 'true' : 'false'
             );
+
+
+            mobileMenuButton.setAttribute(
+                'aria-label',
+                isOpen
+                    ? 'Close navigation menu'
+                    : 'Open navigation menu'
+            );
+
+
+            mobileMenuButton.textContent =
+                isOpen ? '×' : '☰';
 
         }
     );
 
 
+    /* =====================================================
+       MOBILE DROPDOWN
+    ===================================================== */
+
     document
         .querySelectorAll('.dropdown-toggle')
         .forEach(function(toggle) {
+
 
             toggle.addEventListener(
                 'click',
                 function(event) {
 
+
                     if (window.innerWidth <= 700) {
 
+
                         event.preventDefault();
+
 
                         const dropdown =
                             toggle.closest('.dropdown');
 
+
                         dropdown.classList.toggle(
                             'mobile-active'
                         );
+
 
                     }
 
                 }
             );
 
+
         });
 
+
+    /* =====================================================
+       CLOSE MENU WHEN A NORMAL LINK IS CLICKED
+    ===================================================== */
 
     document
         .querySelectorAll(
@@ -4259,66 +3519,147 @@
         )
         .forEach(function(link) {
 
+
             link.addEventListener(
                 'click',
                 function() {
 
+
                     if (window.innerWidth <= 700) {
+
 
                         navigation.classList.remove(
                             'active'
                         );
+
 
                         mobileMenuButton.setAttribute(
                             'aria-expanded',
                             'false'
                         );
 
+
+                        mobileMenuButton.setAttribute(
+                            'aria-label',
+                            'Open navigation menu'
+                        );
+
+
+                        mobileMenuButton.textContent =
+                            '☰';
+
+
                     }
 
                 }
             );
 
+
         });
 
 
-    window.addEventListener(
-        'resize',
-        function() {
+    /* =====================================================
+       CLOSE MENU WHEN CLICKING OUTSIDE
+    ===================================================== */
+
+    document.addEventListener(
+        'click',
+        function(event) {
+
 
             if (window.innerWidth > 700) {
+                return;
+            }
+
+
+            if (
+                !navigation.contains(event.target) &&
+                !mobileMenuButton.contains(event.target)
+            ) {
+
 
                 navigation.classList.remove(
                     'active'
                 );
+
 
                 mobileMenuButton.setAttribute(
                     'aria-expanded',
                     'false'
                 );
 
-                document
-                    .querySelectorAll('.dropdown')
-                    .forEach(function(dropdown) {
 
-                        dropdown.classList.remove(
-                            'mobile-active'
-                        );
+                mobileMenuButton.setAttribute(
+                    'aria-label',
+                    'Open navigation menu'
+                );
 
-                    });
+
+                mobileMenuButton.textContent =
+                    '☰';
+
 
             }
 
         }
     );
 
-</script>
 
-<!-- =========================================================
+    /* =====================================================
+       RESET MOBILE STATE WHEN RETURNING TO DESKTOP
+    ===================================================== */
+
+    window.addEventListener(
+        'resize',
+        function() {
+
+
+            if (window.innerWidth > 700) {
+
+
+                navigation.classList.remove(
+                    'active'
+                );
+
+
+                mobileMenuButton.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+
+
+                mobileMenuButton.setAttribute(
+                    'aria-label',
+                    'Open navigation menu'
+                );
+
+
+                mobileMenuButton.textContent =
+                    '☰';
+
+
+                dropdowns.forEach(
+                    function(dropdown) {
+
+                        dropdown.classList.remove(
+                            'mobile-active'
+                        );
+
+                    }
+                );
+
+
+            }
+
+        }
+    );
+
+
+})();
+
+</script><!-- =========================================================
      STRUCTURED DATA
-========================================================= -->
-
-<script type="application/ld+json">
+========================================================= --><script type="application/ld+json">
 
 {
     "@context": "https://schema.org",
@@ -4335,9 +3676,7 @@
     }
 }
 
-</script>
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 
 {
     "@context": "https://schema.org",
@@ -4346,8 +3685,4 @@
     "url": "https://meditationbelltimer.com/"
 }
 
-</script>
-
-</body>
-
-</html>
+</script></body></html>
