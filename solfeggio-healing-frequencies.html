@@ -25,10 +25,10 @@
 <meta name="twitter:description" content="Explore Solfeggio frequencies for meditation, relaxation, sleep, mindfulness and focus.">
 <meta name="twitter:image" content="https://meditationbelltimer.com/assets/solfeggio-hero.webp">
 
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon16x16.png">
-<link rel="apple-touch-icon" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2437,6 +2437,267 @@ footer {
     * {
         transition-duration:
             .01ms !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE UX — MATCH OUR APPS LAYOUT
+   Image first, content second. Designed for one-hand mobile
+   browsing with generous spacing and clear CTAs.
+========================================================= */
+@media (max-width: 700px) {
+    header {
+        position: sticky !important;
+        top: 0;
+        height: 74px !important;
+        padding: 0 5% !important;
+    }
+
+    .logo {
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        letter-spacing: 1.6px !important;
+    }
+
+    .logo img {
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 7px !important;
+        object-fit: cover;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        font-family: "DM Sans", sans-serif;
+        font-size: 28px !important;
+        line-height: 1;
+        padding: 8px;
+    }
+
+    .nav-links {
+        position: absolute !important;
+        top: 74px !important;
+        left: 0 !important;
+        width: 100% !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        background: rgba(7,9,8,0.98) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        transition: max-height .35s ease, padding .2s ease !important;
+    }
+
+    .nav-links.active {
+        max-height: calc(100vh - 74px) !important;
+        overflow-y: auto !important;
+        padding: 10px 0 20px !important;
+    }
+
+    .nav-links > a,
+    .nav-links .dropdown {
+        width: 100% !important;
+        padding: 15px 5% !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-links > a {
+        color: #bfc2bb !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+    }
+
+    .dropdown-toggle {
+        width: 100% !important;
+        justify-content: space-between !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        padding: 0 !important;
+    }
+
+    .dropdown-content {
+        position: static !important;
+        display: none !important;
+        min-width: 0 !important;
+        padding: 8px 0 0 12px !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+    .dropdown.mobile-active .dropdown-content {
+        display: block !important;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 11px 10px;
+        color: #969a93;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    /* The important UX change: image first, copy below it. */
+    .hero {
+        min-height: 0 !important;
+        height: auto !important;
+        display: block !important;
+        aspect-ratio: auto !important;
+        overflow: hidden;
+        background: #070908 !important;
+    }
+
+    .hero-background {
+        position: relative !important;
+        inset: auto !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 10 !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        z-index: 0 !important;
+    }
+
+    .hero-overlay {
+        display: none !important;
+    }
+
+    .hero-content {
+        position: relative !important;
+        z-index: 2 !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 76px 5% 64px !important;
+        background:
+            radial-gradient(circle at 50% 0%, rgba(216,189,120,0.08), transparent 48%),
+            #070908 !important;
+    }
+
+    .hero-copy {
+        max-width: 850px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    .hero-eyebrow {
+        justify-content: center !important;
+        margin-bottom: 18px !important;
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 11px !important;
+        letter-spacing: 3px !important;
+    }
+
+    .hero-eyebrow::before {
+        display: none !important;
+    }
+
+    .hero h1 {
+        font-family: "Playfair Display", serif !important;
+        font-size: clamp(40px, 11vw, 58px) !important;
+        line-height: 1.08 !important;
+        letter-spacing: -0.5px !important;
+        margin: 0 0 24px !important;
+        text-shadow: none !important;
+    }
+
+    .hero-description {
+        max-width: 720px !important;
+        margin: 0 auto 30px !important;
+        color: #d1cec4 !important;
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 1.75 !important;
+        text-shadow: none !important;
+    }
+
+    .hero-buttons {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        max-width: 420px !important;
+        margin: 0 auto !important;
+    }
+
+    .hero-buttons .btn {
+        width: 100% !important;
+        min-height: 52px !important;
+        font-size: 14px !important;
+    }
+
+    .hero-meta {
+        margin-top: 20px !important;
+        color: #969a93 !important;
+        font-size: 12px !important;
+    }
+
+    .hero-usp {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        padding: 14px 5% !important;
+        background: #0b0e0f !important;
+        border-top: 1px solid rgba(255,255,255,.05);
+    }
+
+    .hero-usp-inner {
+        gap: 12px 22px !important;
+        justify-content: center !important;
+    }
+
+    .hero-usp-item {
+        font-size: 10px !important;
+    }
+
+    .section,
+    .intro {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+
+    .intro {
+        padding-top: 75px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .section-header h2,
+    .intro h2 {
+        font-family: "Playfair Display", serif !important;
+    }
+
+    footer {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-background {
+        aspect-ratio: 16 / 10 !important;
+    }
+
+    .hero-content {
+        padding-top: 68px !important;
+        padding-bottom: 58px !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(39px, 11vw, 52px) !important;
+    }
+
+    .hero-description {
+        font-size: 15.5px !important;
     }
 }
 
