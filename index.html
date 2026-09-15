@@ -56,20 +56,20 @@
 
 <link rel="icon"
       type="image/x-icon"
-      href="favicon.ico">
+      href="/favicon.ico">
 
 <link rel="icon"
       type="image/png"
       sizes="32x32"
-      href="favicon32x32.png">
+      href="/favicon-32x32.png">
 
 <link rel="icon"
       type="image/png"
       sizes="16x16"
-      href="favicon16x16.png">
+      href="/favicon-16x16.png">
 
 <link rel="apple-touch-icon"
-      href="favicon.png">
+      href="/apple-touch-icon.png">
 
 
 <!-- Fonts -->
@@ -1073,158 +1073,101 @@
 
 
     /* =========================================================
-       SOUND LIBRARY
-       Cinematic background cards, matching the Solfeggio page
+       SOUNDS
     ========================================================= */
 
     .sound-grid {
 
-        display: grid;
+        display:
+            grid;
 
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+            repeat(3,1fr);
 
-        gap: 18px;
+        gap:
+            16px;
 
     }
 
 
     .sound-card {
 
-        --sound-bg: none;
+        min-height:
+            190px;
 
-        position: relative;
-        isolation: isolate;
-        min-height: 245px;
-        padding: 28px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        overflow: hidden;
+        padding:
+            28px;
 
-        border: 1px solid rgba(255,255,255,0.09);
-        border-radius: 18px;
+        border:
+            1px solid
+            var(--border);
 
-        background: #101415;
+        border-radius:
+            18px;
+
+        background:
+            #101415;
 
         transition:
-            transform .3s ease,
-            border-color .3s ease,
-            box-shadow .3s ease;
-
-    }
-
-
-    /* Background image */
-    .sound-card::before {
-
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -2;
-
-        background-image: var(--sound-bg);
-        background-size: cover;
-        background-position: center;
-
-        transform: scale(1.01);
-        transition: transform .5s ease;
-
-    }
-
-
-    /* Readability overlay */
-    .sound-card::after {
-
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-
-        background:
-            linear-gradient(
-                to top,
-                rgba(3,7,7,0.98) 0%,
-                rgba(3,7,7,0.86) 35%,
-                rgba(3,7,7,0.48) 68%,
-                rgba(3,7,7,0.18) 100%
-            );
-
-    }
-
-
-    /* Silence card has no supplied background image */
-    .sound-card.sound-no-image {
-
-        background:
-            radial-gradient(
-                circle at 70% 20%,
-                rgba(212,175,90,0.12),
-                transparent 45%
-            ),
-            linear-gradient(145deg, #151a1a, #090c0d);
+            transform .25s ease,
+            border-color .25s ease;
 
     }
 
 
     .sound-card:hover {
 
-        transform: translateY(-5px);
-        border-color: rgba(212,175,90,0.42);
-        box-shadow: 0 18px 45px rgba(0,0,0,0.28);
+        transform:
+            translateY(-4px);
 
-    }
-
-
-    .sound-card:hover::before {
-
-        transform: scale(1.07);
+        border-color:
+            rgba(212,175,90,0.35);
 
     }
 
 
     .sound-icon {
 
-        width: 42px;
-        height: 42px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: auto;
+        margin-bottom:
+            18px;
 
-        color: var(--gold-light);
-        font-size: 22px;
-        border: 1px solid rgba(242,215,143,0.28);
-        border-radius: 50%;
-        background: rgba(5,8,8,0.42);
-        backdrop-filter: blur(5px);
+        color:
+            var(--gold-light);
+
+        font-size:
+            23px;
 
     }
 
 
     .sound-card h3 {
 
-        margin: 0 0 8px;
+        margin:
+            0 0 8px;
 
         font-family:
             'Cormorant Garamond',
             serif;
 
-        font-size: 28px;
-        line-height: 1.05;
-        text-shadow: 0 3px 18px rgba(0,0,0,0.65);
+        font-size:
+            25px;
 
     }
 
 
     .sound-card p {
 
-        margin: 0;
+        margin:
+            0;
 
-        max-width: 430px;
-        color: rgba(255,255,255,0.76);
-        font-size: 13px;
-        line-height: 1.65;
-        text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+        color:
+            var(--muted);
+
+        font-size:
+            13px;
+
+        line-height:
+            1.65;
 
     }
 
@@ -2435,6 +2378,267 @@
 
     }
 
+
+/* =========================================================
+   MOBILE UX — MATCH OUR APPS LAYOUT
+   Image first, content second. Designed for one-hand mobile
+   browsing with generous spacing and clear CTAs.
+========================================================= */
+@media (max-width: 700px) {
+    header {
+        position: sticky !important;
+        top: 0;
+        height: 74px !important;
+        padding: 0 5% !important;
+    }
+
+    .logo {
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        letter-spacing: 1.6px !important;
+    }
+
+    .logo img {
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 7px !important;
+        object-fit: cover;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        font-family: "DM Sans", sans-serif;
+        font-size: 28px !important;
+        line-height: 1;
+        padding: 8px;
+    }
+
+    .nav-links {
+        position: absolute !important;
+        top: 74px !important;
+        left: 0 !important;
+        width: 100% !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        background: rgba(7,9,8,0.98) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        transition: max-height .35s ease, padding .2s ease !important;
+    }
+
+    .nav-links.active {
+        max-height: calc(100vh - 74px) !important;
+        overflow-y: auto !important;
+        padding: 10px 0 20px !important;
+    }
+
+    .nav-links > a,
+    .nav-links .dropdown {
+        width: 100% !important;
+        padding: 15px 5% !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-links > a {
+        color: #bfc2bb !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+    }
+
+    .dropdown-toggle {
+        width: 100% !important;
+        justify-content: space-between !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        padding: 0 !important;
+    }
+
+    .dropdown-content {
+        position: static !important;
+        display: none !important;
+        min-width: 0 !important;
+        padding: 8px 0 0 12px !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+    .dropdown.mobile-active .dropdown-content {
+        display: block !important;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 11px 10px;
+        color: #969a93;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    /* The important UX change: image first, copy below it. */
+    .hero {
+        min-height: 0 !important;
+        height: auto !important;
+        display: block !important;
+        aspect-ratio: auto !important;
+        overflow: hidden;
+        background: #070908 !important;
+    }
+
+    .hero-background {
+        position: relative !important;
+        inset: auto !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 10 !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        z-index: 0 !important;
+    }
+
+    .hero-overlay {
+        display: none !important;
+    }
+
+    .hero-content {
+        position: relative !important;
+        z-index: 2 !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 76px 5% 64px !important;
+        background:
+            radial-gradient(circle at 50% 0%, rgba(216,189,120,0.08), transparent 48%),
+            #070908 !important;
+    }
+
+    .hero-copy {
+        max-width: 850px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    .hero-eyebrow {
+        justify-content: center !important;
+        margin-bottom: 18px !important;
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 11px !important;
+        letter-spacing: 3px !important;
+    }
+
+    .hero-eyebrow::before {
+        display: none !important;
+    }
+
+    .hero h1 {
+        font-family: "Playfair Display", serif !important;
+        font-size: clamp(40px, 11vw, 58px) !important;
+        line-height: 1.08 !important;
+        letter-spacing: -0.5px !important;
+        margin: 0 0 24px !important;
+        text-shadow: none !important;
+    }
+
+    .hero-description {
+        max-width: 720px !important;
+        margin: 0 auto 30px !important;
+        color: #d1cec4 !important;
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 1.75 !important;
+        text-shadow: none !important;
+    }
+
+    .hero-buttons {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        max-width: 420px !important;
+        margin: 0 auto !important;
+    }
+
+    .hero-buttons .btn {
+        width: 100% !important;
+        min-height: 52px !important;
+        font-size: 14px !important;
+    }
+
+    .hero-meta {
+        margin-top: 20px !important;
+        color: #969a93 !important;
+        font-size: 12px !important;
+    }
+
+    .hero-usp {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        padding: 14px 5% !important;
+        background: #0b0e0f !important;
+        border-top: 1px solid rgba(255,255,255,.05);
+    }
+
+    .hero-usp-inner {
+        gap: 12px 22px !important;
+        justify-content: center !important;
+    }
+
+    .hero-usp-item {
+        font-size: 10px !important;
+    }
+
+    .section,
+    .intro {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+
+    .intro {
+        padding-top: 75px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .section-header h2,
+    .intro h2 {
+        font-family: "Playfair Display", serif !important;
+    }
+
+    footer {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-background {
+        aspect-ratio: 16 / 10 !important;
+    }
+
+    .hero-content {
+        padding-top: 68px !important;
+        padding-bottom: 58px !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(39px, 11vw, 52px) !important;
+    }
+
+    .hero-description {
+        font-size: 15.5px !important;
+    }
+}
+
 </style>
 
 </head>
@@ -2696,7 +2900,7 @@
     <div class="usp-item">
 
         <strong>
-            No Monthly Subscription
+            1× No Monthly Subscription
         </strong>
 
         <span>
@@ -2914,77 +3118,195 @@
 
 <div class="sound-grid">
 
-    <article class="sound-card sound-no-image">
+
+    <article class="sound-card">
+
         <div class="sound-icon">◉</div>
-        <h3>Silence &amp; Tibetan Bell</h3>
-        <p>Pure timing with a resonant bell marking your session.</p>
+
+        <h3>
+            Silence &amp; Tibetan Bell
+        </h3>
+
+        <p>
+            Pure timing with a resonant bell marking your session.
+        </p>
+
     </article>
 
-    <article class="sound-card" style="--sound-bg: url('assets/rain_bg.webp');">
+
+    <article class="sound-card">
+
         <div class="sound-icon">≈</div>
-        <h3>Soothing Rain Storm</h3>
-        <p>Continuous rainfall for a calm and immersive atmosphere.</p>
+
+        <h3>
+            Soothing Rain Storm
+        </h3>
+
+        <p>
+            Continuous rainfall for a calm and immersive atmosphere.
+        </p>
+
     </article>
 
-    <article class="sound-card" style="--sound-bg: url('assets/waves_bg.webp');">
+
+    <article class="sound-card">
+
         <div class="sound-icon">∿</div>
-        <h3>Crashing Waves</h3>
-        <p>Rhythmic ocean ambience for meditation and relaxation.</p>
+
+        <h3>
+            Crashing Waves
+        </h3>
+
+        <p>
+            Rhythmic ocean ambience for meditation and relaxation.
+        </p>
+
     </article>
 
-    <article class="sound-card" style="--sound-bg: url('assets/brownnoise_bg.webp');">
+
+    <article class="sound-card">
+
         <div class="sound-icon">≋</div>
-        <h3>Brown Noise</h3>
-        <p>Deep, warm noise suitable for focus, study and background listening.</p>
+
+        <h3>
+            Brown Noise
+        </h3>
+
+        <p>
+            Deep, warm noise suitable for focus, study and
+            background listening.
+        </p>
+
     </article>
 
-    <article class="sound-card" style="--sound-bg: url('assets/bowl_bg.webp');">
+
+    <article class="sound-card">
+
         <div class="sound-icon">◌</div>
-        <h3>Tibetan Singing Bowl</h3>
-        <p>Long resonant tones inspired by traditional singing bowls.</p>
+
+        <h3>
+            Tibetan Singing Bowl
+        </h3>
+
+        <p>
+            Long resonant tones inspired by traditional
+            singing bowls.
+        </p>
+
     </article>
 
-    <article class="sound-card" style="--sound-bg: url('assets/forest_bg.webp');">
+
+    <article class="sound-card">
+
         <div class="sound-icon">✦</div>
-        <h3>Rain Forest</h3>
-        <p>A rich natural atmosphere inspired by the sounds of the forest.</p>
+
+        <h3>
+            Rain Forest
+        </h3>
+
+        <p>
+            A rich natural atmosphere inspired by the sounds
+            of the forest.
+        </p>
+
     </article>
 
-    <article class="sound-card" style="--sound-bg: url('assets/birds_bg.webp');">
+
+    <article class="sound-card">
+
         <div class="sound-icon">⌁</div>
-        <h3>Bird Song</h3>
-        <p>A gentle outdoor atmosphere for mornings and mindful moments.</p>
+
+        <h3>
+            Bird Song
+        </h3>
+
+        <p>
+            A gentle outdoor atmosphere for mornings and
+            mindful moments.
+        </p>
+
     </article>
 
-    <article class="sound-card" style="--sound-bg: url('assets/omchant_bg.webp');">
+
+    <article class="sound-card">
+
         <div class="sound-icon">◎</div>
-        <h3>Deep Om Chant</h3>
-        <p>A continuous vocal ambience for meditation and quiet reflection.</p>
+
+        <h3>
+            Deep Om Chant
+        </h3>
+
+        <p>
+            A continuous vocal ambience for meditation and
+            quiet reflection.
+        </p>
+
     </article>
 
-    <article class="sound-card" style="--sound-bg: url('assets/campfire_bg.webp');">
+
+    <article class="sound-card">
+
         <div class="sound-icon">✧</div>
-        <h3>Calming Campfire</h3>
-        <p>Warm crackling ambience for evening relaxation and reading.</p>
+
+        <h3>
+            Calming Campfire
+        </h3>
+
+        <p>
+            Warm crackling ambience for evening relaxation
+            and reading.
+        </p>
+
     </article>
 
-    <article class="sound-card" style="--sound-bg: url('assets/steamtrain_bg.webp');">
+
+    <article class="sound-card">
+
         <div class="sound-icon">→</div>
-        <h3>Soothing Steam Train</h3>
-        <p>A nostalgic rhythmic ambience with a gentle mechanical character.</p>
+
+        <h3>
+            Soothing Steam Train
+        </h3>
+
+        <p>
+            A nostalgic rhythmic ambience with a gentle
+            mechanical character.
+        </p>
+
     </article>
 
-    <article class="sound-card" style="--sound-bg: url('assets/cicadas_bg.webp');">
+
+    <article class="sound-card">
+
         <div class="sound-icon">☾</div>
-        <h3>Cicadas in the Evening</h3>
-        <p>A warm summer-night ambience for relaxation and sleep.</p>
+
+        <h3>
+            Cicadas in the Evening
+        </h3>
+
+        <p>
+            A warm summer-night ambience for relaxation
+            and sleep.
+        </p>
+
     </article>
 
-    <article class="sound-card" style="--sound-bg: url('assets/spaceship_bg.webp');">
+
+    <article class="sound-card">
+
         <div class="sound-icon">✦</div>
-        <h3>Deep Space Ambient</h3>
-        <p>A spacious atmospheric drone for concentration and quiet listening.</p>
+
+        <h3>
+            Deep Space Ambient
+        </h3>
+
+        <p>
+            A spacious atmospheric drone for concentration
+            and quiet listening.
+        </p>
+
     </article>
+
 
 </div>
 
