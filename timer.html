@@ -1,1089 +1,873 @@
 <!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Free Meditation Timer with Tibetan Bells & Nature Sounds | Meditation Bell Timer</title>
-
-<meta name="description" content="Free online meditation timer with authentic Tibetan bells, nature sounds, brown noise and interval bells. Start with a 5-minute session.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<!-- Favicons -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Free Meditation Timer with Bells & Sounds | Meditation Bell Timer</title><meta name="description" content="Use the free Meditation Bell Timer for mindfulness, meditation, sleep and focus. Set your session length, interval bells and calming soundscapes. No ads, no subscription, no account."><meta name="robots" content="index, follow"><link rel="canonical" href="https://meditationbelltimer.com/timer.html"><link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta property="og:type" content="website">
+<meta property="og:title" content="Free Meditation Timer with Bells & Sounds">
+<meta property="og:description" content="A simple meditation timer with authentic Tibetan bells, interval chimes and calming soundscapes.">
+<meta property="og:url" content="https://meditationbelltimer.com/timer.html">
+<meta property="og:image" content="https://meditationbelltimer.com/assets/bowl_bg.webp"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Meditation Timer with Bells & Sounds">
+<meta name="twitter:description" content="A simple meditation timer with authentic Tibetan bells, interval chimes and calming soundscapes.">
+<meta name="twitter:image" content="https://meditationbelltimer.com/assets/bowl_bg.webp"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"><style>
 
-<style>
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-    /* =========================================================
-       GLOBAL
-    ========================================================= */
+* {
+    box-sizing: border-box;
+}
 
-    * {
-        box-sizing: border-box;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    html {
-        margin: 0;
-        padding: 0;
-        background: #080908;
-        scroll-behavior: smooth;
-    }
+body {
+    margin: 0;
+    background: #080a09;
+    color: #f5f1e8;
+    font-family: "Inter", Arial, sans-serif;
+    line-height: 1.6;
+}
 
-    body {
-        margin: 0;
-        padding: 0;
-        background:
-            radial-gradient(circle at top, rgba(204, 169, 87, 0.035), transparent 35%),
-            #080908;
-        color: #f5f2e9;
-        font-family: 'Lato', sans-serif;
-        min-height: 100vh;
-    }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    a {
-        color: inherit;
-    }
+button {
+    font-family: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
 
 
-    /* =========================================================
-       WEBSITE HEADER
-    ========================================================= */
+/* =========================================================
+   SITEWIDE HEADER
+========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 84px;
+    background: rgba(7, 8, 7, 0.97);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.site-header-inner {
+    width: calc(100% - 48px);
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    flex-shrink: 0;
+}
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.brand-name {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    color: #f4eee2;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.desktop-nav a {
+    color: rgba(245, 241, 232, 0.78);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+    color: #d7b56d;
+}
+
+.mobile-menu-btn {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: #f5f1e8;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.mobile-menu-btn .material-icons {
+    font-size: 30px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            rgba(5, 8, 8, 0.45),
+            rgba(5, 8, 8, 0.78)
+        ),
+        url("/assets/bowl_bg.webp") center center / cover no-repeat;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212, 176, 104, 0.12),
+            transparent 48%
+        );
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(900px, calc(100% - 40px));
+    padding: 90px 20px;
+}
+
+.hero-eyebrow {
+    margin: 0 0 16px;
+    color: #d7b56d;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 0 auto 22px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: rgba(245, 241, 232, 0.82);
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   TIMER SECTION
+========================================================= */
+
+.timer-section {
+    padding: 80px 20px 100px;
+    background: #090b0a;
+}
+
+.timer-container {
+    width: min(1050px, 100%);
+    margin: 0 auto;
+}
+
+.timer-card {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    padding: 42px;
+    border-radius: 24px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.018)
+        );
+    border: 1px solid rgba(255,255,255,0.09);
+    box-shadow: 0 25px 80px rgba(0,0,0,0.35);
+}
+
+.timer-display {
+    text-align: center;
+    padding: 25px 10px 35px;
+}
+
+.timer-display-label {
+    margin-bottom: 12px;
+    color: rgba(245,241,232,0.55);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+#time-display {
+    font-size: clamp(64px, 12vw, 110px);
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #f5f1e8;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-status {
+    min-height: 26px;
+    margin-top: 16px;
+    text-align: center;
+    color: #d7b56d;
+    font-size: 14px;
+}
+
+.timer-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.timer-main-button {
+    min-height: 56px;
+    border: 1px solid rgba(215,181,109,0.65);
+    border-radius: 14px;
+    background: rgba(215,181,109,0.12);
+    color: #f4eee2;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.timer-main-button:hover {
+    background: rgba(215,181,109,0.2);
+    border-color: #d7b56d;
+    transform: translateY(-1px);
+}
+
+.timer-main-button.primary {
+    background: #d7b56d;
+    color: #11120f;
+}
+
+.timer-main-button.primary:hover {
+    background: #e0c17c;
+}
+
+
+/* =========================================================
+   TIMER SETTINGS
+========================================================= */
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.setting-card {
+    padding: 22px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.075);
+}
+
+.setting-card label {
+    display: block;
+    margin-bottom: 9px;
+    color: rgba(245,241,232,0.62);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.setting-card select,
+.setting-card input {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 13px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    background: #111412;
+    color: #f5f1e8;
+    font-size: 15px;
+    outline: none;
+}
+
+.setting-card select:focus,
+.setting-card input:focus {
+    border-color: rgba(215,181,109,0.7);
+}
+
+.setting-help {
+    margin-top: 8px;
+    color: rgba(245,241,232,0.45);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   VOLUME
+========================================================= */
+
+.volume-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.volume-row .material-icons {
+    color: #d7b56d;
+    font-size: 23px;
+}
+
+.volume-row input[type="range"] {
+    flex: 1;
+}
+
+
+/* =========================================================
+   SOUNDScapes
+========================================================= */
+
+.soundscapes {
+    margin-top: 28px;
+}
+
+.soundscapes h2 {
+    margin: 0 0 17px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.sound-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.sound-button {
+    min-height: 54px;
+    padding: 10px 12px;
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.025);
+    color: rgba(245,241,232,0.78);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sound-button:hover {
+    border-color: rgba(215,181,109,0.55);
+    color: #f5f1e8;
+}
+
+.sound-button.active {
+    border-color: #d7b56d;
+    background: rgba(215,181,109,0.12);
+    color: #f5f1e8;
+}
+
+.sound-name {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.sound-description {
+    display: block;
+    margin-top: 2px;
+    color: rgba(245,241,232,0.42);
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   PREMIUM CARD
+========================================================= */
+
+.premium-card {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(215,181,109,0.11),
+            rgba(255,255,255,0.025)
+        );
+    border: 1px solid rgba(215,181,109,0.24);
+}
+
+.premium-card h3 {
+    margin: 0 0 8px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 23px;
+}
+
+.premium-card p {
+    margin: 0 0 17px;
+    color: rgba(245,241,232,0.65);
+    font-size: 14px;
+}
+
+.premium-button {
+    min-height: 48px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 11px;
+    background: #d7b56d;
+    color: #11120f;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   INFORMATION SECTION
+========================================================= */
+
+.info-section {
+    padding: 95px 20px;
+    background: #0b0e0c;
+}
+
+.info-container {
+    width: min(1050px, 100%);
+    margin: 0 auto;
+}
+
+.section-heading {
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin: 0 0 16px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.15;
+}
+
+.section-heading p {
+    margin: 0;
+    color: rgba(245,241,232,0.62);
+    font-size: 16px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.info-card {
+    padding: 28px;
+    border-radius: 17px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.075);
+}
+
+.info-card .material-icons {
+    color: #d7b56d;
+    font-size: 28px;
+}
+
+.info-card h3 {
+    margin: 16px 0 8px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 22px;
+}
+
+.info-card p {
+    margin: 0;
+    color: rgba(245,241,232,0.58);
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   APP CTA
+========================================================= */
+
+.app-cta {
+    padding: 100px 20px;
+    text-align: center;
+    background:
+        linear-gradient(
+            rgba(7,9,8,0.88),
+            rgba(7,9,8,0.94)
+        ),
+        url("/assets/bowl_bg.webp") center / cover no-repeat;
+}
+
+.app-cta-inner {
+    width: min(780px, 100%);
+    margin: 0 auto;
+}
+
+.app-cta h2 {
+    margin: 0 0 15px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(34px, 5vw, 52px);
+}
+
+.app-cta p {
+    margin: 0 auto 28px;
+    color: rgba(245,241,232,0.68);
+    font-size: 16px;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 25px;
+    border-radius: 11px;
+    background: #d7b56d;
+    color: #11120f;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    padding: 65px 20px 35px;
+    background: #060706;
+    border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer-inner {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 45px;
+}
+
+.footer-brand {
+    max-width: 380px;
+}
+
+.footer-brand-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.footer-brand-name img {
+    width: 42px;
+    height: 42px;
+    border-radius: 9px;
+}
+
+.footer-brand-name span {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+.footer-brand p {
+    margin: 0;
+    color: rgba(245,241,232,0.5);
+    font-size: 13px;
+}
+
+.footer-column h3 {
+    margin: 0 0 16px;
+    color: #f5f1e8;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.footer-column a {
+    display: block;
+    width: fit-content;
+    margin-bottom: 10px;
+    color: rgba(245,241,232,0.52);
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: #d7b56d;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    color: rgba(245,241,232,0.4);
+    font-size: 12px;
+}
+
+.footer-bottom a:hover {
+    color: #d7b56d;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
 
     .site-header {
-        position: relative;
-        z-index: 1000;
-        width: 100%;
-        height: 84px;
-
-        background: rgba(7, 8, 7, 0.97);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-        display: flex;
-        align-items: center;
+        height: 76px;
     }
 
     .site-header-inner {
-        width: min(1400px, calc(100% - 48px));
-        margin: 0 auto;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-    }
-
-    .brand {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-
-        text-decoration: none;
-        min-width: 0;
+        width: calc(100% - 32px);
     }
 
     .brand-icon {
-        width: 48px;
-        height: 48px;
-        object-fit: contain;
-        border-radius: 11px;
-        flex-shrink: 0;
-    }
-
-    .brand-name {
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        color: #f3f0e7;
-        white-space: nowrap;
+        width: 42px;
+        height: 42px;
     }
 
     .desktop-nav {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .desktop-nav a {
-        color: rgba(245, 242, 233, 0.75);
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 500;
-        transition: color 0.25s ease;
-    }
-
-    .desktop-nav a:hover {
-        color: #e0bd67;
-    }
-
-    .desktop-nav .nav-cta {
-        padding: 11px 20px;
-        border: 1px solid rgba(224, 189, 103, 0.65);
-        border-radius: 30px;
-        color: #e5c775;
-    }
-
-    .desktop-nav .nav-cta:hover {
-        background: rgba(224, 189, 103, 0.10);
+        display: none;
     }
 
     .mobile-menu-btn {
-        width: 48px;
-        height: 48px;
-
-        display: none;
+        display: flex;
         align-items: center;
         justify-content: center;
-
-        border: 0;
-        background: transparent;
-        color: #f5f2e9;
-        cursor: pointer;
-        padding: 0;
     }
-
-    .mobile-menu-btn .material-icons {
-        font-size: 34px;
-    }
-
-
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
 
     .mobile-menu {
         position: fixed;
-        top: 84px;
+        top: 76px;
         left: 0;
         right: 0;
-
         z-index: 999;
-
-        background: rgba(8, 9, 8, 0.98);
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-
-        padding: 18px 24px 24px;
-
         display: none;
+        flex-direction: column;
+        padding: 10px 18px 20px;
+        background: rgba(7,8,7,0.985);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 18px 35px rgba(0,0,0,0.35);
+        max-height: calc(100vh - 76px);
+        overflow-y: auto;
     }
 
     .mobile-menu.open {
-        display: block;
+        display: flex;
     }
 
     .mobile-menu a {
-        display: flex;
-        align-items: center;
-
-        min-height: 52px;
-
-        color: #f3f0e7;
-        text-decoration: none;
-
-        font-size: 16px;
-        font-weight: 500;
-
+        padding: 15px 4px;
         border-bottom: 1px solid rgba(255,255,255,0.06);
+        color: rgba(245,241,232,0.82);
+        font-size: 15px;
+        font-weight: 500;
     }
 
     .mobile-menu a:last-child {
-        border-bottom: none;
+        border-bottom: 0;
     }
 
+    .mobile-menu a:hover,
     .mobile-menu a.active {
-        color: #e2bf69;
+        color: #d7b56d;
     }
 
-
-    /* =========================================================
-       PAGE INTRO
-    ========================================================= */
-
-    .timer-page {
-        width: min(1180px, calc(100% - 40px));
-        margin: 0 auto;
-        padding: 42px 0 70px;
+    .hero {
+        min-height: 470px;
     }
 
-    .breadcrumbs {
-        display: flex;
-        align-items: center;
+    .timer-card {
+        padding: 30px 22px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .site-header {
+        height: 74px;
+    }
+
+    .site-header-inner {
+        width: calc(100% - 24px);
+    }
+
+    .brand {
         gap: 10px;
-
-        margin-bottom: 28px;
-
-        font-size: 14px;
-        color: rgba(245,242,233,0.48);
     }
 
-    .breadcrumbs a {
-        color: #d9b866;
-        text-decoration: none;
-    }
-
-    .breadcrumbs .material-icons {
-        font-size: 16px;
-        opacity: 0.5;
-    }
-
-    .page-heading {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .eyebrow {
-        margin-bottom: 12px;
-
-        color: #dfbd6a;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-    }
-
-    .page-heading h1 {
-        margin: 0 0 12px;
-
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(38px, 5vw, 62px);
-        line-height: 1.05;
-        font-weight: 500;
-        color: #f6f2e9;
-    }
-
-    .page-heading p {
-        max-width: 680px;
-        margin: 0 auto;
-
-        color: rgba(245,242,233,0.66);
-        font-size: 17px;
-        line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       TIMER CONTAINER
-    ========================================================= */
-
-    .timer-shell {
-        width: 100%;
-
-        display: flex;
-        justify-content: center;
-    }
-
-    #phone-wrapper {
-        position: relative;
-
-        width: min(520px, 100%);
-
-        min-height: 720px;
-        height: min(820px, calc(100vh - 190px));
-
-        background: #111311;
-
-        overflow: hidden;
-
-        border: 1px solid rgba(255,255,255,0.12);
-        border-radius: 32px;
-
-        box-shadow:
-            0 30px 90px rgba(0,0,0,0.55),
-            0 0 0 1px rgba(255,255,255,0.02);
-
-        isolation: isolate;
-    }
-
-    #bg-image {
-        position: absolute;
-        inset: 0;
-
-        background-size: cover;
-        background-position: center;
-
-        opacity: 0.62;
-
-        transition:
-            background-image 0.8s ease,
-            opacity 0.5s ease;
-
-        z-index: 0;
-    }
-
-    #bg-overlay {
-        position: absolute;
-        inset: 0;
-
-        background:
-            linear-gradient(
-                to bottom,
-                rgba(0,0,0,0.62) 0%,
-                rgba(0,0,0,0.26) 30%,
-                rgba(0,0,0,0.40) 60%,
-                rgba(0,0,0,0.82) 100%
-            );
-
-        z-index: 1;
-    }
-
-
-    /* =========================================================
-       TIMER APP UI
-    ========================================================= */
-
-    #app-ui {
-        position: relative;
-
-        z-index: 2;
-
-        min-height: 100%;
-        height: 100%;
-
-        display: flex;
-        flex-direction: column;
-
-        padding: 28px 26px 26px;
-    }
-
-    .timer-app-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        margin-bottom: 18px;
-    }
-
-    .timer-app-title {
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 2.5px;
-        color: rgba(255,255,255,0.72);
-    }
-
-    .app-icon-btn {
+    .brand-icon {
         width: 40px;
         height: 40px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 50%;
-
-        border: 1px solid rgba(255,255,255,0.16);
-        background: rgba(0,0,0,0.18);
-
-        color: rgba(255,255,255,0.72);
-
-        cursor: pointer;
+        border-radius: 9px;
     }
 
-    .app-icon-btn .material-icons {
-        font-size: 20px;
-    }
-
-
-    /* =========================================================
-       TIMER DISPLAY
-    ========================================================= */
-
-    .timer-display-area {
-        text-align: center;
-
-        padding: 14px 0 20px;
-    }
-
-    #timer-display {
-        font-family: 'Lato', sans-serif;
-
-        font-size: clamp(56px, 12vw, 78px);
-        line-height: 1;
-
-        font-weight: 300;
-        letter-spacing: 2px;
-
-        color: #fff;
-
-        text-shadow: 0 4px 25px rgba(0,0,0,0.45);
-
-        font-variant-numeric: tabular-nums;
-    }
-
-    .timer-status {
-        margin-top: 10px;
-
+    .brand-name {
         font-size: 11px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-
-        color: rgba(255,255,255,0.52);
-    }
-
-
-    /* =========================================================
-       SOUND GRID
-    ========================================================= */
-
-    #fade-wrapper {
-        transition:
-            opacity 0.35s ease,
-            transform 0.35s ease;
-    }
-
-    #sound-grid {
-        display: grid;
-
-        grid-template-columns: repeat(4, 1fr);
-
-        gap: 7px;
-
-        margin-bottom: 20px;
-    }
-
-    .sound-card {
-        min-height: 66px;
-
-        padding: 7px 3px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        text-align: center;
-
-        background: rgba(10,10,10,0.18);
-
-        border: 1px solid rgba(255,255,255,0.13);
-
-        border-radius: 11px;
-
-        color: rgba(255,255,255,0.72);
-
-        cursor: pointer;
-
-        transition:
-            background 0.2s ease,
-            border-color 0.2s ease,
-            transform 0.2s ease;
-    }
-
-    .sound-card:hover {
-        transform: translateY(-1px);
-
-        background: rgba(255,255,255,0.10);
-    }
-
-    .sound-card.selected {
-        background: rgba(224,189,103,0.18);
-
-        border-color: rgba(224,189,103,0.75);
-
-        color: #f4d98b;
-
-        box-shadow:
-            inset 0 0 0 1px rgba(224,189,103,0.08),
-            0 5px 20px rgba(0,0,0,0.16);
-    }
-
-    .sound-card .material-icons {
-        font-size: 21px;
-        margin-bottom: 4px;
-    }
-
-    .sound-card .title {
-        font-size: 9px;
-        line-height: 1.1;
-        font-weight: 700;
-    }
-
-
-    /* =========================================================
-       SETTINGS
-    ========================================================= */
-
-    .controls-area {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-
-        margin-bottom: 20px;
-    }
-
-    .control-box {
-        padding: 11px 12px 12px;
-
-        border-radius: 12px;
-
-        background: rgba(0,0,0,0.20);
-
-        border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .control-box label {
-        display: block;
-
-        margin-bottom: 7px;
-
-        color: rgba(255,255,255,0.50);
-
-        font-size: 9px;
-        font-weight: 700;
-        letter-spacing: 1.2px;
-        text-transform: uppercase;
-    }
-
-    .dropdown {
-        width: 100%;
-
-        appearance: auto;
-
-        background: rgba(255,255,255,0.07);
-
-        border: 1px solid rgba(255,255,255,0.16);
-
-        color: #fff;
-
-        padding: 9px 8px;
-
-        border-radius: 8px;
-
-        font-family: 'Lato', sans-serif;
-        font-size: 12px;
-        font-weight: 700;
-
-        outline: none;
-    }
-
-    .dropdown:focus {
-        border-color: rgba(224,189,103,0.7);
-    }
-
-    .dropdown option {
-        background: #151715;
-        color: #fff;
-    }
-
-
-    /* =========================================================
-       BOTTOM CONTROLS
-    ========================================================= */
-
-    .bottom-controls {
-        margin-top: auto;
-
-        padding-top: 16px;
-    }
-
-    .volume-row {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        max-width: 360px;
-        margin: 0 auto 18px;
-    }
-
-    .volume-row .material-icons {
-        color: rgba(255,255,255,0.54);
-        font-size: 18px;
-    }
-
-    .volume-row input[type=range] {
-        flex: 1;
-
-        height: 4px;
-
-        accent-color: #dfbd6a;
-
-        cursor: pointer;
-    }
-
-    .play-area {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        padding-bottom: max(4px, env(safe-area-inset-bottom));
-    }
-
-    #play-btn {
-        width: 78px;
-        height: 78px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 50%;
-
-        border: 1px solid rgba(224,189,103,0.72);
-
-        background:
-            radial-gradient(
-                circle,
-                rgba(224,189,103,0.20),
-                rgba(0,0,0,0.20)
-            );
-
-        color: #f6dc95;
-
-        cursor: pointer;
-
-        box-shadow:
-            0 8px 35px rgba(0,0,0,0.30);
-
-        transition:
-            transform 0.2s ease,
-            background 0.2s ease;
-    }
-
-    #play-btn:hover {
-        transform: scale(1.04);
-
-        background:
-            radial-gradient(
-                circle,
-                rgba(224,189,103,0.32),
-                rgba(0,0,0,0.20)
-            );
-    }
-
-    #play-btn:active {
-        transform: scale(0.97);
-    }
-
-    #play-btn .material-icons {
-        font-size: 38px;
-    }
-
-    .play-caption {
-        text-align: center;
-
-        margin-top: 9px;
-
-        font-size: 9px;
         letter-spacing: 1.5px;
-        text-transform: uppercase;
-
-        color: rgba(255,255,255,0.42);
     }
 
-
-    /* =========================================================
-       BLACK SCREEN
-    ========================================================= */
-
-    #black-screen {
-        position: absolute;
-        inset: 0;
-
-        z-index: 10;
-
-        display: none;
-
-        background: #000;
-
-        cursor: pointer;
+    .mobile-menu {
+        top: 74px;
+        max-height: calc(100vh - 74px);
     }
 
-
-    /* =========================================================
-       PREMIUM MODAL
-    ========================================================= */
-
-    #premium-modal {
-        position: absolute;
-        inset: 0;
-
-        z-index: 100;
-
-        display: none;
-
-        align-items: center;
-        justify-content: center;
-
-        padding: 24px;
-
-        background: rgba(0,0,0,0.82);
-
-        backdrop-filter: blur(12px);
+    .hero {
+        min-height: 430px;
     }
 
-    .modal-content {
-        position: relative;
-
-        width: 100%;
-        max-width: 350px;
-
-        padding: 36px 25px 30px;
-
-        text-align: center;
-
-        background:
-            linear-gradient(
-                145deg,
-                #20221f,
-                #111311
-            );
-
-        border: 1px solid rgba(224,189,103,0.28);
-
-        border-radius: 22px;
-
-        box-shadow:
-            0 30px 80px rgba(0,0,0,0.65);
+    .hero-content {
+        width: calc(100% - 30px);
+        padding: 70px 10px;
     }
 
-    .close-btn {
-        position: absolute;
-
-        top: 13px;
-        right: 13px;
-
-        width: 36px;
-        height: 36px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border: 0;
-        border-radius: 50%;
-
-        background: transparent;
-
-        color: rgba(255,255,255,0.45);
-
-        cursor: pointer;
-    }
-
-    .close-btn:hover {
-        color: #fff;
-    }
-
-    .lock-icon {
-        display: block;
-
-        margin-bottom: 14px;
-
-        color: #e0bd67;
-
+    .hero h1 {
         font-size: 43px;
     }
 
-    .modal-content h3 {
-        margin: 0 0 10px;
-
-        font-family: 'Playfair Display', serif;
-
-        font-size: 27px;
-        font-weight: 500;
-
-        color: #f6f2e9;
-    }
-
-    .modal-content p {
-        margin: 0 auto 24px;
-
-        color: rgba(255,255,255,0.65);
-
-        font-size: 14px;
-        line-height: 1.65;
-    }
-
-    .premium-benefits {
-        margin: 0 0 25px;
-        padding: 0;
-
-        list-style: none;
-
-        text-align: left;
-    }
-
-    .premium-benefits li {
-        display: flex;
-        align-items: center;
-        gap: 9px;
-
-        margin-bottom: 9px;
-
-        color: rgba(255,255,255,0.76);
-
-        font-size: 12px;
-    }
-
-    .premium-benefits .material-icons {
-        color: #dfbd6a;
+    .hero p {
         font-size: 16px;
     }
 
-    .google-play-badge {
-        display: inline-block;
+    .timer-section {
+        padding: 55px 14px 70px;
     }
 
-    .google-play-badge img {
-        height: 56px;
-        width: auto;
-        display: block;
+    .timer-card {
+        padding: 22px 15px;
+        border-radius: 18px;
     }
 
-
-    /* =========================================================
-       BELOW TIMER
-    ========================================================= */
-
-    .timer-note {
-        max-width: 680px;
-
-        margin: 34px auto 0;
-
-        text-align: center;
-
-        color: rgba(245,242,233,0.50);
-
-        font-size: 13px;
-        line-height: 1.7;
+    .timer-controls {
+        grid-template-columns: 1fr;
     }
 
-    .timer-note strong {
-        color: rgba(245,242,233,0.75);
+    .settings-grid {
+        grid-template-columns: 1fr;
     }
 
-
-    /* =========================================================
-       MOBILE
-    ========================================================= */
-
-    @media (max-width: 900px) {
-
-        .site-header {
-            height: 76px;
-        }
-
-        .site-header-inner {
-            width: calc(100% - 30px);
-        }
-
-        .brand-icon {
-            width: 42px;
-            height: 42px;
-        }
-
-        .brand-name {
-            font-size: 17px;
-            letter-spacing: 1.5px;
-        }
-
-        .desktop-nav {
-            display: none;
-        }
-
-        .mobile-menu-btn {
-            display: flex;
-        }
-
-        .mobile-menu {
-            top: 76px;
-        }
-
-        .timer-page {
-            width: calc(100% - 24px);
-            padding-top: 22px;
-            padding-bottom: 40px;
-        }
-
-        .breadcrumbs {
-            margin-bottom: 20px;
-        }
-
-        .page-heading {
-            margin-bottom: 22px;
-        }
-
-        .page-heading p {
-            font-size: 15px;
-        }
-
-        #phone-wrapper {
-            min-height: 690px;
-            height: auto;
-        }
+    .sound-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-
-    @media (max-width: 600px) {
-
-        .site-header {
-            height: 74px;
-        }
-
-        .site-header-inner {
-            width: calc(100% - 24px);
-        }
-
-        .brand {
-            gap: 11px;
-        }
-
-        .brand-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 9px;
-        }
-
-        .brand-name {
-            font-size: 15px;
-            letter-spacing: 1.2px;
-        }
-
-        .mobile-menu {
-            top: 74px;
-        }
-
-        .timer-page {
-            width: 100%;
-            padding: 18px 12px 36px;
-        }
-
-        .breadcrumbs {
-            padding: 0 5px;
-            font-size: 13px;
-        }
-
-        .page-heading {
-            padding: 0 8px;
-            margin-bottom: 18px;
-        }
-
-        .eyebrow {
-            font-size: 10px;
-            letter-spacing: 3px;
-        }
-
-        .page-heading h1 {
-            font-size: 38px;
-        }
-
-        .page-heading p {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        #phone-wrapper {
-            width: 100%;
-            min-height: 690px;
-            border-radius: 24px;
-        }
-
-        #app-ui {
-            padding: 22px 16px 20px;
-        }
-
-        .timer-display-area {
-            padding: 8px 0 16px;
-        }
-
-        #timer-display {
-            font-size: 58px;
-        }
-
-        #sound-grid {
-            gap: 5px;
-            margin-bottom: 16px;
-        }
-
-        .sound-card {
-            min-height: 61px;
-            border-radius: 9px;
-        }
-
-        .sound-card .material-icons {
-            font-size: 19px;
-        }
-
-        .sound-card .title {
-            font-size: 8px;
-        }
-
-        .controls-area {
-            gap: 8px;
-            margin-bottom: 12px;
-        }
-
-        .control-box {
-            padding: 9px;
-        }
-
-        .dropdown {
-            font-size: 11px;
-            padding: 8px 6px;
-        }
-
-        .volume-row {
-            margin-bottom: 14px;
-        }
-
-        #play-btn {
-            width: 72px;
-            height: 72px;
-        }
-
-        #play-btn .material-icons {
-            font-size: 35px;
-        }
-
-        .timer-note {
-            font-size: 12px;
-            padding: 0 12px;
-        }
+    .info-section {
+        padding: 70px 16px;
     }
 
-
-    @media (max-width: 380px) {
-
-        .brand-name {
-            font-size: 13px;
-        }
-
-        .brand-icon {
-            width: 37px;
-            height: 37px;
-        }
-
-        #phone-wrapper {
-            min-height: 660px;
-        }
-
-        #timer-display {
-            font-size: 52px;
-        }
-
-        .sound-card {
-            min-height: 57px;
-        }
-
-        .sound-card .title {
-            font-size: 7px;
-        }
-
-        .controls-area {
-            grid-template-columns: 1fr;
-        }
-
-        .bottom-controls {
-            padding-top: 8px;
-        }
+    .app-cta {
+        padding: 75px 18px;
     }
 
-</style>
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
 
-</head><body><!-- =========================================================
-     WEBSITE HEADER
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+</style><!-- =========================================================
+     STRUCTURED DATA
+========================================================= --><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Free Meditation Timer with Bells & Sounds",
+  "url": "https://meditationbelltimer.com/timer.html",
+  "description": "A free meditation timer with interval bells, calming soundscapes and flexible session durations.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Meditation Bell Timer",
+    "url": "https://meditationbelltimer.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Future Home Tek",
+    "url": "https://meditationbelltimer.com/"
+  }
+}
+</script></head><body><!-- =========================================================
+     SITEWIDE HEADER
 ========================================================= --><header class="site-header"><div class="site-header-inner">
 
     <a href="/" class="brand" aria-label="Meditation Bell Timer home">
@@ -1103,22 +887,24 @@
 
     <nav class="desktop-nav" aria-label="Main navigation">
 
-        <a href="/">Home</a>
-
-        <a href="/timer.html">
-            Timer
+        <a href="/">
+            Home
         </a>
 
-        <a href="/best-meditation-sounds">
-            Meditation Sounds
+        <a href="/timer.html" class="active">
+            Free Timer
+        </a>
+
+        <a href="/our-apps.html">
+            Our Apps
         </a>
 
         <a href="/solfeggio-healing-frequencies.html">
             Solfeggio
         </a>
 
-        <a href="/our-apps.html">
-            Our Apps
+        <a href="/best-meditation-sounds">
+            Sounds
         </a>
 
     </nav>
@@ -1127,8 +913,10 @@
     <button
         class="mobile-menu-btn"
         id="mobile-menu-btn"
-        aria-label="Open menu"
+        type="button"
+        aria-label="Open navigation menu"
         aria-expanded="false"
+        aria-controls="mobile-menu"
     >
         <span class="material-icons" id="menu-icon">
             menu
@@ -1137,1360 +925,1197 @@
 
 </div>
 
-</header><!-- =========================================================
-     MOBILE MENU
-========================================================= --><nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation"><a href="/">
+</header><nav
+    class="mobile-menu"
+    id="mobile-menu"
+    aria-label="Mobile navigation"
+><a href="/">
     Home
 </a>
 
 <a href="/timer.html" class="active">
-    Meditation Timer
-</a>
-
-<a href="/best-meditation-sounds">
-    Best Meditation Sounds
-</a>
-
-<a href="/solfeggio-healing-frequencies.html">
-    Solfeggio Frequencies
+    Free Meditation Timer
 </a>
 
 <a href="/our-apps.html">
     Our Apps
 </a>
 
+<a href="/best-meditation-sounds">
+    Best Meditation Sounds
+</a>
+
+<a href="/sleep-meditation-sounds">
+    Sleep Meditation Sounds
+</a>
+
+<a href="/brown-noise-for-adhd-focus">
+    Brown Noise for Focus
+</a>
+
+<a href="/white-noise-meditation-timer">
+    White Noise Timer
+</a>
+
+<a href="/solfeggio-healing-frequencies.html">
+    Solfeggio Frequencies
+</a>
+
+<a href="/how-to-use-a-meditation-timer">
+    How to Use a Meditation Timer
+</a>
+
+<a href="/how-long-should-you-meditate">
+    How Long Should You Meditate?
+</a>
+
+<a href="/how-tibetan-singing-bowls-work">
+    How Tibetan Singing Bowls Work
+</a>
+
 </nav><!-- =========================================================
-     PAGE
-========================================================= --><main class="timer-page"><div class="breadcrumbs">
+     HERO
+========================================================= --><section class="hero"><div class="hero-content">
 
-    <a href="/">
-        Home
-    </a>
-
-    <span class="material-icons">
-        chevron_right
-    </span>
-
-    <span>
-        Meditation Timer
-    </span>
-
-</div>
-
-
-<section class="page-heading">
-
-    <div class="eyebrow">
-        FREE ONLINE TIMER
-    </div>
+    <p class="hero-eyebrow">
+        Free Online Meditation Timer
+    </p>
 
     <h1>
-        Meditation Timer
+        Meditation, without the noise.
     </h1>
 
     <p>
-        Set your time, choose a sound and settle into your practice.
-        Start free with a five-minute session and use interval bells
-        to mark your practice without checking the clock.
+        A beautifully simple meditation timer with authentic Tibetan
+        bells, flexible intervals and calming soundscapes for
+        mindfulness, sleep, focus and relaxation.
     </p>
 
-</section>
+</div>
 
-
-<!-- =====================================================
+</section><!-- =========================================================
      TIMER
-====================================================== -->
+========================================================= --><main><section class="timer-section"><div class="timer-container">
 
-<div class="timer-shell">
+    <div class="timer-card">
 
-    <div id="phone-wrapper">
+        <div class="timer-display">
 
-        <div id="bg-image"></div>
-
-        <div id="bg-overlay"></div>
-
-
-        <div id="app-ui">
-
-
-            <!-- APP HEADER -->
-
-            <div class="timer-app-header">
-
-                <div class="timer-app-title">
-                    MEDITATION BELL TIMER
-                </div>
-
-                <button
-                    class="app-icon-btn"
-                    id="dark-mode-btn"
-                    aria-label="Black screen mode"
-                    title="Black screen mode"
-                >
-                    <span class="material-icons">
-                        dark_mode
-                    </span>
-                </button>
-
+            <div class="timer-display-label">
+                Meditation Timer
             </div>
 
-
-            <!-- TIMER -->
-
-            <div class="timer-display-area">
-
-                <div id="timer-display">
-                    05:00
-                </div>
-
-                <div
-                    class="timer-status"
-                    id="timer-status"
-                >
-                    Ready when you are
-                </div>
-
+            <div id="time-display">
+                05:00
             </div>
 
-
-            <!-- SOUND + SETTINGS -->
-
-            <div id="fade-wrapper">
-
-
-                <div id="sound-grid"></div>
-
-
-                <div class="controls-area">
-
-
-                    <div class="control-box">
-
-                        <label for="duration-select">
-                            Duration
-                        </label>
-
-                        <select
-                            id="duration-select"
-                            class="dropdown"
-                        ></select>
-
-                    </div>
-
-
-                    <div class="control-box">
-
-                        <label for="interval-select">
-                            Bell Interval
-                        </label>
-
-                        <select
-                            id="interval-select"
-                            class="dropdown"
-                        ></select>
-
-                    </div>
-
-
-                </div>
-
-
+            <div
+                id="timer-status"
+                class="timer-status"
+                aria-live="polite"
+            >
+                Ready when you are.
             </div>
-
-
-            <!-- BOTTOM CONTROLS -->
-
-            <div class="bottom-controls">
-
-
-                <div class="volume-row">
-
-                    <span class="material-icons">
-                        volume_up
-                    </span>
-
-                    <input
-                        type="range"
-                        id="volume-slider"
-                        min="0"
-                        max="1"
-                        step="0.01"
-                        value="0.5"
-                        aria-label="Volume"
-                    >
-
-                </div>
-
-
-                <div class="play-area">
-
-                    <div>
-
-                        <button
-                            id="play-btn"
-                            aria-label="Start meditation"
-                        >
-                            <span
-                                class="material-icons"
-                                id="play-icon"
-                            >
-                                play_arrow
-                            </span>
-                        </button>
-
-                        <div
-                            class="play-caption"
-                            id="play-caption"
-                        >
-                            Start session
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
 
         </div>
 
 
-        <!-- =================================================
-             BLACK SCREEN
-        ================================================== -->
+        <div class="timer-controls">
 
-        <div id="black-screen"></div>
+            <button
+                id="start-button"
+                class="timer-main-button primary"
+                type="button"
+            >
+                Start
+            </button>
+
+            <button
+                id="pause-button"
+                class="timer-main-button"
+                type="button"
+            >
+                Pause
+            </button>
+
+            <button
+                id="reset-button"
+                class="timer-main-button"
+                type="button"
+            >
+                Reset
+            </button>
+
+        </div>
 
 
-        <!-- =================================================
-             PREMIUM MODAL
-        ================================================== -->
+        <div class="settings-grid">
 
-        <div id="premium-modal">
+            <div class="setting-card">
 
-            <div class="modal-content">
+                <label for="duration-select">
+                    Duration
+                </label>
+
+                <select id="duration-select">
+
+                    <option value="5">
+                        5 minutes
+                    </option>
+
+                    <option value="10">
+                        10 minutes
+                    </option>
+
+                    <option value="15">
+                        15 minutes
+                    </option>
+
+                    <option value="20">
+                        20 minutes
+                    </option>
+
+                    <option value="30">
+                        30 minutes
+                    </option>
+
+                    <option value="45">
+                        45 minutes
+                    </option>
+
+                    <option value="60">
+                        60 minutes
+                    </option>
+
+                </select>
+
+                <div class="setting-help">
+                    Choose the length of your meditation session.
+                </div>
+
+            </div>
 
 
-                <button
-                    class="close-btn"
-                    id="close-modal-btn"
-                    aria-label="Close"
-                >
-                    <span class="material-icons">
-                        close
-                    </span>
-                </button>
+            <div class="setting-card">
+
+                <label for="interval-select">
+                    Interval Bell
+                </label>
+
+                <select id="interval-select">
+
+                    <option value="0">
+                        Off
+                    </option>
+
+                    <option value="1">
+                        Every 1 minute
+                    </option>
+
+                    <option value="5">
+                        Every 5 minutes
+                    </option>
+
+                    <option value="10">
+                        Every 10 minutes
+                    </option>
+
+                    <option value="15">
+                        Every 15 minutes
+                    </option>
+
+                    <option value="20">
+                        Every 20 minutes
+                    </option>
+
+                </select>
+
+                <div class="setting-help">
+                    Optional interval chimes help mark time without checking the screen.
+                </div>
+
+            </div>
+
+        </div>
 
 
-                <span class="material-icons lock-icon">
-                    lock
+        <div class="setting-card" style="margin-top:18px;">
+
+            <label>
+                Volume
+            </label>
+
+            <div class="volume-row">
+
+                <span class="material-icons">
+                    volume_down
                 </span>
 
-
-                <h3>
-                    Unlock Extended Sessions
-                </h3>
-
-
-                <p>
-                    The free web timer includes a five-minute session.
-                    Extended sessions are available in the full
-                    Meditation Bell Timer app.
-                </p>
-
-
-                <ul class="premium-benefits">
-
-                    <li>
-                        <span class="material-icons">
-                            check
-                        </span>
-                        Sessions from 10 minutes up to 8 hours
-                    </li>
-
-                    <li>
-                        <span class="material-icons">
-                            check
-                        </span>
-                        12 immersive soundscapes
-                    </li>
-
-                    <li>
-                        <span class="material-icons">
-                            check
-                        </span>
-                        Custom interval bells
-                    </li>
-
-                    <li>
-                        <span class="material-icons">
-                            check
-                        </span>
-                        One-time purchase
-                    </li>
-
-                    <li>
-                        <span class="material-icons">
-                            check
-                        </span>
-                        No monthly subscription
-                    </li>
-
-                </ul>
-
-
-                <a
-                    class="google-play-badge"
-                    href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <input
+                    id="volume-control"
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0.8"
+                    aria-label="Volume"
                 >
 
-                    <img
-                        src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                        alt="Get it on Google Play"
-                    >
-
-                </a>
-
+                <span class="material-icons">
+                    volume_up
+                </span>
 
             </div>
 
         </div>
 
+
+        <div class="soundscapes">
+
+            <h2>
+                Soundscapes
+            </h2>
+
+            <div class="sound-grid">
+
+                <button
+                    class="sound-button active"
+                    data-sound="none"
+                    type="button"
+                >
+                    <span class="sound-name">
+                        Silence
+                    </span>
+                    <span class="sound-description">
+                        Bell only
+                    </span>
+                </button>
+
+
+                <button
+                    class="sound-button"
+                    data-sound="rain"
+                    type="button"
+                >
+                    <span class="sound-name">
+                        Rain
+                    </span>
+                    <span class="sound-description">
+                        Gentle rainfall
+                    </span>
+                </button>
+
+
+                <button
+                    class="sound-button"
+                    data-sound="waves"
+                    type="button"
+                >
+                    <span class="sound-name">
+                        Ocean Waves
+                    </span>
+                    <span class="sound-description">
+                        Calm coastal ambience
+                    </span>
+                </button>
+
+
+                <button
+                    class="sound-button"
+                    data-sound="forest"
+                    type="button"
+                >
+                    <span class="sound-name">
+                        Forest
+                    </span>
+                    <span class="sound-description">
+                        Natural woodland ambience
+                    </span>
+                </button>
+
+
+                <button
+                    class="sound-button"
+                    data-sound="birds"
+                    type="button"
+                >
+                    <span class="sound-name">
+                        Birds
+                    </span>
+                    <span class="sound-description">
+                        Peaceful birdsong
+                    </span>
+                </button>
+
+
+                <button
+                    class="sound-button"
+                    data-sound="brownnoise"
+                    type="button"
+                >
+                    <span class="sound-name">
+                        Brown Noise
+                    </span>
+                    <span class="sound-description">
+                        Deep steady background noise
+                    </span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="premium-card">
+
+            <h3>
+                Want longer sessions?
+            </h3>
+
+            <p>
+                The Meditation Bell Timer app gives you extended sessions,
+                more soundscapes and additional controls, with a simple
+                one-time premium upgrade.
+            </p>
+
+            <a
+                class="premium-button"
+                href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+                target="_blank"
+                rel="noopener"
+            >
+                Get the App
+            </a>
+
+        </div>
 
     </div>
 
 </div>
 
+</section><!-- =========================================================
+     INFORMATION
+========================================================= --><section class="info-section"><div class="info-container">
 
-<p class="timer-note">
+    <div class="section-heading">
 
-    <strong>Free 5-minute meditation timer.</strong>
-    Choose your sound, set an optional bell interval and begin.
-    Sessions of 10 minutes or longer are available in the full app.
+        <h2>
+            A simple timer for your practice
+        </h2>
 
-</p>
+        <p>
+            Set your time, choose whether you want interval bells,
+            select a soundscape and begin. No account or complicated
+            setup is required.
+        </p>
 
-</main><!-- =========================================================
-     JAVASCRIPT
-========================================================= --><script>
-
-(function() {
-
-    'use strict';
-
-
-    /* =========================================================
-       SOUNDS
-    ========================================================= */
-
-    const sounds = [
-
-        {
-            id: "bellOnly",
-            name: "Silence & Tibetan Bell",
-            icon: "notifications_active",
-            audio: "",
-            img: "assets/bowl_bg.webp"
-        },
-
-        {
-            id: "rain",
-            name: "Soothing Rain Storm",
-            icon: "water_drop",
-            audio: "assets/rain.ogg",
-            img: "assets/rain_bg.webp"
-        },
-
-        {
-            id: "waves",
-            name: "Crashing Waves",
-            icon: "waves",
-            audio: "assets/waves.ogg",
-            img: "assets/waves_bg.webp"
-        },
-
-        {
-            id: "birds",
-            name: "Bird Song",
-            icon: "flutter_dash",
-            audio: "assets/birds.ogg",
-            img: "assets/birds_bg.webp"
-        },
-
-        {
-            id: "forest",
-            name: "Rain Forest",
-            icon: "forest",
-            audio: "assets/forest.ogg",
-            img: "assets/forest_bg.webp"
-        },
-
-        {
-            id: "bowl",
-            name: "Tibetan Singing Bowl",
-            icon: "surround_sound",
-            audio: "assets/bowl.ogg",
-            img: "assets/bowl_bg.webp"
-        },
-
-        {
-            id: "omchant",
-            name: "Deep Omm Chant",
-            icon: "self_improvement",
-            audio: "assets/omchant.ogg",
-            img: "assets/omchant_bg.webp"
-        },
-
-        {
-            id: "steamtrain",
-            name: "Soothing Steam Train",
-            icon: "train",
-            audio: "assets/steamtrain.ogg",
-            img: "assets/steamtrain_bg.webp"
-        },
-
-        {
-            id: "spaceship",
-            name: "Deep Space Ambient",
-            icon: "rocket_launch",
-            audio: "assets/spaceship.ogg",
-            img: "assets/spaceship_bg.webp"
-        },
-
-        {
-            id: "campfire",
-            name: "Calming Camp Fire",
-            icon: "local_fire_department",
-            audio: "assets/campfire.ogg",
-            img: "assets/campfire_bg.webp"
-        },
-
-        {
-            id: "cicadas",
-            name: "Cicadas in the Evening",
-            icon: "nightlight_round",
-            audio: "assets/cicadas.ogg",
-            img: "assets/cicadas_bg.webp"
-        },
-
-        {
-            id: "brownNoise",
-            name: "Brown Noise",
-            icon: "graphic_eq",
-            audio: "assets/brownnoise.ogg",
-            img: "assets/brownnoise_bg.webp"
-        }
-
-    ];
+    </div>
 
 
-    /* =========================================================
-       SETTINGS
-    ========================================================= */
+    <div class="info-grid">
 
-    const durations = [
-        5,
-        10,
-        15,
-        20,
-        30,
-        45,
-        60,
-        90,
-        120,
-        180,
-        240,
-        300,
-        360,
-        420,
-        480
-    ];
+        <article class="info-card">
+
+            <span class="material-icons">
+                notifications_none
+            </span>
+
+            <h3>
+                Interval Bells
+            </h3>
+
+            <p>
+                Optional bells can mark intervals during your session
+                so you can stay focused without checking the clock.
+            </p>
+
+        </article>
 
 
-    const intervals = [
-        0,
-        1,
-        3,
-        5,
-        10,
-        15,
-        20,
-        30,
-        60
-    ];
+        <article class="info-card">
+
+            <span class="material-icons">
+                graphic_eq
+            </span>
+
+            <h3>
+                Calming Sounds
+            </h3>
+
+            <p>
+                Use silence or choose from gentle nature and ambient
+                soundscapes to create the listening environment you prefer.
+            </p>
+
+        </article>
 
 
-    /* =========================================================
-       STATE
-    ========================================================= */
+        <article class="info-card">
 
-    let currentProfile = sounds[0];
+            <span class="material-icons">
+                self_improvement
+            </span>
 
-    let isPlaying = false;
+            <h3>
+                Your Practice
+            </h3>
 
-    let remainingSeconds = 5 * 60;
+            <p>
+                Use the timer for meditation, mindfulness, relaxation,
+                focus or a quiet period away from distractions.
+            </p>
 
-    let timerInterval = null;
+        </article>
 
-    let volume = 0.5;
+    </div>
+
+</div>
+
+</section><!-- =========================================================
+     APP CTA
+========================================================= --><section class="app-cta"><div class="app-cta-inner">
+
+    <h2>
+        Take the timer with you.
+    </h2>
+
+    <p>
+        The Meditation Bell &amp; Zen Timer app brings the same
+        distraction-free approach to your Android device, including
+        extended sessions and a wider selection of soundscapes.
+    </p>
+
+    <a
+        class="cta-button"
+        href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+        target="_blank"
+        rel="noopener"
+    >
+        Get Meditation Bell Timer
+    </a>
+
+</div>
+
+</section></main><!-- =========================================================
+     FOOTER
+========================================================= --><footer class="site-footer"><div class="footer-inner">
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <div class="footer-brand-name">
+
+                <img
+                    src="/android-chrome-192x192.png"
+                    alt="Meditation Bell Timer"
+                >
+
+                <span>
+                    MEDITATION BELL TIMER
+                </span>
+
+            </div>
+
+            <p>
+                Simple digital tools for meditation, mindfulness,
+                relaxation, sleep and focus.
+                Created by Future Home Tek.
+            </p>
+
+        </div>
 
 
-    /* =========================================================
-       AUDIO
-    ========================================================= */
+        <div class="footer-column">
 
-    const ambiencePlayer = new Audio();
+            <h3>
+                Explore
+            </h3>
 
-    ambiencePlayer.loop = true;
+            <a href="/">
+                Home
+            </a>
 
-    const bellPlayer = new Audio(
-        'assets/bell.mp3'
+            <a href="/timer.html">
+                Free Meditation Timer
+            </a>
+
+            <a href="/best-meditation-sounds">
+                Best Meditation Sounds
+            </a>
+
+            <a href="/sleep-meditation-sounds">
+                Sleep Meditation Sounds
+            </a>
+
+            <a href="/brown-noise-for-adhd-focus">
+                Brown Noise for Focus
+            </a>
+
+            <a href="/white-noise-meditation-timer">
+                White Noise Timer
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Resources
+            </h3>
+
+            <a href="/our-apps.html">
+                Our Apps
+            </a>
+
+            <a href="/solfeggio-healing-frequencies.html">
+                Solfeggio Frequencies
+            </a>
+
+            <a href="/how-to-use-a-meditation-timer">
+                How to Use a Meditation Timer
+            </a>
+
+            <a href="/how-long-should-you-meditate">
+                How Long Should You Meditate?
+            </a>
+
+            <a href="/how-tibetan-singing-bowls-work">
+                How Tibetan Singing Bowls Work
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Future Home Tek. All rights reserved.
+        </span>
+
+        <a href="/privacy-policy.html">
+            Privacy Policy
+        </a>
+
+    </div>
+
+</div>
+
+</footer><!-- =========================================================
+     TIMER AUDIO
+========================================================= --><audio
+id="bell-audio"
+preload="auto"
+src="/assets/bowl.ogg"
+
+«</audio>»
+
+<audio
+id="rain-audio"
+preload="auto"
+loop
+src="/assets/rain.ogg"
+
+«</audio>»
+
+<audio
+id="waves-audio"
+preload="auto"
+loop
+src="/assets/waves.ogg"
+
+«</audio>»
+
+<audio
+id="forest-audio"
+preload="auto"
+loop
+src="/assets/forest.ogg"
+
+«</audio>»
+
+<audio
+id="birds-audio"
+preload="auto"
+loop
+src="/assets/birds.ogg"
+
+«</audio>»
+
+<audio
+id="brownnoise-audio"
+preload="auto"
+loop
+src="/assets/brownnoise.ogg"
+
+«</audio>»
+
+<script>
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+const mobileMenuButton =
+    document.getElementById("mobile-menu-btn");
+
+const mobileMenu =
+    document.getElementById("mobile-menu");
+
+const menuIcon =
+    document.getElementById("menu-icon");
+
+
+function toggleMobileMenu() {
+
+    const isOpen =
+        mobileMenu.classList.toggle("open");
+
+    mobileMenuButton.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
     );
 
+    mobileMenuButton.setAttribute(
+        "aria-label",
+        isOpen
+            ? "Close navigation menu"
+            : "Open navigation menu"
+    );
 
-    /* =========================================================
-       ELEMENTS
-    ========================================================= */
+    menuIcon.textContent =
+        isOpen ? "close" : "menu";
+}
 
-    const bgImage =
-        document.getElementById('bg-image');
 
-    const timerDisplay =
-        document.getElementById('timer-display');
+function closeMobileMenu() {
 
-    const timerStatus =
-        document.getElementById('timer-status');
+    mobileMenu.classList.remove("open");
 
-    const playIcon =
-        document.getElementById('play-icon');
+    mobileMenuButton.setAttribute(
+        "aria-expanded",
+        "false"
+    );
 
-    const playCaption =
-        document.getElementById('play-caption');
+    mobileMenuButton.setAttribute(
+        "aria-label",
+        "Open navigation menu"
+    );
 
-    const fadeWrapper =
-        document.getElementById('fade-wrapper');
+    menuIcon.textContent = "menu";
+}
 
-    const durationSelect =
-        document.getElementById('duration-select');
 
-    const intervalSelect =
-        document.getElementById('interval-select');
+mobileMenuButton.addEventListener(
+    "click",
+    toggleMobileMenu
+);
 
-    const volumeSlider =
-        document.getElementById('volume-slider');
 
-    const playBtn =
-        document.getElementById('play-btn');
-
-    const darkModeBtn =
-        document.getElementById('dark-mode-btn');
-
-    const blackScreen =
-        document.getElementById('black-screen');
-
-    const premiumModal =
-        document.getElementById('premium-modal');
-
-    const closeModalBtn =
-        document.getElementById('close-modal-btn');
-
-    const mobileMenuBtn =
-        document.getElementById('mobile-menu-btn');
-
-    const mobileMenu =
-        document.getElementById('mobile-menu');
-
-    const menuIcon =
-        document.getElementById('menu-icon');
-
-
-    /* =========================================================
-       INITIALISE
-    ========================================================= */
-
-    function init() {
-
-        bgImage.style.backgroundImage =
-            `url('${currentProfile.img}')`;
-
-
-        /* SOUND GRID */
-
-        const grid =
-            document.getElementById('sound-grid');
-
-
-        sounds.forEach(function(sound, index) {
-
-            const card =
-                document.createElement('button');
-
-            card.type = 'button';
-
-            card.className =
-                'sound-card' +
-                (index === 0 ? ' selected' : '');
-
-            card.id =
-                `card-${sound.id}`;
-
-            card.setAttribute(
-                'aria-label',
-                sound.name
-            );
-
-
-            card.innerHTML =
-                `
-                <span class="material-icons">
-                    ${sound.icon}
-                </span>
-
-                <span class="title">
-                    ${sound.name}
-                </span>
-                `;
-
-
-            card.addEventListener(
-                'click',
-                function() {
-                    selectSound(sound);
-                }
-            );
-
-
-            grid.appendChild(card);
-
-        });
-
-
-        /* DURATIONS */
-
-        durations.forEach(function(d) {
-
-            let label =
-                formatDropdown(d);
-
-            if (d > 5) {
-                label += '  🔒';
-            }
-
-            durationSelect.add(
-                new Option(label, d)
-            );
-
-        });
-
-
-        /* INTERVALS */
-
-        intervals.forEach(function(i) {
-
-            intervalSelect.add(
-                new Option(
-                    formatDropdown(i),
-                    i
-                )
-            );
-
-        });
-
-
-        durationSelect.value = '5';
-
-        intervalSelect.value = '1';
-
-
-        /* EVENTS */
-
-        durationSelect.addEventListener(
-            'change',
-            function(e) {
-
-                const value =
-                    parseInt(e.target.value, 10);
-
-
-                if (value > 5) {
-
-                    e.target.value = '5';
-
-                    remainingSeconds =
-                        5 * 60;
-
-                    updateTimerDisplay();
-
-                    showModal();
-
-                } else {
-
-                    remainingSeconds =
-                        value * 60;
-
-                    updateTimerDisplay();
-
-                }
-
-            }
-        );
-
-
-        intervalSelect.addEventListener(
-            'change',
-            function() {
-
-                if (!isPlaying) {
-                    return;
-                }
-
-            }
-        );
-
-
-        volumeSlider.addEventListener(
-            'input',
-            function(e) {
-
-                volume =
-                    parseFloat(e.target.value);
-
-                ambiencePlayer.volume =
-                    volume;
-
-                bellPlayer.volume =
-                    volume;
-
-            }
-        );
-
-
-        playBtn.addEventListener(
-            'click',
-            togglePlay
-        );
-
-
-        darkModeBtn.addEventListener(
-            'click',
-            toggleBlackScreen
-        );
-
-
-        blackScreen.addEventListener(
-            'click',
-            toggleBlackScreen
-        );
-
-
-        closeModalBtn.addEventListener(
-            'click',
-            closeModal
-        );
-
-
-        /* MOBILE MENU */
-
-        mobileMenuBtn.addEventListener(
-            'click',
-            toggleMobileMenu
-        );
-
-
-        document.addEventListener(
-            'click',
-            function(event) {
-
-                if (
-                    !mobileMenu.contains(event.target) &&
-                    !mobileMenuBtn.contains(event.target)
-                ) {
-
-                    closeMobileMenu();
-
-                }
-
-            }
-        );
-
-
-        updateTimerDisplay();
-
-    }
-
-
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
-
-    function toggleMobileMenu() {
-
-        const isOpen =
-            mobileMenu.classList.toggle('open');
-
-        mobileMenuBtn.setAttribute(
-            'aria-expanded',
-            isOpen ? 'true' : 'false'
-        );
-
-        menuIcon.innerText =
-            isOpen ? 'close' : 'menu';
-
-    }
-
-
-    function closeMobileMenu() {
-
-        mobileMenu.classList.remove('open');
-
-        mobileMenuBtn.setAttribute(
-            'aria-expanded',
-            'false'
-        );
-
-        menuIcon.innerText =
-            'menu';
-
-    }
-
-
-    /* =========================================================
-       PREMIUM MODAL
-    ========================================================= */
-
-    function showModal() {
-
-        premiumModal.style.display =
-            'flex';
-
-    }
-
-
-    function closeModal() {
-
-        premiumModal.style.display =
-            'none';
-
-    }
-
-
-    /* =========================================================
-       SOUND SELECTION
-    ========================================================= */
-
-    function selectSound(sound) {
-
-        document
-            .querySelectorAll('.sound-card')
-            .forEach(function(card) {
-
-                card.classList.remove(
-                    'selected'
-                );
-
-            });
-
-
-        const selectedCard =
-            document.getElementById(
-                `card-${sound.id}`
-            );
-
-
-        if (selectedCard) {
-
-            selectedCard.classList.add(
-                'selected'
-            );
-
-        }
-
-
-        currentProfile =
-            sound;
-
-
-        bgImage.style.backgroundImage =
-            `url('${sound.img}')`;
-
-
-        if (isPlaying) {
-
-            ambiencePlayer.pause();
-
-
-            if (sound.audio !== '') {
-
-                ambiencePlayer.src =
-                    sound.audio;
-
-                ambiencePlayer.loop =
-                    true;
-
-                ambiencePlayer.volume =
-                    volume;
-
-
-                ambiencePlayer.play()
-                    .catch(function(error) {
-                        console.log(
-                            'Audio playback waiting for user interaction.',
-                            error
-                        );
-                    });
-
-            }
-
-        }
-
-    }
-
-
-    /* =========================================================
-       PLAY / STOP
-    ========================================================= */
-
-    function togglePlay() {
-
-        if (isPlaying) {
-
-            stopMeditation();
-
-        } else {
-
-            startMeditation();
-
-        }
-
-    }
-
-
-    function startMeditation() {
-
-        const requestedDuration =
-            parseInt(
-                durationSelect.value,
-                10
-            );
-
-
-        /* HARD FREE-TIER LIMIT */
-
-        if (requestedDuration > 5) {
-
-            durationSelect.value =
-                '5';
-
-            remainingSeconds =
-                5 * 60;
-
-            updateTimerDisplay();
-
-            showModal();
-
-            return;
-
-        }
-
-
-        isPlaying = true;
-
-        remainingSeconds =
-            requestedDuration * 60;
-
-
-        playIcon.innerText =
-            'stop';
-
-
-        playCaption.innerText =
-            'End session';
-
-
-        timerStatus.innerText =
-            'Meditation in progress';
-
-
-        fadeWrapper.style.opacity =
-            '0';
-
-        fadeWrapper.style.pointerEvents =
-            'none';
-
-
-        playBell();
-
-
-        if (currentProfile.audio !== '') {
-
-            ambiencePlayer.src =
-                currentProfile.audio;
-
-            ambiencePlayer.loop =
-                true;
-
-            ambiencePlayer.volume =
-                volume;
-
-
-            ambiencePlayer.play()
-                .catch(function(error) {
-
-                    console.log(
-                        'Audio playback could not start:',
-                        error
-                    );
-
-                });
-
-        }
-
-
-        clearInterval(timerInterval);
-
-
-        timerInterval =
-            setInterval(
-                function() {
-
-                    if (remainingSeconds > 0) {
-
-                        remainingSeconds--;
-
-                        updateTimerDisplay();
-
-
-                        if (
-                            remainingSeconds === 0
-                        ) {
-
-                            playBell();
-
-                            stopMeditation();
-
-                        } else {
-
-                            checkIntervalBell();
-
-                        }
-
-                    }
-
-                },
-                1000
-            );
-
-    }
-
-
-    /* =========================================================
-       STOP
-    ========================================================= */
-
-    function stopMeditation() {
-
-        isPlaying = false;
-
-
-        clearInterval(
-            timerInterval
-        );
-
-
-        timerInterval = null;
-
-
-        ambiencePlayer.pause();
-
-
-        let endDuration =
-            parseInt(
-                durationSelect.value,
-                10
-            );
-
-
-        if (endDuration > 5) {
-
-            endDuration = 5;
-
-        }
-
-
-        remainingSeconds =
-            endDuration * 60;
-
-
-        playIcon.innerText =
-            'play_arrow';
-
-
-        playCaption.innerText =
-            'Start session';
-
-
-        timerStatus.innerText =
-            'Ready when you are';
-
-
-        fadeWrapper.style.opacity =
-            '1';
-
-        fadeWrapper.style.pointerEvents =
-            'auto';
-
-
-        updateTimerDisplay();
-
-    }
-
-
-    /* =========================================================
-       BELL
-    ========================================================= */
-
-    function playBell() {
-
-        bellPlayer.currentTime = 0;
-
-        bellPlayer.volume =
-            volume;
-
-
-        bellPlayer.play()
-            .catch(function(error) {
-
-                console.log(
-                    'Bell playback waiting for user interaction.',
-                    error
-                );
-
-            });
-
-    }
-
-
-    /* =========================================================
-       INTERVAL BELL
-    ========================================================= */
-
-    function checkIntervalBell() {
-
-        const intMins =
-            parseInt(
-                intervalSelect.value,
-                10
-            );
-
-
-        if (intMins <= 0) {
-
-            return;
-
-        }
-
-
-        const totalSeconds =
-            parseInt(
-                durationSelect.value,
-                10
-            ) * 60;
-
-
-        const elapsed =
-            totalSeconds -
-            remainingSeconds;
-
-
-        const intervalSeconds =
-            intMins * 60;
-
+document.addEventListener(
+    "click",
+    function(event) {
 
         if (
-            elapsed > 0 &&
-            elapsed % intervalSeconds === 0
+            mobileMenu.classList.contains("open") &&
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
         ) {
-
-            playBell();
-
+            closeMobileMenu();
         }
 
     }
+);
 
 
-    /* =========================================================
-       DISPLAY
-    ========================================================= */
+document.addEventListener(
+    "keydown",
+    function(event) {
 
-    function updateTimerDisplay() {
+        if (event.key === "Escape") {
+            closeMobileMenu();
+        }
 
-        let displaySecs =
-            remainingSeconds;
-
-
-        if (!isPlaying) {
-
-            let baseVal =
-                parseInt(
-                    durationSelect.value,
-                    10
-                );
+    }
+);
 
 
-            if (baseVal > 5) {
+mobileMenu
+    .querySelectorAll("a")
+    .forEach(function(link) {
 
-                baseVal = 5;
+        link.addEventListener(
+            "click",
+            closeMobileMenu
+        );
+
+    });
+
+
+/* =========================================================
+   TIMER VARIABLES
+========================================================= */
+
+let totalSeconds = 5 * 60;
+let remainingSeconds = totalSeconds;
+
+let timerInterval = null;
+let isRunning = false;
+
+let intervalSeconds = 0;
+let lastIntervalBell = 0;
+
+let activeSound = "none";
+
+
+/* =========================================================
+   DOM ELEMENTS
+========================================================= */
+
+const timeDisplay =
+    document.getElementById("time-display");
+
+const timerStatus =
+    document.getElementById("timer-status");
+
+const startButton =
+    document.getElementById("start-button");
+
+const pauseButton =
+    document.getElementById("pause-button");
+
+const resetButton =
+    document.getElementById("reset-button");
+
+const durationSelect =
+    document.getElementById("duration-select");
+
+const intervalSelect =
+    document.getElementById("interval-select");
+
+const volumeControl =
+    document.getElementById("volume-control");
+
+const bellAudio =
+    document.getElementById("bell-audio");
+
+
+/* =========================================================
+   SOUND ELEMENTS
+========================================================= */
+
+const soundAudios = {
+
+    none: null,
+
+    rain:
+        document.getElementById("rain-audio"),
+
+    waves:
+        document.getElementById("waves-audio"),
+
+    forest:
+        document.getElementById("forest-audio"),
+
+    birds:
+        document.getElementById("birds-audio"),
+
+    brownnoise:
+        document.getElementById("brownnoise-audio")
+
+};
+
+
+/* =========================================================
+   FORMAT TIME
+========================================================= */
+
+function formatTime(seconds) {
+
+    const minutes =
+        Math.floor(seconds / 60);
+
+    const secs =
+        seconds % 60;
+
+    return (
+        String(minutes).padStart(2, "0") +
+        ":" +
+        String(secs).padStart(2, "0")
+    );
+}
+
+
+/* =========================================================
+   UPDATE DISPLAY
+========================================================= */
+
+function updateDisplay() {
+
+    timeDisplay.textContent =
+        formatTime(remainingSeconds);
+
+}
+
+
+/* =========================================================
+   SET VOLUME
+========================================================= */
+
+function updateVolume() {
+
+    const volume =
+        parseFloat(volumeControl.value);
+
+    bellAudio.volume = volume;
+
+    Object.values(soundAudios)
+        .forEach(function(audio) {
+
+            if (audio) {
+                audio.volume = volume;
+            }
+
+        });
+
+}
+
+
+updateVolume();
+
+
+/* =========================================================
+   PLAY BELL
+========================================================= */
+
+function playBell() {
+
+    bellAudio.currentTime = 0;
+
+    bellAudio.volume =
+        parseFloat(volumeControl.value);
+
+    bellAudio.play()
+        .catch(function() {
+            /* Browser autoplay restrictions */
+        });
+
+}
+
+
+/* =========================================================
+   STOP SOUNDS
+========================================================= */
+
+function stopAllSounds() {
+
+    Object.values(soundAudios)
+        .forEach(function(audio) {
+
+            if (audio) {
+
+                audio.pause();
+
+                audio.currentTime = 0;
 
             }
 
+        });
 
-            displaySecs =
-                baseVal * 60;
-
-        }
+}
 
 
-        const h =
-            Math.floor(
-                displaySecs / 3600
+/* =========================================================
+   START SOUND
+========================================================= */
+
+function startActiveSound() {
+
+    if (activeSound === "none") {
+        return;
+    }
+
+    const audio =
+        soundAudios[activeSound];
+
+    if (!audio) {
+        return;
+    }
+
+    audio.volume =
+        parseFloat(volumeControl.value);
+
+    audio.loop = true;
+
+    audio.play()
+        .catch(function() {
+            /* Browser autoplay restrictions */
+        });
+
+}
+
+
+/* =========================================================
+   SET SOUND
+========================================================= */
+
+function setSound(soundName) {
+
+    stopAllSounds();
+
+    activeSound = soundName;
+
+    document
+        .querySelectorAll(".sound-button")
+        .forEach(function(button) {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.sound === soundName
             );
 
+        });
 
-        const m =
-            Math.floor(
-                (displaySecs % 3600) / 60
-            );
-
-
-        const s =
-            displaySecs % 60;
-
-
-        let timeStr = '';
-
-
-        if (h > 0) {
-
-            timeStr +=
-                h + ':';
-
-        }
-
-
-        timeStr +=
-            m
-                .toString()
-                .padStart(2, '0');
-
-
-        timeStr += ':';
-
-
-        timeStr +=
-            s
-                .toString()
-                .padStart(2, '0');
-
-
-        timerDisplay.innerText =
-            timeStr;
-
+    if (isRunning) {
+        startActiveSound();
     }
 
-
-    /* =========================================================
-       FORMATTING
-    ========================================================= */
-
-    function formatDropdown(mins) {
-
-        if (mins === 0) {
-
-            return 'Off';
-
-        }
+}
 
 
-        if (mins < 60) {
+/* =========================================================
+   START TIMER
+========================================================= */
 
-            return `${mins} mins`;
+function startTimer() {
 
-        }
-
-
-        const h =
-            Math.floor(mins / 60);
-
-
-        const m =
-            mins % 60;
-
-
-        return m > 0
-            ? `${h} h ${m} m`
-            : `${h} hour${h > 1 ? 's' : ''}`;
-
+    if (isRunning) {
+        return;
     }
 
-
-    /* =========================================================
-       BLACK SCREEN
-    ========================================================= */
-
-    function toggleBlackScreen() {
-
-        const isVisible =
-            blackScreen.style.display === 'block';
-
-
-        blackScreen.style.display =
-            isVisible
-                ? 'none'
-                : 'block';
-
+    if (remainingSeconds <= 0) {
+        resetTimer();
     }
 
+    isRunning = true;
 
-    /* =========================================================
-       KEYBOARD ACCESSIBILITY
-    ========================================================= */
+    timerStatus.textContent =
+        "Meditation in progress.";
 
-    document.addEventListener(
-        'keydown',
-        function(event) {
+    startActiveSound();
+
+    timerInterval =
+        setInterval(function() {
+
+            remainingSeconds--;
+
+            updateDisplay();
+
+            const elapsed =
+                totalSeconds - remainingSeconds;
 
             if (
-                event.key === 'Escape'
+                intervalSeconds > 0 &&
+                elapsed > 0 &&
+                elapsed % intervalSeconds === 0 &&
+                elapsed !== lastIntervalBell
             ) {
 
-                closeModal();
+                lastIntervalBell =
+                    elapsed;
 
-                closeMobileMenu();
+                playBell();
 
             }
 
+
+            if (remainingSeconds <= 0) {
+
+                completeTimer();
+
+            }
+
+        }, 1000);
+
+}
+
+
+/* =========================================================
+   PAUSE TIMER
+========================================================= */
+
+function pauseTimer() {
+
+    if (!isRunning) {
+        return;
+    }
+
+    isRunning = false;
+
+    clearInterval(timerInterval);
+
+    timerInterval = null;
+
+    stopAllSounds();
+
+    timerStatus.textContent =
+        "Paused.";
+
+}
+
+
+/* =========================================================
+   RESET TIMER
+========================================================= */
+
+function resetTimer() {
+
+    clearInterval(timerInterval);
+
+    timerInterval = null;
+
+    isRunning = false;
+
+    totalSeconds =
+        parseInt(durationSelect.value, 10) * 60;
+
+    remainingSeconds =
+        totalSeconds;
+
+    intervalSeconds =
+        parseInt(intervalSelect.value, 10) * 60;
+
+    lastIntervalBell = 0;
+
+    stopAllSounds();
+
+    updateDisplay();
+
+    timerStatus.textContent =
+        "Ready when you are.";
+
+}
+
+
+/* =========================================================
+   COMPLETE TIMER
+========================================================= */
+
+function completeTimer() {
+
+    clearInterval(timerInterval);
+
+    timerInterval = null;
+
+    isRunning = false;
+
+    remainingSeconds = 0;
+
+    updateDisplay();
+
+    stopAllSounds();
+
+    playBell();
+
+    timerStatus.textContent =
+        "Session complete.";
+
+}
+
+
+/* =========================================================
+   DURATION CHANGE
+========================================================= */
+
+durationSelect.addEventListener(
+    "change",
+    function() {
+
+        if (!isRunning) {
+            resetTimer();
         }
-    );
+
+    }
+);
 
 
-    /* =========================================================
-       START
-    ========================================================= */
+/* =========================================================
+   INTERVAL CHANGE
+========================================================= */
 
-    window.addEventListener(
-        'DOMContentLoaded',
-        init
-    );
+intervalSelect.addEventListener(
+    "change",
+    function() {
+
+        intervalSeconds =
+            parseInt(intervalSelect.value, 10) * 60;
+
+        lastIntervalBell = 0;
+
+    }
+);
 
 
-})();
+/* =========================================================
+   VOLUME CHANGE
+========================================================= */
 
-</script><!-- Cloudflare Analytics --><script
-    defer
-    src="https://static.cloudflareinsights.com/beacon.min.js"
-    data-cf-beacon='{"token":"b448b569267c44c2b0ce85f99a149e61"}'
-></script></body>
+volumeControl.addEventListener(
+    "input",
+    updateVolume
+);
+
+
+/* =========================================================
+   SOUND BUTTONS
+========================================================= */
+
+document
+    .querySelectorAll(".sound-button")
+    .forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                setSound(
+                    button.dataset.sound
+                );
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   TIMER BUTTONS
+========================================================= */
+
+startButton.addEventListener(
+    "click",
+    startTimer
+);
+
+pauseButton.addEventListener(
+    "click",
+    pauseTimer
+);
+
+resetButton.addEventListener(
+    "click",
+    resetTimer
+);
+
+
+/* =========================================================
+   INITIALISE
+========================================================= */
+
+resetTimer();
+
+</script></body>
 </html>
