@@ -1073,101 +1073,158 @@
 
 
     /* =========================================================
-       SOUNDS
+       SOUND LIBRARY
+       Cinematic background cards, matching the Solfeggio page
     ========================================================= */
 
     .sound-grid {
 
-        display:
-            grid;
+        display: grid;
 
-        grid-template-columns:
-            repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
 
-        gap:
-            16px;
+        gap: 18px;
 
     }
 
 
     .sound-card {
 
-        min-height:
-            190px;
+        --sound-bg: none;
 
-        padding:
-            28px;
+        position: relative;
+        isolation: isolate;
+        min-height: 245px;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        overflow: hidden;
 
-        border:
-            1px solid
-            var(--border);
+        border: 1px solid rgba(255,255,255,0.09);
+        border-radius: 18px;
 
-        border-radius:
-            18px;
-
-        background:
-            #101415;
+        background: #101415;
 
         transition:
-            transform .25s ease,
-            border-color .25s ease;
+            transform .3s ease,
+            border-color .3s ease,
+            box-shadow .3s ease;
+
+    }
+
+
+    /* Background image */
+    .sound-card::before {
+
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+
+        background-image: var(--sound-bg);
+        background-size: cover;
+        background-position: center;
+
+        transform: scale(1.01);
+        transition: transform .5s ease;
+
+    }
+
+
+    /* Readability overlay */
+    .sound-card::after {
+
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+
+        background:
+            linear-gradient(
+                to top,
+                rgba(3,7,7,0.98) 0%,
+                rgba(3,7,7,0.86) 35%,
+                rgba(3,7,7,0.48) 68%,
+                rgba(3,7,7,0.18) 100%
+            );
+
+    }
+
+
+    /* Silence card has no supplied background image */
+    .sound-card.sound-no-image {
+
+        background:
+            radial-gradient(
+                circle at 70% 20%,
+                rgba(212,175,90,0.12),
+                transparent 45%
+            ),
+            linear-gradient(145deg, #151a1a, #090c0d);
 
     }
 
 
     .sound-card:hover {
 
-        transform:
-            translateY(-4px);
+        transform: translateY(-5px);
+        border-color: rgba(212,175,90,0.42);
+        box-shadow: 0 18px 45px rgba(0,0,0,0.28);
 
-        border-color:
-            rgba(212,175,90,0.35);
+    }
+
+
+    .sound-card:hover::before {
+
+        transform: scale(1.07);
 
     }
 
 
     .sound-icon {
 
-        margin-bottom:
-            18px;
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: auto;
 
-        color:
-            var(--gold-light);
-
-        font-size:
-            23px;
+        color: var(--gold-light);
+        font-size: 22px;
+        border: 1px solid rgba(242,215,143,0.28);
+        border-radius: 50%;
+        background: rgba(5,8,8,0.42);
+        backdrop-filter: blur(5px);
 
     }
 
 
     .sound-card h3 {
 
-        margin:
-            0 0 8px;
+        margin: 0 0 8px;
 
         font-family:
             'Cormorant Garamond',
             serif;
 
-        font-size:
-            25px;
+        font-size: 28px;
+        line-height: 1.05;
+        text-shadow: 0 3px 18px rgba(0,0,0,0.65);
 
     }
 
 
     .sound-card p {
 
-        margin:
-            0;
+        margin: 0;
 
-        color:
-            var(--muted);
-
-        font-size:
-            13px;
-
-        line-height:
-            1.65;
+        max-width: 430px;
+        color: rgba(255,255,255,0.76);
+        font-size: 13px;
+        line-height: 1.65;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.8);
 
     }
 
@@ -2857,195 +2914,77 @@
 
 <div class="sound-grid">
 
-
-    <article class="sound-card">
-
+    <article class="sound-card sound-no-image">
         <div class="sound-icon">◉</div>
-
-        <h3>
-            Silence &amp; Tibetan Bell
-        </h3>
-
-        <p>
-            Pure timing with a resonant bell marking your session.
-        </p>
-
+        <h3>Silence &amp; Tibetan Bell</h3>
+        <p>Pure timing with a resonant bell marking your session.</p>
     </article>
 
-
-    <article class="sound-card">
-
+    <article class="sound-card" style="--sound-bg: url('assets/rain_bg.webp');">
         <div class="sound-icon">≈</div>
-
-        <h3>
-            Soothing Rain Storm
-        </h3>
-
-        <p>
-            Continuous rainfall for a calm and immersive atmosphere.
-        </p>
-
+        <h3>Soothing Rain Storm</h3>
+        <p>Continuous rainfall for a calm and immersive atmosphere.</p>
     </article>
 
-
-    <article class="sound-card">
-
+    <article class="sound-card" style="--sound-bg: url('assets/waves_bg.webp');">
         <div class="sound-icon">∿</div>
-
-        <h3>
-            Crashing Waves
-        </h3>
-
-        <p>
-            Rhythmic ocean ambience for meditation and relaxation.
-        </p>
-
+        <h3>Crashing Waves</h3>
+        <p>Rhythmic ocean ambience for meditation and relaxation.</p>
     </article>
 
-
-    <article class="sound-card">
-
+    <article class="sound-card" style="--sound-bg: url('assets/brownnoise_bg.webp');">
         <div class="sound-icon">≋</div>
-
-        <h3>
-            Brown Noise
-        </h3>
-
-        <p>
-            Deep, warm noise suitable for focus, study and
-            background listening.
-        </p>
-
+        <h3>Brown Noise</h3>
+        <p>Deep, warm noise suitable for focus, study and background listening.</p>
     </article>
 
-
-    <article class="sound-card">
-
+    <article class="sound-card" style="--sound-bg: url('assets/bowl_bg.webp');">
         <div class="sound-icon">◌</div>
-
-        <h3>
-            Tibetan Singing Bowl
-        </h3>
-
-        <p>
-            Long resonant tones inspired by traditional
-            singing bowls.
-        </p>
-
+        <h3>Tibetan Singing Bowl</h3>
+        <p>Long resonant tones inspired by traditional singing bowls.</p>
     </article>
 
-
-    <article class="sound-card">
-
+    <article class="sound-card" style="--sound-bg: url('assets/forest_bg.webp');">
         <div class="sound-icon">✦</div>
-
-        <h3>
-            Rain Forest
-        </h3>
-
-        <p>
-            A rich natural atmosphere inspired by the sounds
-            of the forest.
-        </p>
-
+        <h3>Rain Forest</h3>
+        <p>A rich natural atmosphere inspired by the sounds of the forest.</p>
     </article>
 
-
-    <article class="sound-card">
-
+    <article class="sound-card" style="--sound-bg: url('assets/birds_bg.webp');">
         <div class="sound-icon">⌁</div>
-
-        <h3>
-            Bird Song
-        </h3>
-
-        <p>
-            A gentle outdoor atmosphere for mornings and
-            mindful moments.
-        </p>
-
+        <h3>Bird Song</h3>
+        <p>A gentle outdoor atmosphere for mornings and mindful moments.</p>
     </article>
 
-
-    <article class="sound-card">
-
+    <article class="sound-card" style="--sound-bg: url('assets/omchant_bg.webp');">
         <div class="sound-icon">◎</div>
-
-        <h3>
-            Deep Om Chant
-        </h3>
-
-        <p>
-            A continuous vocal ambience for meditation and
-            quiet reflection.
-        </p>
-
+        <h3>Deep Om Chant</h3>
+        <p>A continuous vocal ambience for meditation and quiet reflection.</p>
     </article>
 
-
-    <article class="sound-card">
-
+    <article class="sound-card" style="--sound-bg: url('assets/campfire_bg.webp');">
         <div class="sound-icon">✧</div>
-
-        <h3>
-            Calming Campfire
-        </h3>
-
-        <p>
-            Warm crackling ambience for evening relaxation
-            and reading.
-        </p>
-
+        <h3>Calming Campfire</h3>
+        <p>Warm crackling ambience for evening relaxation and reading.</p>
     </article>
 
-
-    <article class="sound-card">
-
+    <article class="sound-card" style="--sound-bg: url('assets/steamtrain_bg.webp');">
         <div class="sound-icon">→</div>
-
-        <h3>
-            Soothing Steam Train
-        </h3>
-
-        <p>
-            A nostalgic rhythmic ambience with a gentle
-            mechanical character.
-        </p>
-
+        <h3>Soothing Steam Train</h3>
+        <p>A nostalgic rhythmic ambience with a gentle mechanical character.</p>
     </article>
 
-
-    <article class="sound-card">
-
+    <article class="sound-card" style="--sound-bg: url('assets/cicadas_bg.webp');">
         <div class="sound-icon">☾</div>
-
-        <h3>
-            Cicadas in the Evening
-        </h3>
-
-        <p>
-            A warm summer-night ambience for relaxation
-            and sleep.
-        </p>
-
+        <h3>Cicadas in the Evening</h3>
+        <p>A warm summer-night ambience for relaxation and sleep.</p>
     </article>
 
-
-    <article class="sound-card">
-
+    <article class="sound-card" style="--sound-bg: url('assets/spaceship_bg.webp');">
         <div class="sound-icon">✦</div>
-
-        <h3>
-            Deep Space Ambient
-        </h3>
-
-        <p>
-            A spacious atmospheric drone for concentration
-            and quiet listening.
-        </p>
-
+        <h3>Deep Space Ambient</h3>
+        <p>A spacious atmospheric drone for concentration and quiet listening.</p>
     </article>
-
 
 </div>
 
