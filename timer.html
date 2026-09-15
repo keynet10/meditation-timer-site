@@ -1,605 +1,3915 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meditation Bell Timer – Free Timer With Interval Bells, Nature Sounds, Brown Noise and Ambient Soundscapes</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon16x16.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-    
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-            font-family: 'Lato', sans-serif;
-            overflow: hidden;
-        }
+<meta charset="UTF-8">
 
-        .page-container {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            min-height: 100vh;
-            width: 100%;
-        }
+<meta name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-        .promo-side {
-            justify-self: start;
-            padding-left: 40px;
-        }
+<title>Meditation Timer – Free 5 Minute Timer with Tibetan Bells & Nature Sounds</title>
 
-        .promo-side h2 {
-            font-size: 24px;
-            font-weight: 300;
-            margin-top: 0;
-            margin-bottom: 10px;
-            color: rgba(255, 255, 255, 0.9);
-        }
+<meta name="description"
+      content="Free online meditation timer with Tibetan bells, nature sounds, brown noise and ambient soundscapes. Start a 5-minute session instantly. Extended durations are available in the Meditation Bell Timer app.">
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 14px;
-        }
+<meta name="theme-color" content="#07100f">
 
-        .btn-primary {
-            background-color: #81D4FA;
-            color: #121212;
-            border: 2px solid #81D4FA;
-        }
-        
-        .btn-primary:hover {
-            background-color: #4fc3f7;
-            transform: translateY(-2px);
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        #phone-wrapper {
-            position: relative;
-            background-color: #121212;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-        @media (min-width: 900px) {
-            #phone-wrapper {
-                height: 90vh;
-                max-height: 850px;
-                aspect-ratio: 9 / 16;
-                border: 8px solid #333;
-                border-radius: 40px;
-            }
-        }
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        @media (max-width: 899px) and (min-width: 500px) {
-            .page-container {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            #phone-wrapper {
-                height: 80vh;
-                aspect-ratio: 9 / 16;
-                border: 8px solid #333;
-                border-radius: 40px;
-            }
-            .promo-side {
-                padding-left: 0;
-                margin-top: 20px;
-                text-align: center;
-            }
-        }
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-        @media (max-width: 499px) {
-            .page-container {
-                display: block;
-            }
-            #phone-wrapper {
-                width: 100vw;
-                height: 100vh;
-                border: none;
-                border-radius: 0;
-            }
-            .promo-side {
-                display: none; 
-            }
-        }
+<style>
 
-        #bg-image {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-size: cover;
-            background-position: center;
-            opacity: 0.6;
-            transition: background-image 1.5s ease-in-out;
-            z-index: 0;
-        }
+/* =========================================================
+   ROOT
+========================================================= */
 
-        #bg-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
+:root {
+    --bg: #050807;
+    --bg-soft: #0a100e;
+    --panel: rgba(16, 24, 21, 0.88);
+    --panel-light: rgba(255,255,255,0.055);
 
-        #app-ui {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            padding: 25px 20px;
-            box-sizing: border-box;
-        }
+    --gold: #d6b36a;
+    --gold-light: #f0d99a;
+    --gold-soft: rgba(214,179,106,0.18);
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        .header h1 {
-            font-size: 12px;
-            letter-spacing: 1.5px;
-            color: rgba(255, 255, 255, 0.7);
-            margin: 0;
-        }
-        .icon-btn {
-            background: none; border: none; color: rgba(255, 255, 255, 0.7);
-            cursor: pointer; padding: 5px;
-        }
+    --cream: #f3eee4;
+    --muted: rgba(243,238,228,0.62);
+    --muted-2: rgba(243,238,228,0.42);
 
-        #timer-display {
-            font-size: 48px;
-            font-weight: 300;
-            text-align: center;
-            margin-bottom: 15px;
-        }
+    --border: rgba(255,255,255,0.09);
+    --border-gold: rgba(214,179,106,0.35);
 
-        #sound-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 6px;
-            margin-bottom: 15px;
-            transition: opacity 0.5s ease;
-        }
-        .sound-card {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 8px 2px;
-            text-align: center;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .sound-card.selected {
-            background: rgba(255, 255, 255, 0.24);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        .sound-card span.material-icons { font-size: 24px; margin-bottom: 4px; }
-        .sound-card span.title { font-size: 10px; font-weight: bold; }
+    --success: #9bc7a5;
 
-        .controls-area {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            transition: opacity 0.5s ease;
-        }
-        .dropdown-group { width: 48%; }
-        .dropdown-group label { font-size: 10px; color: rgba(255, 255, 255, 0.54); display: block; }
+    --max-width: 1180px;
 
-        .dropdown {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.24);
-            color: white;
-            padding: 8px;
-            border-radius: 8px;
-            font-family: 'Lato', sans-serif;
-            font-weight: bold;
-            outline: none;
-            margin-top: 5px;
-        }
-        .dropdown option { background: #121212; }
+    --header-height: 72px;
+}
 
-        .bottom-controls {
-            margin-top: auto;
-            text-align: center;
-        }
-        .volume-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        .volume-row input[type=range] {
-            flex-grow: 1;
-            margin-left: 10px;
-            accent-color: #fff;
-        }
-        #play-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.38);
-            border-radius: 50%;
-            width: 64px;
-            height: 64px; 
-            color: white;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-        }
-        #play-btn span { font-size: 32px; }
 
-        #black-screen {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: black;
-            z-index: 10;
-            display: none;
-        }
-        
-        #premium-modal {
-            display: none; 
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 100;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(5px);
-        }
-        
-        .modal-content {
-            background: #1e1e1e;
-            padding: 30px 20px;
-            border-radius: 20px;
-            text-align: center;
-            width: 80%;
-            max-width: 320px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            position: relative;
-        }
+/* =========================================================
+   RESET
+========================================================= */
 
-        .close-btn {
-            position: absolute;
-            top: 15px; right: 15px;
-            background: none; border: none; color: rgba(255,255,255,0.5);
-            cursor: pointer; padding: 0;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        .close-btn:hover { color: #fff; }
+html {
+    scroll-behavior: smooth;
+}
 
-        .lock-icon {
-            font-size: 48px;
-            color: #ffc107; 
-            margin-bottom: 10px;
-        }
+body {
+    margin: 0;
+    min-height: 100%;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(29,70,54,0.28),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #050807 0%,
+            #07100d 45%,
+            #040706 100%
+        );
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
 
-        .modal-content h3 {
-            margin: 0 0 10px 0;
-            font-size: 20px;
-            font-weight: 400;
-        }
+button,
+select,
+input {
+    font: inherit;
+}
 
-        .modal-content p {
-            font-size: 14px;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.5;
-            margin-bottom: 25px;
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   SITE HEADER
+========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: var(--header-height);
+
+    background: rgba(5,8,7,0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.header-inner {
+    width: min(100% - 32px, var(--max-width));
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    text-decoration: none;
+    min-width: 0;
+}
+
+.brand img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+}
+
+.brand-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.brand-sub {
+    margin-top: 4px;
+    font-size: 10px;
+    color: var(--muted-2);
+    letter-spacing: 0.6px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.main-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--cream);
+}
+
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 17px;
+
+    border-radius: 999px;
+
+    background: var(--gold);
+    color: #10100d !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+}
+
+.nav-cta:hover {
+    background: var(--gold-light);
+}
+
+.mobile-menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.04);
+
+    color: var(--cream);
+    border-radius: 12px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page {
+    width: min(100% - 32px, var(--max-width));
+    margin: auto;
+}
+
+
+/* =========================================================
+   BREADCRUMBS
+========================================================= */
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 20px 0 14px;
+
+    color: var(--muted-2);
+    font-size: 11px;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: var(--cream);
+}
+
+.breadcrumbs .material-icons {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   HERO INTRO
+========================================================= */
+
+.timer-intro {
+    text-align: center;
+
+    padding:
+        12px
+        0
+        28px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 12px;
+
+    color: var(--gold-light);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.eyebrow .material-icons {
+    font-size: 14px;
+}
+
+.timer-intro h1 {
+    margin: 0;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(30px, 5vw, 52px);
+    line-height: 1.08;
+    font-weight: 500;
+
+    letter-spacing: -0.7px;
+}
+
+.timer-intro p {
+    max-width: 660px;
+
+    margin: 14px auto 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TIMER APPLICATION
+========================================================= */
+
+.timer-app {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 350px;
+
+    min-height: 670px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.09);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(214,179,106,0.055),
+            transparent 34%
+        ),
+        rgba(9,14,12,0.9);
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.45),
+        inset 0 1px rgba(255,255,255,0.035);
+}
+
+
+/* =========================================================
+   MAIN TIMER AREA
+========================================================= */
+
+.timer-main {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.timer-main::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 36%,
+            rgba(25,73,57,0.18),
+            transparent 38%
+        );
+}
+
+
+/* =========================================================
+   TIMER HEADER
+========================================================= */
+
+.timer-topbar {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.timer-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    box-shadow: 0 0 12px rgba(214,179,106,0.55);
+}
+
+.status-dot.playing {
+    animation: pulseDot 1.5s infinite;
+}
+
+@keyframes pulseDot {
+    0%,100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.45;
+        transform: scale(0.75);
+    }
+}
+
+.black-screen-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.black-screen-btn:hover {
+    color: var(--cream);
+    background: rgba(255,255,255,0.08);
+}
+
+
+/* =========================================================
+   TIMER DISPLAY
+========================================================= */
+
+.timer-zone {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 270px;
+}
+
+.timer-ring {
+    position: relative;
+
+    width: min(300px, 62vw);
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-ring svg {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transform: rotate(-90deg);
+}
+
+.ring-track {
+    fill: none;
+    stroke: rgba(255,255,255,0.055);
+    stroke-width: 4;
+}
+
+.ring-progress {
+    fill: none;
+
+    stroke: var(--gold);
+
+    stroke-width: 4;
+
+    stroke-linecap: round;
+
+    transition:
+        stroke-dashoffset 0.8s linear;
+}
+
+.timer-center {
+    position: relative;
+
+    text-align: center;
+}
+
+.timer-display {
+    font-size: clamp(48px, 8vw, 78px);
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+    font-variant-numeric: tabular-nums;
+
+    text-shadow:
+        0 0 35px rgba(255,255,255,0.06);
+}
+
+.timer-state {
+    margin-top: 13px;
+
+    color: var(--muted-2);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CURRENT SOUND
+========================================================= */
+
+.current-sound {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.current-sound .material-icons {
+    color: var(--gold);
+    font-size: 18px;
+}
+
+#currentSoundName {
+    color: var(--cream);
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PLAY CONTROL
+========================================================= */
+
+.player-controls {
+    position: relative;
+    z-index: 20;
+
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.play-btn {
+    position: relative;
+
+    width: 76px;
+    height: 76px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0d99a,
+            #c9a85d
+        );
+
+    color: #0b0d0c;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.35),
+        0 0 0 7px rgba(214,179,106,0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.play-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 38px rgba(0,0,0,0.42),
+        0 0 0 9px rgba(214,179,106,0.1);
+}
+
+.play-btn:active {
+    transform: scale(0.96);
+}
+
+.play-btn .material-icons {
+    font-size: 37px;
+}
+
+.play-hint {
+    margin-top: 11px;
+
+    color: var(--muted-2);
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SIDE PANEL
+========================================================= */
+
+.settings-panel {
+    position: relative;
+
+    padding: 28px 25px;
+
+    border-left:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    background:
+        rgba(255,255,255,0.025);
+
+    overflow-y: auto;
+}
+
+.panel-title {
+    margin-bottom: 18px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   SETTINGS
+========================================================= */
+
+.setting-block {
+    margin-bottom: 22px;
+}
+
+.setting-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 8px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: var(--muted);
+}
+
+.setting-label strong {
+    color: var(--cream);
+    font-weight: 600;
+}
+
+.select-wrap {
+    position: relative;
+}
+
+.select-wrap .material-icons {
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+    color: var(--muted);
+
+    font-size: 18px;
+}
+
+select {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding:
+        0
+        42px
+        0
+        14px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 13px;
+
+    outline: none;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    color: var(--cream);
+
+    appearance: none;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+select:hover {
+    border-color: rgba(255,255,255,0.16);
+}
+
+select:focus {
+    border-color: var(--border-gold);
+}
+
+select option {
+    background: #101512;
+    color: white;
+}
+
+
+/* =========================================================
+   VOLUME
+========================================================= */
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.volume-control .material-icons {
+    color: var(--muted);
+    font-size: 20px;
+}
+
+.volume-control input {
+    flex: 1;
+    accent-color: var(--gold);
+}
+
+
+/* =========================================================
+   SOUND GRID
+========================================================= */
+
+.sound-section {
+    margin-top: 28px;
+}
+
+.sound-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+.sound-section-title span:first-child {
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+
+    color: var(--muted);
+}
+
+.sound-count {
+    font-size: 10px;
+    color: var(--muted-2);
+}
+
+.sound-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap: 8px;
+}
+
+.sound-card {
+    position: relative;
+
+    min-height: 84px;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.sound-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        var(--sound-image);
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.55;
+
+    transition:
+        transform 0.45s ease,
+        opacity 0.25s ease;
+}
+
+.sound-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.05),
+            rgba(0,0,0,0.78)
+        );
+}
+
+.sound-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.sound-card:hover::before {
+    transform: scale(1.05);
+    opacity: 0.7;
+}
+
+.sound-card.selected {
+    border-color: var(--gold);
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(214,179,106,0.2),
+        0 5px 20px
+        rgba(0,0,0,0.18);
+}
+
+.sound-card.selected::before {
+    opacity: 0.75;
+}
+
+.sound-card-content {
+    position: relative;
+    z-index: 3;
+}
+
+.sound-icon {
+    position: absolute;
+
+    top: 9px;
+    right: 9px;
+
+    z-index: 3;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,0.38);
+
+    backdrop-filter: blur(5px);
+
+    color: white;
+}
+
+.sound-icon .material-icons {
+    font-size: 14px;
+}
+
+.sound-name {
+    font-size: 10px;
+
+    line-height: 1.25;
+
+    font-weight: 600;
+
+    color: white;
+}
+
+.sound-selected {
+    margin-top: 3px;
+
+    font-size: 8px;
+
+    color: var(--gold-light);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   PREMIUM NOTICE
+========================================================= */
+
+.premium-note {
+    margin-top: 18px;
+
+    padding: 14px;
+
+    border:
+        1px solid
+        rgba(214,179,106,0.17);
+
+    border-radius: 14px;
+
+    background:
+        rgba(214,179,106,0.045);
+}
+
+.premium-note-row {
+    display: flex;
+    gap: 10px;
+}
+
+.premium-note .material-icons {
+    color: var(--gold);
+    font-size: 19px;
+}
+
+.premium-note strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 11px;
+}
+
+.premium-note p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   APP CTA
+========================================================= */
+
+.app-cta {
+    margin-top: 14px;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(24,57,43,0.75),
+            rgba(12,25,20,0.75)
+        );
+
+    border:
+        1px solid
+        rgba(155,199,165,0.12);
+}
+
+.app-cta-title {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.app-cta-text {
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+.app-cta a {
+    display: inline-flex;
+
+    margin-top: 10px;
+
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    background: var(--gold);
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BELOW TIMER CONTENT
+========================================================= */
+
+.info-section {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0,1fr));
+
+    gap: 14px;
+
+    margin: 18px 0 50px;
+}
+
+.info-card {
+    padding: 22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.025);
+}
+
+.info-card .material-icons {
+    color: var(--gold);
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+.info-card h2 {
+    margin: 0 0 8px;
+
+    font-size: 14px;
+}
+
+.info-card p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    margin-top: 40px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    background:
+        rgba(3,5,4,0.8);
+}
+
+.footer-inner {
+    width: min(100% - 32px, var(--max-width));
+
+    margin: auto;
+
+    padding:
+        38px
+        0
+        calc(38px + env(safe-area-inset-bottom));
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr;
+
+    gap: 40px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-brand img {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 10px;
+
+    margin-bottom: 12px;
+}
+
+.footer-brand strong {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.footer-brand p {
+    max-width: 310px;
+
+    margin: 8px 0 0;
+
+    color: var(--muted-2);
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+.footer-column h3 {
+    margin: 0 0 12px;
+
+    font-size: 10px;
+
+    color: var(--muted);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
+
+.footer-column a {
+    display: block;
+
+    width: fit-content;
+
+    margin: 8px 0;
+
+    color: var(--muted-2);
+
+    text-decoration: none;
+
+    font-size: 10px;
+}
+
+.footer-column a:hover {
+    color: var(--cream);
+}
+
+.footer-bottom {
+    border-top:
+        1px solid
+        rgba(255,255,255,0.05);
+
+    width: min(100% - 32px, var(--max-width));
+
+    margin: auto;
+
+    padding:
+        18px
+        0
+        calc(18px + env(safe-area-inset-bottom));
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: var(--muted-2);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   PREMIUM MODAL
+========================================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 3000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        20px
+        20px
+        calc(20px + env(safe-area-inset-bottom));
+
+    background:
+        rgba(0,0,0,0.78);
+
+    backdrop-filter: blur(12px);
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-card {
+    position: relative;
+
+    width: min(100%, 420px);
+
+    padding: 34px 26px 28px;
+
+    border:
+        1px solid
+        rgba(214,179,106,0.22);
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151c18,
+            #090d0b
+        );
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,0.65);
+
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 38px;
+    height: 38px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    color: var(--muted);
+
+    cursor: pointer;
+}
+
+.modal-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(214,179,106,0.1);
+
+    color: var(--gold);
+}
+
+.modal-icon .material-icons {
+    font-size: 28px;
+}
+
+.modal-card h2 {
+    margin: 0;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+}
+
+.modal-card p {
+    margin: 12px auto 20px;
+
+    max-width: 340px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.65;
+}
+
+.modal-benefits {
+    display: grid;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+    text-align: left;
+}
+
+.modal-benefit {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--cream);
+
+    font-size: 11px;
+}
+
+.modal-benefit .material-icons {
+    color: var(--success);
+
+    font-size: 17px;
+}
+
+.play-store-badge {
+    display: inline-block;
+}
+
+.play-store-badge img {
+    height: 58px;
+
+    width: auto;
+}
+
+.modal-small {
+    margin-top: 8px;
+
+    color: var(--muted-2);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   BLACK SCREEN
+========================================================= */
+
+.black-screen {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2500;
+
+    display: none;
+
+    background: #000;
+
+    cursor: pointer;
+}
+
+.black-screen.active {
+    display: block;
+}
+
+.black-screen-hint {
+    position: absolute;
+
+    bottom:
+        calc(25px + env(safe-area-inset-bottom));
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: rgba(255,255,255,0.28);
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+.mobile-nav {
+    display: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .timer-app {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-panel {
+        border-left: 0;
+
+        border-top:
+            1px solid
+            rgba(255,255,255,0.07);
+    }
+
+    .sound-grid {
+        grid-template-columns:
+            repeat(3, minmax(0,1fr));
+    }
+
+    .info-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 680px) {
+
+    :root {
+        --header-height: 62px;
+    }
+
+    .header-inner {
+        width: min(100% - 22px, var(--max-width));
+    }
+
+    .brand img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .brand-name {
+        font-size: 11px;
+        letter-spacing: 1.4px;
+    }
+
+    .brand-sub {
+        display: none;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-nav.mobile-open {
+        position: absolute;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        top: var(--header-height);
+
+        left: 0;
+        right: 0;
+
+        padding: 14px 18px 18px;
+
+        background:
+            rgba(5,8,7,0.97);
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,0.08);
+
+        gap: 3px;
+    }
+
+    .main-nav.mobile-open a {
+        padding: 13px;
+
+        border-radius: 10px;
+    }
+
+    .main-nav.mobile-open a:hover {
+        background:
+            rgba(255,255,255,0.05);
+    }
+
+    .page {
+        width: min(100% - 18px, var(--max-width));
+    }
+
+    .breadcrumbs {
+        padding-top: 13px;
+    }
+
+    .timer-intro {
+        padding-bottom: 20px;
+    }
+
+    .timer-intro h1 {
+        font-size: 31px;
+    }
+
+    .timer-intro p {
+        font-size: 12px;
+        padding: 0 6px;
+    }
+
+    .timer-app {
+        border-radius: 22px;
+
+        min-height: auto;
+    }
+
+    .timer-main {
+        padding:
+            18px
+            15px
+            calc(22px + env(safe-area-inset-bottom));
+    }
+
+    .timer-zone {
+        min-height: 235px;
+    }
+
+    .timer-ring {
+        width: min(245px, 68vw);
+    }
+
+    .timer-display {
+        font-size: 55px;
+    }
+
+    .player-controls {
+        margin-top: 4px;
+
+        padding:
+            14px
+            0
+            0;
+    }
+
+    .play-btn {
+        width: 72px;
+        height: 72px;
+    }
+
+    .play-btn .material-icons {
+        font-size: 35px;
+    }
+
+    .settings-panel {
+        padding: 22px 15px 25px;
+    }
+
+    .sound-grid {
+        grid-template-columns:
+            repeat(3, minmax(0,1fr));
+
+        gap: 6px;
+    }
+
+    .sound-card {
+        min-height: 78px;
+        padding: 8px;
+    }
+
+    .sound-name {
+        font-size: 9px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 28px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .timer-intro h1 {
+        font-size: 28px;
+    }
+
+    .timer-zone {
+        min-height: 215px;
+    }
+
+    .timer-ring {
+        width: 220px;
+    }
+
+    .timer-display {
+        font-size: 48px;
+    }
+
+    .sound-grid {
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+    }
+
+    .sound-card {
+        min-height: 82px;
+    }
+
+    .info-section {
+        margin-bottom: 35px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible {
+    outline:
+        2px solid
+        var(--gold);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+</style>
+
+
+<!-- =======================================================
+     STRUCTURED DATA
+======================================================= -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Meditation Bell Timer",
+    "url": "https://meditationbelltimer.com/timer.html",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web Browser",
+    "description": "A free online meditation timer with interval bells, Tibetan singing bowl sounds, nature sounds, ambient soundscapes and brown noise.",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "GBP"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Future Home Tek",
+        "url": "https://meditationbelltimer.com/"
+    }
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://meditationbelltimer.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Meditation Timer",
+            "item": "https://meditationbelltimer.com/timer.html"
         }
-    </style>
+    ]
+}
+</script>
+
 </head>
+
+
 <body>
 
-    <div class="page-container">
-        <div></div>
 
-        <div id="phone-wrapper">
-            <div id="bg-image"></div>
-            <div id="bg-overlay"></div>
-            
-            <div id="app-ui">
-                <div class="header">
-                    <button class="icon-btn" id="dark-mode-btn"><span class="material-icons">dark_mode</span></button>
-                    <h1>MEDITATION BELL TIMER</h1>
-                    <div style="width: 24px;"></div> 
-                </div>
+<!-- =======================================================
+     HEADER
+======================================================= -->
 
-                <div id="timer-display">05:00</div>
+<header class="site-header">
 
-                <div id="fade-wrapper">
-                    <div id="sound-grid"></div>
+    <div class="header-inner">
 
-                    <div class="controls-area">
-                        <div class="dropdown-group">
-                            <label>Duration</label>
-                            <select id="duration-select" class="dropdown"></select>
-                        </div>
-                        <div class="dropdown-group">
-                            <label>Bell Interval</label>
-                            <select id="interval-select" class="dropdown"></select>
-                        </div>
-                    </div>
-                </div>
+        <a href="/" class="brand">
 
-                <div class="bottom-controls">
-                    <div class="volume-row">
-                        <span class="material-icons" style="color: rgba(255,255,255,0.54); font-size: 16px;">volume_up</span>
-                        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
-                    </div>
-                    <button id="play-btn"><span class="material-icons" id="play-icon">play_arrow</span></button>
-                </div>
-            </div>
+            <img
+                src="/android-chrome-192x192.png"
+                alt="Meditation Bell Timer">
 
-            <div id="black-screen"></div>
-            <div id="premium-modal">
-                <div class="modal-content">
-                    <button class="close-btn" id="close-modal-btn">
-                        <span class="material-icons">close</span>
-                    </button>
-                    <span class="material-icons lock-icon">lock</span>
-                    <h3>Premium Feature</h3>
-                    <p>Extended durations and unlimited gapless audio are exclusively available in the full app. Pay once, yours forever.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer" target="_blank" rel="noopener noreferrer">
-                        <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" style="height: 54px; width: auto;" />
-                    </a>
-                </div>
-            </div>
-        </div>
+            <span class="brand-text">
 
-        <div class="promo-side">
-           <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer" target="_blank" rel="noopener noreferrer" style="display: inline-block; transition: transform 0.2s ease-in-out;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-               <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" style="height: 68px; width: auto;" />
-           </a>
-        </div>
+                <span class="brand-name">
+                    Future Home Tek
+                </span>
+
+                <span class="brand-sub">
+                    Simple tools for a calmer life
+                </span>
+
+            </span>
+
+        </a>
+
+
+        <nav class="main-nav" id="mainNav">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/timer.html">
+                Meditation Timer
+            </a>
+
+            <a href="/solfeggio-healing-frequencies.html">
+                Solfeggio
+            </a>
+
+            <a href="/our-apps.html">
+                Our Apps
+            </a>
+
+            <a
+                class="nav-cta"
+                href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Get the App
+
+            </a>
+
+        </nav>
+
+
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Open navigation"
+            aria-expanded="false">
+
+            <span class="material-icons">
+                menu
+            </span>
+
+        </button>
+
     </div>
 
-    <script>
-        // Wrapped in IIFE to protect from console tampering
-        (function() {
-            const sounds = [
-                { id: "bellOnly", name: "Silence & Tibetan Bell", icon: "notifications_active", audio: "", img: "assets/bowl_bg.webp" },
-                { id: "rain", name: "Soothing Rain Storm", icon: "water_drop", audio: "assets/rain.ogg", img: "assets/rain_bg.webp" },
-                { id: "waves", name: "Crashing Waves", icon: "waves", audio: "assets/waves.ogg", img: "assets/waves_bg.webp" },
-                { id: "birds", name: "Bird Song", icon: "flutter_dash", audio: "assets/birds.ogg", img: "assets/birds_bg.webp" },
-                { id: "forest", name: "Rain Forest", icon: "forest", audio: "assets/forest.ogg", img: "assets/forest_bg.webp" },
-                { id: "bowl", name: "Tibetan Singing Bowl", icon: "surround_sound", audio: "assets/bowl.ogg", img: "assets/bowl_bg.webp" },
-                { id: "omchant", name: "Deep Omm Chant", icon: "self_improvement", audio: "assets/omchant.ogg", img: "assets/omchant_bg.webp" },
-                { id: "steamtrain", name: "Soothing Steam Train", icon: "train", audio: "assets/steamtrain.ogg", img: "assets/steamtrain_bg.webp" },
-                { id: "spaceship", name: "Deep Space Ambient", icon: "rocket_launch", audio: "assets/spaceship.ogg", img: "assets/spaceship_bg.webp" },
-                { id: "campfire", name: "Calming Camp Fire", icon: "local_fire_department", audio: "assets/campfire.ogg", img: "assets/campfire_bg.webp" },
-                { id: "cicadas", name: "Cicadas in the Evening", icon: "nightlight_round", audio: "assets/cicadas.ogg", img: "assets/cicadas_bg.webp" },
-                { id: "brownNoise", name: "Brown Noise", icon: "graphic_eq", audio: "assets/brownnoise.ogg", img: "assets/brownnoise_bg.webp" }
-            ];
+</header>
 
-            const durations = [5, 10, 15, 20, 30, 45, 60, 90, 120, 180, 240, 300, 360, 420, 480];
-            const intervals = [0, 1, 3, 5, 10, 15, 20, 30, 60];
 
-            let currentProfile = sounds[0];
-            let isPlaying = false;
-            let remainingSeconds = 5 * 60; 
-            let timerInterval;
-            let volume = 0.5;
 
-            const ambiencePlayer = new Audio();
-            ambiencePlayer.loop = true; 
-            const bellPlayer = new Audio('assets/bell.mp3');
+<!-- =======================================================
+     MAIN
+======================================================= -->
 
-            const bgImage = document.getElementById('bg-image');
-            const timerDisplay = document.getElementById('timer-display');
-            const playIcon = document.getElementById('play-icon');
-            const fadeWrapper = document.getElementById('fade-wrapper');
-            const durationSelect = document.getElementById('duration-select');
-            const intervalSelect = document.getElementById('interval-select');
-            const volumeSlider = document.getElementById('volume-slider');
-            const playBtn = document.getElementById('play-btn');
-            const darkModeBtn = document.getElementById('dark-mode-btn');
-            const blackScreen = document.getElementById('black-screen');
-            const closeModalBtn = document.getElementById('close-modal-btn');
+<main class="page">
 
-            function init() {
-                bgImage.style.backgroundImage = `url('${currentProfile.img}')`;
-                
-                const grid = document.getElementById('sound-grid');
-                sounds.forEach((sound, index) => {
-                    const card = document.createElement('div');
-                    card.className = `sound-card ${index === 0 ? 'selected' : ''}`;
-                    card.id = `card-${sound.id}`;
-                    card.onclick = () => selectSound(sound);
-                    card.innerHTML = `<span class="material-icons">${sound.icon}</span><span class="title">${sound.name}</span>`;
-                    grid.appendChild(card);
-                });
 
-                durations.forEach(d => {
-                    let label = formatDropdown(d);
-                    if (d > 5) label += " 🔒"; 
-                    durationSelect.add(new Option(label, d));
-                });
-                intervals.forEach(i => intervalSelect.add(new Option(formatDropdown(i), i)));
-                
-                durationSelect.value = "5"; 
-                intervalSelect.value = "1";
+    <!-- BREADCRUMBS -->
 
-                durationSelect.addEventListener('change', (e) => {
-                    if (parseInt(e.target.value) > 5) {
-                        e.target.value = "5"; 
-                        showModal(); 
-                    } else {
-                        updateTimerDisplay();
-                    }
-                });
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
 
-                volumeSlider.addEventListener('input', (e) => {
-                    volume = e.target.value;
-                    ambiencePlayer.volume = volume;
-                    bellPlayer.volume = volume;
-                });
+        <a href="/">
+            Home
+        </a>
 
-                // Attach UI events dynamically
-                playBtn.addEventListener('click', togglePlay);
-                darkModeBtn.addEventListener('click', toggleBlackScreen);
-                blackScreen.addEventListener('click', toggleBlackScreen);
-                closeModalBtn.addEventListener('click', closeModal);
+        <span class="material-icons">
+            chevron_right
+        </span>
 
-                updateTimerDisplay();
+        <span>
+            Meditation Timer
+        </span>
+
+    </nav>
+
+
+    <!-- INTRO -->
+
+    <section class="timer-intro">
+
+        <div class="eyebrow">
+
+            <span class="material-icons">
+                self_improvement
+            </span>
+
+            Free Online Meditation Timer
+
+        </div>
+
+
+        <h1>
+            Meditation, without the noise.
+        </h1>
+
+
+        <p>
+            Set your time, choose your sound and begin.
+            A simple meditation timer with authentic bells,
+            nature sounds and ambient soundscapes.
+        </p>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         TIMER APPLICATION
+    =================================================== -->
+
+    <section
+        class="timer-app"
+        aria-label="Meditation timer">
+
+
+        <!-- ===============================================
+             MAIN TIMER
+        =============================================== -->
+
+        <div class="timer-main">
+
+
+            <div class="timer-topbar">
+
+                <div class="timer-label">
+
+                    <span
+                        class="status-dot"
+                        id="statusDot">
+                    </span>
+
+                    <span id="statusText">
+                        Ready to begin
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="black-screen-btn"
+                    id="blackScreenBtn"
+                    aria-label="Black screen mode"
+                    title="Black screen mode">
+
+                    <span class="material-icons">
+                        dark_mode
+                    </span>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- TIMER RING -->
+
+            <div class="timer-zone">
+
+                <div class="timer-ring">
+
+                    <svg viewBox="0 0 200 200">
+
+                        <circle
+                            class="ring-track"
+                            cx="100"
+                            cy="100"
+                            r="92">
+                        </circle>
+
+                        <circle
+                            class="ring-progress"
+                            id="ringProgress"
+                            cx="100"
+                            cy="100"
+                            r="92">
+                        </circle>
+
+                    </svg>
+
+
+                    <div class="timer-center">
+
+                        <div
+                            class="timer-display"
+                            id="timerDisplay"
+                            aria-live="polite">
+
+                            05:00
+
+                        </div>
+
+
+                        <div
+                            class="timer-state"
+                            id="timerState">
+
+                            5 minute session
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CURRENT SOUND -->
+
+            <div class="current-sound">
+
+                <span class="material-icons">
+                    graphic_eq
+                </span>
+
+                <span>
+                    Sound:
+                </span>
+
+                <strong id="currentSoundName">
+                    Silence & Tibetan Bell
+                </strong>
+
+            </div>
+
+
+
+            <!-- PLAY -->
+
+            <div class="player-controls">
+
+                <button
+                    class="play-btn"
+                    id="playBtn"
+                    aria-label="Start meditation timer">
+
+                    <span
+                        class="material-icons"
+                        id="playIcon">
+
+                        play_arrow
+
+                    </span>
+
+                </button>
+
+
+                <div
+                    class="play-hint"
+                    id="playHint">
+
+                    Start session
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ===============================================
+             SETTINGS PANEL
+        =============================================== -->
+
+        <aside class="settings-panel">
+
+
+            <div class="panel-title">
+                Session Settings
+            </div>
+
+
+            <!-- DURATION -->
+
+            <div class="setting-block">
+
+                <div class="setting-label">
+
+                    <span>
+                        Duration
+                    </span>
+
+                    <strong id="durationLabel">
+                        5 minutes
+                    </strong>
+
+                </div>
+
+
+                <div class="select-wrap">
+
+                    <select id="durationSelect"
+                            aria-label="Meditation duration">
+
+                    </select>
+
+                    <span class="material-icons">
+                        expand_more
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BELL INTERVAL -->
+
+            <div class="setting-block">
+
+                <div class="setting-label">
+
+                    <span>
+                        Interval Bell
+                    </span>
+
+                    <strong>
+                        Optional
+                    </strong>
+
+                </div>
+
+
+                <div class="select-wrap">
+
+                    <select
+                        id="intervalSelect"
+                        aria-label="Bell interval">
+
+                    </select>
+
+                    <span class="material-icons">
+                        expand_more
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VOLUME -->
+
+            <div class="setting-block">
+
+                <div class="setting-label">
+
+                    <span>
+                        Volume
+                    </span>
+
+                    <strong id="volumeValue">
+                        50%
+                    </strong>
+
+                </div>
+
+
+                <div class="volume-control">
+
+                    <span class="material-icons">
+                        volume_down
+                    </span>
+
+                    <input
+                        type="range"
+                        id="volumeSlider"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="0.5"
+                        aria-label="Volume">
+
+                    <span class="material-icons">
+                        volume_up
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SOUNDS -->
+
+            <div class="sound-section">
+
+                <div class="sound-section-title">
+
+                    <span>
+                        Soundscapes
+                    </span>
+
+                    <span
+                        class="sound-count"
+                        id="soundCount">
+
+                        1 of 12
+
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="sound-grid"
+                    id="soundGrid">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PREMIUM -->
+
+            <div class="premium-note">
+
+                <div class="premium-note-row">
+
+                    <span class="material-icons">
+                        lock
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Want longer sessions?
+                        </strong>
+
+                        <p>
+                            The free web timer includes a
+                            5-minute session. Unlock sessions
+                            from 10 minutes to 8 hours in the app.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- APP CTA -->
+
+            <div class="app-cta">
+
+                <div class="app-cta-title">
+                    Take your practice with you
+                </div>
+
+                <div class="app-cta-text">
+                    No ads. No monthly subscription.
+                    No account. Works offline.
+                </div>
+
+                <a
+                    href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Explore the app
+
+                </a>
+
+            </div>
+
+
+        </aside>
+
+
+    </section>
+
+
+
+    <!-- ===================================================
+         SUPPORTING INFORMATION
+    =================================================== -->
+
+    <section class="info-section">
+
+
+        <article class="info-card">
+
+            <span class="material-icons">
+                notifications_active
+            </span>
+
+            <h2>
+                Interval bells
+            </h2>
+
+            <p>
+                Choose an optional bell interval to mark
+                the passing of time without constantly
+                checking the clock.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <span class="material-icons">
+                graphic_eq
+            </span>
+
+            <h2>
+                Choose your atmosphere
+            </h2>
+
+            <p>
+                Listen to a Tibetan bowl, rainfall,
+                ocean waves, forest ambience, birds,
+                brown noise and more.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <span class="material-icons">
+                phone_android
+            </span>
+
+            <h2>
+                Want up to 8 hours?
+            </h2>
+
+            <p>
+                The Meditation Bell Timer app adds extended
+                sessions and is available as a one-time
+                premium upgrade.
+            </p>
+
+        </article>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+
+        <div class="footer-brand">
+
+            <img
+                src="/android-chrome-192x192.png"
+                alt="Future Home Tek">
+
+            <strong>
+                FUTURE HOME TEK
+            </strong>
+
+            <p>
+                Simple digital tools designed to support
+                mindfulness, relaxation, focus and better
+                everyday routines.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/timer.html">
+                Meditation Timer
+            </a>
+
+            <a href="/best-meditation-sounds">
+                Best Meditation Sounds
+            </a>
+
+            <a href="/how-to-use-a-meditation-timer">
+                How to Use a Meditation Timer
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Apps
+            </h3>
+
+            <a href="/our-apps.html">
+                Our Apps
+            </a>
+
+            <a href="/solfeggio-healing-frequencies.html">
+                Solfeggio Frequencies
+            </a>
+
+            <a
+                href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Google Play
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Future Home Tek
+        </span>
+
+        <span>
+            Simple tools. Less noise.
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =======================================================
+     PREMIUM MODAL
+======================================================= -->
+
+<div
+    class="modal"
+    id="premiumModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="premiumTitle">
+
+
+    <div class="modal-card">
+
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            aria-label="Close">
+
+            <span class="material-icons">
+                close
+            </span>
+
+        </button>
+
+
+        <div class="modal-icon">
+
+            <span class="material-icons">
+                lock
+            </span>
+
+        </div>
+
+
+        <h2 id="premiumTitle">
+            Extend your session
+        </h2>
+
+
+        <p>
+            The online timer is free for 5-minute sessions.
+            For longer meditation, relaxation or focus sessions,
+            the full Meditation Bell Timer app supports durations
+            from 10 minutes up to 8 hours.
+        </p>
+
+
+        <div class="modal-benefits">
+
+            <div class="modal-benefit">
+
+                <span class="material-icons">
+                    check_circle
+                </span>
+
+                Sessions up to 8 hours
+
+            </div>
+
+
+            <div class="modal-benefit">
+
+                <span class="material-icons">
+                    check_circle
+                </span>
+
+                12 immersive soundscapes
+
+            </div>
+
+
+            <div class="modal-benefit">
+
+                <span class="material-icons">
+                    check_circle
+                </span>
+
+                No monthly subscription
+
+            </div>
+
+
+            <div class="modal-benefit">
+
+                <span class="material-icons">
+                    check_circle
+                </span>
+
+                No account required
+
+            </div>
+
+
+            <div class="modal-benefit">
+
+                <span class="material-icons">
+                    check_circle
+                </span>
+
+                Works offline
+
+            </div>
+
+        </div>
+
+
+        <a
+            class="play-store-badge"
+            href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <img
+                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                alt="Get it on Google Play">
+
+        </a>
+
+
+        <div class="modal-small">
+            One-time premium upgrade. No recurring subscription.
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     BLACK SCREEN
+======================================================= -->
+
+<div
+    class="black-screen"
+    id="blackScreen">
+
+    <div class="black-screen-hint">
+        Tap anywhere to return
+    </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
+
+(function() {
+
+"use strict";
+
+
+/* =========================================================
+   SOUND LIBRARY
+========================================================= */
+
+const sounds = [
+
+    {
+        id: "bellOnly",
+        name: "Silence & Tibetan Bell",
+        icon: "notifications_active",
+        audio: "",
+        img: "assets/bowl_bg.webp"
+    },
+
+    {
+        id: "rain",
+        name: "Soothing Rain",
+        icon: "water_drop",
+        audio: "assets/rain.ogg",
+        img: "assets/rain_bg.webp"
+    },
+
+    {
+        id: "waves",
+        name: "Crashing Waves",
+        icon: "waves",
+        audio: "assets/waves.ogg",
+        img: "assets/waves_bg.webp"
+    },
+
+    {
+        id: "birds",
+        name: "Bird Song",
+        icon: "flutter_dash",
+        audio: "assets/birds.ogg",
+        img: "assets/birds_bg.webp"
+    },
+
+    {
+        id: "forest",
+        name: "Rain Forest",
+        icon: "forest",
+        audio: "assets/forest.ogg",
+        img: "assets/forest_bg.webp"
+    },
+
+    {
+        id: "bowl",
+        name: "Tibetan Singing Bowl",
+        icon: "surround_sound",
+        audio: "assets/bowl.ogg",
+        img: "assets/bowl_bg.webp"
+    },
+
+    {
+        id: "omchant",
+        name: "Deep Om Chant",
+        icon: "self_improvement",
+        audio: "assets/omchant.ogg",
+        img: "assets/omchant_bg.webp"
+    },
+
+    {
+        id: "steamtrain",
+        name: "Soothing Steam Train",
+        icon: "train",
+        audio: "assets/steamtrain.ogg",
+        img: "assets/steamtrain_bg.webp"
+    },
+
+    {
+        id: "spaceship",
+        name: "Deep Space Ambient",
+        icon: "rocket_launch",
+        audio: "assets/spaceship.ogg",
+        img: "assets/spaceship_bg.webp"
+    },
+
+    {
+        id: "campfire",
+        name: "Calming Campfire",
+        icon: "local_fire_department",
+        audio: "assets/campfire.ogg",
+        img: "assets/campfire_bg.webp"
+    },
+
+    {
+        id: "cicadas",
+        name: "Evening Cicadas",
+        icon: "nightlight_round",
+        audio: "assets/cicadas.ogg",
+        img: "assets/cicadas_bg.webp"
+    },
+
+    {
+        id: "brownNoise",
+        name: "Brown Noise",
+        icon: "graphic_eq",
+        audio: "assets/brownnoise.ogg",
+        img: "assets/brownnoise_bg.webp"
+    }
+
+];
+
+
+/* =========================================================
+   TIMER OPTIONS
+========================================================= */
+
+const durations = [
+    5,
+    10,
+    15,
+    20,
+    30,
+    45,
+    60,
+    90,
+    120,
+    180,
+    240,
+    300,
+    360,
+    420,
+    480
+];
+
+
+const intervals = [
+    0,
+    1,
+    3,
+    5,
+    10,
+    15,
+    20,
+    30,
+    60
+];
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let currentSound = sounds[0];
+
+let isPlaying = false;
+
+let remainingSeconds = 300;
+
+let selectedDuration = 5;
+
+let timerInterval = null;
+
+let volume = 0.5;
+
+let sessionTotalSeconds = 300;
+
+
+/* =========================================================
+   AUDIO
+========================================================= */
+
+const ambiencePlayer = new Audio();
+
+ambiencePlayer.loop = true;
+ambiencePlayer.preload = "auto";
+
+
+const bellPlayer = new Audio(
+    "assets/bell.mp3"
+);
+
+bellPlayer.preload = "auto";
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const soundGrid =
+    document.getElementById("soundGrid");
+
+const durationSelect =
+    document.getElementById("durationSelect");
+
+const intervalSelect =
+    document.getElementById("intervalSelect");
+
+const volumeSlider =
+    document.getElementById("volumeSlider");
+
+const volumeValue =
+    document.getElementById("volumeValue");
+
+const durationLabel =
+    document.getElementById("durationLabel");
+
+const timerDisplay =
+    document.getElementById("timerDisplay");
+
+const timerState =
+    document.getElementById("timerState");
+
+const currentSoundName =
+    document.getElementById("currentSoundName");
+
+const soundCount =
+    document.getElementById("soundCount");
+
+const playBtn =
+    document.getElementById("playBtn");
+
+const playIcon =
+    document.getElementById("playIcon");
+
+const playHint =
+    document.getElementById("playHint");
+
+const ringProgress =
+    document.getElementById("ringProgress");
+
+const statusDot =
+    document.getElementById("statusDot");
+
+const statusText =
+    document.getElementById("statusText");
+
+const premiumModal =
+    document.getElementById("premiumModal");
+
+const modalClose =
+    document.getElementById("modalClose");
+
+const blackScreen =
+    document.getElementById("blackScreen");
+
+const blackScreenBtn =
+    document.getElementById("blackScreenBtn");
+
+const mobileMenuBtn =
+    document.getElementById("mobileMenuBtn");
+
+const mainNav =
+    document.getElementById("mainNav");
+
+
+/* =========================================================
+   RING
+========================================================= */
+
+const ringRadius = 92;
+
+const circumference =
+    2 * Math.PI * ringRadius;
+
+ringProgress.style.strokeDasharray =
+    circumference;
+
+ringProgress.style.strokeDashoffset =
+    0;
+
+
+/* =========================================================
+   FORMATTERS
+========================================================= */
+
+function formatDuration(minutes) {
+
+    if (minutes < 60) {
+        return `${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
+    }
+
+    const hours =
+        Math.floor(minutes / 60);
+
+    const mins =
+        minutes % 60;
+
+    if (mins === 0) {
+        return `${hours} ${hours === 1 ? "hour" : "hours"}`;
+    }
+
+    return `${hours}h ${mins}m`;
+}
+
+
+function formatInterval(minutes) {
+
+    if (minutes === 0) {
+        return "Off";
+    }
+
+    if (minutes < 60) {
+        return `${minutes} minute${minutes === 1 ? "" : "s"}`;
+    }
+
+    return "60 minutes";
+}
+
+
+function formatTime(seconds) {
+
+    const h =
+        Math.floor(seconds / 3600);
+
+    const m =
+        Math.floor((seconds % 3600) / 60);
+
+    const s =
+        seconds % 60;
+
+
+    if (h > 0) {
+
+        return (
+            h +
+            ":" +
+            String(m).padStart(2, "0") +
+            ":" +
+            String(s).padStart(2, "0")
+        );
+
+    }
+
+
+    return (
+        String(m).padStart(2, "0") +
+        ":" +
+        String(s).padStart(2, "0")
+    );
+}
+
+
+/* =========================================================
+   BUILD DURATION OPTIONS
+========================================================= */
+
+function buildDurationOptions() {
+
+    durationSelect.innerHTML = "";
+
+
+    durations.forEach(function(minutes) {
+
+        const option =
+            document.createElement("option");
+
+        option.value = minutes;
+
+        option.textContent =
+            minutes > 5
+                ? `${formatDuration(minutes)}  🔒`
+                : formatDuration(minutes);
+
+        durationSelect.appendChild(option);
+
+    });
+
+
+    durationSelect.value = "5";
+
+}
+
+
+/* =========================================================
+   BUILD INTERVAL OPTIONS
+========================================================= */
+
+function buildIntervalOptions() {
+
+    intervalSelect.innerHTML = "";
+
+
+    intervals.forEach(function(minutes) {
+
+        const option =
+            document.createElement("option");
+
+        option.value = minutes;
+
+        option.textContent =
+            formatInterval(minutes);
+
+        intervalSelect.appendChild(option);
+
+    });
+
+
+    intervalSelect.value = "1";
+
+}
+
+
+/* =========================================================
+   BUILD SOUND CARDS
+========================================================= */
+
+function buildSoundCards() {
+
+    soundGrid.innerHTML = "";
+
+
+    sounds.forEach(function(sound, index) {
+
+        const card =
+            document.createElement("button");
+
+        card.type = "button";
+
+        card.className =
+            "sound-card" +
+            (index === 0 ? " selected" : "");
+
+        card.dataset.id =
+            sound.id;
+
+
+        card.style.setProperty(
+            "--sound-image",
+            `url("${sound.img}")`
+        );
+
+
+        card.innerHTML = `
+
+            <div class="sound-icon">
+
+                <span class="material-icons">
+                    ${sound.icon}
+                </span>
+
+            </div>
+
+            <div class="sound-card-content">
+
+                <div class="sound-name">
+                    ${sound.name}
+                </div>
+
+                <div
+                    class="sound-selected"
+                    ${index === 0 ? "" : 'style="display:none"'}>
+                    Selected
+                </div>
+
+            </div>
+
+        `;
+
+
+        card.addEventListener(
+            "click",
+            function() {
+
+                selectSound(sound);
+
+            }
+        );
+
+
+        soundGrid.appendChild(card);
+
+    });
+
+}
+
+
+/* =========================================================
+   SELECT SOUND
+========================================================= */
+
+function selectSound(sound) {
+
+    currentSound = sound;
+
+
+    document
+        .querySelectorAll(".sound-card")
+        .forEach(function(card) {
+
+            const selected =
+                card.dataset.id === sound.id;
+
+            card.classList.toggle(
+                "selected",
+                selected
+            );
+
+
+            const selectedLabel =
+                card.querySelector(
+                    ".sound-selected"
+                );
+
+            if (selectedLabel) {
+
+                selectedLabel.style.display =
+                    selected
+                        ? "block"
+                        : "none";
+
             }
 
-            function showModal() {
-                document.getElementById('premium-modal').style.display = 'flex';
+        });
+
+
+    currentSoundName.textContent =
+        sound.name;
+
+
+    const index =
+        sounds.findIndex(
+            item => item.id === sound.id
+        );
+
+
+    soundCount.textContent =
+        `${index + 1} of ${sounds.length}`;
+
+
+    if (isPlaying) {
+
+        playAmbientSound();
+
+    }
+
+}
+
+
+/* =========================================================
+   PLAY AMBIENT
+========================================================= */
+
+function playAmbientSound() {
+
+    ambiencePlayer.pause();
+
+    ambiencePlayer.currentTime = 0;
+
+    if (!currentSound.audio) {
+        return;
+    }
+
+
+    ambiencePlayer.src =
+        currentSound.audio;
+
+    ambiencePlayer.volume =
+        volume;
+
+
+    const playPromise =
+        ambiencePlayer.play();
+
+
+    if (playPromise !== undefined) {
+
+        playPromise.catch(function() {
+
+            /*
+             Audio playback can be rejected by the browser
+             if the user gesture has expired. The next
+             interaction will retry playback.
+            */
+
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   PLAY BELL
+========================================================= */
+
+function playBell() {
+
+    bellPlayer.pause();
+
+    bellPlayer.currentTime = 0;
+
+    bellPlayer.volume =
+        volume;
+
+
+    const playPromise =
+        bellPlayer.play();
+
+
+    if (playPromise !== undefined) {
+
+        playPromise.catch(function() {});
+
+    }
+
+}
+
+
+/* =========================================================
+   TIMER DISPLAY
+========================================================= */
+
+function updateDisplay() {
+
+    timerDisplay.textContent =
+        formatTime(remainingSeconds);
+
+
+    const progress =
+        sessionTotalSeconds > 0
+            ? remainingSeconds / sessionTotalSeconds
+            : 1;
+
+
+    const offset =
+        circumference * (1 - progress);
+
+
+    ringProgress.style.strokeDashoffset =
+        offset;
+
+
+    if (!isPlaying) {
+
+        timerState.textContent =
+            `${formatDuration(selectedDuration)} session`;
+
+    } else {
+
+        timerState.textContent =
+            "Session in progress";
+
+    }
+
+}
+
+
+/* =========================================================
+   UPDATE DURATION LABEL
+========================================================= */
+
+function updateDurationLabel() {
+
+    durationLabel.textContent =
+        formatDuration(selectedDuration);
+
+}
+
+
+/* =========================================================
+   START TIMER
+========================================================= */
+
+function startMeditation() {
+
+    if (selectedDuration > 5) {
+
+        showPremiumModal();
+
+        durationSelect.value = "5";
+
+        selectedDuration = 5;
+
+        sessionTotalSeconds = 300;
+
+        remainingSeconds = 300;
+
+        updateDurationLabel();
+
+        updateDisplay();
+
+        return;
+
+    }
+
+
+    isPlaying = true;
+
+    sessionTotalSeconds =
+        selectedDuration * 60;
+
+    remainingSeconds =
+        sessionTotalSeconds;
+
+
+    playIcon.textContent =
+        "stop";
+
+    playHint.textContent =
+        "Stop session";
+
+
+    statusDot.classList.add(
+        "playing"
+    );
+
+    statusText.textContent =
+        "Session in progress";
+
+
+    playBtn.setAttribute(
+        "aria-label",
+        "Stop meditation timer"
+    );
+
+
+    durationSelect.disabled = true;
+
+    intervalSelect.disabled = true;
+
+
+    playBell();
+
+    playAmbientSound();
+
+
+    updateDisplay();
+
+
+    timerInterval =
+        setInterval(function() {
+
+            if (remainingSeconds > 0) {
+
+                remainingSeconds--;
+
+                updateDisplay();
+
+                checkIntervalBell();
+
             }
 
-            function closeModal() {
-                document.getElementById('premium-modal').style.display = 'none';
+
+            if (remainingSeconds <= 0) {
+
+                finishMeditation();
+
             }
 
-            function selectSound(sound) {
-                document.querySelectorAll('.sound-card').forEach(c => c.classList.remove('selected'));
-                document.getElementById(`card-${sound.id}`).classList.add('selected');
-                
-                currentProfile = sound;
-                bgImage.style.backgroundImage = `url('${sound.img}')`;
+        }, 1000);
 
-                if (isPlaying) {
-                    ambiencePlayer.pause();
-                    if (sound.audio !== "") {
-                        ambiencePlayer.src = sound.audio;
-                        ambiencePlayer.play();
-                    }
-                }
-            }
+}
 
-            function togglePlay() {
-                if (isPlaying) stopMeditation();
-                else startMeditation();
-            }
 
-            function startMeditation() {
-                // Server-side equivalent hard stop
-                const requestedDuration = parseInt(durationSelect.value);
-                if (requestedDuration > 5) {
-                    durationSelect.value = "5";
-                    updateTimerDisplay();
-                    showModal();
-                    return; 
-                }
+/* =========================================================
+   STOP TIMER
+========================================================= */
 
-                isPlaying = true;
-                remainingSeconds = requestedDuration * 60;
-                playIcon.innerText = "stop";
-                fadeWrapper.style.opacity = "0";
-                fadeWrapper.style.pointerEvents = "none";
+function stopMeditation() {
 
-                playBell();
+    clearInterval(timerInterval);
 
-                if (currentProfile.audio !== "") {
-                    ambiencePlayer.src = currentProfile.audio;
-                    ambiencePlayer.volume = volume;
-                    ambiencePlayer.play();
-                }
+    timerInterval = null;
 
-                timerInterval = setInterval(() => {
-                    if (remainingSeconds > 0) {
-                        remainingSeconds--;
-                        updateTimerDisplay();
 
-                        if (remainingSeconds === 0) {
-                            playBell();
-                            stopMeditation();
-                        } else {
-                            checkIntervalBell();
-                        }
-                    }
-                }, 1000);
-            }
+    isPlaying = false;
 
-            function stopMeditation() {
-                isPlaying = false;
-                clearInterval(timerInterval);
-                ambiencePlayer.pause();
-                
-                let endDuration = parseInt(durationSelect.value);
-                if (endDuration > 5) endDuration = 5;
-                
-                remainingSeconds = endDuration * 60;
-                
-                playIcon.innerText = "play_arrow";
-                fadeWrapper.style.opacity = "1";
-                fadeWrapper.style.pointerEvents = "auto";
-                updateTimerDisplay();
-            }
 
-            function playBell() {
-                bellPlayer.currentTime = 0;
-                bellPlayer.volume = volume;
-                bellPlayer.play();
-            }
+    ambiencePlayer.pause();
 
-            function checkIntervalBell() {
-                const intMins = parseInt(intervalSelect.value);
-                if (intMins > 0) {
-                    const totalSeconds = parseInt(durationSelect.value) * 60;
-                    const elapsed = totalSeconds - remainingSeconds;
-                    const intervalSeconds = intMins * 60;
+    ambiencePlayer.currentTime = 0;
 
-                    if (elapsed > 0 && elapsed % intervalSeconds === 0) {
-                        playBell();
-                    }
-                }
-            }
 
-            function updateTimerDisplay() {
-                let displaySecs = remainingSeconds;
-                if (!isPlaying) {
-                    let baseVal = parseInt(durationSelect.value);
-                    if (baseVal > 5) baseVal = 5; 
-                    displaySecs = baseVal * 60;
-                }
+    remainingSeconds =
+        selectedDuration * 60;
 
-                let h = Math.floor(displaySecs / 3600);
-                let m = Math.floor((displaySecs % 3600) / 60);
-                let s = displaySecs % 60;
-                
-                let timeStr = "";
-                if (h > 0) timeStr += h + ":";
-                timeStr += m.toString().padStart(2, '0') + ":" + s.toString().padStart(2, '0');
-                timerDisplay.innerText = timeStr;
-            }
 
-            function formatDropdown(mins) {
-                if (mins === 0) return "Off";
-                if (mins < 60) return `${mins} mins`;
-                let h = Math.floor(mins / 60);
-                let m = mins % 60;
-                return m > 0 ? `${h} h ${m} m` : `${h} hour${h > 1 ? 's' : ''}`;
-            }
+    sessionTotalSeconds =
+        selectedDuration * 60;
 
-            function toggleBlackScreen() {
-                const bs = document.getElementById('black-screen');
-                bs.style.display = bs.style.display === 'block' ? 'none' : 'block';
-            }
 
-            window.addEventListener('DOMContentLoaded', init);
-        })();
-    </script>
+    playIcon.textContent =
+        "play_arrow";
 
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b448b569267c44c2b0ce85f99a149e61"}'></script>
+    playHint.textContent =
+        "Start session";
+
+
+    statusDot.classList.remove(
+        "playing"
+    );
+
+    statusText.textContent =
+        "Ready to begin";
+
+
+    playBtn.setAttribute(
+        "aria-label",
+        "Start meditation timer"
+    );
+
+
+    durationSelect.disabled = false;
+
+    intervalSelect.disabled = false;
+
+
+    updateDisplay();
+
+}
+
+
+/* =========================================================
+   FINISH TIMER
+========================================================= */
+
+function finishMeditation() {
+
+    clearInterval(timerInterval);
+
+    timerInterval = null;
+
+
+    isPlaying = false;
+
+
+    ambiencePlayer.pause();
+
+
+    playBell();
+
+
+    remainingSeconds = 0;
+
+    updateDisplay();
+
+
+    playIcon.textContent =
+        "check";
+
+    playHint.textContent =
+        "Session complete";
+
+
+    statusDot.classList.remove(
+        "playing"
+    );
+
+    statusText.textContent =
+        "Session complete";
+
+
+    durationSelect.disabled = false;
+
+    intervalSelect.disabled = false;
+
+
+    setTimeout(function() {
+
+        playIcon.textContent =
+            "play_arrow";
+
+        playHint.textContent =
+            "Start another session";
+
+
+        remainingSeconds =
+            selectedDuration * 60;
+
+        sessionTotalSeconds =
+            selectedDuration * 60;
+
+
+        statusText.textContent =
+            "Ready to begin";
+
+
+        updateDisplay();
+
+    }, 2500);
+
+}
+
+
+/* =========================================================
+   INTERVAL BELL
+========================================================= */
+
+function checkIntervalBell() {
+
+    if (!isPlaying) {
+        return;
+    }
+
+
+    const intervalMinutes =
+        parseInt(
+            intervalSelect.value,
+            10
+        );
+
+
+    if (intervalMinutes <= 0) {
+        return;
+    }
+
+
+    const elapsed =
+        sessionTotalSeconds -
+        remainingSeconds;
+
+
+    const intervalSeconds =
+        intervalMinutes * 60;
+
+
+    if (
+        elapsed > 0 &&
+        elapsed % intervalSeconds === 0
+    ) {
+
+        playBell();
+
+    }
+
+}
+
+
+/* =========================================================
+   PLAY / STOP
+========================================================= */
+
+playBtn.addEventListener(
+    "click",
+    function() {
+
+        if (isPlaying) {
+
+            stopMeditation();
+
+        } else {
+
+            startMeditation();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   DURATION CHANGE
+========================================================= */
+
+durationSelect.addEventListener(
+    "change",
+    function(event) {
+
+        const value =
+            parseInt(
+                event.target.value,
+                10
+            );
+
+
+        if (value > 5) {
+
+            durationSelect.value = "5";
+
+            selectedDuration = 5;
+
+            sessionTotalSeconds = 300;
+
+            remainingSeconds = 300;
+
+
+            updateDurationLabel();
+
+            updateDisplay();
+
+            showPremiumModal();
+
+            return;
+
+        }
+
+
+        selectedDuration = value;
+
+        sessionTotalSeconds =
+            value * 60;
+
+        remainingSeconds =
+            sessionTotalSeconds;
+
+
+        updateDurationLabel();
+
+        updateDisplay();
+
+    }
+);
+
+
+/* =========================================================
+   INTERVAL CHANGE
+========================================================= */
+
+intervalSelect.addEventListener(
+    "change",
+    function() {
+
+        /*
+         Setting can be changed before
+         the session begins.
+        */
+
+    }
+);
+
+
+/* =========================================================
+   VOLUME
+========================================================= */
+
+volumeSlider.addEventListener(
+    "input",
+    function(event) {
+
+        volume =
+            parseFloat(
+                event.target.value
+            );
+
+
+        ambiencePlayer.volume =
+            volume;
+
+        bellPlayer.volume =
+            volume;
+
+
+        volumeValue.textContent =
+            Math.round(volume * 100) + "%";
+
+    }
+);
+
+
+/* =========================================================
+   PREMIUM MODAL
+========================================================= */
+
+function showPremiumModal() {
+
+    premiumModal.classList.add(
+        "show"
+    );
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+function closePremiumModal() {
+
+    premiumModal.classList.remove(
+        "show"
+    );
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+modalClose.addEventListener(
+    "click",
+    closePremiumModal
+);
+
+
+premiumModal.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === premiumModal
+        ) {
+
+            closePremiumModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESCAPE MODAL
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closePremiumModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   BLACK SCREEN
+========================================================= */
+
+function toggleBlackScreen() {
+
+    blackScreen.classList.toggle(
+        "active"
+    );
+
+}
+
+
+blackScreenBtn.addEventListener(
+    "click",
+    toggleBlackScreen
+);
+
+
+blackScreen.addEventListener(
+    "click",
+    toggleBlackScreen
+);
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+mobileMenuBtn.addEventListener(
+    "click",
+    function() {
+
+        const open =
+            mainNav.classList.toggle(
+                "mobile-open"
+            );
+
+
+        mobileMenuBtn.setAttribute(
+            "aria-expanded",
+            open ? "true" : "false"
+        );
+
+
+        const icon =
+            mobileMenuBtn.querySelector(
+                ".material-icons"
+            );
+
+
+        icon.textContent =
+            open
+                ? "close"
+                : "menu";
+
+    }
+);
+
+
+/* =========================================================
+   STOP AUDIO WHEN PAGE IS HIDDEN
+========================================================= */
+
+document.addEventListener(
+    "visibilitychange",
+    function() {
+
+        /*
+         Do not automatically stop the timer.
+         Mobile browsers may suspend JavaScript anyway.
+         Audio remains controlled by the browser.
+        */
+
+    }
+);
+
+
+/* =========================================================
+   INITIALISE
+========================================================= */
+
+function init() {
+
+    buildDurationOptions();
+
+    buildIntervalOptions();
+
+    buildSoundCards();
+
+
+    volumeSlider.value =
+        volume;
+
+    volumeValue.textContent =
+        "50%";
+
+
+    selectedDuration = 5;
+
+    sessionTotalSeconds = 300;
+
+    remainingSeconds = 300;
+
+
+    updateDurationLabel();
+
+    updateDisplay();
+
+}
+
+
+init();
+
+
+})();
+
+</script>
+
+
+
+<!-- =======================================================
+     CLOUDFLARE INSIGHTS
+======================================================= -->
+
+<script
+    defer
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token":"b448b569267c44c2b0ce85f99a149e61"}'>
+</script>
+
+
 </body>
 </html>
