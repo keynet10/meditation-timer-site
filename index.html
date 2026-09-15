@@ -1,1865 +1,2725 @@
-```html
 <!DOCTYPE html>
-<html lang="en-GB">
+
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+<meta charset="UTF-8">
 
-    <title>Meditation Bell Timer | Meditation, Sleep & Focus App</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Meditation Bell Timer is a simple, distraction-free meditation timer with Tibetan bell intervals, calming nature sounds, Brown Noise and sleep-friendly ambient soundscapes. Try it free.">
+<title>
+    Meditation Bell Timer | Meditation, Sleep & Focus App
+</title>
 
-    <link rel="canonical" href="https://meditationbelltimer.com/">
+<meta name="description"
+      content="Meditation Bell Timer is a beautifully simple meditation timer for mindfulness, sleep, focus and relaxation. Tibetan bells, immersive nature sounds, Brown Noise and a distraction-free dark interface.">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://meditationbelltimer.com/">
-    <meta property="og:title" content="Meditation Bell Timer | Meditation, Sleep & Focus">
-    <meta property="og:description"
-          content="A beautifully simple meditation timer with Tibetan bells, calming soundscapes, Brown Noise and distraction-free sessions.">
-    <meta property="og:image" content="https://meditationbelltimer.com/assets/hero-meditation-bowl.webp">
-    <meta property="og:site_name" content="Meditation Bell Timer">
+<link rel="canonical"
+      href="https://meditationbelltimer.com/">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Meditation Bell Timer | Meditation, Sleep & Focus">
-    <meta name="twitter:description"
-          content="A simple meditation timer with Tibetan bells, ambient sounds and distraction-free sessions.">
-    <meta name="twitter:image" content="https://meditationbelltimer.com/assets/hero-meditation-bowl.webp">
+<!-- Open Graph -->
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon16x16.png">
-    <link rel="apple-touch-icon" href="/favicon.png">
+<meta property="og:type"
+      content="website">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta property="og:title"
+      content="Meditation Bell Timer | Meditation, Sleep & Focus">
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
-          rel="stylesheet">
+<meta property="og:description"
+      content="A beautifully simple meditation timer with Tibetan bells, immersive soundscapes, focus sounds and a distraction-free dark interface.">
 
-    <style>
+<meta property="og:url"
+      content="https://meditationbelltimer.com/">
 
-        /* =========================================================
-           GLOBAL
-        ========================================================= */
+<meta property="og:image"
+      content="https://meditationbelltimer.com/assets/hero-meditation-bowl.webp">
 
-        :root {
-            --black: #080b0a;
-            --black-soft: #0d1210;
-            --navy: #101719;
-            --card: #131b19;
-            --card-light: #18211f;
 
-            --gold: #d8b878;
-            --gold-light: #f0dca8;
-            --gold-dark: #a98a4f;
+<!-- Twitter -->
 
-            --cream: #f4efe5;
-            --text: #eeeae1;
-            --muted: #a8aaa5;
-            --muted-dark: #777c78;
+<meta name="twitter:card"
+      content="summary_large_image">
 
-            --green: #1c3029;
-            --border: rgba(216,184,120,0.16);
+<meta name="twitter:title"
+      content="Meditation Bell Timer">
 
-            --max-width: 1240px;
+<meta name="twitter:description"
+      content="A simple meditation timer for mindfulness, sleep, focus and relaxation.">
+
+<meta name="twitter:image"
+      content="https://meditationbelltimer.com/assets/hero-meditation-bowl.webp">
+
+
+<!-- Favicon -->
+
+<link rel="icon"
+      type="image/x-icon"
+      href="favicon.ico">
+
+<link rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon32x32.png">
+
+<link rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon16x16.png">
+
+<link rel="apple-touch-icon"
+      href="favicon.png">
+
+
+<!-- Fonts -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+    /* =========================================================
+       ROOT
+    ========================================================= */
+
+    :root {
+
+        --black: #070909;
+
+        --navy: #0b1113;
+
+        --gold: #d4af5a;
+
+        --gold-light: #f2d78f;
+
+        --cream: #f7f1e5;
+
+        --white: #ffffff;
+
+        --muted: rgba(255,255,255,0.68);
+
+        --border: rgba(255,255,255,0.08);
+
+        --max-width: 1180px;
+
+    }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+
+        margin: 0;
+
+        padding: 0;
+
+        background: var(--black);
+
+        color: var(--white);
+
+        font-family: 'Lato', sans-serif;
+
+        line-height: 1.65;
+
+        overflow-x: hidden;
+
+    }
+
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+
+    a {
+        color: inherit;
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    header {
+
+        position: fixed;
+
+        top: 0;
+        left: 0;
+        right: 0;
+
+        z-index: 1000;
+
+        height: 78px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: 0 5%;
+
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(5,8,8,0.92),
+                rgba(5,8,8,0.72)
+            );
+
+        backdrop-filter: blur(14px);
+
+        -webkit-backdrop-filter: blur(14px);
+
+        border-bottom:
+            1px solid rgba(255,255,255,0.055);
+
+    }
+
+
+    .logo {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        color: white;
+
+        text-decoration: none;
+
+        font-size: 15px;
+
+        font-weight: 700;
+
+        letter-spacing: 2px;
+
+        white-space: nowrap;
+
+    }
+
+
+    .logo img {
+
+        width: 28px;
+        height: 28px;
+
+        border-radius: 6px;
+
+    }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    .nav-links {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 30px;
+
+    }
+
+
+    .nav-links > a,
+    .dropdown-toggle {
+
+        color: rgba(255,255,255,0.72);
+
+        text-decoration: none;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        transition: color 0.25s ease;
+
+    }
+
+
+    .nav-links > a:hover,
+    .dropdown-toggle:hover {
+
+        color: var(--gold-light);
+
+    }
+
+
+    .dropdown {
+
+        position: relative;
+
+    }
+
+
+    .dropdown-toggle {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 5px;
+
+        cursor: pointer;
+
+    }
+
+
+    .dropdown-content {
+
+        position: absolute;
+
+        top: calc(100% + 15px);
+
+        right: 0;
+
+        min-width: 245px;
+
+        padding: 10px;
+
+        background:
+            rgba(12,15,16,0.98);
+
+        border:
+            1px solid rgba(255,255,255,0.08);
+
+        border-radius: 12px;
+
+        box-shadow:
+            0 25px 70px rgba(0,0,0,0.5);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-8px);
+
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            visibility 0.2s ease;
+
+    }
+
+
+    .dropdown:hover .dropdown-content {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+
+    }
+
+
+    .dropdown-content a {
+
+        display: block;
+
+        padding: 10px 12px;
+
+        border-radius: 8px;
+
+        color: rgba(255,255,255,0.68);
+
+        text-decoration: none;
+
+        font-size: 13px;
+
+        transition:
+            background 0.2s ease,
+            color 0.2s ease;
+
+    }
+
+
+    .dropdown-content a:hover {
+
+        background:
+            rgba(212,175,90,0.08);
+
+        color:
+            var(--gold-light);
+
+    }
+
+
+    /* =========================================================
+       MOBILE MENU BUTTON
+    ========================================================= */
+
+    .menu-toggle {
+
+        display: none;
+
+        border: 0;
+
+        background: transparent;
+
+        color: white;
+
+        font-size: 28px;
+
+        cursor: pointer;
+
+    }
+
+
+    /* =========================================================
+       HERO
+       
+       IMPORTANT:
+       Full-width image.
+       NO Screenshot1 overlay.
+    ========================================================= */
+
+    .hero {
+
+        position: relative;
+
+        width: 100%;
+
+        min-height: min(820px, 92vh);
+
+        display: flex;
+
+        align-items: center;
+
+        overflow: hidden;
+
+        background:
+            #101516;
+
+    }
+
+
+    /* =========================================================
+       HERO IMAGE
+    ========================================================= */
+
+    .hero-background {
+
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center center;
+
+        z-index: 0;
+
+    }
+
+
+    /* =========================================================
+       HERO IMAGE DARKENING
+       
+       Left side is deliberately darker so the text remains
+       readable without destroying the image.
+    ========================================================= */
+
+    .hero-overlay {
+
+        position: absolute;
+
+        inset: 0;
+
+        z-index: 1;
+
+        background:
+
+            linear-gradient(
+                90deg,
+                rgba(4,8,9,0.94) 0%,
+                rgba(4,8,9,0.82) 22%,
+                rgba(4,8,9,0.52) 44%,
+                rgba(4,8,9,0.16) 70%,
+                rgba(4,8,9,0.05) 100%
+            );
+
+    }
+
+
+    /* Bottom fade */
+
+    .hero-overlay::after {
+
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 180px;
+
+        background:
+            linear-gradient(
+                to bottom,
+                transparent,
+                rgba(7,9,9,0.95)
+            );
+
+    }
+
+
+    /* =========================================================
+       HERO CONTENT
+    ========================================================= */
+
+    .hero-content {
+
+        position: relative;
+
+        z-index: 2;
+
+        width: 100%;
+
+        max-width: var(--max-width);
+
+        margin: 0 auto;
+
+        padding:
+            145px 30px 115px;
+
+    }
+
+
+    .hero-copy {
+
+        max-width: 610px;
+
+    }
+
+
+    .hero-eyebrow {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        margin-bottom: 24px;
+
+        color:
+            var(--gold-light);
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+        letter-spacing: 3px;
+
+        text-transform: uppercase;
+
+    }
+
+
+    .hero-eyebrow::before {
+
+        content: "";
+
+        width: 38px;
+
+        height: 1px;
+
+        background:
+            var(--gold);
+
+    }
+
+
+    .hero h1 {
+
+        margin: 0 0 24px;
+
+        font-family:
+            'Cormorant Garamond',
+            serif;
+
+        font-size:
+            clamp(58px, 7vw, 92px);
+
+        font-weight: 600;
+
+        line-height: 0.91;
+
+        letter-spacing: -1.5px;
+
+        color:
+            var(--cream);
+
+        text-shadow:
+            0 5px 30px rgba(0,0,0,0.35);
+
+    }
+
+
+    .hero h1 span {
+
+        color:
+            var(--gold-light);
+
+    }
+
+
+    .hero-description {
+
+        max-width: 560px;
+
+        margin: 0 0 32px;
+
+        color:
+            rgba(255,255,255,0.82);
+
+        font-size: 17px;
+
+        font-weight: 300;
+
+        line-height: 1.8;
+
+        text-shadow:
+            0 2px 12px rgba(0,0,0,0.8);
+
+    }
+
+
+    /* =========================================================
+       HERO BUTTONS
+    ========================================================= */
+
+    .hero-buttons {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        flex-wrap: wrap;
+
+        margin-bottom: 22px;
+
+    }
+
+
+    .btn {
+
+        min-height: 52px;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 0 26px;
+
+        border-radius: 999px;
+
+        text-decoration: none;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        transition:
+            transform 0.25s ease,
+            background 0.25s ease,
+            border-color 0.25s ease;
+
+    }
+
+
+    .btn:hover {
+
+        transform:
+            translateY(-2px);
+
+    }
+
+
+    .btn-primary {
+
+        background:
+            var(--gold);
+
+        color:
+            #101010;
+
+        box-shadow:
+            0 10px 35px
+            rgba(212,175,90,0.2);
+
+    }
+
+
+    .btn-primary:hover {
+
+        background:
+            var(--gold-light);
+
+    }
+
+
+    .btn-secondary {
+
+        color:
+            white;
+
+        background:
+            rgba(5,8,8,0.35);
+
+        border:
+            1px solid
+            rgba(242,215,143,0.55);
+
+        backdrop-filter:
+            blur(8px);
+
+    }
+
+
+    .btn-secondary:hover {
+
+        background:
+            rgba(212,175,90,0.12);
+
+        border-color:
+            var(--gold-light);
+
+    }
+
+
+    .hero-meta {
+
+        color:
+            rgba(255,255,255,0.5);
+
+        font-size: 12px;
+
+        letter-spacing: 0.3px;
+
+    }
+
+
+    /* =========================================================
+       USP STRIP
+    ========================================================= */
+
+    .usp-strip {
+
+        position: relative;
+
+        z-index: 5;
+
+        background:
+            #0b0e0f;
+
+        border-top:
+            1px solid rgba(255,255,255,0.05);
+
+        border-bottom:
+            1px solid rgba(255,255,255,0.05);
+
+    }
+
+
+    .usp-inner {
+
+        max-width:
+            var(--max-width);
+
+        margin:
+            0 auto;
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(4,1fr);
+
+    }
+
+
+    .usp-item {
+
+        padding:
+            24px 18px;
+
+        text-align:
+            center;
+
+        border-right:
+            1px solid rgba(255,255,255,0.05);
+
+    }
+
+
+    .usp-item:last-child {
+
+        border-right:
+            0;
+
+    }
+
+
+    .usp-item strong {
+
+        display:
+            block;
+
+        margin-bottom:
+            3px;
+
+        color:
+            var(--gold-light);
+
+        font-size:
+            13px;
+
+        letter-spacing:
+            0.5px;
+
+    }
+
+
+    .usp-item span {
+
+        color:
+            rgba(255,255,255,0.45);
+
+        font-size:
+            11px;
+
+    }
+
+
+    /* =========================================================
+       GENERAL
+    ========================================================= */
+
+    .section {
+
+        max-width:
+            var(--max-width);
+
+        margin:
+            0 auto;
+
+        padding:
+            100px 30px;
+
+    }
+
+
+    .section-header {
+
+        max-width:
+            760px;
+
+        margin:
+            0 auto 55px;
+
+        text-align:
+            center;
+
+    }
+
+
+    .section-label {
+
+        display:
+            block;
+
+        margin-bottom:
+            10px;
+
+        color:
+            var(--gold);
+
+        font-size:
+            11px;
+
+        font-weight:
+            700;
+
+        letter-spacing:
+            3px;
+
+        text-transform:
+            uppercase;
+
+    }
+
+
+    .section-header h2 {
+
+        margin:
+            0 0 16px;
+
+        font-family:
+            'Cormorant Garamond',
+            serif;
+
+        font-size:
+            clamp(40px,5vw,60px);
+
+        font-weight:
+            600;
+
+        line-height:
+            1.02;
+
+    }
+
+
+    .section-header p {
+
+        margin:
+            0;
+
+        color:
+            var(--muted);
+
+        font-size:
+            16px;
+
+        line-height:
+            1.8;
+
+    }
+
+
+    /* =========================================================
+       INTRO
+    ========================================================= */
+
+    .intro {
+
+        max-width:
+            850px;
+
+        margin:
+            0 auto;
+
+        padding:
+            110px 30px 50px;
+
+        text-align:
+            center;
+
+    }
+
+
+    .intro h2 {
+
+        margin:
+            0 0 18px;
+
+        font-family:
+            'Cormorant Garamond',
+            serif;
+
+        font-size:
+            clamp(40px,5vw,58px);
+
+        line-height:
+            1.05;
+
+    }
+
+
+    .intro p {
+
+        margin:
+            0;
+
+        color:
+            var(--muted);
+
+        font-size:
+            16px;
+
+        line-height:
+            1.9;
+
+    }
+
+
+    /* =========================================================
+       FEATURES
+    ========================================================= */
+
+    .feature-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:
+            18px;
+
+    }
+
+
+    .feature-card {
+
+        padding:
+            34px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,0.035),
+                rgba(255,255,255,0.012)
+            );
+
+        border:
+            1px solid
+            var(--border);
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .feature-number {
+
+        margin-bottom:
+            20px;
+
+        color:
+            var(--gold);
+
+        font-size:
+            11px;
+
+        font-weight:
+            700;
+
+        letter-spacing:
+            2px;
+
+    }
+
+
+    .feature-card h3 {
+
+        margin:
+            0 0 10px;
+
+        font-family:
+            'Cormorant Garamond',
+            serif;
+
+        font-size:
+            30px;
+
+    }
+
+
+    .feature-card p {
+
+        margin:
+            0;
+
+        color:
+            var(--muted);
+
+        font-size:
+            14px;
+
+        line-height:
+            1.75;
+
+    }
+
+
+    /* =========================================================
+       SOUNDS
+    ========================================================= */
+
+    .sound-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:
+            16px;
+
+    }
+
+
+    .sound-card {
+
+        min-height:
+            190px;
+
+        padding:
+            28px;
+
+        border:
+            1px solid
+            var(--border);
+
+        border-radius:
+            18px;
+
+        background:
+            #101415;
+
+        transition:
+            transform .25s ease,
+            border-color .25s ease;
+
+    }
+
+
+    .sound-card:hover {
+
+        transform:
+            translateY(-4px);
+
+        border-color:
+            rgba(212,175,90,0.35);
+
+    }
+
+
+    .sound-icon {
+
+        margin-bottom:
+            18px;
+
+        color:
+            var(--gold-light);
+
+        font-size:
+            23px;
+
+    }
+
+
+    .sound-card h3 {
+
+        margin:
+            0 0 8px;
+
+        font-family:
+            'Cormorant Garamond',
+            serif;
+
+        font-size:
+            25px;
+
+    }
+
+
+    .sound-card p {
+
+        margin:
+            0;
+
+        color:
+            var(--muted);
+
+        font-size:
+            13px;
+
+        line-height:
+            1.65;
+
+    }
+
+
+    /* =========================================================
+       VISUAL SECTION
+    ========================================================= */
+
+    .visual-section {
+
+        position:
+            relative;
+
+        overflow:
+            hidden;
+
+        border-radius:
+            26px;
+
+        background:
+            #101415;
+
+        border:
+            1px solid
+            var(--border);
+
+    }
+
+
+    .visual-section-content {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            0.9fr 1.1fr;
+
+        align-items:
+            center;
+
+    }
+
+
+    .visual-copy {
+
+        padding:
+            60px;
+
+    }
+
+
+    .visual-copy h2 {
+
+        margin:
+            0 0 18px;
+
+        font-family:
+            'Cormorant Garamond',
+            serif;
+
+        font-size:
+            clamp(40px,5vw,58px);
+
+        line-height:
+            1;
+
+    }
+
+
+    .visual-copy p {
+
+        color:
+            var(--muted);
+
+        line-height:
+            1.8;
+
+    }
+
+
+    .visual-image {
+
+        min-height:
+            480px;
+
+        background:
+            #0b0e0f;
+
+    }
+
+
+    .visual-image img {
+
+        width:
+            100%;
+
+        height:
+            100%;
+
+        min-height:
+            480px;
+
+        object-fit:
+            cover;
+
+    }
+
+
+    /* =========================================================
+       THREE STEPS
+    ========================================================= */
+
+    .steps {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:
+            20px;
+
+    }
+
+
+    .step {
+
+        padding:
+            30px;
+
+        border-top:
+            1px solid
+            rgba(212,175,90,0.35);
+
+    }
+
+
+    .step-number {
+
+        margin-bottom:
+            15px;
+
+        color:
+            var(--gold);
+
+        font-family:
+            'Cormorant Garamond',
+            serif;
+
+        font-size:
+            44px;
+
+        line-height:
+            1;
+
+    }
+
+
+    .step h3 {
+
+        margin:
+            0 0 10px;
+
+        font-family:
+            'Cormorant Garamond',
+            serif;
+
+        font-size:
+            28px;
+
+    }
+
+
+    .step p {
+
+        margin:
+            0;
+
+        color:
+            var(--muted);
+
+        font-size:
+            14px;
+
+    }
+
+
+    /* =========================================================
+       USE CASES
+    ========================================================= */
+
+    .use-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:
+            18px;
+
+    }
+
+
+    .use-card {
+
+        padding:
+            30px;
+
+        border-radius:
+            18px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,0.03),
+                rgba(255,255,255,0.01)
+            );
+
+        border:
+            1px solid
+            var(--border);
+
+    }
+
+
+    .use-card h3 {
+
+        margin:
+            0 0 10px;
+
+        font-family:
+            'Cormorant Garamond',
+            serif;
+
+        font-size:
+            29px;
+
+    }
+
+
+    .use-card p {
+
+        margin:
+            0;
+
+        color:
+            var(--muted);
+
+        font-size:
+            14px;
+
+        line-height:
+            1.75;
+
+    }
+
+
+    /* =========================================================
+       APP COLLECTION
+    ========================================================= */
+
+    .app-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:
+            18px;
+
+    }
+
+
+    .app-card {
+
+        padding:
+            32px;
+
+        background:
+            #101415;
+
+        border:
+            1px solid
+            var(--border);
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .app-card.featured {
+
+        border-color:
+            rgba(212,175,90,0.32);
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(212,175,90,0.07),
+                rgba(255,255,255,0.015)
+            );
+
+    }
+
+
+    .app-tag {
+
+        display:
+            inline-block;
+
+        margin-bottom:
+            15px;
+
+        color:
+            var(--gold-light);
+
+        font-size:
+            10px;
+
+        font-weight:
+            700;
+
+        letter-spacing:
+            2px;
+
+        text-transform:
+            uppercase;
+
+    }
+
+
+    .app-card h3 {
+
+        margin:
+            0 0 12px;
+
+        font-family:
+            'Cormorant Garamond',
+            serif;
+
+        font-size:
+            31px;
+
+        line-height:
+            1.05;
+
+    }
+
+
+    .app-card p {
+
+        margin:
+            0 0 20px;
+
+        color:
+            var(--muted);
+
+        font-size:
+            14px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .app-card ul {
+
+        margin:
+            0 0 25px;
+
+        padding:
+            0;
+
+        list-style:
+            none;
+
+    }
+
+
+    .app-card li {
+
+        margin-bottom:
+            8px;
+
+        color:
+            rgba(255,255,255,0.65);
+
+        font-size:
+            13px;
+
+    }
+
+
+    .app-card li::before {
+
+        content:
+            "✓";
+
+        margin-right:
+            8px;
+
+        color:
+            var(--gold);
+
+    }
+
+
+    .text-link {
+
+        color:
+            var(--gold-light);
+
+        text-decoration:
+            none;
+
+        font-size:
+            13px;
+
+        font-weight:
+            700;
+
+    }
+
+
+    /* =========================================================
+       SCREENSHOT GALLERY
+    ========================================================= */
+
+    .gallery {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(6,1fr);
+
+        gap:
+            14px;
+
+    }
+
+
+    .gallery img {
+
+        width:
+            100%;
+
+        aspect-ratio:
+            9 / 16;
+
+        object-fit:
+            cover;
+
+        border-radius:
+            16px;
+
+        border:
+            1px solid
+            rgba(255,255,255,0.06);
+
+        background:
+            #101212;
+
+    }
+
+
+    /* =========================================================
+       FAQ
+    ========================================================= */
+
+    .faq {
+
+        max-width:
+            850px;
+
+        margin:
+            0 auto;
+
+    }
+
+
+    details {
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,0.08);
+
+    }
+
+
+    summary {
+
+        padding:
+            22px 0;
+
+        cursor:
+            pointer;
+
+        color:
+            rgba(255,255,255,0.9);
+
+        font-family:
+            'Cormorant Garamond',
+            serif;
+
+        font-size:
+            24px;
+
+        list-style:
+            none;
+
+    }
+
+
+    summary::-webkit-details-marker {
+
+        display:
+            none;
+
+    }
+
+
+    summary::after {
+
+        content:
+            "+";
+
+        float:
+            right;
+
+        color:
+            var(--gold);
+
+        font-family:
+            Lato,
+            sans-serif;
+
+    }
+
+
+    details[open] summary::after {
+
+        content:
+            "−";
+
+    }
+
+
+    details p {
+
+        margin:
+            0 0 22px;
+
+        color:
+            var(--muted);
+
+        font-size:
+            14px;
+
+        line-height:
+            1.8;
+
+    }
+
+
+    /* =========================================================
+       FINAL CTA
+    ========================================================= */
+
+    .final-cta {
+
+        position:
+            relative;
+
+        overflow:
+            hidden;
+
+        margin:
+            30px auto 100px;
+
+        max-width:
+            1100px;
+
+        padding:
+            90px 30px;
+
+        text-align:
+            center;
+
+        border:
+            1px solid
+            rgba(212,175,90,0.18);
+
+        border-radius:
+            28px;
+
+        background:
+            radial-gradient(
+                circle at 50% 0%,
+                rgba(212,175,90,0.13),
+                transparent 55%
+            ),
+            #0d1112;
+
+    }
+
+
+    .final-cta h2 {
+
+        margin:
+            0 0 15px;
+
+        font-family:
+            'Cormorant Garamond',
+            serif;
+
+        font-size:
+            clamp(44px,5vw,64px);
+
+        line-height:
+            1;
+
+    }
+
+
+    .final-cta p {
+
+        max-width:
+            650px;
+
+        margin:
+            0 auto 30px;
+
+        color:
+            var(--muted);
+
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+
+        padding:
+            60px 5% 30px;
+
+        background:
+            #060808;
+
+        border-top:
+            1px solid
+            rgba(255,255,255,0.05);
+
+    }
+
+
+    .footer-inner {
+
+        max-width:
+            var(--max-width);
+
+        margin:
+            0 auto;
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1.5fr 1fr 1fr 1fr;
+
+        gap:
+            40px;
+
+    }
+
+
+    .footer-brand p {
+
+        max-width:
+            310px;
+
+        color:
+            rgba(255,255,255,0.42);
+
+        font-size:
+            13px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .footer-column h4 {
+
+        margin:
+            0 0 15px;
+
+        color:
+            var(--gold-light);
+
+        font-size:
+            11px;
+
+        letter-spacing:
+            2px;
+
+        text-transform:
+            uppercase;
+
+    }
+
+
+    .footer-column a {
+
+        display:
+            block;
+
+        margin-bottom:
+            9px;
+
+        color:
+            rgba(255,255,255,0.5);
+
+        text-decoration:
+            none;
+
+        font-size:
+            13px;
+
+        transition:
+            color .2s ease;
+
+    }
+
+
+    .footer-column a:hover {
+
+        color:
+            var(--gold-light);
+
+    }
+
+
+    .footer-bottom {
+
+        max-width:
+            var(--max-width);
+
+        margin:
+            45px auto 0;
+
+        padding-top:
+            22px;
+
+        border-top:
+            1px solid
+            rgba(255,255,255,0.05);
+
+        color:
+            rgba(255,255,255,0.3);
+
+        font-size:
+            12px;
+
+        text-align:
+            center;
+
+    }
+
+
+    /* =========================================================
+       TABLET
+    ========================================================= */
+
+    @media (max-width: 950px) {
+
+        .sound-grid {
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+        }
+
+
+        .app-grid {
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+
+        .gallery {
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+        }
+
+
+        .visual-section-content {
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+
+        .visual-image {
+
+            order:
+                -1;
+
+        }
+
+
+        .footer-inner {
+
+            grid-template-columns:
+                1fr 1fr;
+
+        }
+
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 700px) {
+
+        header {
+
+            height:
+                68px;
+
+            padding:
+                0 5%;
+
+        }
+
+
+        .logo {
+
+            font-size:
+                12px;
+
+            letter-spacing:
+                1.6px;
+
+        }
+
+
+        .menu-toggle {
+
+            display:
+                block;
+
+        }
+
+
+        .nav-links {
+
+            position:
+                absolute;
+
+            top:
+                68px;
+
+            left:
+                0;
+
+            width:
+                100%;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                stretch;
+
+            gap:
+                0;
+
+            background:
+                rgba(7,9,9,0.98);
+
+            max-height:
+                0;
+
+            overflow:
+                hidden;
+
+            transition:
+                max-height .35s ease;
+
+        }
+
+
+        .nav-links.active {
+
+            max-height:
+                calc(100vh - 68px);
+
+            overflow-y:
+                auto;
+
+            padding-bottom:
+                15px;
+
+        }
+
+
+        .nav-links > a,
+        .dropdown {
+
+            width:
+                100%;
+
+            padding:
+                15px 5%;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.05);
+
+        }
+
+
+        .dropdown-toggle {
+
+            width:
+                100%;
+
+            justify-content:
+                space-between;
+
+        }
+
+
+        .dropdown-content {
+
+            position:
+                static;
+
+            display:
+                none;
+
+            min-width:
+                0;
+
+            padding:
+                8px 0 0 12px;
+
+            background:
+                transparent;
+
+            border:
+                0;
+
+            box-shadow:
+                none;
+
+            opacity:
+                1;
+
+            visibility:
+                visible;
+
+            transform:
+                none;
+
+        }
+
+
+        .dropdown.mobile-active
+        .dropdown-content {
+
+            display:
+                block;
+
+        }
+
+
+        /* HERO MOBILE */
+
+        .hero {
+
+            min-height:
+                720px;
+
+        }
+
+
+        .hero-background {
+
+            object-position:
+                62% center;
+
+        }
+
+
+        .hero-overlay {
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(4,8,9,0.93) 0%,
+                    rgba(4,8,9,0.74) 55%,
+                    rgba(4,8,9,0.30) 100%
+                );
+
+        }
+
+
+        .hero-content {
+
+            padding:
+                120px 24px 90px;
+
+        }
+
+
+        .hero-copy {
+
+            max-width:
+                520px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(54px,15vw,76px);
+
+            line-height:
+                0.9;
+
+        }
+
+
+        .hero-description {
+
+            font-size:
+                15px;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        .hero-buttons {
+
+            flex-direction:
+                column;
+
+            align-items:
+                flex-start;
+
+        }
+
+
+        .btn {
+
+            width:
+                auto;
+
+            min-height:
+                50px;
+
+        }
+
+
+        .usp-inner {
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+        }
+
+
+        .usp-item {
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.05);
+
+        }
+
+
+        .usp-item:nth-child(2) {
+
+            border-right:
+                0;
+
+        }
+
+
+        .section {
+
+            padding:
+                75px 20px;
+
+        }
+
+
+        .intro {
+
+            padding:
+                80px 22px 25px;
+
+        }
+
+
+        .feature-grid,
+        .sound-grid,
+        .use-grid,
+        .steps {
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+
+        .visual-copy {
+
+            padding:
+                40px 28px;
+
+        }
+
+
+        .visual-image,
+        .visual-image img {
+
+            min-height:
+                350px;
+
+        }
+
+
+        .gallery {
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+        }
+
+
+        .final-cta {
+
+            margin:
+                10px 20px 70px;
+
+            padding:
+                70px 24px;
+
+        }
+
+
+        .footer-inner {
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+        html {
+
+            scroll-behavior:
+                auto;
+
         }
 
         * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: var(--black);
-            color: var(--text);
-            font-family: "DM Sans", sans-serif;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-        ::selection {
-            background: var(--gold);
-            color: var(--black);
-        }
-
-
-        /* =========================================================
-           HEADER
-        ========================================================= */
-
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: rgba(8, 11, 10, 0.92);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .header-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-
-            min-height: 76px;
-            padding: 0 28px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 11px;
-
-            text-decoration: none;
-            color: var(--cream);
-
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            white-space: nowrap;
-        }
-
-        .brand img {
-            width: 30px;
-            height: 30px;
-            border-radius: 7px;
-            object-fit: cover;
-        }
-
-        .main-nav {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .main-nav > a,
-        .dropdown-toggle {
-            color: #b9bbb6;
-            text-decoration: none;
-
-            font-size: 14px;
-            font-weight: 600;
-
-            transition: color .25s ease;
-        }
-
-        .main-nav > a:hover,
-        .dropdown-toggle:hover {
-            color: var(--gold-light);
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-toggle {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .dropdown-arrow {
-            font-size: 11px;
-            opacity: .7;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: calc(100% + 16px);
-            left: 50%;
-            transform: translateX(-50%) translateY(-5px);
-
-            width: 250px;
-            padding: 10px;
-
-            background: #101513;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-
-            box-shadow: 0 20px 60px rgba(0,0,0,.55);
-
-            opacity: 0;
-            visibility: hidden;
-
-            transition: all .2s ease;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .dropdown-menu a {
-            display: block;
-
-            padding: 10px 12px;
-            border-radius: 8px;
-
-            color: #b9bbb6;
-            text-decoration: none;
-
-            font-size: 13px;
-        }
-
-        .dropdown-menu a:hover {
-            background: rgba(216,184,120,.08);
-            color: var(--gold-light);
-        }
-
-        .mobile-menu-button {
-            display: none;
-
-            width: 42px;
-            height: 42px;
-
-            border: 1px solid rgba(255,255,255,.1);
-            border-radius: 10px;
-
-            background: transparent;
-            color: var(--cream);
-
-            font-size: 21px;
-            cursor: pointer;
-        }
-
-
-        /* =========================================================
-           HERO
-        ========================================================= */
-
-        .hero {
-            position: relative;
-
-            max-width: var(--max-width);
-            margin: 0 auto;
-
-            min-height: 650px;
-
-            padding: 70px 28px 72px;
-
-            display: grid;
-            grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-            align-items: center;
-
-            gap: 55px;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-
-            width: 600px;
-            height: 600px;
-
-            top: 30px;
-            right: 5%;
-
-            background: rgba(48, 88, 72, .18);
-            filter: blur(120px);
-
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-
-            margin-bottom: 23px;
-
-            color: var(--gold-light);
-
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 28px;
-            height: 1px;
-            background: var(--gold);
-        }
-
-        .hero h1 {
-            max-width: 650px;
-
-            margin: 0 0 24px;
-
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(46px, 5.2vw, 72px);
-            line-height: 1.06;
-            font-weight: 500;
-            letter-spacing: -1.5px;
-
-            color: var(--cream);
-        }
-
-        .hero h1 span {
-            color: var(--gold-light);
-        }
-
-        .hero-description {
-            max-width: 570px;
-
-            margin: 0 0 32px;
-
-            color: #b6b9b4;
-
-            font-size: 18px;
-            line-height: 1.75;
-        }
-
-        .hero-buttons {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
-        .google-play {
-            display: inline-block;
-
-            transition: transform .2s ease;
-        }
-
-        .google-play:hover {
-            transform: translateY(-2px);
-        }
-
-        .google-play img {
-            width: 190px;
-            height: auto;
-        }
-
-        .button-secondary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            min-height: 54px;
-            padding: 0 25px;
-
-            border: 1px solid rgba(216,184,120,.42);
-            border-radius: 30px;
-
-            color: var(--cream);
-            text-decoration: none;
-
-            font-size: 15px;
-            font-weight: 600;
-
-            transition: all .25s ease;
-        }
-
-        .button-secondary:hover {
-            background: rgba(216,184,120,.08);
-            border-color: var(--gold);
-            transform: translateY(-2px);
-        }
-
-        .hero-note {
-            margin-top: 20px;
-
-            color: var(--muted-dark);
-            font-size: 12px;
-            letter-spacing: .3px;
-        }
-
-
-        /* =========================================================
-           HERO VISUAL
-           IMPORTANT: NOTHING IS STRETCHED
-        ========================================================= */
-
-        .hero-visual {
-            position: relative;
-
-            width: 100%;
-            max-width: 590px;
-
-            justify-self: end;
-
-            aspect-ratio: 4 / 4.7;
-
-            border-radius: 32px;
-
-            overflow: hidden;
-
-            background: #111817;
-
-            border: 1px solid rgba(216,184,120,.14);
-
-            box-shadow:
-                0 40px 100px rgba(0,0,0,.55),
-                0 0 80px rgba(35,75,61,.18);
-        }
-
-        /*
-           The hero artwork is cropped rather than stretched.
-           This means different screen sizes cannot warp it.
-        */
-
-        .hero-background {
-            position: absolute;
-            inset: 0;
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-            object-position: center center;
-
-            opacity: .95;
-        }
-
-        .hero-visual::after {
-            content: "";
-
-            position: absolute;
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(4,8,7,.05) 0%,
-                    rgba(4,8,7,.08) 35%,
-                    rgba(4,8,7,.52) 100%
-                );
-
-            pointer-events: none;
-        }
-
-        /* Phone */
-
-        .hero-phone {
-            position: absolute;
-
-            z-index: 3;
-
-            left: 50%;
-            bottom: -18px;
-
-            transform: translateX(-50%);
-
-            width: min(49%, 255px);
-
-            padding: 7px;
-
-            background: #080909;
-
-            border: 1px solid rgba(255,255,255,.16);
-
-            border-radius: 28px;
-
-            box-shadow:
-                0 25px 60px rgba(0,0,0,.7),
-                0 0 0 1px rgba(0,0,0,.5);
-        }
-
-        .hero-phone img {
-            width: 100%;
-            height: auto;
-
-            border-radius: 21px;
-
-            object-fit: contain;
-        }
-
-        /* Small decorative glow */
-
-        .hero-orb {
-            position: absolute;
-
-            z-index: 2;
-
-            width: 180px;
-            height: 180px;
-
-            top: 12%;
-            right: 9%;
-
-            border-radius: 50%;
-
-            background: rgba(216,184,120,.15);
-
-            filter: blur(35px);
-        }
-
-        .hero-badge {
-            position: absolute;
-
-            z-index: 5;
-
-            left: 24px;
-            bottom: 24px;
-
-            padding: 11px 15px;
-
-            border: 1px solid rgba(216,184,120,.22);
-            border-radius: 12px;
-
-            background: rgba(7,11,10,.75);
-
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-
-            color: var(--cream);
-
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-
-        /* =========================================================
-           USP STRIP
-        ========================================================= */
-
-        .usp-strip {
-            border-top: 1px solid rgba(255,255,255,.05);
-            border-bottom: 1px solid rgba(255,255,255,.05);
-
-            background: #0d1210;
-        }
-
-        .usp-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-
-            padding: 22px 28px;
-
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-
-            text-align: center;
-        }
-
-        .usp-item {
-            position: relative;
-
-            color: #c9cbc6;
-
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .4px;
-        }
-
-        .usp-item:not(:last-child)::after {
-            content: "";
-
-            position: absolute;
-            top: 50%;
-            right: 0;
-
-            width: 1px;
-            height: 22px;
-
-            background: rgba(255,255,255,.08);
-
-            transform: translateY(-50%);
-        }
-
-        .usp-item strong {
-            color: var(--gold-light);
-        }
-
-
-        /* =========================================================
-           GENERAL SECTIONS
-        ========================================================= */
-
-        .section {
-            max-width: var(--max-width);
-            margin: 0 auto;
-
-            padding: 105px 28px;
-        }
-
-        .section-heading {
-            max-width: 760px;
-            margin: 0 auto 60px;
-
-            text-align: center;
-        }
-
-        .section-heading .eyebrow {
-            justify-content: center;
-        }
-
-        .section-heading h2 {
-            margin: 0 0 18px;
-
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(34px, 4vw, 50px);
-            line-height: 1.15;
-            font-weight: 500;
-
-            color: var(--cream);
-        }
-
-        .section-heading p {
-            margin: 0;
-
-            color: var(--muted);
-
-            font-size: 17px;
-        }
-
-
-        /* =========================================================
-           INTRO
-        ========================================================= */
-
-        .intro-section {
-            text-align: center;
-        }
-
-        .intro-copy {
-            max-width: 820px;
-            margin: 0 auto;
-
-            color: #b7bab5;
-
-            font-size: 18px;
-            line-height: 1.85;
-        }
-
-
-        /* =========================================================
-           FEATURES
-        ========================================================= */
-
-        .feature-grid {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 18px;
-        }
-
-        .feature-card {
-            padding: 30px 26px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,.035),
-                    rgba(255,255,255,.012)
-                );
-
-            border: 1px solid rgba(255,255,255,.07);
-
-            border-radius: 18px;
-
-            transition:
-                transform .25s ease,
-                border-color .25s ease,
-                background .25s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-
-            border-color: rgba(216,184,120,.25);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(216,184,120,.07),
-                    rgba(255,255,255,.015)
-                );
-        }
-
-        .feature-number {
-            color: var(--gold);
-
-            font-size: 12px;
-            font-weight: 700;
-
-            letter-spacing: 2px;
-        }
-
-        .feature-card h3 {
-            margin: 18px 0 10px;
-
-            color: var(--cream);
-
-            font-size: 19px;
-        }
-
-        .feature-card p {
-            margin: 0;
-
-            color: var(--muted);
-
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-
-        /* =========================================================
-           SOUNDS
-        ========================================================= */
-
-        .sounds-section {
-            max-width: none;
-
-            background:
-                radial-gradient(
-                    circle at 50% 20%,
-                    rgba(29,55,45,.25),
-                    transparent 55%
-                );
-
-            border-top: 1px solid rgba(255,255,255,.04);
-            border-bottom: 1px solid rgba(255,255,255,.04);
-        }
-
-        .sounds-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-
-            padding: 105px 28px;
-        }
-
-        .sound-grid {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 14px;
-        }
-
-        .sound-card {
-            position: relative;
-
-            min-height: 145px;
-
-            padding: 25px;
-
-            display: flex;
-            align-items: flex-end;
-
-            overflow: hidden;
-
-            border-radius: 16px;
-
-            border: 1px solid rgba(255,255,255,.08);
-
-            background-size: cover;
-            background-position: center;
-
-            isolation: isolate;
-        }
-
-        .sound-card::before {
-            content: "";
-
-            position: absolute;
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(0,0,0,.04),
-                    rgba(0,0,0,.78)
-                );
-
-            z-index: -1;
-        }
-
-        .sound-card h3 {
-            margin: 0;
-
-            color: #fff;
-
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        .sound-card span {
-            display: block;
-
-            margin-top: 3px;
-
-            color: rgba(255,255,255,.7);
-
-            font-size: 11px;
-        }
-
-        .sound-1 {
-            background-image: url("assets/bowl_bg.webp");
-        }
-
-        .sound-2 {
-            background-image: url("assets/rain_bg.webp");
-        }
-
-        .sound-3 {
-            background-image: url("assets/waves_bg.webp");
-        }
-
-        .sound-4 {
-            background-image: url("assets/brownnoise_bg.webp");
-        }
-
-        .sound-5 {
-            background-image: url("assets/forest_bg.webp");
-        }
-
-        .sound-6 {
-            background-image: url("assets/birds_bg.webp");
-        }
-
-        .sound-7 {
-            background-image: url("assets/omchant_bg.webp");
-        }
-
-        .sound-8 {
-            background-image: url("assets/spaceship_bg.webp");
-        }
-
-
-        /* =========================================================
-           HOW IT WORKS
-        ========================================================= */
-
-        .steps {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 25px;
-        }
-
-        .step {
-            position: relative;
-
-            padding: 35px 30px;
-
-            border-top: 1px solid rgba(216,184,120,.3);
-        }
-
-        .step-number {
-            color: var(--gold);
-
-            font-family: "Playfair Display", serif;
-
-            font-size: 42px;
-            line-height: 1;
-        }
-
-        .step h3 {
-            margin: 22px 0 10px;
-
-            color: var(--cream);
-
-            font-size: 20px;
-        }
-
-        .step p {
-            margin: 0;
-
-            color: var(--muted);
-
-            font-size: 14px;
-        }
-
-
-        /* =========================================================
-           USE CASES
-        ========================================================= */
-
-        .use-case-grid {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-        .use-case {
-            padding: 35px;
-
-            background: var(--card);
-
-            border: 1px solid rgba(255,255,255,.06);
-
-            border-radius: 20px;
-        }
-
-        .use-case h3 {
-            margin: 0 0 12px;
-
-            color: var(--gold-light);
-
-            font-family: "Playfair Display", serif;
-
-            font-size: 25px;
-        }
-
-        .use-case p {
-            margin: 0;
-
-            color: var(--muted);
-
-            font-size: 14px;
-        }
-
-
-        /* =========================================================
-           OUR APPS
-        ========================================================= */
-
-        .apps-section {
-            max-width: none;
-
-            background: #0c110f;
-
-            border-top: 1px solid rgba(255,255,255,.04);
-            border-bottom: 1px solid rgba(255,255,255,.04);
-        }
-
-        .apps-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-
-            padding: 105px 28px;
-        }
-
-        .app-grid {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-        .app-card {
-            padding: 32px;
-
-            background: #131a18;
-
-            border: 1px solid rgba(255,255,255,.07);
-
-            border-radius: 22px;
-
-            transition: transform .25s ease, border-color .25s ease;
-        }
-
-        .app-card:hover {
-            transform: translateY(-5px);
-
-            border-color: rgba(216,184,120,.28);
-        }
-
-        .app-label {
-            color: var(--gold);
-
-            font-size: 11px;
-            font-weight: 700;
-
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .app-card h3 {
-            margin: 13px 0 12px;
-
-            color: var(--cream);
-
-            font-family: "Playfair Display", serif;
-
-            font-size: 27px;
-        }
-
-        .app-card p {
-            margin: 0 0 22px;
-
-            color: var(--muted);
-
-            font-size: 14px;
-        }
-
-        .app-link {
-            color: var(--gold-light);
-
-            text-decoration: none;
-
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        .app-link:hover {
-            text-decoration: underline;
-        }
-
-
-        /* =========================================================
-           FAQ
-        ========================================================= */
-
-        .faq {
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .faq details {
-            border-bottom: 1px solid rgba(255,255,255,.08);
-        }
-
-        .faq summary {
-            position: relative;
-
-            padding: 23px 35px 23px 0;
-
-            cursor: pointer;
-
-            list-style: none;
-
-            color: var(--cream);
-
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        .faq summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .faq summary::after {
-            content: "+";
-
-            position: absolute;
-            right: 5px;
-            top: 20px;
-
-            color: var(--gold);
-
-            font-size: 22px;
-            font-weight: 400;
-        }
-
-        .faq details[open] summary::after {
-            content: "−";
-        }
-
-        .faq-answer {
-            padding: 0 35px 22px 0;
-
-            color: var(--muted);
-
-            font-size: 14px;
-        }
-
-
-        /* =========================================================
-           FINAL CTA
-        ========================================================= */
-
-        .final-cta {
-            max-width: 1000px;
-            margin: 0 auto;
-
-            padding: 90px 30px;
-
-            text-align: center;
-
-            border: 1px solid rgba(216,184,120,.16);
-            border-radius: 28px;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(42,73,61,.38),
-                    rgba(14,20,18,.9) 65%
-                );
-        }
-
-        .final-cta h2 {
-            margin: 0 0 16px;
-
-            color: var(--cream);
-
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(34px, 4vw, 52px);
-            font-weight: 500;
-        }
-
-        .final-cta p {
-            max-width: 650px;
-            margin: 0 auto 28px;
-
-            color: var(--muted);
-
-            font-size: 16px;
-        }
-
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
-        footer {
-            margin-top: 100px;
-
-            border-top: 1px solid rgba(255,255,255,.07);
-
-            background: #070a09;
-        }
-
-        .footer-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-
-            padding: 65px 28px 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-
-            gap: 50px;
-        }
-
-        .footer-brand p {
-            max-width: 330px;
-
-            margin: 17px 0 0;
-
-            color: var(--muted-dark);
-
-            font-size: 13px;
-        }
-
-        .footer-column h3 {
-            margin: 0 0 17px;
-
-            color: var(--cream);
-
-            font-size: 13px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .footer-column a {
-            display: block;
-
-            margin: 9px 0;
-
-            color: var(--muted-dark);
-
-            text-decoration: none;
-
-            font-size: 13px;
-        }
-
-        .footer-column a:hover {
-            color: var(--gold-light);
-        }
-
-        .footer-bottom {
-            margin-top: 55px;
-            padding-top: 22px;
-
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-
-            border-top: 1px solid rgba(255,255,255,.05);
-
-            color: #5e635f;
-
-            font-size: 11px;
-        }
-
-
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
-
-        @media (max-width: 1000px) {
-
-            .main-nav {
-                gap: 18px;
-            }
-
-            .hero {
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
-            }
-
-            .hero h1 {
-                font-size: 50px;
-            }
-
-            .feature-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .sound-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-
-        @media (max-width: 800px) {
-
-            .header-inner {
-                min-height: 68px;
-            }
-
-            .mobile-menu-button {
-                display: block;
-            }
-
-            .main-nav {
-                display: none;
-
-                position: absolute;
-
-                top: 68px;
-                left: 0;
-                right: 0;
-
-                padding: 10px 20px 20px;
-
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-
-                background: rgba(8,11,10,.98);
-
-                border-bottom: 1px solid rgba(255,255,255,.07);
-
-                max-height: calc(100vh - 68px);
-
-                overflow-y: auto;
-            }
-
-            .main-nav.active {
-                display: flex;
-            }
-
-            .main-nav > a,
-            .dropdown-toggle {
-                display: block;
-
-                padding: 15px 5px;
-
-                border-bottom: 1px solid rgba(255,255,255,.05);
 
-                font-size: 15px;
-            }
+            transition-duration:
+                0.01ms !important;
 
-            .dropdown-menu {
-                position: static;
-
-                width: 100%;
-
-                transform: none;
-
-                margin: 0;
-
-                opacity: 1;
-                visibility: visible;
-
-                display: none;
-
-                background: transparent;
-
-                border: 0;
-
-                box-shadow: none;
-
-                padding: 5px 0 8px 15px;
-            }
-
-            .dropdown.open .dropdown-menu {
-                display: block;
-            }
-
-            .dropdown:hover .dropdown-menu {
-                transform: none;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-
-                padding-top: 50px;
-
-                min-height: auto;
-
-                gap: 50px;
-            }
-
-            .hero-content {
-                text-align: center;
-            }
-
-            .eyebrow {
-                justify-content: center;
-            }
-
-            .hero h1 {
-                max-width: 680px;
-                margin-left: auto;
-                margin-right: auto;
-
-                font-size: clamp(42px, 10vw, 58px);
-            }
-
-            .hero-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-note {
-                text-align: center;
-            }
-
-            .hero-visual {
-                justify-self: center;
-
-                width: min(100%, 500px);
-
-                aspect-ratio: 4 / 4.8;
-            }
-
-            .usp-inner {
-                grid-template-columns: repeat(2, 1fr);
-
-                row-gap: 18px;
-            }
-
-            .usp-item:nth-child(2)::after {
-                display: none;
-            }
-
-            .steps,
-            .use-case-grid,
-            .app-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-
-        @media (max-width: 520px) {
-
-            .header-inner {
-                padding: 0 18px;
-            }
-
-            .brand {
-                font-size: 12px;
-                letter-spacing: 1.5px;
-            }
-
-            .brand img {
-                width: 27px;
-                height: 27px;
-            }
-
-            .hero {
-                padding: 40px 18px 55px;
-
-                gap: 40px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-                letter-spacing: -1px;
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            .hero-visual {
-                width: 100%;
-
-                aspect-ratio: 4 / 5.3;
-
-                border-radius: 24px;
-            }
-
-            .hero-phone {
-                width: 47%;
-            }
-
-            .hero-badge {
-                left: 15px;
-                bottom: 15px;
-
-                font-size: 10px;
-            }
-
-            .usp-inner {
-                grid-template-columns: 1fr 1fr;
-
-                padding: 20px 12px;
-            }
-
-            .usp-item {
-                font-size: 11px;
-            }
-
-            .usp-item::after {
-                display: none !important;
-            }
-
-            .section,
-            .sounds-inner,
-            .apps-inner {
-                padding: 75px 18px;
-            }
-
-            .feature-grid,
-            .sound-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .sound-card {
-                min-height: 170px;
-            }
-
-            .final-cta {
-                margin: 0 18px;
-                padding: 65px 22px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .footer-inner {
-                padding: 55px 20px 25px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-            }
         }
-
-
-        /* =========================================================
-           REDUCED MOTION
-        ========================================================= */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: .01ms !important;
-            }
-        }
-
-    </style>
-
-
-    <!-- =========================================================
-         STRUCTURED DATA
-    ========================================================= -->
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Meditation Bell Timer",
-        "url": "https://meditationbelltimer.com/",
-        "logo": "https://meditationbelltimer.com/android-chrome-512x512.png"
     }
-    </script>
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Meditation Bell Timer",
-        "url": "https://meditationbelltimer.com/"
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Meditation Bell Timer",
-        "applicationCategory": "HealthApplication",
-        "operatingSystem": "Android",
-        "description": "A distraction-free meditation timer with Tibetan bell intervals, ambient soundscapes, Brown Noise and sleep-friendly audio.",
-        "url": "https://meditationbelltimer.com/",
-        "downloadUrl": "https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
-    }
-    </script>
+</style>
+```
 
 </head>
 
-
 <body>
-
 
 <!-- =========================================================
      HEADER
 ========================================================= -->
 
-<header class="site-header">
+<header>
 
-    <div class="header-inner">
+```
+<a href="/" class="logo">
 
-        <a href="/" class="brand" aria-label="Meditation Bell Timer home">
+    <img
+        src="android-chrome-512x512.png"
+        alt="Meditation Bell Timer">
 
-            <img
-                src="/android-chrome-512x512.png"
-                alt=""
-                width="30"
-                height="30"
-            >
+    MEDITATION BELL TIMER
 
-            MEDITATION BELL TIMER
+</a>
+
+
+<button
+    class="menu-toggle"
+    id="mobile-menu-btn"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="nav-links">
+
+    ☰
+
+</button>
+
+
+<nav
+    class="nav-links"
+    id="nav-links">
+
+
+    <a href="/our-apps.html">
+        Our Apps
+    </a>
+
+
+    <a href="/solfeggio-healing-frequencies.html">
+        Solfeggio Frequencies
+    </a>
+
+
+    <div class="dropdown">
+
+        <a
+            href="#"
+            class="dropdown-toggle">
+
+            Resources
+            <span>▼</span>
 
         </a>
 
 
-        <button
-            class="mobile-menu-button"
-            id="mobile-menu-button"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-            aria-controls="main-navigation"
-        >
-            ☰
-        </button>
+        <div class="dropdown-content">
 
+            <a href="/brown-noise-for-adhd-focus">
+                Brown Noise for ADHD Focus
+            </a>
 
-        <nav
-            class="main-nav"
-            id="main-navigation"
-            aria-label="Main navigation"
-        >
+            <a href="/meditation-timer-for-adhd">
+                Meditation Timer for ADHD
+            </a>
 
-            <a href="/our-apps.html">Our Apps</a>
+            <a href="/white-noise-meditation-timer">
+                White Noise Timer
+            </a>
+
+            <a href="/sleep-meditation-sounds">
+                Sleep Meditation Sounds
+            </a>
 
             <a href="/solfeggio-healing-frequencies.html">
                 Solfeggio Frequencies
             </a>
 
+            <a href="/our-apps.html">
+                Our Apps
+            </a>
 
-            <div class="dropdown">
-
-                <a href="#"
-                   class="dropdown-toggle"
-                   aria-haspopup="true">
-                    Resources
-                    <span class="dropdown-arrow">▼</span>
-                </a>
-
-                <div class="dropdown-menu">
-
-                    <a href="/brown-noise-for-adhd-focus">
-                        Brown Noise for ADHD Focus
-                    </a>
-
-                    <a href="/meditation-timer-for-adhd">
-                        Meditation Timer for ADHD
-                    </a>
-
-                    <a href="/white-noise-meditation-timer">
-                        White Noise Timer
-                    </a>
-
-                    <a href="/sleep-meditation-sounds">
-                        Sleep Meditation Sounds
-                    </a>
-
-                    <a href="/solfeggio-healing-frequencies.html">
-                        Solfeggio Frequencies
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="dropdown">
-
-                <a href="#"
-                   class="dropdown-toggle"
-                   aria-haspopup="true">
-                    Articles
-                    <span class="dropdown-arrow">▼</span>
-                </a>
-
-                <div class="dropdown-menu">
-
-                    <a href="/how-to-use-a-meditation-timer">
-                        How To Use A Meditation Timer
-                    </a>
-
-                    <a href="/meditation-timer-vs-guided-meditation">
-                        Timer vs Guided Meditation
-                    </a>
-
-                    <a href="/how-long-should-you-meditate">
-                        How Long Should You Meditate
-                    </a>
-
-                    <a href="/best-meditation-sounds">
-                        Best Meditation Sounds
-                    </a>
-
-                    <a href="/meditation-timer-for-adhd-focus">
-                        Meditation Timer For ADHD Focus
-                    </a>
-
-                    <a href="/pomodoro-meditation-method">
-                        Pomodoro Meditation Method
-                    </a>
-
-                    <a href="/how-tibetan-singing-bowls-work">
-                        How Tibetan Singing Bowls Work
-                    </a>
-
-                </div>
-
-            </div>
-
-        </nav>
+        </div>
 
     </div>
 
+
+    <div class="dropdown">
+
+        <a
+            href="#"
+            class="dropdown-toggle">
+
+            Articles
+            <span>▼</span>
+
+        </a>
+
+
+        <div class="dropdown-content">
+
+            <a href="/how-to-use-a-meditation-timer">
+                How To Use A Meditation Timer
+            </a>
+
+            <a href="/meditation-timer-vs-guided-meditation">
+                Timer vs Guided Meditation
+            </a>
+
+            <a href="/how-long-should-you-meditate">
+                How Long Should You Meditate
+            </a>
+
+            <a href="/best-meditation-sounds">
+                Best Meditation Sounds
+            </a>
+
+            <a href="/meditation-timer-for-adhd-focus">
+                Meditation Timer For ADHD Focus
+            </a>
+
+            <a href="/pomodoro-meditation-method">
+                Pomodoro Meditation Method
+            </a>
+
+            <a href="/how-tibetan-singing-bowls-work">
+                How Tibetan Singing Bowls Work
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+```
+
 </header>
 
-
-
 <!-- =========================================================
-     HERO
+     CINEMATIC FULL-WIDTH HERO
+     
+     NO Screenshot1.png
+     
+     The hero artwork fills the entire section.
+     Text is positioned directly over the image.
 ========================================================= -->
-
-<main>
 
 <section class="hero">
 
+```
+<img
+    class="hero-background"
+    src="assets/hero-meditation-bowl.webp"
+    alt="Tibetan singing bowl in a peaceful mountain landscape"
+    fetchpriority="high"
+>
 
-    <div class="hero-content">
 
-        <div class="eyebrow">
-            Simple tools for a quieter mind
+<div class="hero-overlay"></div>
+
+
+<div class="hero-content">
+
+    <div class="hero-copy">
+
+
+        <div class="hero-eyebrow">
+            A simpler way to slow down
         </div>
 
 
         <h1>
+
             Meditation,
-            <span>without the noise.</span>
+            <br>
+
+            <span>
+                without the noise.
+            </span>
+
         </h1>
 
 
         <p class="hero-description">
-            A beautifully simple meditation timer designed for
-            mindfulness, sleep, focus and relaxation — with authentic
-            Tibetan bells, immersive soundscapes and no distractions.
+
+            A beautifully simple meditation timer for mindfulness,
+            sleep, focus and quiet moments. Set your time, choose
+            your sound and let the screen disappear.
+
         </p>
 
 
         <div class="hero-buttons">
 
+
             <a
-                class="google-play"
                 href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Get Meditation Bell Timer on Google Play"
-            >
-                <img
-                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                    alt="Get it on Google Play"
-                    width="190"
-                    height="57"
-                >
+                class="btn btn-primary">
+
+                Get the App
+
             </a>
 
 
             <a
-                href="/timer.html"
-                class="button-secondary"
-            >
-                Try the Web Timer
+                href="timer.html"
+                class="btn btn-secondary">
+
+                Try the Web Timer →
+
             </a>
 
+
         </div>
 
 
-        <div class="hero-note">
-            No account required · Works offline · Built for real life
+        <div class="hero-meta">
+
+            Simple. Private. Offline.
+            Designed to stay out of your way.
+
         </div>
+
 
     </div>
 
-
-
-    <!-- HERO VISUAL -->
-
-    <div class="hero-visual">
-
-        <img
-            class="hero-background"
-            src="assets/hero-meditation-bowl.webp"
-            alt="Cinematic Tibetan singing bowl meditation scene"
-            onerror="this.onerror=null;this.src='assets/bowl_bg.webp';"
-        >
-
-
-        <div class="hero-orb"></div>
-
-
-        <!-- Phone screenshot kept at natural proportions -->
-
-        <div class="hero-phone">
-
-            <img
-                src="assets/Screenshot1.png"
-                alt="Meditation Bell Timer app interface showing meditation timer and soundscapes"
-                width="1080"
-                height="1920"
-                loading="eager"
-            >
-
-        </div>
-
-
-        <div class="hero-badge">
-            Tibetan bells · Ambient sound · Focus
-        </div>
-
-    </div>
+</div>
+```
 
 </section>
-
-
 
 <!-- =========================================================
      USP STRIP
 ========================================================= -->
 
-<section class="usp-strip" aria-label="Meditation Bell Timer benefits">
+<section class="usp-strip">
 
-    <div class="usp-inner">
+```
+<div class="usp-inner">
 
-        <div class="usp-item">
-            <strong>No Ads</strong>
-        </div>
 
-        <div class="usp-item">
-            <strong>No Monthly Subscription</strong>
-        </div>
+    <div class="usp-item">
 
-        <div class="usp-item">
-            <strong>No Account</strong>
-        </div>
+        <strong>
+            ✓ No Ads
+        </strong>
 
-        <div class="usp-item">
-            <strong>100% Offline</strong>
-        </div>
+        <span>
+            No advertising interruptions
+        </span>
 
     </div>
 
+
+    <div class="usp-item">
+
+        <strong>
+            1× No Monthly Subscription
+        </strong>
+
+        <span>
+            Simple one-time upgrade
+        </span>
+
+    </div>
+
+
+    <div class="usp-item">
+
+        <strong>
+            ◉ No Account
+        </strong>
+
+        <span>
+            Just open and use
+        </span>
+
+    </div>
+
+
+    <div class="usp-item">
+
+        <strong>
+            ⌁ 100% Offline
+        </strong>
+
+        <span>
+            Listen without connectivity
+        </span>
+
+    </div>
+
+
+</div>
+```
+
 </section>
-
-
 
 <!-- =========================================================
      INTRO
 ========================================================= -->
 
-<section class="section intro-section">
+<section class="intro">
 
-    <div class="section-heading">
-
-        <div class="eyebrow">
-            A simpler approach
-        </div>
-
-        <h2>
-            Your practice.
-            Your pace.
-            Your space.
-        </h2>
-
-    </div>
+```
+<span class="section-label">
+    The idea
+</span>
 
 
-    <p class="intro-copy">
+<h2>
+    A quieter approach to meditation.
+</h2>
 
-        Meditation Bell Timer was built for people who don't need another
-        complicated wellness platform. There are no social feeds,
-        endless courses or distracting dashboards. Just a beautifully
-        simple timer, gentle interval bells and immersive sounds that
-        let you create the environment you want.
 
-    </p>
+<p>
+
+    Meditation doesn't need another complicated app competing
+    for your attention. Meditation Bell Timer was created around
+    a simple idea: give you a reliable timer, beautiful sounds
+    and gentle bells — then get out of the way.
+
+    Whether you're sitting for five minutes, settling down for
+    the night, studying, practising mindfulness or simply taking
+    a quiet break, the experience is designed to remain calm,
+    focused and distraction-free.
+
+</p>
+```
 
 </section>
-
-
 
 <!-- =========================================================
      FEATURES
@@ -1867,274 +2727,510 @@
 
 <section class="section">
 
-    <div class="section-heading">
+```
+<div class="section-header">
 
-        <div class="eyebrow">
-            Designed around you
+    <span class="section-label">
+        Built around simplicity
+    </span>
+
+    <h2>
+        Everything you need.
+        <br>
+        Nothing you don't.
+    </h2>
+
+    <p>
+
+        A focused collection of tools for meditation,
+        mindfulness, relaxation, sleep, study and quiet
+        concentration.
+
+    </p>
+
+</div>
+
+
+<div class="feature-grid">
+
+
+    <article class="feature-card">
+
+        <div class="feature-number">
+            01 / TIMER
         </div>
 
-        <h2>
-            Everything you need.
-            Nothing you don't.
-        </h2>
+        <h3>
+            Simple Meditation Timer
+        </h3>
 
         <p>
-            A focused set of tools for meditation, sleep, study,
-            relaxation and deep work.
+
+            Choose your session length and let the timer
+            quietly guide the beginning and end of your
+            practice.
+
         </p>
 
-    </div>
+    </article>
 
 
-    <div class="feature-grid">
+    <article class="feature-card">
+
+        <div class="feature-number">
+            02 / BELLS
+        </div>
+
+        <h3>
+            Gentle Interval Bells
+        </h3>
+
+        <p>
+
+            Set recurring Tibetan bell intervals to bring
+            your attention gently back to the present moment.
+
+        </p>
+
+    </article>
 
 
-        <article class="feature-card">
+    <article class="feature-card">
 
-            <div class="feature-number">01</div>
+        <div class="feature-number">
+            03 / SOUND
+        </div>
 
-            <h3>Custom Meditation Timer</h3>
+        <h3>
+            Immersive Soundscapes
+        </h3>
 
-            <p>
-                Choose your session length and let the timer quietly
-                run in the background while you focus on your practice.
-            </p>
+        <p>
 
-        </article>
+            Choose from rain, ocean waves, nature ambience,
+            Tibetan bowls, Brown Noise and atmospheric sounds.
 
+        </p>
 
-        <article class="feature-card">
-
-            <div class="feature-number">02</div>
-
-            <h3>Gentle Interval Bells</h3>
-
-            <p>
-                Set recurring Tibetan bell intervals to provide a
-                simple reminder to return your attention to the present.
-            </p>
-
-        </article>
+    </article>
 
 
-        <article class="feature-card">
+    <article class="feature-card">
 
-            <div class="feature-number">03</div>
+        <div class="feature-number">
+            04 / DARK
+        </div>
 
-            <h3>Immersive Soundscapes</h3>
+        <h3>
+            Distraction-Free Dark Mode
+        </h3>
 
-            <p>
-                Rain, ocean waves, forest ambience, Brown Noise,
-                singing bowls, campfire and more.
-            </p>
+        <p>
 
-        </article>
+            A deep-black interface and Black Screen mode keep
+            your phone from becoming the focus of your session.
+
+        </p>
+
+    </article>
 
 
-        <article class="feature-card">
-
-            <div class="feature-number">04</div>
-
-            <h3>Pitch-Black Mode</h3>
-
-            <p>
-                Designed for evening meditation and sleep, with a
-                dark interface that keeps the screen from becoming
-                the focus.
-            </p>
-
-        </article>
-
-    </div>
+</div>
+```
 
 </section>
-
-
 
 <!-- =========================================================
      SOUND LIBRARY
 ========================================================= -->
 
-<section class="sounds-section">
+<section class="section">
 
-    <div class="sounds-inner">
+```
+<div class="section-header">
 
-        <div class="section-heading">
+    <span class="section-label">
+        The sound library
+    </span>
 
-            <div class="eyebrow">
-                Find your atmosphere
-            </div>
+    <h2>
+        Choose the atmosphere.
+    </h2>
 
-            <h2>
-                12 immersive soundscapes
-            </h2>
+    <p>
 
-            <p>
-                Choose silence, nature, gentle ambience or deeper
-                sounds for focus and relaxation.
-            </p>
+        From complete silence and Tibetan bells to rain,
+        ocean waves, Brown Noise and atmospheric ambience,
+        choose a sound that suits the moment.
 
-        </div>
+    </p>
 
-
-        <div class="sound-grid">
-
-
-            <article class="sound-card sound-1">
-
-                <div>
-                    <h3>Tibetan Bell</h3>
-                    <span>Pure meditation timing</span>
-                </div>
-
-            </article>
+</div>
 
 
-            <article class="sound-card sound-2">
-
-                <div>
-                    <h3>Soothing Rain</h3>
-                    <span>Gentle background ambience</span>
-                </div>
-
-            </article>
+<div class="sound-grid">
 
 
-            <article class="sound-card sound-3">
+    <article class="sound-card">
 
-                <div>
-                    <h3>Crashing Waves</h3>
-                    <span>Rhythmic ocean ambience</span>
-                </div>
+        <div class="sound-icon">◉</div>
 
-            </article>
+        <h3>
+            Silence &amp; Tibetan Bell
+        </h3>
 
+        <p>
+            Pure timing with a resonant bell marking your session.
+        </p>
 
-            <article class="sound-card sound-4">
-
-                <div>
-                    <h3>Brown Noise</h3>
-                    <span>Deep, steady background sound</span>
-                </div>
-
-            </article>
+    </article>
 
 
-            <article class="sound-card sound-5">
+    <article class="sound-card">
 
-                <div>
-                    <h3>Rain Forest</h3>
-                    <span>Immersive nature atmosphere</span>
-                </div>
+        <div class="sound-icon">≈</div>
 
-            </article>
+        <h3>
+            Soothing Rain Storm
+        </h3>
 
+        <p>
+            Continuous rainfall for a calm and immersive atmosphere.
+        </p>
 
-            <article class="sound-card sound-6">
-
-                <div>
-                    <h3>Bird Song</h3>
-                    <span>Gentle morning ambience</span>
-                </div>
-
-            </article>
+    </article>
 
 
-            <article class="sound-card sound-7">
+    <article class="sound-card">
 
-                <div>
-                    <h3>Deep Om Chant</h3>
-                    <span>Continuous vocal ambience</span>
-                </div>
+        <div class="sound-icon">∿</div>
 
-            </article>
+        <h3>
+            Crashing Waves
+        </h3>
+
+        <p>
+            Rhythmic ocean ambience for meditation and relaxation.
+        </p>
+
+    </article>
 
 
-            <article class="sound-card sound-8">
+    <article class="sound-card">
 
-                <div>
-                    <h3>Deep Space Ambient</h3>
-                    <span>Atmospheric focus sound</span>
-                </div>
+        <div class="sound-icon">≋</div>
 
-            </article>
+        <h3>
+            Brown Noise
+        </h3>
 
-        </div>
+        <p>
+            Deep, warm noise suitable for focus, study and
+            background listening.
+        </p>
 
-    </div>
+    </article>
+
+
+    <article class="sound-card">
+
+        <div class="sound-icon">◌</div>
+
+        <h3>
+            Tibetan Singing Bowl
+        </h3>
+
+        <p>
+            Long resonant tones inspired by traditional
+            singing bowls.
+        </p>
+
+    </article>
+
+
+    <article class="sound-card">
+
+        <div class="sound-icon">✦</div>
+
+        <h3>
+            Rain Forest
+        </h3>
+
+        <p>
+            A rich natural atmosphere inspired by the sounds
+            of the forest.
+        </p>
+
+    </article>
+
+
+    <article class="sound-card">
+
+        <div class="sound-icon">⌁</div>
+
+        <h3>
+            Bird Song
+        </h3>
+
+        <p>
+            A gentle outdoor atmosphere for mornings and
+            mindful moments.
+        </p>
+
+    </article>
+
+
+    <article class="sound-card">
+
+        <div class="sound-icon">◎</div>
+
+        <h3>
+            Deep Om Chant
+        </h3>
+
+        <p>
+            A continuous vocal ambience for meditation and
+            quiet reflection.
+        </p>
+
+    </article>
+
+
+    <article class="sound-card">
+
+        <div class="sound-icon">✧</div>
+
+        <h3>
+            Calming Campfire
+        </h3>
+
+        <p>
+            Warm crackling ambience for evening relaxation
+            and reading.
+        </p>
+
+    </article>
+
+
+    <article class="sound-card">
+
+        <div class="sound-icon">→</div>
+
+        <h3>
+            Soothing Steam Train
+        </h3>
+
+        <p>
+            A nostalgic rhythmic ambience with a gentle
+            mechanical character.
+        </p>
+
+    </article>
+
+
+    <article class="sound-card">
+
+        <div class="sound-icon">☾</div>
+
+        <h3>
+            Cicadas in the Evening
+        </h3>
+
+        <p>
+            A warm summer-night ambience for relaxation
+            and sleep.
+        </p>
+
+    </article>
+
+
+    <article class="sound-card">
+
+        <div class="sound-icon">✦</div>
+
+        <h3>
+            Deep Space Ambient
+        </h3>
+
+        <p>
+            A spacious atmospheric drone for concentration
+            and quiet listening.
+        </p>
+
+    </article>
+
+
+</div>
+```
 
 </section>
 
-
-
 <!-- =========================================================
-     HOW IT WORKS
+     VISUAL / DARK SCREEN
 ========================================================= -->
 
 <section class="section">
 
-    <div class="section-heading">
+```
+<div class="visual-section">
 
-        <div class="eyebrow">
-            Three simple steps
+
+    <div class="visual-section-content">
+
+
+        <div class="visual-copy">
+
+            <span class="section-label">
+                A calmer screen
+            </span>
+
+
+            <h2>
+                Designed to disappear.
+            </h2>
+
+
+            <p>
+
+                Your phone doesn't need to become another source
+                of distraction. Meditation Bell Timer uses a
+                deliberately minimal interface, with a deep-black
+                screen designed for low-light and night-time
+                sessions.
+
+            </p>
+
+
+            <p>
+
+                Choose your sound, start your timer and let the
+                experience become part of the background.
+
+            </p>
+
+
+            <a
+                href="timer.html"
+                class="btn btn-secondary">
+
+                Try the Web Version
+
+            </a>
+
         </div>
 
-        <h2>
-            Set it. Start it. Step away.
-        </h2>
+
+        <div class="visual-image">
+
+            <img
+                src="assets/Screenshot1.png"
+                alt="Meditation Bell Timer app interface"
+                loading="lazy"
+            >
+
+        </div>
+
 
     </div>
 
-
-    <div class="steps">
-
-
-        <article class="step">
-
-            <div class="step-number">01</div>
-
-            <h3>Choose your sound</h3>
-
-            <p>
-                Start with silence and a Tibetan bell, or choose one
-                of the immersive ambient soundscapes.
-            </p>
-
-        </article>
-
-
-        <article class="step">
-
-            <div class="step-number">02</div>
-
-            <h3>Set your session</h3>
-
-            <p>
-                Select your duration and add interval bells if you
-                want gentle reminders throughout your practice.
-            </p>
-
-        </article>
-
-
-        <article class="step">
-
-            <div class="step-number">03</div>
-
-            <h3>Put the phone down</h3>
-
-            <p>
-                Start the timer, switch to the dark screen and let
-                the app become part of the background.
-            </p>
-
-        </article>
-
-    </div>
+</div>
+```
 
 </section>
 
+<!-- =========================================================
+     THREE STEPS
+========================================================= -->
 
+<section class="section">
+
+```
+<div class="section-header">
+
+    <span class="section-label">
+        Three simple steps
+    </span>
+
+    <h2>
+        Start. Settle. Breathe.
+    </h2>
+
+    <p>
+        No courses to complete. No social feed.
+        No complicated setup.
+    </p>
+
+</div>
+
+
+<div class="steps">
+
+
+    <article class="step">
+
+        <div class="step-number">
+            01
+        </div>
+
+        <h3>
+            Choose your session
+        </h3>
+
+        <p>
+
+            Select the timer duration that suits your practice,
+            whether that's a short reset or a longer session.
+
+        </p>
+
+    </article>
+
+
+    <article class="step">
+
+        <div class="step-number">
+            02
+        </div>
+
+        <h3>
+            Choose your sound
+        </h3>
+
+        <p>
+
+            Start with silence and a Tibetan bell, or choose
+            from rain, waves, nature, Brown Noise and other
+            soundscapes.
+
+        </p>
+
+    </article>
+
+
+    <article class="step">
+
+        <div class="step-number">
+            03
+        </div>
+
+        <h3>
+            Put the screen away
+        </h3>
+
+        <p>
+
+            Use the distraction-free interface or Black Screen
+            mode and let the timer quietly do its job.
+
+        </p>
+
+    </article>
+
+
+</div>
+```
+
+</section>
 
 <!-- =========================================================
      USE CASES
@@ -2142,181 +3238,414 @@
 
 <section class="section">
 
-    <div class="section-heading">
+```
+<div class="section-header">
 
-        <div class="eyebrow">
-            More than meditation
-        </div>
+    <span class="section-label">
+        One app, many moments
+    </span>
 
-        <h2>
-            One simple tool.
-            Many ways to use it.
-        </h2>
+    <h2>
+        Made for real life.
+    </h2>
 
-    </div>
-
-
-    <div class="use-case-grid">
+</div>
 
 
-        <article class="use-case">
-
-            <h3>Mindfulness</h3>
-
-            <p>
-                Create a quiet space for unguided meditation,
-                breathing exercises, personal reflection and
-                everyday mindfulness.
-            </p>
-
-        </article>
+<div class="use-grid">
 
 
-        <article class="use-case">
+    <article class="use-card">
 
-            <h3>Sleep & Relaxation</h3>
+        <span class="section-label">
+            Mindfulness
+        </span>
 
-            <p>
-                Pair a long-running ambient soundscape with the
-                pitch-black interface for a calmer bedtime environment.
-            </p>
+        <h3>
+            Meditation &amp; reflection
+        </h3>
 
-        </article>
+        <p>
+
+            Create a quiet space for unguided meditation,
+            breathwork, mindfulness or personal reflection.
+
+        </p>
+
+    </article>
 
 
-        <article class="use-case">
+    <article class="use-card">
 
-            <h3>Focus & Study</h3>
+        <span class="section-label">
+            Sleep
+        </span>
 
-            <p>
-                Use Brown Noise, rain or deep ambient sounds alongside
-                structured sessions to create a distraction-free
-                working environment.
-            </p>
+        <h3>
+            Evening &amp; night
+        </h3>
 
-        </article>
+        <p>
 
-    </div>
+            Choose a calming soundscape, set a timer and
+            use the dark interface without a bright screen
+            dominating the room.
+
+        </p>
+
+    </article>
+
+
+    <article class="use-card">
+
+        <span class="section-label">
+            Focus
+        </span>
+
+        <h3>
+            Study &amp; concentration
+        </h3>
+
+        <p>
+
+            Use the timer with silence, Brown Noise or
+            atmospheric sounds to create a focused working
+            environment.
+
+        </p>
+
+    </article>
+
+
+</div>
+```
 
 </section>
-
-
 
 <!-- =========================================================
-     OUR APPS
+     APP COLLECTION
 ========================================================= -->
 
-<section class="apps-section">
+<section class="section">
 
-    <div class="apps-inner">
+```
+<div class="section-header">
 
-        <div class="section-heading">
+    <span class="section-label">
+        The Meditation Bell Timer collection
+    </span>
 
-            <div class="eyebrow">
-                The Future Home Tek collection
-            </div>
+    <h2>
+        Three apps.
+        <br>
+        One calmer ecosystem.
+    </h2>
 
-            <h2>
-                Our apps
-            </h2>
+    <p>
 
-            <p>
-                A growing collection of simple, beautifully designed
-                audio and mindfulness tools.
-            </p>
+        Different tools for different moments — from simple
+        meditation timing to frequency listening and fully
+        custom sound baths.
 
-        </div>
+    </p>
 
-
-        <div class="app-grid">
-
-
-            <article class="app-card">
-
-                <div class="app-label">
-                    Meditation
-                </div>
-
-                <h3>
-                    Meditation Bell & Zen Timer
-                </h3>
-
-                <p>
-                    A minimalist meditation timer with authentic
-                    Tibetan bells, custom intervals, ambient
-                    soundscapes, Brown Noise and a pitch-black mode.
-                </p>
-
-                <a
-                    class="app-link"
-                    href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Explore Meditation Bell Timer →
-                </a>
-
-            </article>
+</div>
 
 
-            <article class="app-card">
-
-                <div class="app-label">
-                    Frequencies
-                </div>
-
-                <h3>
-                    Solfeggio Frequencies
-                </h3>
-
-                <p>
-                    Explore a focused library of Solfeggio frequencies,
-                    plus 432 Hz, Delta and Gamma sessions for meditation,
-                    relaxation, sleep and focus.
-                </p>
-
-                <a
-                    class="app-link"
-                    href="/solfeggio-healing-frequencies.html"
-                >
-                    Explore Solfeggio Frequencies →
-                </a>
-
-            </article>
+<div class="app-grid">
 
 
-            <article class="app-card">
+    <!-- APP 1 -->
 
-                <div class="app-label">
-                    Sound Bath
-                </div>
+    <article class="app-card featured">
 
-                <h3>
-                    Sound Bath Zen
-                </h3>
+        <span class="app-tag">
+            Meditation · Focus · Sleep
+        </span>
 
-                <p>
-                    Build your own sound bath by combining frequencies
-                    with calming ambient sounds, independently controlled
-                    and designed around your session.
-                </p>
 
-                <a
-                    class="app-link"
-                    href="/our-apps.html"
-                >
-                    Explore Sound Bath Zen →
-                </a>
+        <h3>
+            Meditation Bell &amp; Zen Timer
+        </h3>
 
-            </article>
 
-        </div>
+        <p>
 
-    </div>
+            Our original minimalist meditation timer,
+            combining custom session timing, Tibetan bells
+            and immersive ambient soundscapes.
+
+        </p>
+
+
+        <ul>
+
+            <li>
+                Custom meditation timer
+            </li>
+
+            <li>
+                Tibetan bell intervals
+            </li>
+
+            <li>
+                12 immersive soundscapes
+            </li>
+
+            <li>
+                Brown Noise &amp; focus sounds
+            </li>
+
+            <li>
+                Dark Screen mode
+            </li>
+
+            <li>
+                Offline listening
+            </li>
+
+        </ul>
+
+
+        <a
+            href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-link">
+
+            Explore Meditation Bell Timer →
+
+        </a>
+
+    </article>
+
+
+
+    <!-- APP 2 -->
+
+    <article class="app-card">
+
+        <span class="app-tag">
+            Frequencies · Meditation · Focus
+        </span>
+
+
+        <h3>
+            Solfeggio Frequencies Healing
+        </h3>
+
+
+        <p>
+
+            Explore a dedicated collection of Solfeggio
+            frequencies, including the traditional scale
+            alongside 432 Hz, 4 Hz Delta and 40 Hz Gamma.
+
+        </p>
+
+
+        <ul>
+
+            <li>
+                12 frequency options
+            </li>
+
+            <li>
+                174 Hz – 963 Hz
+            </li>
+
+            <li>
+                432 Hz
+            </li>
+
+            <li>
+                4 Hz Delta
+            </li>
+
+            <li>
+                40 Hz Gamma
+            </li>
+
+            <li>
+                Minimalist black interface
+            </li>
+
+        </ul>
+
+
+        <a
+            href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-link">
+
+            Explore Solfeggio Frequencies →
+
+        </a>
+
+    </article>
+
+
+
+    <!-- APP 3 -->
+
+    <article class="app-card">
+
+        <span class="app-tag">
+            Custom Sound Bath
+        </span>
+
+
+        <h3>
+            Sound Bath Zen
+        </h3>
+
+
+        <p>
+
+            Build your own sound bath by combining frequency
+            audio with calming ambient soundscapes and
+            controlling the two layers independently.
+
+        </p>
+
+
+        <ul>
+
+            <li>
+                Two independent audio layers
+            </li>
+
+            <li>
+                Solfeggio &amp; brainwave frequencies
+            </li>
+
+            <li>
+                Nature &amp; ambient sounds
+            </li>
+
+            <li>
+                Independent volume controls
+            </li>
+
+            <li>
+                Saved presets
+            </li>
+
+            <li>
+                Long-form sessions
+            </li>
+
+        </ul>
+
+
+        <a
+            href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-link">
+
+            Explore Sound Bath Zen →
+
+        </a>
+
+    </article>
+
+
+</div>
+
+
+<div style="text-align:center; margin-top:35px;">
+
+    <a
+        href="/our-apps.html"
+        class="text-link">
+
+        View All Three Apps →
+
+    </a>
+
+</div>
+```
 
 </section>
 
+<!-- =========================================================
+     APP SCREENSHOTS
+========================================================= -->
 
+<section class="section">
+
+```
+<div class="section-header">
+
+    <span class="section-label">
+        Inside the app
+    </span>
+
+    <h2>
+        Clean by design.
+    </h2>
+
+    <p>
+
+        The interface is deliberately simple so the app can
+        become part of your routine without becoming the
+        centre of it.
+
+    </p>
+
+</div>
+
+
+<div class="gallery">
+
+
+    <img
+        src="assets/Screenshot1.png"
+        alt="Meditation Bell Timer main timer interface"
+        loading="lazy"
+    >
+
+
+    <img
+        src="assets/Screenshot2.png"
+        alt="Meditation Bell Timer offline use interface"
+        loading="lazy"
+    >
+
+
+    <img
+        src="assets/Screenshot3.png"
+        alt="Meditation Bell Timer ambient soundscapes"
+        loading="lazy"
+    >
+
+
+    <img
+        src="assets/Screenshot4.png"
+        alt="Meditation Bell Timer custom timer and bell intervals"
+        loading="lazy"
+    >
+
+
+    <img
+        src="assets/Screenshot5.png"
+        alt="Meditation Bell Timer dark screen mode"
+        loading="lazy"
+    >
+
+
+    <img
+        src="assets/Screenshot6.png"
+        alt="Meditation Bell Timer focus and study interface"
+        loading="lazy"
+    >
+
+</div>
+```
+
+</section>
 
 <!-- =========================================================
      FAQ
@@ -2324,158 +3653,168 @@
 
 <section class="section">
 
-    <div class="section-heading">
+```
+<div class="section-header">
 
-        <div class="eyebrow">
-            Frequently asked
-        </div>
+    <span class="section-label">
+        Frequently asked
+    </span>
 
-        <h2>
-            A few things you might want to know
-        </h2>
+    <h2>
+        Questions, answered.
+    </h2>
 
-    </div>
-
-
-    <div class="faq">
+</div>
 
 
-        <details>
-
-            <summary>
-                Is Meditation Bell Timer a guided meditation app?
-            </summary>
-
-            <div class="faq-answer">
-                No. It is designed primarily as an unguided meditation
-                timer. You choose the duration, sounds and interval
-                bells, then practise in your own way.
-            </div>
-
-        </details>
+<div class="faq">
 
 
-        <details>
+    <details>
 
-            <summary>
-                Can I use it without an internet connection?
-            </summary>
+        <summary>
+            What is Meditation Bell Timer?
+        </summary>
 
-            <div class="faq-answer">
-                Yes. The app is designed to work offline, making it
-                suitable for meditation, travel, bedtime and situations
-                where you don't want to rely on a connection.
-            </div>
+        <p>
 
-        </details>
+            Meditation Bell Timer is a simple timer for
+            meditation, mindfulness, focus, study, relaxation
+            and sleep. It combines timed sessions with Tibetan
+            bell sounds, interval chimes and immersive ambient
+            soundscapes.
 
+        </p>
 
-        <details>
-
-            <summary>
-                Does the app contain advertising?
-            </summary>
-
-            <div class="faq-answer">
-                No. Meditation Bell Timer is designed around a
-                distraction-free experience without advertising.
-            </div>
-
-        </details>
+    </details>
 
 
-        <details>
+    <details>
 
-            <summary>
-                Can I use the timer for sleep and relaxation?
-            </summary>
+        <summary>
+            Can I use Meditation Bell Timer without an account?
+        </summary>
 
-            <div class="faq-answer">
-                Yes. Longer sessions, calming ambient soundscapes and
-                the pitch-black interface make it suitable for bedtime
-                listening and relaxation routines.
-            </div>
+        <p>
 
-        </details>
+            Yes. The app is designed without requiring an
+            account or social profile, keeping the experience
+            simple and private.
 
+        </p>
 
-        <details>
-
-            <summary>
-                Can I try the timer before committing to longer sessions?
-            </summary>
-
-            <div class="faq-answer">
-                Yes. The app includes a free short-session experience,
-                allowing you to try the timer and soundscapes before
-                deciding whether you want longer sessions.
-            </div>
-
-        </details>
+    </details>
 
 
-    </div>
+    <details>
+
+        <summary>
+            Does it work offline?
+        </summary>
+
+        <p>
+
+            Yes. Meditation Bell Timer is designed for offline
+            use, making it useful when you want your meditation
+            session to remain free from notifications and
+            connectivity issues.
+
+        </p>
+
+    </details>
+
+
+    <details>
+
+        <summary>
+            What sounds are included?
+        </summary>
+
+        <p>
+
+            The sound library includes Tibetan bells, Tibetan
+            singing bowls, rain, ocean waves, Brown Noise,
+            rainforest ambience, birds, Om chant, campfire,
+            steam train, evening cicadas and deep space ambience.
+
+        </p>
+
+    </details>
+
+
+    <details>
+
+        <summary>
+            Can I set recurring meditation bells?
+        </summary>
+
+        <p>
+
+            Yes. You can configure recurring bell intervals
+            so a gentle Tibetan bell can mark points throughout
+            your session.
+
+        </p>
+
+    </details>
+
+
+    <details>
+
+        <summary>
+            Are there other apps in the collection?
+        </summary>
+
+        <p>
+
+            Yes. The Meditation Bell Timer collection also
+            includes Solfeggio Frequencies Healing and Sound
+            Bath Zen. Each app has a different focus while
+            sharing the same minimalist approach to digital
+            wellness.
+
+        </p>
+
+    </details>
+
+
+</div>
+```
 
 </section>
-
-
 
 <!-- =========================================================
      FINAL CTA
 ========================================================= -->
 
-<section class="section">
+<section class="final-cta">
 
-    <div class="final-cta">
-
-        <div class="eyebrow">
-            Begin with five quiet minutes
-        </div>
-
-        <h2>
-            Make a little space for yourself.
-        </h2>
-
-        <p>
-            Choose a sound, set your timer and step away from the screen.
-            Your next session can be as simple as that.
-        </p>
+```
+<h2>
+    Make a little room for stillness.
+</h2>
 
 
-        <div class="hero-buttons" style="justify-content:center;">
+<p>
 
-            <a
-                class="google-play"
-                href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Get Meditation Bell Timer on Google Play"
-            >
-                <img
-                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                    alt="Get it on Google Play"
-                    width="190"
-                    height="57"
-                >
-            </a>
+    Whether you're meditating, studying, relaxing or getting
+    ready for sleep, Meditation Bell Timer gives you the tools
+    to create a calmer session — without filling the experience
+    with clutter.
+
+</p>
 
 
-            <a
-                href="/timer.html"
-                class="button-secondary"
-            >
-                Try Web Timer
-            </a>
+<a
+    href="timer.html"
+    class="btn btn-primary">
 
-        </div>
+    Try the Web Timer →
 
-    </div>
+</a>
+```
 
 </section>
-
-</main>
-
-
 
 <!-- =========================================================
      FOOTER
@@ -2483,258 +3822,301 @@
 
 <footer>
 
-    <div class="footer-inner">
+```
+<div class="footer-inner">
 
 
-        <div class="footer-grid">
+    <div class="footer-brand">
+
+        <a href="/" class="logo">
+
+            <img
+                src="android-chrome-512x512.png"
+                alt="Meditation Bell Timer">
+
+            MEDITATION BELL TIMER
+
+        </a>
 
 
-            <div class="footer-brand">
+        <p>
 
-                <a href="/" class="brand">
+            Simple digital tools for meditation,
+            mindfulness, sleep, focus and quiet moments.
 
-                    <img
-                        src="/android-chrome-512x512.png"
-                        alt=""
-                        width="30"
-                        height="30"
-                    >
-
-                    MEDITATION BELL TIMER
-
-                </a>
-
-                <p>
-                    Simple tools for meditation, mindfulness, sleep,
-                    relaxation and focus.
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>Apps</h3>
-
-                <a href="/our-apps.html">
-                    Our Apps
-                </a>
-
-                <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Meditation Bell Timer
-                </a>
-
-                <a href="/solfeggio-healing-frequencies.html">
-                    Solfeggio Frequencies
-                </a>
-
-                <a href="/our-apps.html">
-                    Sound Bath Zen
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>Resources</h3>
-
-                <a href="/how-to-use-a-meditation-timer">
-                    How To Use A Meditation Timer
-                </a>
-
-                <a href="/best-meditation-sounds">
-                    Best Meditation Sounds
-                </a>
-
-                <a href="/sleep-meditation-sounds">
-                    Sleep Meditation Sounds
-                </a>
-
-                <a href="/brown-noise-for-adhd-focus">
-                    Brown Noise for Focus
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>Explore</h3>
-
-                <a href="/timer.html">
-                    Web Timer
-                </a>
-
-                <a href="/solfeggio-healing-frequencies.html">
-                    Solfeggio Frequencies
-                </a>
-
-                <a href="/our-apps.html">
-                    Our Apps
-                </a>
-
-                <a href="/privacy-policy.html">
-                    Privacy Policy
-                </a>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <span>
-                © 2026 Meditation Bell Timer. All rights reserved.
-            </span>
-
-            <span>
-                Built for quieter moments.
-            </span>
-
-        </div>
+        </p>
 
     </div>
 
+
+    <div class="footer-column">
+
+        <h4>
+            Apps
+        </h4>
+
+        <a href="/our-apps.html">
+            Our Apps
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            Meditation Bell &amp; Zen Timer
+
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            Solfeggio Frequencies
+
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            Sound Bath Zen
+
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Resources
+        </h4>
+
+        <a href="/solfeggio-healing-frequencies.html">
+            Solfeggio Frequencies
+        </a>
+
+        <a href="/brown-noise-for-adhd-focus">
+            Brown Noise &amp; Focus
+        </a>
+
+        <a href="/sleep-meditation-sounds">
+            Sleep Meditation Sounds
+        </a>
+
+        <a href="/best-meditation-sounds">
+            Best Meditation Sounds
+        </a>
+
+        <a href="/how-to-use-a-meditation-timer">
+            How To Use A Meditation Timer
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Company
+        </h4>
+
+        <a href="/our-apps.html">
+            Our Apps
+        </a>
+
+        <a href="privacy.html">
+            Privacy Policy
+        </a>
+
+        <a href="timer.html">
+            Web Timer
+        </a>
+
+        <a
+            href="https://www.youtube.com/@MeditationBellTimer"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            YouTube
+
+        </a>
+
+        <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Instagram
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    © 2026 Meditation Bell Timer. All rights reserved.
+
+</div>
+```
+
 </footer>
 
-
-
 <!-- =========================================================
-     JAVASCRIPT
+     MOBILE NAVIGATION
 ========================================================= -->
 
 <script>
 
-    /* Mobile navigation */
-
-    const menuButton =
-        document.getElementById("mobile-menu-button");
+    const mobileMenuButton =
+        document.getElementById('mobile-menu-btn');
 
     const navigation =
-        document.getElementById("main-navigation");
+        document.getElementById('nav-links');
 
 
-    menuButton.addEventListener("click", function () {
+    mobileMenuButton.addEventListener(
+        'click',
+        function () {
 
-        const isOpen =
-            navigation.classList.toggle("active");
+            const active =
+                navigation.classList.toggle('active');
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            isOpen ? "true" : "false"
-        );
+            mobileMenuButton.setAttribute(
+                'aria-expanded',
+                active ? 'true' : 'false'
+            );
 
-        menuButton.setAttribute(
-            "aria-label",
-            isOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
-        );
+        }
+    );
 
-    });
-
-
-    /* Mobile dropdowns */
 
     document
-        .querySelectorAll(".dropdown-toggle")
+        .querySelectorAll('.dropdown-toggle')
         .forEach(function(toggle) {
 
-            toggle.addEventListener("click", function(event) {
+            toggle.addEventListener(
+                'click',
+                function(event) {
 
-                if (window.innerWidth <= 800) {
+                    if (window.innerWidth <= 700) {
 
-                    event.preventDefault();
+                        event.preventDefault();
 
-                    const dropdown =
-                        toggle.closest(".dropdown");
+                        const dropdown =
+                            toggle.closest('.dropdown');
 
-                    dropdown.classList.toggle("open");
+                        dropdown.classList.toggle(
+                            'mobile-active'
+                        );
+
+                    }
 
                 }
-
-            });
+            );
 
         });
 
-
-    /* Close mobile menu when normal links are clicked */
 
     document
-        .querySelectorAll(".main-nav > a, .dropdown-menu a")
+        .querySelectorAll(
+            '#nav-links a:not(.dropdown-toggle)'
+        )
         .forEach(function(link) {
 
-            link.addEventListener("click", function() {
+            link.addEventListener(
+                'click',
+                function() {
 
-                if (window.innerWidth <= 800) {
+                    if (window.innerWidth <= 700) {
 
-                    navigation.classList.remove("active");
+                        navigation.classList.remove(
+                            'active'
+                        );
 
-                    menuButton.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
+                        mobileMenuButton.setAttribute(
+                            'aria-expanded',
+                            'false'
+                        );
 
-                    menuButton.setAttribute(
-                        "aria-label",
-                        "Open navigation menu"
-                    );
+                    }
 
                 }
-
-            });
+            );
 
         });
 
 
-    /* Escape closes mobile navigation */
+    window.addEventListener(
+        'resize',
+        function() {
 
-    document.addEventListener("keydown", function(event) {
+            if (window.innerWidth > 700) {
 
-        if (event.key === "Escape") {
+                navigation.classList.remove(
+                    'active'
+                );
 
-            navigation.classList.remove("active");
+                mobileMenuButton.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+                document
+                    .querySelectorAll('.dropdown')
+                    .forEach(function(dropdown) {
 
-            menuButton.setAttribute(
-                "aria-label",
-                "Open navigation menu"
-            );
+                        dropdown.classList.remove(
+                            'mobile-active'
+                        );
 
-        }
+                    });
 
-    });
-
-
-    /* Close menu when resizing back to desktop */
-
-    window.addEventListener("resize", function() {
-
-        if (window.innerWidth > 800) {
-
-            navigation.classList.remove("active");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+            }
 
         }
-
-    });
+    );
 
 </script>
 
+<!-- =========================================================
+     STRUCTURED DATA
+========================================================= -->
+
+<script type="application/ld+json">
+
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Meditation Bell Timer",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Android",
+    "description": "A simple meditation timer with Tibetan bells, interval chimes, immersive soundscapes, focus sounds and a distraction-free dark interface.",
+    "url": "https://meditationbelltimer.com/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer",
+    "author": {
+        "@type": "Organization",
+        "name": "Future Home Tek"
+    }
+}
+
+</script>
+
+<script type="application/ld+json">
+
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Meditation Bell Timer",
+    "url": "https://meditationbelltimer.com/"
+}
+
+</script>
 
 </body>
+
 </html>
-```
