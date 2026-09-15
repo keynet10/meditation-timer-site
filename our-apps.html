@@ -25,7 +25,10 @@
     <meta name="twitter:image" content="https://meditationbelltimer.com/assets/solfeggio-hero.webp">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -260,7 +263,7 @@
 
             width: 100%;
 
-            min-height: min(76vh, 780px);
+            aspect-ratio: 16 / 9;
 
             overflow: hidden;
 
@@ -268,10 +271,10 @@
         }
 
         .hero-image {
+            display: block;
+
             width: 100%;
             height: 100%;
-
-            min-height: min(76vh, 780px);
 
             object-fit: cover;
             object-position: center center;
@@ -1091,14 +1094,11 @@
             }
 
             .hero {
-                min-height: auto;
+                aspect-ratio: 16 / 9;
             }
 
             .hero-image {
-                min-height: 500px;
-
-                height: auto;
-
+                height: 100%;
                 object-fit: cover;
             }
 
@@ -1157,8 +1157,12 @@
 
         @media (max-width: 480px) {
 
+            .hero {
+                aspect-ratio: 16 / 10;
+            }
+
             .hero-image {
-                min-height: 440px;
+                height: 100%;
             }
 
             h2 {
@@ -1212,7 +1216,7 @@
         <a href="https://meditationbelltimer.com/" class="brand" aria-label="Meditation Bell Timer home">
 
             <img
-                src="assets/favicon.png"
+                src="/android-chrome-192x192.png"
                 alt=""
                 width="30"
                 height="30"
@@ -1326,8 +1330,8 @@
 
         /assets/solfeggio-hero.webp
 
-        The image is not stretched because object-fit: cover
-        maintains its proportions while filling the hero area.
+        The image is displayed responsively in a 16:9 hero frame.
+        object-fit: cover preserves the artwork proportions.
     -->
 
     <img
@@ -1991,7 +1995,7 @@
                 >
 
                     <img
-                        src="assets/favicon.png"
+                        src="/android-chrome-192x192.png"
                         alt=""
                         width="30"
                         height="30"
