@@ -1,1689 +1,2286 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Apps – Meditation, Solfeggio Frequencies & Sound Bath Zen</title>
+    <title>Our Apps | Meditation, Solfeggio & Sound Bath Wellness Apps</title>
 
-<meta name="description" content="Explore our collection of simple, distraction-free wellness apps for meditation, mindfulness, sleep, relaxation, focus, Solfeggio frequencies and personalised sound baths.">
+    <meta name="description" content="Explore the Meditation Bell Timer, Solfeggio Healing Frequencies and Sound Bath Zen apps. Simple, distraction-free wellness tools for meditation, sleep, focus and relaxation.">
 
-<meta name="keywords" content="meditation apps, meditation timer, meditation bell, Zen timer, Solfeggio frequencies app, healing frequencies app, 528 Hz app, 432 Hz app, sound bath app, sleep sounds, meditation sounds, focus sounds, brown noise, relaxation app">
+    <link rel="canonical" href="https://meditationbelltimer.com/our-apps.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Our Apps | Simple Tools for a Calmer Life">
+    <meta property="og:description" content="Explore our collection of simple, distraction-free wellness apps for meditation, sleep, focus and relaxation.">
+    <meta property="og:url" content="https://meditationbelltimer.com/our-apps.html">
+    <meta property="og:image" content="https://meditationbelltimer.com/assets/solfeggio-hero.webp">
 
-<meta name="robots" content="index, follow">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Apps | Simple Tools for a Calmer Life">
+    <meta name="twitter:description" content="Meditation, Solfeggio frequencies and personalised sound baths — simple wellness tools without the clutter.">
+    <meta name="twitter:image" content="https://meditationbelltimer.com/assets/solfeggio-hero.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 
-<link rel="canonical" href="https://meditationbelltimer.com/our-apps.html">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-* {
-    box-sizing: border-box;
-}
+    <style>
 
-html {
-    scroll-behavior: smooth;
-}
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
 
-body {
-    margin: 0;
-    padding: 0;
-    background: #071018;
-    color: #e9edf0;
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-    line-height: 1.7;
-}
+        :root {
+            --bg: #070908;
+            --bg-soft: #0c100e;
+            --bg-card: #111713;
+            --bg-card-hover: #151d18;
 
-a {
-    color: inherit;
-}
+            --gold: #d8bd78;
+            --gold-light: #f1dda2;
+            --gold-dark: #a58b4d;
 
+            --text: #f4f0e7;
+            --text-soft: #d1cec4;
+            --muted: #969a93;
 
-/* =========================
-   HEADER
-========================= */
+            --border: rgba(216, 189, 120, 0.18);
+
+            --max-width: 1240px;
+
+            --radius: 22px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(92%, var(--max-width));
+            margin: 0 auto;
+        }
+
 
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+        /* =========================================================
+           ACCESSIBILITY
+        ========================================================= */
 
-    background: rgba(5, 12, 18, 0.96);
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
 
-    border-bottom:
-        1px solid rgba(255,255,255,0.08);
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
 
-    backdrop-filter: blur(12px);
-}
+            height: 74px;
 
-.nav {
-    max-width: 1180px;
-    margin: 0 auto;
+            background: rgba(7, 9, 8, 0.94);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
 
-    padding: 16px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+        .header-inner {
+            height: 74px;
 
-    gap: 25px;
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.logo {
-    text-decoration: none;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
 
-    font-size: 17px;
-    font-weight: 700;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
 
-    letter-spacing: 1.8px;
+        .brand img {
+            width: 30px;
+            height: 30px;
+            border-radius: 7px;
+            object-fit: cover;
+        }
 
-    color: #f4eee1;
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+        }
 
-    white-space: nowrap;
-}
+        nav > a,
+        .dropdown-toggle {
+            color: #bfc2bb;
 
-.nav-links {
-    display: flex;
-    align-items: center;
+            font-size: 14px;
+            font-weight: 500;
 
-    gap: 24px;
+            transition: color 0.25s ease;
 
-    flex-wrap: wrap;
-}
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
 
-.nav-links a {
-    text-decoration: none;
+        nav > a:hover,
+        .dropdown-toggle:hover {
+            color: var(--gold-light);
+        }
 
-    color: #b8c1c7;
+        .dropdown {
+            position: relative;
+        }
 
-    font-size: 14px;
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 20px);
+            right: 0;
 
-    transition:
-        color 0.2s ease;
-}
+            min-width: 220px;
 
-.nav-links a:hover {
-    color: #f2d7a1;
-}
+            background: #101410;
 
-.nav-links .active {
-    color: #f2d7a1;
-}
+            border: 1px solid var(--border);
+            border-radius: 14px;
 
+            padding: 8px;
 
-/* =========================
-   HERO
-========================= */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
 
-.hero {
-    position: relative;
+            transition: all 0.2s ease;
 
-    overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+        }
 
-    padding:
-        115px 24px
-        105px;
+        .dropdown:hover .dropdown-menu,
+        .dropdown:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
 
-    text-align: center;
+        .dropdown-menu a {
+            display: block;
 
-    background:
+            padding: 11px 13px;
 
-        radial-gradient(
-            circle at 50% 25%,
-            rgba(73,111,124,0.30),
-            transparent 38%
-        ),
+            color: var(--text-soft);
 
-        radial-gradient(
-            circle at 15% 85%,
-            rgba(139,101,54,0.12),
-            transparent 30%
-        ),
+            font-size: 13px;
 
-        #071018;
-}
+            border-radius: 9px;
 
-.hero::before {
+            transition: background 0.2s ease, color 0.2s ease;
+        }
 
-    content: "";
+        .dropdown-menu a:hover {
+            background: rgba(216,189,120,0.08);
+            color: var(--gold-light);
+        }
 
-    position: absolute;
+        .menu-toggle {
+            display: none;
 
-    width: 520px;
-    height: 520px;
+            background: none;
+            border: 0;
 
-    left: 50%;
-    top: 50%;
+            color: white;
 
-    transform:
-        translate(-50%, -50%);
+            font-size: 26px;
 
-    border-radius: 50%;
+            cursor: pointer;
+        }
 
-    border:
-        1px solid rgba(222,190,132,0.12);
 
-    box-shadow:
+        /* =========================================================
+           HERO
+        ========================================================= */
 
-        0 0 0 75px
-        rgba(222,190,132,0.025),
+        .hero {
+            position: relative;
 
-        0 0 0 150px
-        rgba(222,190,132,0.018),
+            width: 100%;
 
-        0 0 0 225px
-        rgba(222,190,132,0.012);
+            min-height: min(76vh, 780px);
 
-    pointer-events: none;
-}
+            overflow: hidden;
 
-.hero-content {
-    position: relative;
+            background: #050706;
+        }
 
-    z-index: 2;
+        .hero-image {
+            width: 100%;
+            height: 100%;
 
-    max-width: 900px;
+            min-height: min(76vh, 780px);
 
-    margin: auto;
-}
+            object-fit: cover;
+            object-position: center center;
+        }
 
-.eyebrow {
+        /*
+           The hero artwork contains the visual/text composition.
+           No screenshot or phone is layered over the image.
+        */
 
-    margin-bottom: 18px;
+        .hero::after {
+            content: "";
 
-    color: #d5b777;
+            position: absolute;
+            inset: 0;
 
-    text-transform: uppercase;
+            pointer-events: none;
 
-    letter-spacing: 3px;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4,7,5,0.08) 0%,
+                    rgba(4,7,5,0.00) 55%,
+                    rgba(4,7,5,0.12) 100%
+                );
+        }
 
-    font-size: 12px;
 
-    font-weight: 600;
-}
+        /* =========================================================
+           INTRO
+        ========================================================= */
 
-h1 {
+        .intro {
+            padding: 110px 0 90px;
 
-    margin:
-        0 auto
-        25px;
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(216,189,120,0.07),
+                    transparent 45%
+                );
+        }
 
-    color: #f4eee1;
+        .intro-inner {
+            max-width: 850px;
+            margin: 0 auto;
 
-    font-size:
-        clamp(40px, 6vw, 72px);
+            text-align: center;
+        }
 
-    line-height: 1.08;
+        .eyebrow {
+            margin-bottom: 18px;
 
-    font-weight: 500;
+            color: var(--gold);
 
-    letter-spacing: -1.5px;
-}
+            font-size: 12px;
+            font-weight: 700;
 
-.hero p {
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
 
-    max-width: 760px;
+        h2 {
+            font-family: "Playfair Display", serif;
 
-    margin:
-        0 auto
-        34px;
+            font-size: clamp(36px, 5vw, 58px);
 
-    color: #aebbc1;
+            line-height: 1.12;
 
-    font-size: 18px;
-}
+            font-weight: 500;
 
-.button {
+            margin-bottom: 25px;
+        }
 
-    display: inline-block;
+        .intro p {
+            max-width: 720px;
+            margin: 0 auto;
 
-    padding:
-        14px 28px;
+            color: var(--text-soft);
 
-    border-radius: 40px;
+            font-size: 18px;
+        }
 
-    background: #d6b776;
 
-    color: #10171b;
+        /* =========================================================
+           APP CARDS
+        ========================================================= */
 
-    text-decoration: none;
+        .apps {
+            padding: 20px 0 110px;
+        }
 
-    font-size: 15px;
+        .apps-grid {
+            display: grid;
 
-    font-weight: 700;
+            grid-template-columns: repeat(3, 1fr);
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+            gap: 26px;
+        }
 
-    box-shadow:
-        0 8px 30px
-        rgba(214,183,118,0.16);
-}
+        .app-card {
+            position: relative;
 
-.button:hover {
+            display: flex;
+            flex-direction: column;
 
-    transform:
-        translateY(-2px);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.025),
+                    rgba(255,255,255,0.005)
+                ),
+                var(--bg-card);
 
-    box-shadow:
-        0 12px 35px
-        rgba(214,183,118,0.25);
-}
+            border: 1px solid var(--border);
 
-.button.secondary {
+            border-radius: var(--radius);
 
-    margin-left: 10px;
+            padding: 36px 32px 32px;
 
-    background: transparent;
+            min-height: 510px;
 
-    color: #e6d6b5;
+            overflow: hidden;
 
-    border:
-        1px solid
-        rgba(214,183,118,0.50);
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+        }
 
-    box-shadow: none;
-}
+        .app-card::before {
+            content: "";
 
+            position: absolute;
 
-/* =========================
-   GENERAL SECTIONS
-========================= */
+            width: 180px;
+            height: 180px;
 
-.section {
+            top: -80px;
+            right: -70px;
 
-    max-width: 1120px;
+            border-radius: 50%;
 
-    margin: 0 auto;
+            background: rgba(216,189,120,0.08);
 
-    padding:
-        90px 24px;
-}
+            filter: blur(10px);
+        }
 
-.section-heading {
+        .app-card:hover {
+            transform: translateY(-6px);
 
-    max-width: 760px;
+            border-color: rgba(216,189,120,0.38);
 
-    margin:
-        0 auto
-        55px;
+            background: var(--bg-card-hover);
+        }
 
-    text-align: center;
-}
+        .app-icon {
+            width: 74px;
+            height: 74px;
 
-.section-heading h2 {
+            border-radius: 18px;
 
-    margin:
-        0 0 16px;
+            margin-bottom: 25px;
 
-    color: #f4eee1;
+            object-fit: cover;
 
-    font-size:
-        clamp(30px, 4vw, 46px);
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.35);
+        }
 
-    line-height: 1.15;
+        .app-number {
+            color: var(--gold);
 
-    font-weight: 500;
-}
+            font-size: 11px;
+            font-weight: 700;
 
-.section-heading p {
+            letter-spacing: 2px;
+            text-transform: uppercase;
 
-    margin: 0;
+            margin-bottom: 10px;
+        }
 
-    color: #9eabb2;
+        .app-card h3 {
+            font-family: "Playfair Display", serif;
 
-    font-size: 17px;
-}
+            font-size: 30px;
+            line-height: 1.2;
 
+            font-weight: 500;
 
-/* =========================
-   APP CARDS
-========================= */
+            margin-bottom: 15px;
+        }
 
-.apps-section {
+        .app-card .tagline {
+            color: var(--gold-light);
 
-    background: #071018;
-}
+            font-size: 14px;
+            font-weight: 600;
 
-.apps-grid {
+            margin-bottom: 15px;
+        }
 
-    display: grid;
+        .app-card p {
+            color: var(--text-soft);
 
-    grid-template-columns:
-        repeat(3, 1fr);
+            font-size: 14px;
 
-    gap: 24px;
-}
+            margin-bottom: 22px;
+        }
 
-.app-card {
+        .app-features {
+            list-style: none;
 
-    display: flex;
+            margin-bottom: 28px;
+        }
 
-    flex-direction: column;
+        .app-features li {
+            position: relative;
 
-    padding: 34px 28px;
+            padding-left: 22px;
 
-    min-height: 100%;
+            color: #bfc2bb;
 
-    background:
-        rgba(255,255,255,0.035);
+            font-size: 13px;
 
-    border:
-        1px solid
-        rgba(255,255,255,0.08);
+            margin-bottom: 8px;
+        }
 
-    border-radius: 22px;
+        .app-features li::before {
+            content: "✦";
 
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
+            position: absolute;
+            left: 0;
+            top: 0;
 
-.app-card:hover {
+            color: var(--gold);
 
-    transform:
-        translateY(-6px);
+            font-size: 11px;
+        }
 
-    border-color:
-        rgba(214,183,118,0.35);
+        .app-card .button {
+            margin-top: auto;
+        }
 
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,0.25);
-}
 
-.app-number {
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
 
-    color: #b99b65;
+        .button {
+            display: inline-flex;
 
-    font-size: 12px;
+            align-items: center;
+            justify-content: center;
 
-    text-transform: uppercase;
+            min-height: 48px;
 
-    letter-spacing: 2px;
+            padding: 0 22px;
 
-    margin-bottom: 18px;
-}
+            border-radius: 999px;
 
-.app-icon {
+            font-size: 13px;
+            font-weight: 600;
 
-    width: 82px;
-    height: 82px;
+            letter-spacing: 0.2px;
 
-    border-radius: 20px;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
 
-    margin-bottom: 22px;
+        .button:hover {
+            transform: translateY(-2px);
+        }
 
-    background:
-        linear-gradient(
-            145deg,
-            #273d45,
-            #101c22
-        );
+        .button-primary {
+            background: var(--gold);
 
-    border:
-        1px solid
-        rgba(255,255,255,0.12);
+            color: #11130f;
 
-    display: flex;
+            border: 1px solid var(--gold);
+        }
 
-    align-items: center;
-    justify-content: center;
+        .button-primary:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+        }
 
-    color: #d9bf86;
+        .button-outline {
+            background: transparent;
 
-    font-size: 35px;
+            color: var(--gold-light);
 
-    box-shadow:
-        0 12px 35px
-        rgba(0,0,0,0.25);
-}
+            border: 1px solid rgba(216,189,120,0.45);
+        }
 
-.app-card h3 {
+        .button-outline:hover {
+            background: rgba(216,189,120,0.08);
+            border-color: var(--gold);
+        }
 
-    margin:
-        0 0 7px;
 
-    color: #f0eadc;
+        /* =========================================================
+           SHARED PHILOSOPHY
+        ========================================================= */
 
-    font-size: 25px;
+        .philosophy {
+            padding: 110px 0;
 
-    line-height: 1.2;
+            background:
+                linear-gradient(
+                    180deg,
+                    #090c0a 0%,
+                    #0c110e 100%
+                );
 
-    font-weight: 600;
-}
+            border-top: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
 
-.app-tagline {
+        .section-heading {
+            max-width: 720px;
 
-    margin:
-        0 0 20px;
+            margin: 0 auto 55px;
 
-    color: #d5b777;
+            text-align: center;
+        }
 
-    font-size: 14px;
+        .section-heading p {
+            color: var(--text-soft);
 
-    font-weight: 600;
-}
+            font-size: 17px;
+        }
 
-.app-card p {
+        .principles {
+            display: grid;
 
-    color: #9daab0;
+            grid-template-columns: repeat(4, 1fr);
 
-    font-size: 15px;
+            gap: 18px;
+        }
 
-    margin:
-        0 0 18px;
-}
+        .principle {
+            padding: 30px 25px;
 
-.app-card ul {
+            border: 1px solid rgba(216,189,120,0.14);
 
-    padding-left: 20px;
+            border-radius: 18px;
 
-    margin:
-        0 0 25px;
+            background: rgba(255,255,255,0.015);
+        }
 
-    color: #9daab0;
+        .principle-icon {
+            width: 42px;
+            height: 42px;
 
-    font-size: 14px;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-.app-card li {
+            margin-bottom: 18px;
 
-    margin-bottom: 7px;
-}
+            border-radius: 50%;
 
-.app-button {
+            background: rgba(216,189,120,0.08);
 
-    margin-top: auto;
+            color: var(--gold);
 
-    display: block;
+            font-size: 18px;
+        }
 
-    text-align: center;
+        .principle h3 {
+            font-family: "Playfair Display", serif;
 
-    padding: 13px 20px;
+            font-size: 22px;
+            font-weight: 500;
 
-    border-radius: 30px;
+            margin-bottom: 10px;
+        }
 
-    background:
-        rgba(214,183,118,0.10);
+        .principle p {
+            color: var(--muted);
 
-    border:
-        1px solid
-        rgba(214,183,118,0.40);
+            font-size: 13px;
+        }
 
-    color: #e4d2ac;
 
-    text-decoration: none;
+        /* =========================================================
+           ECOSYSTEM
+        ========================================================= */
 
-    font-size: 14px;
+        .ecosystem {
+            padding: 120px 0;
+        }
 
-    font-weight: 700;
+        .ecosystem-grid {
+            display: grid;
 
-    transition:
-        background 0.2s ease;
-}
+            grid-template-columns: 0.9fr 1.1fr;
 
-.app-button:hover {
+            gap: 80px;
 
-    background:
-        rgba(214,183,118,0.18);
-}
+            align-items: center;
+        }
 
+        .ecosystem-copy h2 {
+            margin-bottom: 22px;
+        }
 
-/* =========================
-   POSITIONING SECTION
-========================= */
+        .ecosystem-copy > p {
+            color: var(--text-soft);
 
-.compare-section {
+            font-size: 16px;
 
-    background: #09151d;
+            margin-bottom: 30px;
+        }
 
-    border-top:
-        1px solid
-        rgba(255,255,255,0.05);
+        .ecosystem-list {
+            list-style: none;
+        }
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.05);
-}
+        .ecosystem-list li {
+            display: flex;
 
-.compare-grid {
+            gap: 15px;
 
-    display: grid;
+            padding: 17px 0;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
 
-    gap: 20px;
-}
+            color: var(--text-soft);
 
-.compare-card {
+            font-size: 14px;
+        }
 
-    padding: 32px 26px;
+        .ecosystem-list strong {
+            display: block;
 
-    border-radius: 18px;
+            color: var(--text);
 
-    background:
-        rgba(255,255,255,0.025);
+            margin-bottom: 3px;
+        }
 
-    border:
-        1px solid
-        rgba(255,255,255,0.07);
+        .check {
+            color: var(--gold);
 
-    text-align: center;
-}
+            font-size: 18px;
+        }
 
-.compare-card h3 {
+        .ecosystem-visual {
+            position: relative;
 
-    margin:
-        0 0 12px;
+            min-height: 470px;
 
-    color: #eee7d8;
+            border-radius: 28px;
 
-    font-size: 21px;
-}
+            overflow: hidden;
 
-.compare-card p {
+            background:
+                radial-gradient(
+                    circle at 50% 35%,
+                    rgba(216,189,120,0.15),
+                    transparent 38%
+                ),
+                linear-gradient(
+                    145deg,
+                    #101711,
+                    #060806
+                );
 
-    margin: 0;
+            border: 1px solid rgba(216,189,120,0.16);
+        }
 
-    color: #96a3a9;
+        .visual-circle {
+            position: absolute;
 
-    font-size: 14px;
-}
+            left: 50%;
+            top: 50%;
 
+            width: 280px;
+            height: 280px;
 
-/* =========================
-   USP
-========================= */
+            transform: translate(-50%, -50%);
 
-.usp-section {
+            border-radius: 50%;
 
-    background: #071018;
-}
+            border: 1px solid rgba(216,189,120,0.22);
 
-.usp-grid {
+            box-shadow:
+                0 0 0 40px rgba(216,189,120,0.025),
+                0 0 0 80px rgba(216,189,120,0.018);
+        }
 
-    display: grid;
+        .visual-word {
+            position: absolute;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+            left: 50%;
+            top: 50%;
 
-    gap: 20px;
-}
+            transform: translate(-50%, -50%);
 
-.usp {
+            width: 80%;
 
-    padding: 28px;
+            text-align: center;
 
-    border-radius: 18px;
+            font-family: "Playfair Display", serif;
 
-    background:
-        rgba(255,255,255,0.03);
+            font-size: clamp(34px, 5vw, 58px);
 
-    border:
-        1px solid
-        rgba(255,255,255,0.07);
-}
+            line-height: 1.05;
 
-.usp h3 {
+            color: var(--gold-light);
+        }
 
-    margin:
-        0 0 8px;
 
-    color: #eee7d8;
+        /* =========================================================
+           FAQ
+        ========================================================= */
 
-    font-size: 19px;
-}
+        .faq {
+            padding: 100px 0 120px;
 
-.usp p {
+            background: #090c0a;
+        }
 
-    margin: 0;
+        .faq-list {
+            max-width: 850px;
 
-    color: #97a4aa;
+            margin: 0 auto;
+        }
 
-    font-size: 14px;
-}
+        details {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
 
+            padding: 22px 0;
+        }
 
-/* =========================
-   APP ECOSYSTEM
-========================= */
+        summary {
+            cursor: pointer;
 
-.ecosystem {
+            list-style: none;
 
-    padding:
-        100px 24px;
+            color: var(--text);
 
-    text-align: center;
+            font-family: "Playfair Display", serif;
 
-    background:
+            font-size: 21px;
+        }
 
-        radial-gradient(
-            circle at center,
-            rgba(83,120,130,0.18),
-            transparent 58%
-        ),
+        summary::-webkit-details-marker {
+            display: none;
+        }
 
-        #071018;
-}
+        summary::after {
+            content: "+";
 
-.ecosystem-inner {
+            float: right;
 
-    max-width: 850px;
+            color: var(--gold);
 
-    margin: auto;
-}
+            font-family: "DM Sans", sans-serif;
 
-.ecosystem h2 {
+            font-size: 22px;
+        }
 
-    margin:
-        0 0 20px;
+        details[open] summary::after {
+            content: "−";
+        }
 
-    color: #f4eee1;
+        details p {
+            max-width: 760px;
 
-    font-size:
-        clamp(32px, 5vw, 52px);
+            padding-top: 14px;
 
-    line-height: 1.12;
+            color: var(--muted);
 
-    font-weight: 500;
-}
+            font-size: 14px;
+        }
 
-.ecosystem p {
 
-    max-width: 720px;
+        /* =========================================================
+           FINAL CTA
+        ========================================================= */
 
-    margin:
-        0 auto 30px;
+        .final-cta {
+            padding: 120px 0;
 
-    color: #a7b3b8;
+            text-align: center;
 
-    font-size: 17px;
-}
+            background:
+                radial-gradient(
+                    circle at 50% 50%,
+                    rgba(216,189,120,0.10),
+                    transparent 55%
+                );
+        }
 
+        .final-cta-inner {
+            max-width: 760px;
+            margin: 0 auto;
+        }
 
-/* =========================
-   FAQ
-========================= */
+        .final-cta h2 {
+            margin-bottom: 20px;
+        }
 
-.faq-section {
+        .final-cta p {
+            color: var(--text-soft);
 
-    background: #09151d;
+            font-size: 17px;
 
-    border-top:
-        1px solid
-        rgba(255,255,255,0.05);
-}
+            margin-bottom: 30px;
+        }
 
-.faq {
 
-    max-width: 850px;
+        /* =========================================================
+           FOOTER
+        ========================================================= */
 
-    margin: auto;
-}
+        footer {
+            padding: 65px 0 30px;
 
-details {
+            border-top: 1px solid rgba(255,255,255,0.06);
 
-    padding:
-        20px 0;
+            background: #050705;
+        }
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.08);
-}
+        .footer-grid {
+            display: grid;
 
-summary {
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
 
-    cursor: pointer;
+            gap: 50px;
 
-    color: #eee8da;
+            padding-bottom: 50px;
+        }
 
-    font-size: 17px;
+        .footer-brand {
+            max-width: 330px;
+        }
 
-    font-weight: 600;
-}
+        .footer-brand .brand {
+            margin-bottom: 18px;
+        }
 
-details p {
+        .footer-brand p {
+            color: var(--muted);
 
-    margin:
-        15px 0 0;
+            font-size: 13px;
+        }
 
-    color: #98a5aa;
+        .footer-column h4 {
+            color: var(--gold-light);
 
-    font-size: 15px;
-}
+            font-size: 12px;
+            font-weight: 700;
 
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
 
-/* =========================
-   FOOTER
-========================= */
+            margin-bottom: 17px;
+        }
 
-.footer {
+        .footer-column a {
+            display: block;
 
-    padding:
-        42px 24px;
+            color: var(--muted);
 
-    text-align: center;
+            font-size: 13px;
 
-    color: #77848a;
+            margin-bottom: 10px;
 
-    font-size: 13px;
+            transition: color 0.2s ease;
+        }
 
-    border-top:
-        1px solid
-        rgba(255,255,255,0.07);
-}
+        .footer-column a:hover {
+            color: var(--gold-light);
+        }
 
-.footer a {
+        .footer-bottom {
+            padding-top: 25px;
 
-    color: #aeb8bd;
+            border-top: 1px solid rgba(255,255,255,0.06);
 
-    text-decoration: none;
-}
+            display: flex;
 
+            justify-content: space-between;
+            align-items: center;
 
-/* =========================
-   RESPONSIVE
-========================= */
+            gap: 20px;
 
-@media (max-width: 850px) {
+            color: #777b75;
 
-    .nav {
+            font-size: 12px;
+        }
 
-        flex-direction: column;
+        .footer-social {
+            display: flex;
+            gap: 18px;
+        }
 
-        gap: 12px;
+        .footer-social a:hover {
+            color: var(--gold-light);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            nav {
+                gap: 20px;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .app-card {
+                min-height: auto;
+            }
+
+            .principles {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ecosystem-grid {
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 760px) {
+
+            header,
+            .header-inner {
+                height: 66px;
+            }
+
+            .brand {
+                font-size: 13px;
+                letter-spacing: 1.5px;
+            }
+
+            .brand img {
+                width: 28px;
+                height: 28px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+
+                top: 66px;
+                left: 0;
+                right: 0;
+
+                display: none;
+
+                flex-direction: column;
+                align-items: stretch;
+
+                gap: 0;
+
+                padding: 10px 5% 20px;
+
+                background: rgba(7,9,8,0.98);
+
+                border-bottom: 1px solid rgba(255,255,255,0.08);
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            nav > a,
+            .dropdown-toggle {
+                padding: 15px 5px;
+
+                text-align: left;
+
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+            }
+
+            .dropdown-menu {
+                position: static;
+
+                display: none;
+
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+
+                background: transparent;
+
+                border: 0;
+
+                box-shadow: none;
+
+                padding: 0 0 8px 12px;
+            }
+
+            .dropdown.open .dropdown-menu {
+                display: block;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-image {
+                min-height: 500px;
+
+                height: auto;
+
+                object-fit: cover;
+            }
+
+            .intro {
+                padding: 75px 0 60px;
+            }
+
+            .intro p {
+                font-size: 16px;
+            }
+
+            .apps {
+                padding-bottom: 75px;
+            }
+
+            .app-card {
+                padding: 30px 25px;
+            }
+
+            .principles {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy {
+                padding: 80px 0;
+            }
+
+            .ecosystem {
+                padding: 80px 0;
+            }
+
+            .ecosystem-visual {
+                min-height: 360px;
+            }
+
+            .faq {
+                padding: 80px 0;
+            }
+
+            .final-cta {
+                padding: 90px 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .hero-image {
+                min-height: 440px;
+            }
+
+            h2 {
+                font-size: 38px;
+            }
+
+            .app-card h3 {
+                font-size: 27px;
+            }
+
+            .button {
+                width: 100%;
+            }
+        }
+
+    </style>
+
+    <!-- =========================================================
+         STRUCTURED DATA
+    ========================================================= -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Our Apps",
+        "url": "https://meditationbelltimer.com/our-apps.html",
+        "description": "A collection of simple wellness apps for meditation, sleep, focus, relaxation and sound.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Future Home Tek",
+            "url": "https://meditationbelltimer.com/"
+        }
     }
-
-    .nav-links {
-
-        justify-content: center;
-
-        gap: 14px;
-    }
-
-    .apps-grid,
-    .compare-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-    .usp-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-
-        padding:
-            80px 20px
-            75px;
-    }
-
-    .section {
-
-        padding:
-            65px 20px;
-    }
-
-    .button.secondary {
-
-        margin-left: 0;
-
-        margin-top: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .nav-links a {
-
-        font-size: 12px;
-    }
-
-    .hero p {
-
-        font-size: 16px;
-    }
-
-    .app-card {
-
-        padding:
-            28px 22px;
-    }
-}
-
-</style>
+    </script>
 
 </head>
 
+
 <body>
 
-<!-- =========================
+
+<!-- =========================================================
      HEADER
-========================= -->
+========================================================= -->
 
-<header class="site-header">
+<header>
 
-<nav class="nav">
+    <div class="container header-inner">
 
-<a
-href="https://meditationbelltimer.com/"
-class="logo">
+        <a href="https://meditationbelltimer.com/" class="brand" aria-label="Meditation Bell Timer home">
 
-MEDITATION BELL TIMER
+            <img
+                src="assets/favicon.png"
+                alt=""
+                width="30"
+                height="30"
+            >
 
-</a>
+            <span>MEDITATION BELL TIMER</span>
 
-<div class="nav-links">
+        </a>
 
-<a href="https://meditationbelltimer.com/">
-Home
-</a>
 
-<a href="/our-apps.html"
-class="active">
-Our Apps </a>
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mainNav"
+        >
+            ☰
+        </button>
 
-<a href="/solfeggio-healing-frequencies.html">
-Solfeggio Frequencies
-</a>
 
-<a href="https://meditationbelltimer.com/#resources">
-Resources
-</a>
+        <nav id="mainNav">
 
-<a href="https://meditationbelltimer.com/#articles">
-Articles
-</a>
+            <a href="our-apps.html">
+                Our Apps
+            </a>
 
-</div>
+            <a href="solfeggio-healing-frequencies.html">
+                Solfeggio Frequencies
+            </a>
 
-</nav>
+
+            <div class="dropdown">
+
+                <button
+                    class="dropdown-toggle"
+                    aria-expanded="false"
+                >
+                    Resources ▾
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="timer.html">
+                        Free Meditation Timer
+                    </a>
+
+                    <a href="sleep-meditation-sounds">
+                        Sleep Meditation Sounds
+                    </a>
+
+                    <a href="white-noise-meditation-timer">
+                        White Noise Timer
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="dropdown">
+
+                <button
+                    class="dropdown-toggle"
+                    aria-expanded="false"
+                >
+                    Articles ▾
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="how-to-use-a-meditation-timer">
+                        How To Use A Meditation Timer
+                    </a>
+
+                    <a href="how-long-should-you-meditate">
+                        How Long Should You Meditate?
+                    </a>
+
+                    <a href="best-meditation-sounds">
+                        Best Meditation Sounds
+                    </a>
+
+                    <a href="how-tibetan-singing-bowls-work">
+                        How Tibetan Singing Bowls Work
+                    </a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </div>
 
 </header>
 
-<!-- =========================
+
+
+<!-- =========================================================
      HERO
-========================= -->
+========================================================= -->
 
-<section class="hero">
+<section class="hero" aria-label="Our wellness apps">
 
-<div class="hero-content">
+    <!--
+        IMPORTANT:
+        This is intentionally a full-width hero image.
 
-<div class="eyebrow">
-Simple Tools for a Calmer Life
-</div>
+        Upload your artwork to:
 
-<h1>
-Our Apps
-</h1>
+        /assets/solfeggio-hero.webp
 
-<p>
-A collection of beautifully simple wellness apps designed for
-meditation, mindfulness, sleep, relaxation, focus and immersive sound.
-</p>
+        The image is not stretched because object-fit: cover
+        maintains its proportions while filling the hero area.
+    -->
 
-<a
-href="#apps"
-class="button">
+    <img
+        class="hero-image"
+        src="assets/solfeggio-hero.webp"
+        alt="Meditation, Solfeggio frequency and sound bath wellness apps"
+    >
 
-Explore Our Apps
+    <!-- SEO/accessibility heading.
+         Visually hidden because the hero artwork carries the visual title. -->
 
-</a>
-
-</div>
+    <h1 class="sr-only">
+        Our Apps – Simple Tools for a Calmer Life
+    </h1>
 
 </section>
 
-<!-- =========================
+
+
+<!-- =========================================================
      INTRO
-========================= -->
+========================================================= -->
 
-<section class="section">
+<section class="intro">
 
-<div class="section-heading">
+    <div class="container intro-inner">
 
-<div class="eyebrow">
-Our Approach
-</div>
+        <div class="eyebrow">
+            The Future Home Tek Collection
+        </div>
 
-<h2>
-Wellness Without the Clutter
-</h2>
+        <h2>
+            Wellness without the clutter.
+        </h2>
 
-<p>
-We believe wellness apps should help you switch off,
-not give you something else to manage.
-</p>
+        <p>
+            Three beautifully simple apps designed around one idea:
+            give you the tools you need for meditation, relaxation,
+            sleep and focus — without turning wellness into another
+            complicated digital experience.
+        </p>
 
-</div>
-
-<div style="
-max-width:850px;
-margin:auto;
-text-align:center;
-color:#a7b3b8;
-font-size:17px;
-">
-
-<p>
-Our apps are built around a simple idea:
-<strong style="color:#eee3c9;">
-give you the tools you need and then get out of the way.
-</strong>
-</p>
-
-<p>
-Whether you want a traditional meditation timer,
-Solfeggio frequencies or the ability to create your own
-personal sound bath, each app has been designed to provide
-a calm and focused experience without unnecessary complexity.
-</p>
-
-</div>
+    </div>
 
 </section>
 
-<!-- =========================
-     THREE APPS
-========================= -->
 
-<section
-class="apps-section"
-id="apps">
 
-<div class="section">
+<!-- =========================================================
+     OUR APPS
+========================================================= -->
 
-<div class="section-heading">
+<section class="apps">
 
-<div class="eyebrow">
-The Collection
-</div>
+    <div class="container">
 
-<h2>
-Three Apps. Three Ways to Find Your Calm.
-</h2>
+        <div class="apps-grid">
 
-<p>
-Choose the experience that best suits the way you relax,
-meditate, sleep or focus.
-</p>
 
-</div>
+            <!-- =================================================
+                 APP 1 — MEDITATION BELL TIMER
+            ================================================== -->
 
-<div class="apps-grid">
+            <article class="app-card">
 
-<!-- =========================
-     APP 1
-========================= -->
+                <img
+                    class="app-icon"
+                    src="assets/icon.png"
+                    alt="Meditation Bell Timer app icon"
+                    loading="lazy"
+                >
 
-<div class="app-card">
+                <div class="app-number">
+                    01 · Meditation
+                </div>
 
-<div class="app-number">
-01 • Meditation
-</div>
+                <h3>
+                    Meditation Bell Timer
+                </h3>
 
-<div class="app-icon">
-◌
-</div>
+                <div class="tagline">
+                    Meditation. Focus. Sleep. Simplicity.
+                </div>
 
-<h3>
-Meditation Bell &amp; Zen Timer
-</h3>
+                <p>
+                    A beautifully simple meditation timer with
+                    authentic Tibetan bells, immersive ambient
+                    sounds, custom interval chimes and a
+                    distraction-free dark interface.
+                </p>
 
-<div class="app-tagline">
-Meditate your way. Anywhere. Anytime.
-</div>
+                <ul class="app-features">
 
-<p>
-A beautifully simple meditation timer for unguided
-mindfulness, meditation, breathwork, yoga, relaxation,
-sleep and focus.
-</p>
+                    <li>
+                        Custom meditation timer
+                    </li>
 
-<ul>
+                    <li>
+                        Authentic Tibetan singing bowl
+                    </li>
 
-<li>
-Authentic Tibetan singing bowl
-</li>
+                    <li>
+                        12 immersive soundscapes
+                    </li>
 
-<li>
-Custom interval bells from 1–60 minutes
-</li>
+                    <li>
+                        Adjustable interval bells
+                    </li>
 
-<li>
-12 immersive ambient soundscapes
-</li>
+                    <li>
+                        Pitch-black screen mode
+                    </li>
 
-<li>
-Brown Noise for focus and study
-</li>
+                    <li>
+                        100% offline
+                    </li>
 
-<li>
-5-minute sessions through to extended sessions
-</li>
+                    <li>
+                        No advertising or recurring subscription
+                    </li>
 
-<li>
-Pitch-black nighttime mode
-</li>
+                </ul>
 
-<li>
-100% offline
-</li>
+                <a
+                    class="button button-primary"
+                    href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Explore Meditation Bell Timer
+                </a>
 
-</ul>
+            </article>
 
-<a
-href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
-class="app-button"
-target="_blank"
-rel="noopener">
 
-Explore Meditation Bell & Zen Timer
 
-</a>
+            <!-- =================================================
+                 APP 2 — SOLFEGGIO
+            ================================================== -->
 
-</div>
+            <article class="app-card">
 
-<!-- =========================
-     APP 2
-========================= -->
+                <img
+                    class="app-icon"
+                    src="assets/solfeggio_icon.png"
+                    alt="Solfeggio Healing Frequencies app icon"
+                    loading="lazy"
+                >
 
-<div class="app-card">
+                <div class="app-number">
+                    02 · Frequencies
+                </div>
 
-<div class="app-number">
-02 • Frequencies
-</div>
+                <h3>
+                    Solfeggio Healing Frequencies
+                </h3>
 
-<div class="app-icon">
-◎
-</div>
+                <div class="tagline">
+                    Pure frequencies. Zero distractions.
+                </div>
 
-<h3>
-Solfeggio Frequencies Healing
-</h3>
+                <p>
+                    Explore a complete library of Solfeggio
+                    frequencies alongside 432 Hz, 4 Hz Delta
+                    and 40 Hz Gamma in a clean, minimalist
+                    listening environment.
+                </p>
 
-<div class="app-tagline">
-Explore the world of frequency sound.
-</div>
+                <ul class="app-features">
 
-<p>
-A focused frequency player for meditation,
-mindfulness, relaxation, sleep, study and concentration.
-Choose from the Solfeggio scale and additional
-Delta, Gamma and 432 Hz options.
-</p>
+                    <li>
+                        Full Solfeggio frequency collection
+                    </li>
 
-<ul>
+                    <li>
+                        174 Hz through 963 Hz
+                    </li>
 
-<li>
-12 frequency experiences
-</li>
+                    <li>
+                        432 Hz tuning
+                    </li>
 
-<li>
-174 Hz through 963 Hz
-</li>
+                    <li>
+                        4 Hz Delta for sleep-focused listening
+                    </li>
+
+                    <li>
+                        40 Hz Gamma for focus sessions
+                    </li>
 
-<li>
-Popular 432 Hz frequency
-</li>
+                    <li>
+                        Up to 8-hour sessions
+                    </li>
 
-<li>
-4 Hz Delta for sleep-focused listening
-</li>
+                    <li>
+                        100% offline listening
+                    </li>
 
-<li>
-40 Hz Gamma for focus and study
-</li>
+                </ul>
 
-<li>
-Simple session timer
-</li>
+                <a
+                    class="button button-primary"
+                    href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Explore Solfeggio
+                </a>
 
-<li>
-True-black OLED-friendly interface
-</li>
+            </article>
 
-<li>
-100% offline
-</li>
 
-</ul>
 
-<a
-href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
-class="app-button"
-target="_blank"
-rel="noopener">
+            <!-- =================================================
+                 APP 3 — SOUND BATH ZEN
+            ================================================== -->
 
-Explore Solfeggio Frequencies
+            <article class="app-card">
 
-</a>
+                <img
+                    class="app-icon"
+                    src="assets/soundbath_icon.png"
+                    alt="Sound Bath Zen app icon"
+                    loading="lazy"
+                >
 
-</div>
+                <div class="app-number">
+                    03 · Sound Bath
+                </div>
 
-<!-- =========================
-     APP 3
-========================= -->
+                <h3>
+                    Sound Bath Zen
+                </h3>
 
-<div class="app-card">
+                <div class="tagline">
+                    Create your own sound bath.
+                </div>
 
-<div class="app-number">
-03 • Sound Bath
-</div>
+                <p>
+                    Combine frequencies and calming ambient
+                    sounds to create personalised sound
+                    environments for sleep, meditation,
+                    relaxation and focused work.
+                </p>
 
-<div class="app-icon">
-⌁
-</div>
+                <ul class="app-features">
 
-<h3>
-Sound Bath Zen
-</h3>
+                    <li>
+                        Two independent audio layers
+                    </li>
 
-<div class="app-tagline">
-Create your own sound bath.
-</div>
+                    <li>
+                        Mix frequencies with ambient sounds
+                    </li>
 
-<p>
-Go beyond a simple sound player. Combine Solfeggio
-frequencies with calming sounds and create your own
-personalised audio environment.
-</p>
+                    <li>
+                        Rain, nature, bowls and atmospheric sounds
+                    </li>
 
-<ul>
+                    <li>
+                        Save your favourite combinations
+                    </li>
 
-<li>
-Two independent audio layers
-</li>
+                    <li>
+                        Flexible sessions up to 8 hours
+                    </li>
 
-<li>
-Solfeggio and frequency library
-</li>
+                    <li>
+                        Custom interval bells
+                    </li>
 
-<li>
-Rain and nature sounds
-</li>
+                    <li>
+                        100% offline
+                    </li>
 
-<li>
-Brown Noise
-</li>
+                </ul>
 
-<li>
-Tibetan singing bowls
-</li>
+                <a
+                    class="button button-primary"
+                    href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Explore Sound Bath Zen
+                </a>
 
-<li>
-Independent volume controls
-</li>
+            </article>
 
-<li>
-Save your favourite mixes as presets
-</li>
+        </div>
 
-<li>
-Sessions of up to 8 hours
-</li>
-
-<li>
-100% offline
-</li>
-
-</ul>
-
-<a
-href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
-class="app-button"
-target="_blank"
-rel="noopener">
-
-Explore Sound Bath Zen
-
-</a>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<!-- =========================
-     WHICH APP?
-========================= -->
 
-<section class="compare-section">
 
-<div class="section">
+<!-- =========================================================
+     OUR PHILOSOPHY
+========================================================= -->
 
-<div class="section-heading">
+<section class="philosophy">
 
-<div class="eyebrow">
-Which One Is Right for You?
-</div>
+    <div class="container">
 
-<h2>
-Choose Your Experience
-</h2>
+        <div class="section-heading">
 
-<p>
-Each app has been designed around a different style of
-mindfulness and sound.
-</p>
+            <div class="eyebrow">
+                Our Philosophy
+            </div>
 
-</div>
+            <h2>
+                Built to get out of your way.
+            </h2>
 
-<div class="compare-grid">
+            <p>
+                We believe wellness apps should help you disconnect
+                from technology — not give you another reason to
+                keep looking at your screen.
+            </p>
 
-<div class="compare-card">
+        </div>
 
-<h3>
-🧘 Meditation Bell
-</h3>
 
-<p>
-Best if you want a traditional meditation timer with
-Tibetan bells, ambient sounds and a distraction-free
-environment for meditation, mindfulness, sleep and focus.
-</p>
+        <div class="principles">
 
-</div>
 
-<div class="compare-card">
+            <div class="principle">
 
-<h3>
-〰 Solfeggio Frequencies
-</h3>
+                <div class="principle-icon">
+                    ◇
+                </div>
 
-<p>
-Best if you want to explore individual frequencies,
-including the Solfeggio scale, 432 Hz, 4 Hz Delta and
-40 Hz Gamma.
-</p>
+                <h3>
+                    Simple
+                </h3>
 
-</div>
+                <p>
+                    Clear interfaces with the features you actually
+                    need and none of the unnecessary clutter.
+                </p>
 
-<div class="compare-card">
+            </div>
 
-<h3>
-🎧 Sound Bath Zen
-</h3>
 
-<p>
-Best if you want maximum control and the ability to mix
-frequencies with rain, nature sounds, Brown Noise,
-singing bowls and ambience.
-</p>
+            <div class="principle">
 
-</div>
+                <div class="principle-icon">
+                    ◌
+                </div>
 
-</div>
+                <h3>
+                    Private
+                </h3>
 
-</div>
+                <p>
+                    Our apps are designed to work without requiring
+                    accounts, social feeds or unnecessary personal data.
+                </p>
 
-</section>
+            </div>
 
-<!-- =========================
-     SHARED USP
-========================= -->
 
-<section class="usp-section">
+            <div class="principle">
 
-<div class="section">
+                <div class="principle-icon">
+                    ♪
+                </div>
 
-<div class="section-heading">
+                <h3>
+                    Immersive
+                </h3>
 
-<div class="eyebrow">
-A Different Approach
-</div>
+                <p>
+                    Carefully selected sounds, frequencies and
+                    visual environments designed to create space
+                    for your practice.
+                </p>
 
-<h2>
-Designed to Get Out of Your Way
-</h2>
+            </div>
 
-<p>
-The common thread running through all three apps is
-simplicity.
-</p>
 
-</div>
+            <div class="principle">
 
-<div class="usp-grid">
+                <div class="principle-icon">
+                    ∞
+                </div>
 
-<div class="usp">
+                <h3>
+                    Offline
+                </h3>
 
-<h3>
-No Advertising
-</h3>
+                <p>
+                    Your sessions shouldn't depend on a signal,
+                    streaming service or constant internet connection.
+                </p>
 
-<p>
-No advertising interruptions while you're meditating,
-relaxing, sleeping or concentrating.
-</p>
+            </div>
 
-</div>
+        </div>
 
-<div class="usp">
-
-<h3>
-No Recurring Subscription
-</h3>
-
-<p>
-Our apps are designed around a straightforward,
-one-time approach rather than a recurring monthly
-wellness subscription.
-</p>
-
-</div>
-
-<div class="usp">
-
-<h3>
-No Account Required
-</h3>
-
-<p>
-There is no need to create a social profile or maintain
-an account just to use the core experience.
-</p>
-
-</div>
-
-<div class="usp">
-
-<h3>
-100% Offline
-</h3>
-
-<p>
-The apps are designed to work without streaming,
-buffering or an internet connection, making them ideal
-for travel, retreats, camping and quiet spaces.
-</p>
-
-</div>
-
-<div class="usp">
-
-<h3>
-Minimalist Interfaces
-</h3>
-
-<p>
-Clean interfaces keep the visual experience calm and
-help minimise unnecessary screen distraction.
-</p>
-
-</div>
-
-<div class="usp">
-
-<h3>
-Made for Real Life
-</h3>
-
-<p>
-Use them at home, before bed, during meditation,
-while studying, travelling or simply when you want
-to disconnect.
-</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<!-- =========================
-     ECOSYSTEM
-========================= -->
+
+
+<!-- =========================================================
+     THE ECOSYSTEM
+========================================================= -->
 
 <section class="ecosystem">
 
-<div class="ecosystem-inner">
+    <div class="container ecosystem-grid">
 
-<div class="eyebrow">
-One Calm Ecosystem
-</div>
 
-<h2>
-Find the Sound That Works for You
-</h2>
+        <div class="ecosystem-copy">
 
-<p>
-Start with a simple meditation timer. Explore the world
-of Solfeggio frequencies. Or create a completely
-personalised sound bath by combining frequencies and
-ambient sounds.
-</p>
+            <div class="eyebrow">
+                One Ecosystem
+            </div>
 
-<p>
-There is no single right way to relax or meditate.
-Our apps are designed to give you different tools
-so you can discover what works best for you.
-</p>
+            <h2>
+                Three ways to create your space.
+            </h2>
 
-<a
-href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
-class="button"
-target="_blank"
-rel="noopener">
+            <p>
+                Each app has a different purpose, but they share the
+                same design philosophy: calm technology, quality audio
+                and complete control over your environment.
+            </p>
 
-Explore Sound Bath Zen
 
-</a>
+            <ul class="ecosystem-list">
 
-</div>
+                <li>
+
+                    <span class="check">✦</span>
+
+                    <div>
+                        <strong>Meditation Bell Timer</strong>
+                        Timer, interval bells and immersive ambient
+                        soundscapes for traditional meditation,
+                        focus and sleep.
+                    </div>
+
+                </li>
+
+
+                <li>
+
+                    <span class="check">✦</span>
+
+                    <div>
+                        <strong>Solfeggio Healing Frequencies</strong>
+                        A focused library of individual frequencies
+                        for mindful listening and relaxation.
+                    </div>
+
+                </li>
+
+
+                <li>
+
+                    <span class="check">✦</span>
+
+                    <div>
+                        <strong>Sound Bath Zen</strong>
+                        Mix frequencies and ambient sounds together
+                        to create your own personalised sound bath.
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="ecosystem-visual">
+
+            <div class="visual-circle"></div>
+
+            <div class="visual-word">
+                Less noise.<br>
+                More space.
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- =========================
+
+
+<!-- =========================================================
      FAQ
-========================= -->
+========================================================= -->
 
-<section class="faq-section">
+<section class="faq">
 
-<div class="section">
+    <div class="container">
 
-<div class="section-heading">
+        <div class="section-heading">
 
-<div class="eyebrow">
-Frequently Asked Questions
-</div>
+            <div class="eyebrow">
+                Frequently Asked Questions
+            </div>
 
-<h2>
-Our Apps
-</h2>
+            <h2>
+                The simple version.
+            </h2>
 
-</div>
+        </div>
 
-<div class="faq">
 
-<details>
+        <div class="faq-list">
 
-<summary>
-Are the apps suitable for beginners?
-</summary>
 
-<p>
-Yes. All three apps are designed to be simple to understand.
-You can open an app, choose your preferred sound or frequency,
-set a session and begin without needing to complete a course
-or follow complicated instructions.
-</p>
+            <details>
 
-</details>
+                <summary>
+                    Are the apps subscription based?
+                </summary>
 
-<details>
+                <p>
+                    No. The apps are designed around a simple
+                    one-time purchase model for premium features
+                    rather than recurring monthly subscriptions.
+                </p>
 
-<summary>
-Can I use the apps without an internet connection?
-</summary>
+            </details>
 
-<p>
-Yes. The apps are designed to work 100% offline, so you can
-use them while travelling, in airplane mode, at retreats,
-while camping or whenever you simply want to disconnect.
-</p>
 
-</details>
+            <details>
 
-<details>
+                <summary>
+                    Do the apps require an account?
+                </summary>
 
-<summary>
-Which app is best for meditation?
-</summary>
+                <p>
+                    No account is required to use the apps.
+                    They are designed to be straightforward,
+                    private and easy to use.
+                </p>
 
-<p>
-Meditation Bell &amp; Zen Timer is the natural choice if you
-want a traditional meditation timer with Tibetan singing
-bowl bells, interval chimes and optional ambient sounds.
-Solfeggio Frequencies and Sound Bath Zen offer additional
-approaches based around frequency listening.
-</p>
+            </details>
 
-</details>
 
-<details>
+            <details>
 
-<summary>
-Which app is best for sleep?
-</summary>
+                <summary>
+                    Do the apps work offline?
+                </summary>
 
-<p>
-All three apps can be used as part of a relaxing bedtime
-routine. Meditation Bell provides rain, waves, Brown Noise
-and other ambient sounds, while Solfeggio Frequencies
-includes a 4 Hz Delta option. Sound Bath Zen allows you
-to combine frequencies and calming sounds into your own
-personalised sleep environment.
-</p>
+                <p>
+                    Yes. The apps are designed to work offline,
+                    allowing you to use your sessions without
+                    relying on an internet connection.
+                </p>
 
-</details>
+            </details>
 
-<details>
 
-<summary>
-Can I use the apps for studying and focus?
-</summary>
+            <details>
 
-<p>
-Yes. Meditation Bell includes Brown Noise and ambient
-soundscapes for focused sessions. Solfeggio Frequencies
-includes a 40 Hz Gamma option, while Sound Bath Zen lets
-you combine focus-oriented frequencies with sounds such
-as Brown Noise and atmospheric ambience.
-</p>
+                <summary>
+                    Which app should I choose?
+                </summary>
 
-</details>
+                <p>
+                    Choose Meditation Bell Timer if you want a
+                    traditional timer with bells and ambient sounds.
+                    Choose Solfeggio if you want a focused frequency
+                    library. Choose Sound Bath Zen if you want to
+                    combine frequencies and ambient sounds into
+                    your own customised sessions.
+                </p>
 
-<details>
+            </details>
 
-<summary>
-Do I need an account?
-</summary>
 
-<p>
-No. The apps are designed to provide their core experiences
-without requiring you to create an account or social profile.
-</p>
+            <details>
 
-</details>
+                <summary>
+                    Can I use the apps for sleep and relaxation?
+                </summary>
 
-</div>
+                <p>
+                    Yes. All three apps can be used as part of
+                    personal relaxation or bedtime routines.
+                    Sound selection, frequency choice and session
+                    duration can be tailored to your own preferences.
+                </p>
 
-</div>
+            </details>
+
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- =========================
+
+
+<!-- =========================================================
      FINAL CTA
-========================= -->
+========================================================= -->
 
-<section class="ecosystem">
+<section class="final-cta">
 
-<div class="ecosystem-inner">
+    <div class="container final-cta-inner">
 
-<div class="eyebrow">
-Your Practice. Your Sound.
-</div>
+        <div class="eyebrow">
+            Find Your Practice
+        </div>
 
-<h2>
-Choose Your Way to Unwind
-</h2>
+        <h2>
+            Start with less.
+        </h2>
 
-<p>
-Meditate. Breathe. Listen. Focus. Sleep.
-Create your own peaceful environment with a simple
-collection of sound and mindfulness tools.
-</p>
+        <p>
+            Whether you want a quiet meditation timer, a focused
+            frequency library or a completely custom sound bath,
+            there's an app designed for your way of listening.
+        </p>
 
-<a
-href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
-class="button"
-target="_blank"
-rel="noopener">
+        <a
+            class="button button-primary"
+            href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+            target="_blank"
+            rel="noopener"
+        >
+            Explore The Apps
+        </a>
 
-Get Started with Meditation Bell
-
-</a>
-
-</div>
+    </div>
 
 </section>
 
-<!-- =========================
+
+
+<!-- =========================================================
      FOOTER
-========================= -->
+========================================================= -->
 
-<footer class="footer">
+<footer>
 
-<p>
-© 2026 Meditation Bell Timer. All rights reserved.
-</p>
+    <div class="container">
 
-<p>
 
-<a href="https://meditationbelltimer.com/">
-Meditation Bell Timer
-</a>
+        <div class="footer-grid">
 
- • 
 
-<a href="/our-apps.html">
-Our Apps
-</a>
+            <div class="footer-brand">
 
- • 
+                <a
+                    href="https://meditationbelltimer.com/"
+                    class="brand"
+                >
 
-<a href="/solfeggio-healing-frequencies.html">
-Solfeggio Frequencies
-</a>
+                    <img
+                        src="assets/favicon.png"
+                        alt=""
+                        width="30"
+                        height="30"
+                    >
 
- • 
+                    <span>
+                        MEDITATION BELL TIMER
+                    </span>
 
-<a href="/privacy-policy.html">
-Privacy Policy
-</a>
+                </a>
 
-</p>
+                <p>
+                    Simple digital tools for meditation,
+                    focus, relaxation and sleep — designed
+                    to help you spend less time looking at
+                    your screen.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Apps
+                </h4>
+
+                <a href="our-apps.html">
+                    Our Apps
+                </a>
+
+                <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+                   target="_blank"
+                   rel="noopener">
+                    Meditation Bell Timer
+                </a>
+
+                <a href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+                   target="_blank"
+                   rel="noopener">
+                    Solfeggio Frequencies
+                </a>
+
+                <a href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
+                   target="_blank"
+                   rel="noopener">
+                    Sound Bath Zen
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="timer.html">
+                    Free Web Timer
+                </a>
+
+                <a href="solfeggio-healing-frequencies.html">
+                    Solfeggio Frequencies
+                </a>
+
+                <a href="sleep-meditation-sounds">
+                    Sleep Sounds
+                </a>
+
+                <a href="white-noise-meditation-timer">
+                    White Noise Timer
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Company
+                </h4>
+
+                <a href="https://meditationbelltimer.com/">
+                    Home
+                </a>
+
+                <a href="privacy-policy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="https://www.youtube.com/"
+                   target="_blank"
+                   rel="noopener">
+                    YouTube
+                </a>
+
+                <a href="https://www.instagram.com/"
+                   target="_blank"
+                   rel="noopener">
+                    Instagram
+                </a>
+
+                <a href="https://www.tiktok.com/"
+                   target="_blank"
+                   rel="noopener">
+                    TikTok
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div>
+                © 2026 Meditation Bell Timer. All rights reserved.
+            </div>
+
+            <div class="footer-social">
+
+                <a href="https://www.youtube.com/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="YouTube">
+                    YouTube
+                </a>
+
+                <a href="https://www.instagram.com/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Instagram">
+                    Instagram
+                </a>
+
+                <a href="https://www.tiktok.com/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="TikTok">
+                    TikTok
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </footer>
 
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener("click", function () {
+
+        const isOpen = mainNav.classList.toggle("open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+    });
+
+
+    /*
+       Mobile dropdown handling
+    */
+
+    document
+        .querySelectorAll(".dropdown-toggle")
+        .forEach(function(toggle) {
+
+            toggle.addEventListener("click", function(event) {
+
+                if (window.innerWidth > 760) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                const dropdown = toggle.closest(".dropdown");
+
+                const isOpen =
+                    dropdown.classList.toggle("open");
+
+                toggle.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
+
+            });
+
+        });
+
+
+    /*
+       Close mobile navigation after clicking a normal link
+    */
+
+    document
+        .querySelectorAll("#mainNav > a")
+        .forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                if (window.innerWidth <= 760) {
+
+                    mainNav.classList.remove("open");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            });
+
+        });
+
+
+    /*
+       Escape closes mobile menu
+    */
+
+    document.addEventListener("keydown", function(event) {
+
+        if (event.key === "Escape") {
+
+            mainNav.classList.remove("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    });
+
+
+    /*
+       Reset mobile menu when returning to desktop
+    */
+
+    window.addEventListener("resize", function() {
+
+        if (window.innerWidth > 760) {
+
+            mainNav.classList.remove("open");
+
+            document
+                .querySelectorAll(".dropdown")
+                .forEach(function(dropdown) {
+
+                    dropdown.classList.remove("open");
+
+                });
+
+            document
+                .querySelectorAll(".dropdown-toggle")
+                .forEach(function(toggle) {
+
+                    toggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                });
+
+        }
+
+    });
+
+</script>
+
+
 </body>
 </html>
+```
