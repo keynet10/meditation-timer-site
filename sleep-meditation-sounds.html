@@ -1,297 +1,1872 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sleep Meditation Sounds | Deep Sleep & Insomnia Relief App</title>
-    <meta name="description" content="Fall asleep faster with gapless sleep meditation sounds. Our pitch-black timer plays ambient audio with zero ads to wake you up and zero subscriptions.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sleep Meditation Sounds: Relaxing Sounds for Sleep & Nighttime | Meditation Bell Timer</title><meta name="description" content="Explore relaxing sleep meditation sounds including rain, ocean waves, brown noise, Tibetan singing bowls and nature ambience. Find the right sound for your nighttime routine."><link rel="canonical" href="https://meditationbelltimer.com/sleep-meditation-sounds"><link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet"><style>
+:root{
+    --bg:#050708;
+    --bg-soft:#0b1010;
+    --card:#101616;
+    --card-hover:#151d1d;
+    --text:#f5f1e8;
+    --muted:#a9aaa4;
+    --gold:#d6b77a;
+    --gold-soft:#ead9b1;
+    --line:rgba(214,183,122,.18);
+    --white-line:rgba(255,255,255,.09);
+    --max:1180px;
+}
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #e0e0e0;
-            font-family: 'Lato', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+*{
+    box-sizing:border-box;
+}
 
-        /* --- NAVIGATION --- */
-        header {
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(18, 18, 18, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .logo {
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: #fff;
-        }
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        .nav-links a.nav-item {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 700;
-            transition: color 0.3s;
-            display: flex;
-            align-items: center;
-        }
-        .nav-links a.nav-item:hover { color: #81D4FA; }
+html{
+    scroll-behavior:smooth;
+}
 
-        /* --- DROPDOWN MENU (DESKTOP) --- */
-        .dropdown { position: relative; display: inline-block; }
-        .dropdown-toggle {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            transition: color 0.3s;
-        }
-        .dropdown-toggle:hover { color: #81D4FA; }
-        .dropdown-content {
-            display: none; position: absolute; background-color: #1e1e1e;
-            min-width: 240px; box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
-            border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
-            z-index: 101; top: 100%; left: 50%; transform: translateX(-50%);
-            padding: 10px 0; margin-top: 10px;
-        }
-        .dropdown::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 15px; }
-        .dropdown-content a {
-            color: rgba(255, 255, 255, 0.7); padding: 12px 20px; text-decoration: none;
-            display: block; text-align: left; transition: all 0.2s; font-weight: 400; font-size: 14px;
-        }
-        .dropdown-content a:hover { background-color: rgba(255, 255, 255, 0.05); color: #fff; }
+body{
+    margin:0;
+    background:
+        radial-gradient(circle at 50% -10%,rgba(38,69,62,.28),transparent 42%),
+        var(--bg);
+    color:var(--text);
+    font-family:'Lato',sans-serif;
+    line-height:1.7;
+}
 
-        @media (min-width: 901px) {
-            .dropdown:hover .dropdown-content { display: block; animation: fadeIn 0.3s ease; }
-        }
-        @keyframes fadeIn { from { opacity: 0; transform: translate(-50%, -10px); } to { opacity: 1; transform: translate(-50%, 0); } }
+a{
+    color:inherit;
+    text-decoration:none;
+}
 
-        .menu-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; padding: 5px; }
+img{
+    max-width:100%;
+    display:block;
+}
 
-        /* --- RESPONSIVE MOBILE MENU --- */
-        @media (max-width: 900px) {
-            .menu-toggle { display: block; }
-            .nav-links {
-                display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
-                background: rgba(18, 18, 18, 0.98); border-bottom: 1px solid rgba(255,255,255,0.1);
-                max-height: 0; overflow-y: hidden; transition: max-height 0.4s ease-out; align-items: flex-start; padding: 0;
-            }
-            .nav-links.active { max-height: calc(100vh - 80px); overflow-y: auto; padding: 10px 0 20px 0; }
-            .nav-links > a.nav-item, .dropdown { width: 100%; padding: 15px 5%; font-size: 18px; box-sizing: border-box; border-bottom: 1px solid rgba(255,255,255,0.05); }
-            .dropdown-toggle { font-size: 18px; }
-            .dropdown-content { position: static; display: none; background: transparent; box-shadow: none; border: none; transform: none; min-width: 100%; margin-top: 0; padding: 10px 0 0 15px; }
-            .dropdown.mobile-active .dropdown-content { display: block; }
-            .dropdown-content a { padding: 10px 0; font-size: 16px; border-bottom: none; }
-        }
+/* =========================
+   HEADER
+========================= */
 
-        /* --- ARTICLE LAYOUT --- */
-        .article-container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        h1 { font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.2; }
-        h2 { font-size: 28px; font-weight: 400; color: #fff; margin-top: 40px; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
-        h3 { font-size: 20px; font-weight: 700; margin-top: 30px; }
-        p, ul { font-size: 18px; margin-bottom: 20px; color: #b0b0b0; }
-        li { margin-bottom: 10px; }
-        .subtitle { font-size: 20px; font-weight: 300; color: #81D4FA; margin-bottom: 40px; }
+.site-header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,7,8,.88);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.07);
+}
 
-        /* --- SCREENSHOT CAROUSEL --- */
-        .carousel-wrapper { margin: 40px 0; position: relative; }
-        .carousel-container { display: flex; overflow-x: auto; gap: 20px; padding: 20px 0; scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory; scroll-behavior: smooth; }
-        .carousel-container::-webkit-scrollbar { display: none; }
-        .carousel-item { flex: 0 0 auto; width: 240px; scroll-snap-align: center; border-radius: 20px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.6); background-color: #121212; overflow: hidden; }
-        .carousel-item img { width: 100%; height: auto; display: block; }
+.header-inner{
+    max-width:var(--max);
+    margin:auto;
+    height:72px;
+    padding:0 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
 
-        /* --- CTA BOX --- */
-        .cta-box { background-color: #121212; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 30px; text-align: center; margin: 40px 0; }
-        .cta-box h3 { margin-top: 0; color: #fff; font-size: 24px; }
-        .btn-container { display: flex; gap: 20px; justify-content: center; align-items: center; margin-top: 25px; flex-wrap: wrap; }
-        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 0 28px; height: 54px; border-radius: 30px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; font-size: 16px; box-sizing: border-box; }
-        .btn-primary { background-color: #81D4FA; color: #121212; }
-        .btn-primary:hover { background-color: #4fc3f7; transform: translateY(-2px); }
-        .play-store-badge img { height: 54px; width: auto; display: block; transition: transform 0.2s ease-in-out; }
-        .play-store-badge:hover img { transform: scale(1.05); }
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-width:0;
+}
 
-        footer { text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.5); font-size: 14px; }
-    </style>
-</head>
-<body>
+.brand img{
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    object-fit:cover;
+}
 
-    <header>
-        <a href="/" class="logo">
-            <img src="android-chrome-512x512.png" alt="Meditation Bell Timer Logo" style="width: 24px; height: 24px; border-radius: 4px;">
-            MEDITATION BELL TIMER
+.brand-text{
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    white-space:nowrap;
+}
+
+.desktop-nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.desktop-nav a{
+    font-size:14px;
+    color:rgba(255,255,255,.72);
+    transition:.25s ease;
+}
+
+.desktop-nav a:hover{
+    color:var(--gold-soft);
+}
+
+.nav-cta{
+    padding:10px 17px;
+    border:1px solid rgba(214,183,122,.45);
+    border-radius:24px;
+    color:var(--gold-soft)!important;
+}
+
+.menu-button{
+    display:none;
+    border:0;
+    background:none;
+    color:#fff;
+    cursor:pointer;
+    padding:8px;
+}
+
+.menu-button span{
+    font-size:27px;
+}
+
+/* Mobile menu */
+
+.mobile-menu{
+    display:none;
+    border-top:1px solid rgba(255,255,255,.07);
+    background:#080c0d;
+    padding:10px 22px 20px;
+}
+
+.mobile-menu a{
+    display:block;
+    padding:12px 0;
+    color:rgba(255,255,255,.82);
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.mobile-menu.open{
+    display:block;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    min-height:560px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+        linear-gradient(to bottom,rgba(3,7,7,.2),rgba(3,7,7,.82)),
+        url('/assets/rain_bg.webp') center/cover no-repeat;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at center,transparent 10%,rgba(0,0,0,.5) 75%),
+        linear-gradient(to bottom,rgba(0,0,0,.05),rgba(0,0,0,.82));
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:min(900px,92%);
+    padding:100px 20px;
+}
+
+.eyebrow{
+    display:inline-block;
+    margin-bottom:20px;
+    color:var(--gold);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    margin:0 auto 22px;
+    max-width:850px;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(38px,6vw,70px);
+    line-height:1.08;
+    font-weight:500;
+    letter-spacing:-1px;
+}
+
+.hero p{
+    max-width:720px;
+    margin:0 auto 32px;
+    font-size:18px;
+    color:rgba(255,255,255,.82);
+}
+
+.hero-actions{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    padding:0 22px;
+    border-radius:28px;
+    font-size:14px;
+    font-weight:700;
+    transition:.25s ease;
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:#111;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+    background:var(--gold-soft);
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.25);
+    background:rgba(0,0,0,.25);
+}
+
+.btn-secondary:hover{
+    background:rgba(255,255,255,.08);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.container{
+    width:min(var(--max),92%);
+    margin:auto;
+}
+
+.breadcrumbs{
+    padding:22px 0 0;
+    font-size:13px;
+    color:#858982;
+}
+
+.breadcrumbs a{
+    color:#aaa99f;
+}
+
+.breadcrumbs span{
+    margin:0 8px;
+    opacity:.45;
+}
+
+.content{
+    padding:65px 0 90px;
+}
+
+.intro{
+    max-width:850px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.intro h2{
+    margin:0 0 18px;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(30px,4vw,44px);
+    font-weight:500;
+    line-height:1.2;
+}
+
+.intro p{
+    color:var(--muted);
+    font-size:17px;
+}
+
+/* =========================
+   QUICK NAV
+========================= */
+
+.quick-nav{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-bottom:80px;
+}
+
+.quick-nav a{
+    padding:18px;
+    text-align:center;
+    border:1px solid var(--white-line);
+    border-radius:14px;
+    background:rgba(255,255,255,.025);
+    color:rgba(255,255,255,.82);
+    font-size:14px;
+    transition:.25s ease;
+}
+
+.quick-nav a:hover{
+    border-color:var(--line);
+    background:rgba(214,183,122,.06);
+    color:var(--gold-soft);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    margin-bottom:85px;
+}
+
+.section-heading{
+    max-width:760px;
+    margin-bottom:30px;
+}
+
+.section-heading .eyebrow{
+    margin-bottom:8px;
+}
+
+.section-heading h2{
+    margin:0 0 12px;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(29px,4vw,43px);
+    line-height:1.18;
+    font-weight:500;
+}
+
+.section-heading p{
+    margin:0;
+    color:var(--muted);
+}
+
+/* Sound cards */
+
+.sound-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.sound-card{
+    position:relative;
+    min-height:290px;
+    overflow:hidden;
+    border:1px solid var(--white-line);
+    border-radius:20px;
+    background:#0d1212;
+    transition:.3s ease;
+}
+
+.sound-card:hover{
+    transform:translateY(-4px);
+    border-color:var(--line);
+}
+
+.sound-image{
+    height:190px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+.sound-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to bottom,rgba(0,0,0,.05),rgba(0,0,0,.72));
+}
+
+.sound-body{
+    padding:20px;
+}
+
+.sound-body h3{
+    margin:0 0 6px;
+    font-family:'Playfair Display',serif;
+    font-size:23px;
+    font-weight:500;
+}
+
+.sound-body p{
+    margin:0 0 15px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+}
+
+.audio{
+    width:100%;
+    height:34px;
+    filter:invert(.9);
+    opacity:.85;
+}
+
+/* Two-column sections */
+
+.two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:55px;
+    align-items:center;
+}
+
+.two-col.reverse{
+    grid-template-columns:1fr 1fr;
+}
+
+.text-block h3{
+    margin:0 0 14px;
+    font-family:'Playfair Display',serif;
+    font-size:29px;
+    font-weight:500;
+}
+
+.text-block p{
+    color:var(--muted);
+}
+
+.image-panel{
+    min-height:350px;
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid var(--white-line);
+    background-size:cover;
+    background-position:center;
+}
+
+/* Checklist */
+
+.check-list{
+    list-style:none;
+    padding:0;
+    margin:25px 0 0;
+}
+
+.check-list li{
+    position:relative;
+    padding:11px 0 11px 31px;
+    color:rgba(255,255,255,.82);
+}
+
+.check-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:10px;
+    color:var(--gold);
+    font-weight:700;
+}
+
+/* Tips */
+
+.tip-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.tip{
+    padding:27px;
+    border:1px solid var(--white-line);
+    border-radius:18px;
+    background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.015));
+}
+
+.tip-number{
+    color:var(--gold);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.tip h3{
+    margin:10px 0 9px;
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    font-weight:500;
+}
+
+.tip p{
+    margin:0;
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* App CTA */
+
+.app-cta{
+    position:relative;
+    overflow:hidden;
+    padding:65px 40px;
+    border:1px solid var(--line);
+    border-radius:25px;
+    background:
+        linear-gradient(90deg,rgba(4,8,8,.96),rgba(4,8,8,.72)),
+        url('/assets/rain_bg.webp') center/cover;
+    text-align:center;
+}
+
+.app-cta h2{
+    margin:0 0 13px;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(30px,4vw,45px);
+    font-weight:500;
+}
+
+.app-cta p{
+    max-width:680px;
+    margin:0 auto 25px;
+    color:var(--muted);
+}
+
+/* FAQ */
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+.faq details{
+    border-bottom:1px solid var(--white-line);
+}
+
+.faq summary{
+    cursor:pointer;
+    list-style:none;
+    padding:21px 40px 21px 0;
+    position:relative;
+    font-size:16px;
+    font-weight:700;
+}
+
+.faq summary::-webkit-details-marker{
+    display:none;
+}
+
+.faq summary::after{
+    content:"+";
+    position:absolute;
+    right:5px;
+    top:18px;
+    color:var(--gold);
+    font-size:22px;
+    font-weight:300;
+}
+
+.faq details[open] summary::after{
+    content:"−";
+}
+
+.faq-answer{
+    padding:0 35px 22px 0;
+    color:var(--muted);
+    font-size:15px;
+}
+
+/* Internal links */
+
+.explore-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.explore-card{
+    padding:24px;
+    border:1px solid var(--white-line);
+    border-radius:17px;
+    background:rgba(255,255,255,.025);
+    transition:.25s ease;
+}
+
+.explore-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--line);
+}
+
+.explore-card h3{
+    margin:0 0 8px;
+    font-family:'Playfair Display',serif;
+    font-size:21px;
+    font-weight:500;
+}
+
+.explore-card p{
+    margin:0;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.explore-arrow{
+    display:inline-block;
+    margin-top:13px;
+    color:var(--gold);
+    font-size:13px;
+    font-weight:700;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer{
+    border-top:1px solid rgba(255,255,255,.07);
+    background:#030505;
+    padding:55px 0 25px;
+}
+
+.footer-grid{
+    width:min(var(--max),92%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:45px;
+}
+
+.footer-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:14px;
+}
+
+.footer-brand img{
+    width:42px;
+    height:42px;
+    border-radius:10px;
+}
+
+.footer-title{
+    font-weight:700;
+    letter-spacing:1.2px;
+    font-size:13px;
+}
+
+.footer-col h3{
+    margin:0 0 13px;
+    color:var(--gold-soft);
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.footer-col a{
+    display:block;
+    color:#8e928d;
+    font-size:14px;
+    padding:4px 0;
+}
+
+.footer-col a:hover{
+    color:#fff;
+}
+
+.footer-description{
+    max-width:400px;
+    color:#777c77;
+    font-size:14px;
+}
+
+.footer-bottom{
+    width:min(var(--max),92%);
+    margin:40px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.05);
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    color:#606560;
+    font-size:12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    .header-inner{
+        height:66px;
+        padding:0 18px;
+    }
+
+    .desktop-nav{
+        display:none;
+    }
+
+    .menu-button{
+        display:block;
+    }
+
+    .brand img{
+        width:38px;
+        height:38px;
+    }
+
+    .brand-text{
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:520px;
+    }
+
+    .hero-content{
+        padding:80px 15px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .quick-nav{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .sound-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .tip-grid{
+        grid-template-columns:1fr;
+    }
+
+    .explore-grid{
+        grid-template-columns:1fr;
+    }
+
+    .two-col,
+    .two-col.reverse{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .image-panel{
+        min-height:270px;
+        order:-1;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid > div:first-child{
+        grid-column:1 / -1;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+}
+
+@media(max-width:520px){
+
+    .breadcrumbs{
+        padding-top:17px;
+        font-size:12px;
+    }
+
+    .content{
+        padding-top:45px;
+    }
+
+    .intro{
+        margin-bottom:50px;
+    }
+
+    .intro h2{
+        font-size:31px;
+    }
+
+    .intro p{
+        font-size:15px;
+    }
+
+    .quick-nav{
+        grid-template-columns:1fr 1fr;
+        margin-bottom:60px;
+    }
+
+    .quick-nav a{
+        padding:14px 8px;
+        font-size:12px;
+    }
+
+    .sound-grid{
+        grid-template-columns:1fr;
+    }
+
+    .sound-card{
+        min-height:0;
+    }
+
+    .sound-image{
+        height:210px;
+    }
+
+    .section{
+        margin-bottom:65px;
+    }
+
+    .section-heading h2{
+        font-size:31px;
+    }
+
+    .app-cta{
+        padding:45px 22px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .footer-grid > div:first-child{
+        grid-column:auto;
+    }
+}
+</style><!-- Google-friendly structured data --><script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Sleep Meditation Sounds: Relaxing Sounds for Sleep & Nighttime",
+  "description":"A practical guide to choosing relaxing sleep meditation sounds including rain, ocean waves, brown noise, Tibetan singing bowls and nature ambience.",
+  "author":{
+    "@type":"Organization",
+    "name":"Future Home Tek"
+  },
+  "publisher":{
+    "@type":"Organization",
+    "name":"Future Home Tek"
+  },
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"https://meditationbelltimer.com/sleep-meditation-sounds"
+  }
+}
+</script><script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Home",
+      "item":"https://meditationbelltimer.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Sleep Meditation Sounds",
+      "item":"https://meditationbelltimer.com/sleep-meditation-sounds"
+    }
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"What are the best sounds for sleep?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"There is no single best sleep sound for everyone. Rain, ocean waves, brown noise, forest ambience and gentle atmospheric sounds are popular choices. The best option is usually one that feels comfortable and does not keep your attention active."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Are rain sounds good for sleep?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Many people enjoy rain as a steady background sound at bedtime. Its continuously changing texture can be preferable to complete silence for some listeners."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Is brown noise good for sleep?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Brown noise has a deeper, lower-frequency character than white noise and can be a comfortable background for some listeners. Personal preference is the most important factor."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Should sleep sounds play all night?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Not necessarily. Some people prefer a timer that fades or stops after they have settled into bed, while others prefer continuous background sound. Experiment with a duration that feels comfortable for you."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"What volume should sleep sounds be?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Keep the volume comfortable and low enough that the sound remains background rather than something you actively listen to. Avoid unnecessarily loud playback."
+      }
+    }
+  ]
+}
+</script></head><body><!-- =========================
+     SITE HEADER
+========================= --><header class="site-header">
+    <div class="header-inner">    <a class="brand" href="/">
+        <img src="/android-chrome-192x192.png" alt="Meditation Bell Timer logo">
+        <span class="brand-text">MEDITATION BELL TIMER</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/timer.html">Free Timer</a>
+        <a href="/our-apps.html">Our Apps</a>
+        <a href="/solfeggio-healing-frequencies.html">Solfeggio</a>
+        <a href="/best-meditation-sounds">Sounds</a>
+    </nav>
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+        <span>☰</span>
+    </button>
+
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="/">Home</a>
+    <a href="/timer.html">Free Meditation Timer</a>
+    <a href="/our-apps.html">Our Apps</a>
+
+    <a href="/best-meditation-sounds">Best Meditation Sounds</a>
+    <a href="/sleep-meditation-sounds">Sleep Meditation Sounds</a>
+    <a href="/brown-noise-for-adhd-focus">Brown Noise for Focus</a>
+    <a href="/white-noise-meditation-timer">White Noise Timer</a>
+
+    <a href="/solfeggio-healing-frequencies.html">Solfeggio Frequencies</a>
+
+    <a href="/how-to-use-a-meditation-timer">How to Use a Meditation Timer</a>
+    <a href="/how-long-should-you-meditate">How Long Should You Meditate?</a>
+    <a href="/how-tibetan-singing-bowls-work">How Tibetan Singing Bowls Work</a>
+
+</div>
+
+</header><!-- =========================
+     HERO
+========================= --><section class="hero"><div class="hero-content">
+
+    <span class="eyebrow">Sleep Meditation Sounds</span>
+
+    <h1>Find the Sound That Helps You Unwind</h1>
+
+    <p>
+        Rain, ocean waves, brown noise, Tibetan singing bowls and natural ambience —
+        explore different sounds and create a calmer nighttime listening routine.
+    </p>
+
+    <div class="hero-actions">
+        <a class="btn btn-primary" href="/timer.html">
+            Try the Free Timer
         </a>
-        
-        <button class="menu-toggle" id="mobile-menu-btn">
-            <span class="material-icons">menu</span>
-        </button>
 
-        <nav class="nav-links" id="nav-links">
-            <div class="dropdown">
-                <a href="#" class="dropdown-toggle" style="cursor: pointer; justify-content: space-between; width: 100%;">
-                    Resources <span class="material-icons" style="font-size: 18px;">expand_more</span>
-                </a>
-                <div class="dropdown-content">
-                    <a href="/brown-noise-for-adhd-focus">Brown Noise for ADHD Focus</a>
-                    <a href="/meditation-timer-for-adhd">Meditation Timer for ADHD</a>
-                    <a href="/white-noise-meditation-timer">White Noise Timer</a>
-                    <a href="/sleep-meditation-sounds">Sleep Meditation Sounds</a>
+        <a class="btn btn-secondary" href="#sounds">
+            Explore Sleep Sounds
+        </a>
+    </div>
+
+</div>
+
+</section><main><div class="container"><!-- Breadcrumbs -->
+
+<div class="breadcrumbs">
+    <a href="/">Home</a>
+    <span>›</span>
+    Sleep Meditation Sounds
+</div>
+
+
+<article class="content">
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+        <h2>A quieter way to end the day</h2>
+
+        <p>
+            The right background sound can become a simple part of a bedtime routine.
+            Some people prefer the steady texture of rain or brown noise. Others enjoy
+            ocean waves, forests, birdsong or the resonant sound of a Tibetan singing bowl.
+        </p>
+
+        <p>
+            There is no universally perfect sleep sound. The best choice is the one that
+            feels comfortable, unobtrusive and easy to leave playing while you relax.
+        </p>
+
+    </section>
+
+
+    <!-- QUICK NAV -->
+
+    <nav class="quick-nav" aria-label="Page sections">
+
+        <a href="#sounds">Sleep Sounds</a>
+        <a href="#choose">Choose Your Sound</a>
+        <a href="#timer">Use a Timer</a>
+        <a href="#tips">Nighttime Tips</a>
+
+    </nav>
+
+
+    <!-- =========================
+         SOUNDS
+    ========================== -->
+
+    <section class="section" id="sounds">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Sound Library</span>
+
+            <h2>Popular sounds for nighttime listening</h2>
+
+            <p>
+                Try different sound profiles and see which one fits naturally into your
+                evening routine.
+            </p>
+
+        </div>
+
+
+        <div class="sound-grid">
+
+
+            <!-- Rain -->
+
+            <article class="sound-card">
+
+                <div class="sound-image"
+                     style="background-image:url('/assets/rain_bg.webp');">
                 </div>
-            </div>
 
-            <div class="dropdown">
-                <a href="#" class="dropdown-toggle" style="cursor: pointer; justify-content: space-between; width: 100%;">
-                    Articles <span class="material-icons" style="font-size: 18px;">expand_more</span>
-                </a>
-                <div class="dropdown-content">
-                    <a href="/how-to-use-a-meditation-timer">How To Use A Meditation Timer</a>
-                    <a href="/meditation-timer-vs-guided-meditation">Timer vs Guided Meditation</a>
-                    <a href="/how-long-should-you-meditate">How Long Should You Meditate</a>
-                    <a href="/best-meditation-sounds">Best Meditation Sounds</a>
-                    <a href="/meditation-timer-for-adhd-focus">Meditation Timer For ADHD Focus</a>
-                    <a href="/pomodoro-meditation-method">Pomodoro Meditation Method</a>
-                    <a href="/how-tibetan-singing-bowls-work">How Tibetan Singing Bowls Work</a>
+                <div class="sound-body">
+
+                    <h3>Rain</h3>
+
+                    <p>
+                        A soft, continuously changing natural sound that can provide a
+                        gentle background without music or speech.
+                    </p>
+
+                    <audio class="audio" controls preload="none">
+                        <source src="/assets/rain.ogg" type="audio/ogg">
+                    </audio>
+
                 </div>
-            </div>
-        </nav>
-    </header>
 
-    <div class="article-container">
-        <h1>Sleep Meditation Sounds: Fall Asleep Faster & Stay Asleep</h1>
-        <div class="subtitle">Why the right ambient noise combined with a pitch-black screen is the ultimate cure for racing thoughts at bedtime.</div>
+            </article>
 
-        <p>It happens to millions of people every night: your body is exhausted, you turn off the lights, and suddenly your brain decides it is time to replay every mistake you have ever made. Racing thoughts and bedtime anxiety are incredibly common, and for many, a completely silent room only makes the internal noise louder.</p>
 
-        <p>Introducing high-fidelity <strong>sleep meditation sounds</strong> into your nightly routine is one of the most effective ways to slow down a hyperactive mind and gently guide your body into deep sleep.</p>
+            <!-- Waves -->
 
-        <div class="carousel-wrapper">
-            <div class="carousel-container">
-                <div class="carousel-item"><img src="assets/Screenshot1.jpg" alt="Meditation Bell Timer App Interface"></div>
-                <div class="carousel-item"><img src="assets/Screenshot2.jpg" alt="Pitch Black UI Mode"></div>
-                <div class="carousel-item"><img src="assets/Screenshot3.jpg" alt="Sleep Sounds and Ambient Noise"></div>
-                <div class="carousel-item"><img src="assets/Screenshot4.jpg" alt="Offline Gapless Sleep Timer"></div>
-            </div>
+            <article class="sound-card">
+
+                <div class="sound-image"
+                     style="background-image:url('/assets/waves_bg.webp');">
+                </div>
+
+                <div class="sound-body">
+
+                    <h3>Ocean Waves</h3>
+
+                    <p>
+                        The repeated rise and fall of waves creates a naturally evolving
+                        soundscape for relaxed evening listening.
+                    </p>
+
+                    <audio class="audio" controls preload="none">
+                        <source src="/assets/waves.ogg" type="audio/ogg">
+                    </audio>
+
+                </div>
+
+            </article>
+
+
+            <!-- Brown Noise -->
+
+            <article class="sound-card">
+
+                <div class="sound-image"
+                     style="background-image:url('/assets/brownnoise_bg.webp');">
+                </div>
+
+                <div class="sound-body">
+
+                    <h3>Brown Noise</h3>
+
+                    <p>
+                        A deeper, warmer noise profile for listeners who prefer a
+                        consistent background rather than natural ambience.
+                    </p>
+
+                    <audio class="audio" controls preload="none">
+                        <source src="/assets/brownnoise.ogg" type="audio/ogg">
+                    </audio>
+
+                </div>
+
+            </article>
+
+
+            <!-- Forest -->
+
+            <article class="sound-card">
+
+                <div class="sound-image"
+                     style="background-image:url('/assets/forest_bg.webp');">
+                </div>
+
+                <div class="sound-body">
+
+                    <h3>Forest Ambience</h3>
+
+                    <p>
+                        A mixture of natural environmental sounds for a more immersive
+                        outdoor-inspired atmosphere.
+                    </p>
+
+                    <audio class="audio" controls preload="none">
+                        <source src="/assets/forest.ogg" type="audio/ogg">
+                    </audio>
+
+                </div>
+
+            </article>
+
+
+            <!-- Campfire -->
+
+            <article class="sound-card">
+
+                <div class="sound-image"
+                     style="background-image:url('/assets/campfire_bg.webp');">
+                </div>
+
+                <div class="sound-body">
+
+                    <h3>Campfire</h3>
+
+                    <p>
+                        Gentle crackling ambience that creates a warm and atmospheric
+                        evening listening environment.
+                    </p>
+
+                    <audio class="audio" controls preload="none">
+                        <source src="/assets/campfire.ogg" type="audio/ogg">
+                    </audio>
+
+                </div>
+
+            </article>
+
+
+            <!-- Cicadas -->
+
+            <article class="sound-card">
+
+                <div class="sound-image"
+                     style="background-image:url('/assets/cicadas_bg.webp');">
+                </div>
+
+                <div class="sound-body">
+
+                    <h3>Evening Cicadas</h3>
+
+                    <p>
+                        A distinctive summer-night ambience with a continuous natural
+                        texture.
+                    </p>
+
+                    <audio class="audio" controls preload="none">
+                        <source src="/assets/cicadas.ogg" type="audio/ogg">
+                    </audio>
+
+                </div>
+
+            </article>
+
+
+            <!-- Tibetan Bowl -->
+
+            <article class="sound-card">
+
+                <div class="sound-image"
+                     style="background-image:url('/assets/bowl_bg.webp');">
+                </div>
+
+                <div class="sound-body">
+
+                    <h3>Tibetan Singing Bowl</h3>
+
+                    <p>
+                        A resonant tonal sound that can provide a simple auditory focus
+                        during meditation and quiet evening practice.
+                    </p>
+
+                    <audio class="audio" controls preload="none">
+                        <source src="/assets/bowl.ogg" type="audio/ogg">
+                    </audio>
+
+                </div>
+
+            </article>
+
+
+            <!-- Om -->
+
+            <article class="sound-card">
+
+                <div class="sound-image"
+                     style="background-image:url('/assets/omchant_bg.webp');">
+                </div>
+
+                <div class="sound-body">
+
+                    <h3>Om Chant</h3>
+
+                    <p>
+                        A sustained vocal sound for listeners who prefer a more
+                        contemplative or traditional meditation atmosphere.
+                    </p>
+
+                    <audio class="audio" controls preload="none">
+                        <source src="/assets/omchant.ogg" type="audio/ogg">
+                    </audio>
+
+                </div>
+
+            </article>
+
+
+            <!-- Deep Space -->
+
+            <article class="sound-card">
+
+                <div class="sound-image"
+                     style="background-image:url('/assets/spaceship_bg.webp');">
+                </div>
+
+                <div class="sound-body">
+
+                    <h3>Deep Space</h3>
+
+                    <p>
+                        A slow atmospheric option for anyone looking for something
+                        different from traditional nature sounds.
+                    </p>
+
+                    <audio class="audio" controls preload="none">
+                        <source src="/assets/spaceship.ogg" type="audio/ogg">
+                    </audio>
+
+                </div>
+
+            </article>
+
         </div>
 
-        <h2>Why Ambient Sleep Audio Works</h2>
-        <p>Listening to nature sounds—like a crackling campfire, crashing ocean waves, or evening cicadas—does more than just give you something to listen to. It actively triggers the parasympathetic nervous system, signaling to your body that you are in a safe, calm environment.</p>
-        <p>Furthermore, consistent ambient noise masks disruptive background sounds. If you live in a city, a sudden siren or a neighbor's slamming door can instantly pull you out of light REM sleep. A steady stream of deep brown noise or heavy rain acts as an acoustic shield, allowing you to stay asleep longer.</p>
+    </section>
 
-        <div class="cta-box">
-            <h3>Try Our Pitch-Black Sleep Timer</h3>
-            <p>Don't let your phone screen keep you awake. Try our custom-built, AMOLED-friendly sleep timer completely free.</p>
-            <div class="btn-container">
-                <a href="timer.html" class="btn btn-primary">
-                    <span class="material-icons">web</span> Try Web Version
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer" target="_blank" rel="noopener noreferrer" class="play-store-badge">
-                    <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"/>
-                </a>
+
+    <!-- =========================
+         CHOOSING
+    ========================== -->
+
+    <section class="section" id="choose">
+
+        <div class="two-col">
+
+            <div class="text-block">
+
+                <span class="eyebrow">Choosing Your Sound</span>
+
+                <h3>What makes a good sleep sound?</h3>
+
+                <p>
+                    The most useful sleep sound is usually the one you can stop paying
+                    attention to. If you find yourself waiting for the next wave,
+                    analysing a sound or being distracted by changes in volume,
+                    another option may suit you better.
+                </p>
+
+                <ul class="check-list">
+                    <li>Comfortable at a low listening volume</li>
+                    <li>Consistent enough to become background ambience</li>
+                    <li>Free from speech or unexpected interruptions</li>
+                    <li>Suitable for your personal preference</li>
+                    <li>Easy to start and stop with a timer</li>
+                </ul>
+
             </div>
+
+            <div class="image-panel"
+                 style="background-image:url('/assets/rain_bg.webp');">
+            </div>
+
         </div>
 
-        <h2>The Two Biggest Mistakes with Sleep Apps</h2>
-        <p>If you have tried using your phone to help you fall asleep before, you have likely run into these two massive roadblocks:</p>
-        
-        <h3>1. The Screen Light Problem</h3>
-        <p>Blue light suppresses melatonin production. If your sleep app has a bright, colorful interface that lights up your entire bedroom while it runs, it is actively fighting your body's natural sleep cycle. You need an app with a true "Pitch Black" UI that can run the audio while keeping the screen entirely dark.</p>
+    </section>
 
-        <h3>2. The 3 AM Ad Nightmare</h3>
-        <p>There is nothing worse than finally drifting off to a soothing rainstorm on YouTube or a free app, only to be jolted awake at 3:00 AM by a blaring commercial for car insurance. To protect your sleep, your audio tool must be 100% ad-free.</p>
 
-        <h2>Offline, Ad-Free, and Subscription-Free</h2>
-        <p>We built <strong>Meditation Bell Timer</strong> to be the ultimate bedside companion. It solves every problem associated with mobile sleep aids.</p>
-        
-        <p>The app features a master-grade collection of sleep sounds on a 100% gapless audio engine, meaning there are no jarring clicks when the track loops. It has a dedicated "Black Screen" mode, saving your battery and keeping your room pitch dark. Best of all, it works completely offline—put your phone in airplane mode to block late-night texts, and the timer will still run flawlessly.</p>
+    <!-- =========================
+         SOUND TYPES
+    ========================== -->
 
-        <p>We absolutely refuse to put ads in our app, and we hate monthly subscriptions. You can download and use the timer completely free. If you want to run the timer for a full 8 hours, it's a single, one-time payment to unlock infinite durations forever.</p>
+    <section class="section">
 
-        <div class="cta-box">
-            <h3>Get a Better Night's Rest</h3>
-            <p>Stop paying a monthly fee just to fall asleep. Download Meditation Bell Timer today.</p>
-            <div class="btn-container">
-                <a href="timer.html" class="btn btn-primary">
-                    <span class="material-icons">web</span> Try Web Version
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer" target="_blank" rel="noopener noreferrer" class="play-store-badge">
-                    <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"/>
-                </a>
-            </div>
+        <div class="section-heading">
+
+            <span class="eyebrow">Find Your Preference</span>
+
+            <h2>Which type of sound suits you?</h2>
+
         </div>
+
+
+        <div class="tip-grid">
+
+            <div class="tip">
+
+                <span class="tip-number">01 — NATURAL</span>
+
+                <h3>Rain & Waves</h3>
+
+                <p>
+                    Ideal if you enjoy continuously changing natural ambience without
+                    speech or music.
+                </p>
+
+            </div>
+
+
+            <div class="tip">
+
+                <span class="tip-number">02 — STEADY</span>
+
+                <h3>Brown & White Noise</h3>
+
+                <p>
+                    A good option if you prefer a consistent sound with relatively
+                    little variation.
+                </p>
+
+            </div>
+
+
+            <div class="tip">
+
+                <span class="tip-number">03 — ATMOSPHERIC</span>
+
+                <h3>Forest & Campfire</h3>
+
+                <p>
+                    Choose these if you prefer a more immersive environment rather
+                    than a simple continuous noise.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TIMER
+    ========================== -->
+
+    <section class="section" id="timer">
+
+        <div class="two-col">
+
+            <div class="image-panel"
+                 style="background-image:url('/assets/bowl_bg.webp');">
+            </div>
+
+            <div class="text-block">
+
+                <span class="eyebrow">Sleep Timer</span>
+
+                <h3>Set your sound, start the timer, then leave the screen alone.</h3>
+
+                <p>
+                    A timer can make nighttime listening simpler. Choose a sound,
+                    select a duration and let the session finish automatically rather
+                    than checking the clock.
+                </p>
+
+                <p>
+                    The free Meditation Bell Timer includes a pitch-black mode designed
+                    for nighttime use, so the display does not need to remain bright
+                    while your session is running.
+                </p>
+
+                <a class="btn btn-primary" href="/timer.html">
+                    Open Free Sleep Timer
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NIGHT TIPS
+    ========================== -->
+
+    <section class="section" id="tips">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Simple Nighttime Routine</span>
+
+            <h2>Make your listening environment work for you</h2>
+
+            <p>
+                Small details can make a sleep-sound routine more comfortable.
+            </p>
+
+        </div>
+
+
+        <div class="tip-grid">
+
+            <div class="tip">
+
+                <span class="tip-number">01</span>
+
+                <h3>Keep the volume gentle</h3>
+
+                <p>
+                    Sleep sounds generally work best as background ambience rather
+                    than something you need to listen to actively.
+                </p>
+
+            </div>
+
+
+            <div class="tip">
+
+                <span class="tip-number">02</span>
+
+                <h3>Choose consistency</h3>
+
+                <p>
+                    Once you find a sound you like, using the same sound regularly can
+                    make it a familiar part of your evening routine.
+                </p>
+
+            </div>
+
+
+            <div class="tip">
+
+                <span class="tip-number">03</span>
+
+                <h3>Try a timer</h3>
+
+                <p>
+                    You do not necessarily need audio playing all night. Experiment
+                    with a shorter session and see what feels right for you.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESPONSIBLE USE
+    ========================== -->
+
+    <section class="section">
+
+        <div class="two-col">
+
+            <div class="text-block">
+
+                <span class="eyebrow">A Personal Choice</span>
+
+                <h3>There is no perfect sleep sound</h3>
+
+                <p>
+                    Sleep preferences vary considerably. Some people find complete
+                    silence most comfortable, while others prefer a steady soundscape.
+                    What works one night may not be what you want the next.
+                </p>
+
+                <p>
+                    Think of sleep sounds as part of your environment rather than a
+                    treatment. If a sound makes you more alert, distracted or
+                    uncomfortable, simply choose another option or turn it off.
+                </p>
+
+            </div>
+
+            <div class="image-panel"
+                 style="background-image:url('/assets/campfire_bg.webp');">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         APP CTA
+    ========================== -->
+
+    <section class="section">
+
+        <div class="app-cta">
+
+            <span class="eyebrow">Meditation Bell Timer</span>
+
+            <h2>Your sounds. Your timer. Your routine.</h2>
+
+            <p>
+                Explore relaxing soundscapes, interval bells and flexible meditation
+                sessions with a simple timer designed to stay out of your way.
+            </p>
+
+            <div class="hero-actions">
+
+                <a class="btn btn-primary" href="/timer.html">
+                    Try the Free Web Timer
+                </a>
+
+                <a class="btn btn-secondary"
+                   href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Explore the Android App
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FAQ
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">FAQ</span>
+
+            <h2>Sleep Meditation Sounds — Frequently Asked Questions</h2>
+
+        </div>
+
+
+        <div class="faq">
+
+            <details>
+                <summary>What are the best sounds for sleep?</summary>
+                <div class="faq-answer">
+                    There is no single best sleep sound for everyone. Rain, ocean waves,
+                    brown noise, forest ambience and gentle atmospheric sounds are popular
+                    choices. The best option is usually one that feels comfortable and does
+                    not keep your attention active.
+                </div>
+            </details>
+
+
+            <details>
+                <summary>Are rain sounds good for sleep?</summary>
+                <div class="faq-answer">
+                    Many people enjoy rain as a steady background sound at bedtime.
+                    Its continuously changing texture can be preferable to complete silence
+                    for some listeners.
+                </div>
+            </details>
+
+
+            <details>
+                <summary>Is brown noise good for sleep?</summary>
+                <div class="faq-answer">
+                    Brown noise has a deeper, lower-frequency character than white noise
+                    and can be a comfortable background for some listeners. Personal
+                    preference is the most important factor.
+                </div>
+            </details>
+
+
+            <details>
+                <summary>Should sleep sounds play all night?</summary>
+                <div class="faq-answer">
+                    Not necessarily. Some people prefer a timer that stops after they
+                    have settled into bed, while others prefer continuous background sound.
+                    Experiment with a duration that feels comfortable for you.
+                </div>
+            </details>
+
+
+            <details>
+                <summary>What volume should sleep sounds be?</summary>
+                <div class="faq-answer">
+                    Keep the volume comfortable and low enough that the sound remains
+                    background rather than something you actively listen to. Avoid
+                    unnecessarily loud playback.
+                </div>
+            </details>
+
+
+            <details>
+                <summary>Can I use a meditation timer for sleep?</summary>
+                <div class="faq-answer">
+                    Yes. A meditation timer can also be used for quiet nighttime
+                    listening. Choose a sound, set a suitable duration and allow the
+                    session to finish without needing to check the clock.
+                </div>
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPLORE
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Explore More</span>
+
+            <h2>Continue exploring Meditation Bell Timer</h2>
+
+        </div>
+
+
+        <div class="explore-grid">
+
+            <a class="explore-card" href="/best-meditation-sounds">
+
+                <h3>Best Meditation Sounds</h3>
+
+                <p>
+                    Explore a wider guide to Tibetan bowls, nature sounds,
+                    brown noise, white noise and ambient soundscapes.
+                </p>
+
+                <span class="explore-arrow">Read the guide →</span>
+
+            </a>
+
+
+            <a class="explore-card" href="/how-to-use-a-meditation-timer">
+
+                <h3>How to Use a Meditation Timer</h3>
+
+                <p>
+                    Learn how a simple timer can create a more structured,
+                    distraction-free meditation routine.
+                </p>
+
+                <span class="explore-arrow">Read the guide →</span>
+
+            </a>
+
+
+            <a class="explore-card" href="/how-tibetan-singing-bowls-work">
+
+                <h3>How Tibetan Singing Bowls Work</h3>
+
+                <p>
+                    Learn about the sound, resonance and traditional use of
+                    Tibetan singing bowls.
+                </p>
+
+                <span class="explore-arrow">Read the guide →</span>
+
+            </a>
+
+
+            <a class="explore-card" href="/white-noise-meditation-timer">
+
+                <h3>White Noise Meditation Timer</h3>
+
+                <p>
+                    Explore white noise as a steady background for meditation,
+                    relaxation and focused listening.
+                </p>
+
+                <span class="explore-arrow">Read more →</span>
+
+            </a>
+
+
+            <a class="explore-card" href="/brown-noise-for-adhd-focus">
+
+                <h3>Brown Noise for Focus</h3>
+
+                <p>
+                    Understand how brown noise differs from white noise and
+                    why some people prefer its deeper sound.
+                </p>
+
+                <span class="explore-arrow">Read more →</span>
+
+            </a>
+
+
+            <a class="explore-card" href="/solfeggio-healing-frequencies.html">
+
+                <h3>Solfeggio Frequencies</h3>
+
+                <p>
+                    Explore Solfeggio frequencies and their traditional
+                    associations within frequency-based listening.
+                </p>
+
+                <span class="explore-arrow">Explore frequencies →</span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+</article>
+
+</div></main><!-- =========================
+     FOOTER
+========================= --><footer class="site-footer"><div class="footer-grid">
+
+    <div>
+
+        <div class="footer-brand">
+
+            <img src="/android-chrome-192x192.png"
+                 alt="Meditation Bell Timer logo">
+
+            <span class="footer-title">
+                MEDITATION BELL TIMER
+            </span>
+
+        </div>
+
+        <p class="footer-description">
+            Simple tools for meditation, relaxation, focus and sleep —
+            designed without unnecessary clutter.
+        </p>
 
     </div>
 
-        <footer>
 
-        <div class="social-links">
-            <a href="https://www.youtube.com/@MeditationBellTimer" target="_blank">
-                <i class="fa-brands fa-youtube" style="font-size: 18px;"></i> YouTube
-            </a>
-            <a href="https://www.instagram.com/meditationbelltimer/" target="_blank">
-                <i class="fa-brands fa-instagram" style="font-size: 18px;"></i> Instagram
-            </a>
-            <a href="https://www.tiktok.com/@meditationbelltimer" target="_blank">
-                <i class="fa-brands fa-tiktok" style="font-size: 18px;"></i> TikTok
-            </a>
-        </div>
+    <div class="footer-col">
 
-        <div style="margin-bottom: 20px;">
-            <a href="privacy.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; transition: color 0.3s;" onmouseover="this.style.color='#81D4FA'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Privacy Policy</a>
-        </div>
+        <h3>Explore</h3>
 
-        <p class="copyright">&copy; 2026 Meditation Bell Timer. All rights reserved.</p>
-    </footer>
+        <a href="/">Home</a>
+        <a href="/timer.html">Free Timer</a>
+        <a href="/our-apps.html">Our Apps</a>
+        <a href="/best-meditation-sounds">Best Meditation Sounds</a>
+        <a href="/solfeggio-healing-frequencies.html">Solfeggio Frequencies</a>
+
+    </div>
 
 
+    <div class="footer-col">
 
-    <script>
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.getElementById('nav-links');
-        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        <h3>Resources</h3>
 
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.querySelector('.material-icons').innerText = navLinks.classList.contains('active') ? 'close' : 'menu';
+        <a href="/sleep-meditation-sounds">Sleep Meditation Sounds</a>
+        <a href="/white-noise-meditation-timer">White Noise Timer</a>
+        <a href="/brown-noise-for-adhd-focus">Brown Noise for Focus</a>
+        <a href="/how-to-use-a-meditation-timer">How to Use a Meditation Timer</a>
+        <a href="/how-long-should-you-meditate">How Long Should You Meditate?</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+
+    </div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+    <span>
+        © 2026 Meditation Bell Timer. All rights reserved.
+    </span>
+
+    <span>
+        Future Home Tek
+    </span>
+
+</div>
+
+</footer><script>
+
+(function(){
+
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuButton.addEventListener('click', function(){
+
+        const open = mobileMenu.classList.toggle('open');
+
+        menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+    });
+
+
+    mobileMenu.querySelectorAll('a').forEach(function(link){
+
+        link.addEventListener('click', function(){
+
+            mobileMenu.classList.remove('open');
+            menuButton.setAttribute('aria-expanded','false');
+
         });
 
-        dropdownToggles.forEach(toggle => {
-            toggle.addEventListener('click', (e) => {
-                if (window.innerWidth <= 900) {
-                    e.preventDefault();
-                    const parentDropdown = toggle.closest('.dropdown');
-                    parentDropdown.classList.toggle('mobile-active');
-                    
-                    const icon = toggle.querySelector('.material-icons');
-                    icon.innerText = parentDropdown.classList.contains('mobile-active') ? 'expand_less' : 'expand_more';
-                }
-            });
-        });
-    </script>
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b448b569267c44c2b0ce85f99a149e61"}'></script>
-</body>
+    });
+
+})();
+
+</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"b448b569267c44c2b0ce85f99a149e61"}'></script></body>
 </html>
