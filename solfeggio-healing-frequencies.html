@@ -1,29 +1,54 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Solfeggio Healing Frequencies – 528 Hz, 432 Hz, Meditation & Sleep</title>
 
-<meta name="description" content="Explore Solfeggio frequencies from 174 Hz to 963 Hz, plus 432 Hz, 4 Hz Delta and 40 Hz Gamma. Discover how frequency listening can fit into meditation, relaxation, sleep, mindfulness and focus.">
+<meta
+    name="description"
+    content="Explore Solfeggio frequencies from 174 Hz to 963 Hz, plus 432 Hz, 4 Hz Delta and 40 Hz Gamma. Discover how frequency listening can fit into meditation, relaxation, sleep, mindfulness and focus."
+>
 
-<link rel="canonical" href="https://meditationbelltimer.com/solfeggio-healing-frequencies.html">
+<link
+    rel="canonical"
+    href="https://meditationbelltimer.com/solfeggio-healing-frequencies.html"
+>
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Solfeggio Healing Frequencies – 528 Hz, 432 Hz, Meditation & Sleep">
-<meta property="og:description" content="Explore Solfeggio frequencies from 174 Hz to 963 Hz, plus 432 Hz, 4 Hz Delta and 40 Hz Gamma.">
-<meta property="og:url" content="https://meditationbelltimer.com/solfeggio-healing-frequencies.html">
-<meta property="og:image" content="https://meditationbelltimer.com/assets/solfeggio-hero.webp">
+<meta
+    property="og:title"
+    content="Solfeggio Healing Frequencies – 528 Hz, 432 Hz, Meditation & Sleep"
+>
+<meta
+    property="og:description"
+    content="Explore Solfeggio frequencies from 174 Hz to 963 Hz, plus 432 Hz, 4 Hz Delta and 40 Hz Gamma."
+>
+<meta
+    property="og:url"
+    content="https://meditationbelltimer.com/solfeggio-healing-frequencies.html"
+>
+<meta
+    property="og:image"
+    content="https://meditationbelltimer.com/assets/solfeggio-hero.webp"
+>
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Solfeggio Healing Frequencies">
-<meta name="twitter:description" content="Explore Solfeggio frequencies for meditation, relaxation, sleep, mindfulness and focus.">
-<meta name="twitter:image" content="https://meditationbelltimer.com/assets/solfeggio-hero.webp">
+<meta
+    name="twitter:title"
+    content="Solfeggio Healing Frequencies"
+>
+<meta
+    name="twitter:description"
+    content="Explore Solfeggio frequencies for meditation, relaxation, sleep, mindfulness and focus."
+>
+<meta
+    name="twitter:image"
+    content="https://meditationbelltimer.com/assets/solfeggio-hero.webp"
+>
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -33,7 +58,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+>
+
 
 <style>
 
@@ -43,9 +72,8 @@
 
 :root {
 
-    --black: #060808;
-    --dark: #0b1010;
-    --dark-green: #0c1715;
+    --black: #070909;
+    --navy: #0b1113;
 
     --gold: #d4af5a;
     --gold-light: #f2d78f;
@@ -56,7 +84,7 @@
 
     --muted: rgba(255,255,255,0.68);
 
-    --border: rgba(255,255,255,0.09);
+    --border: rgba(255,255,255,0.08);
 
     --max-width: 1180px;
 }
@@ -68,6 +96,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -100,7 +130,7 @@ a {
 
 
 /* =========================================================
-   HEADER
+   SITEWIDE HEADER — MASTER VERSION 1
 ========================================================= */
 
 header {
@@ -111,9 +141,9 @@ header {
     left: 0;
     right: 0;
 
-    height: 78px;
-
     z-index: 1000;
+
+    height: 74px;
 
     display: flex;
 
@@ -123,18 +153,12 @@ header {
 
     padding: 0 5%;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(5,8,8,0.94),
-            rgba(5,8,8,0.76)
-        );
+    background: rgba(7,9,9,0.94);
 
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 
-    border-bottom:
-        1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 
@@ -146,15 +170,17 @@ header {
 
     gap: 10px;
 
-    text-decoration: none;
-
     color: white;
 
-    font-size: 15px;
+    text-decoration: none;
 
-    font-weight: 700;
+    font-family: 'DM Sans', sans-serif;
 
-    letter-spacing: 2px;
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.6px;
 
     white-space: nowrap;
 }
@@ -162,16 +188,14 @@ header {
 
 .logo img {
 
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
 
-    border-radius: 6px;
+    border-radius: 7px;
+
+    object-fit: cover;
 }
 
-
-/* =========================================================
-   NAV
-========================================================= */
 
 .nav-links {
 
@@ -179,7 +203,7 @@ header {
 
     align-items: center;
 
-    gap: 30px;
+    gap: 28px;
 }
 
 
@@ -190,11 +214,13 @@ header {
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
 
-    font-weight: 700;
+    font-size: 13px;
 
-    transition: color .25s ease;
+    font-weight: 500;
+
+    transition: color 0.25s ease;
 }
 
 
@@ -206,6 +232,7 @@ header {
 
 
 .dropdown {
+
     position: relative;
 }
 
@@ -222,27 +249,41 @@ header {
 }
 
 
+.dropdown-arrow {
+
+    font-size: 9px;
+
+    opacity: 0.65;
+
+    transition: transform 0.2s ease;
+}
+
+
+.dropdown:hover .dropdown-arrow {
+
+    transform: rotate(180deg);
+}
+
+
 .dropdown-content {
 
     position: absolute;
 
-    top: calc(100% + 15px);
+    top: calc(100% + 17px);
 
     right: 0;
 
-    min-width: 250px;
+    min-width: 270px;
 
-    padding: 10px;
+    padding: 9px;
 
-    background: rgba(10,13,13,0.98);
+    background: rgba(10,13,14,0.98);
 
-    border:
-        1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
 
     border-radius: 12px;
 
-    box-shadow:
-        0 25px 70px rgba(0,0,0,0.55);
+    box-shadow: 0 25px 70px rgba(0,0,0,0.55);
 
     opacity: 0;
 
@@ -251,9 +292,9 @@ header {
     transform: translateY(-8px);
 
     transition:
-        opacity .2s ease,
-        transform .2s ease,
-        visibility .2s ease;
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
 }
 
 
@@ -279,26 +320,32 @@ header {
 
     text-decoration: none;
 
+    font-family: 'DM Sans', sans-serif;
+
     font-size: 13px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
 }
 
 
 .dropdown-content a:hover {
 
-    color: var(--gold-light);
+    background: rgba(212,175,90,0.08);
 
-    background:
-        rgba(212,175,90,0.08);
+    color: var(--gold-light);
 }
 
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
 
 .menu-toggle {
 
     display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
 
     border: 0;
 
@@ -306,23 +353,25 @@ header {
 
     color: white;
 
-    font-size: 28px;
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 27px;
+
+    line-height: 1;
 
     cursor: pointer;
 }
 
 
 /* =========================================================
-   CINEMATIC HERO
+   HERO
 ========================================================= */
 
 .hero {
 
     position: relative;
 
-    min-height: min(780px, 92vh);
-
-    width: 100%;
+    min-height: 780px;
 
     display: flex;
 
@@ -330,11 +379,9 @@ header {
 
     overflow: hidden;
 
-    background: #0a0f0f;
+    margin-top: 74px;
 }
 
-
-/* HERO IMAGE */
 
 .hero-background {
 
@@ -347,13 +394,9 @@ header {
 
     object-fit: cover;
 
-    object-position: center center;
-
-    z-index: 0;
+    object-position: center;
 }
 
-
-/* DARK OVERLAY */
 
 .hero-overlay {
 
@@ -361,45 +404,15 @@ header {
 
     inset: 0;
 
-    z-index: 1;
-
     background:
-
         linear-gradient(
             90deg,
-            rgba(3,7,7,0.94) 0%,
-            rgba(3,7,7,0.82) 22%,
-            rgba(3,7,7,0.55) 45%,
-            rgba(3,7,7,0.22) 70%,
-            rgba(3,7,7,0.08) 100%
+            rgba(3,7,7,.94) 0%,
+            rgba(3,7,7,.80) 48%,
+            rgba(3,7,7,.36) 100%
         );
 }
 
-
-/* BOTTOM FADE */
-
-.hero-overlay::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    height: 180px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            rgba(6,8,8,0.98)
-        );
-}
-
-
-/* HERO CONTENT */
 
 .hero-content {
 
@@ -413,14 +426,13 @@ header {
 
     margin: 0 auto;
 
-    padding:
-        145px 30px 120px;
+    padding: 150px 5% 180px;
 }
 
 
 .hero-copy {
 
-    max-width: 650px;
+    max-width: 680px;
 }
 
 
@@ -436,9 +448,11 @@ header {
 
     color: var(--gold-light);
 
+    font-family: 'DM Sans', sans-serif;
+
     font-size: 11px;
 
-    font-weight: 700;
+    font-weight: 600;
 
     letter-spacing: 3px;
 
@@ -450,7 +464,7 @@ header {
 
     content: "";
 
-    width: 40px;
+    width: 30px;
 
     height: 1px;
 
@@ -460,25 +474,19 @@ header {
 
 .hero h1 {
 
-    margin: 0 0 24px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(58px, 7vw, 92px);
-
-    font-weight: 600;
-
-    line-height: .9;
-
-    letter-spacing: -1px;
+    margin: 0 0 25px;
 
     color: var(--cream);
 
-    text-shadow:
-        0 5px 35px rgba(0,0,0,0.45);
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(58px, 7vw, 88px);
+
+    font-weight: 600;
+
+    line-height: .98;
+
+    letter-spacing: -2px;
 }
 
 
@@ -490,43 +498,31 @@ header {
 
 .hero-description {
 
-    max-width: 610px;
+    max-width: 650px;
 
     margin: 0 0 32px;
 
-    color:
-        rgba(255,255,255,0.84);
+    color: rgba(255,255,255,0.78);
+
+    font-family: 'DM Sans', sans-serif;
 
     font-size: 17px;
 
-    font-weight: 300;
-
-    line-height: 1.8;
-
-    text-shadow:
-        0 2px 15px rgba(0,0,0,0.8);
+    line-height: 1.75;
 }
 
-
-/* =========================================================
-   BUTTONS
-========================================================= */
 
 .hero-buttons {
 
     display: flex;
 
-    align-items: center;
-
-    gap: 14px;
-
     flex-wrap: wrap;
+
+    gap: 12px;
 }
 
 
 .btn {
-
-    min-height: 52px;
 
     display: inline-flex;
 
@@ -534,27 +530,30 @@ header {
 
     justify-content: center;
 
-    padding: 0 27px;
+    min-height: 50px;
 
-    border-radius: 999px;
+    padding: 0 23px;
+
+    border-radius: 8px;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
 
     text-decoration: none;
 
-    font-size: 14px;
-
-    font-weight: 700;
-
     transition:
-        transform .25s ease,
-        background .25s ease,
-        border-color .25s ease;
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
 }
 
 
 .btn:hover {
 
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 }
 
 
@@ -562,11 +561,7 @@ header {
 
     background: var(--gold);
 
-    color: #111;
-
-    box-shadow:
-        0 10px 35px
-        rgba(212,175,90,.2);
+    color: #090a08;
 }
 
 
@@ -578,27 +573,21 @@ header {
 
 .btn-secondary {
 
-    color: white;
+    border: 1px solid rgba(255,255,255,0.22);
 
-    background:
-        rgba(4,7,7,0.35);
+    background: rgba(255,255,255,0.04);
 
-    border:
-        1px solid
-        rgba(242,215,143,.55);
+    color: var(--cream);
 
-    backdrop-filter:
-        blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 
 .btn-secondary:hover {
 
-    background:
-        rgba(212,175,90,.12);
+    border-color: rgba(242,215,143,.55);
 
-    border-color:
-        var(--gold-light);
+    background: rgba(255,255,255,0.07);
 }
 
 
@@ -606,170 +595,65 @@ header {
 
     margin-top: 20px;
 
-    color:
-        rgba(255,255,255,0.48);
+    color: #969a93;
 
     font-size: 12px;
 }
 
 
-/* =========================================================
-   HERO USP STRIP
-========================================================= */
-
 .hero-usp {
 
     position: absolute;
 
-    bottom: 0;
     left: 0;
     right: 0;
+    bottom: 0;
 
     z-index: 3;
 
-    padding:
-        18px 5%;
+    padding: 17px 5%;
 
-    border-top:
-        1px solid rgba(255,255,255,.08);
+    background: rgba(7,9,9,.82);
 
-    background:
-        rgba(4,7,7,.40);
+    border-top: 1px solid rgba(255,255,255,.08);
 
-    backdrop-filter:
-        blur(10px);
+    backdrop-filter: blur(12px);
 }
 
 
 .hero-usp-inner {
 
-    max-width:
-        var(--max-width);
+    max-width: 1180px;
 
-    margin: auto;
+    margin: 0 auto;
 
-    display:
-        flex;
+    display: flex;
 
-    justify-content:
-        center;
+    align-items: center;
 
-    align-items:
-        center;
+    justify-content: space-between;
 
-    gap: 40px;
-
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
 
 .hero-usp-item {
 
-    color:
-        rgba(255,255,255,.58);
+    color: rgba(255,255,255,.58);
+
+    font-family: 'DM Sans', sans-serif;
 
     font-size: 11px;
 
-    letter-spacing:
-        .5px;
+    text-align: center;
 }
 
 
 .hero-usp-item strong {
 
-    color:
-        var(--gold-light);
-}
+    color: var(--gold-light);
 
-
-/* =========================================================
-   GENERAL SECTIONS
-========================================================= */
-
-.section {
-
-    max-width:
-        var(--max-width);
-
-    margin:
-        0 auto;
-
-    padding:
-        100px 30px;
-}
-
-
-.section-header {
-
-    max-width:
-        760px;
-
-    margin:
-        0 auto 55px;
-
-    text-align:
-        center;
-}
-
-
-.section-label {
-
-    display:
-        block;
-
-    margin-bottom:
-        10px;
-
-    color:
-        var(--gold);
-
-    font-size:
-        11px;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        3px;
-
-    text-transform:
-        uppercase;
-}
-
-
-.section-header h2 {
-
-    margin:
-        0 0 17px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(42px,5vw,62px);
-
-    font-weight:
-        600;
-
-    line-height:
-        1.02;
-}
-
-
-.section-header p {
-
-    margin:
-        0;
-
-    color:
-        var(--muted);
-
-    font-size:
-        16px;
-
-    line-height:
-        1.8;
+    font-weight: 600;
 }
 
 
@@ -779,132 +663,148 @@ header {
 
 .intro {
 
-    max-width:
-        900px;
+    max-width: 850px;
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 
-    padding:
-        105px 30px 60px;
+    padding: 110px 5% 80px;
 
-    text-align:
-        center;
+    text-align: center;
+}
+
+
+.section-label {
+
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: var(--gold);
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+
+.intro h2,
+.section-header h2,
+.feature-section h2,
+.final-cta h2 {
+
+    color: var(--cream);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(34px,5vw,52px);
+
+    font-weight: 600;
+
+    line-height: 1.08;
 }
 
 
 .intro h2 {
 
-    margin:
-        0 0 20px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(42px,5vw,60px);
-
-    line-height:
-        1.02;
+    margin-bottom: 25px;
 }
 
 
 .intro p {
 
-    margin:
-        0;
+    color: var(--muted);
 
-    color:
-        var(--muted);
+    font-size: 16px;
 
-    font-size:
-        16px;
-
-    line-height:
-        1.9;
+    line-height: 1.85;
 }
 
 
 /* =========================================================
-   FREQUENCY LIBRARY
+   GENERAL SECTION
+========================================================= */
+
+.section {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 95px 5%;
+}
+
+
+.section-header {
+
+    max-width: 760px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+
+.section-header h2 {
+
+    margin-bottom: 20px;
+}
+
+
+.section-header p {
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FREQUENCY GRID
 ========================================================= */
 
 .frequency-grid {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
 
-    gap:
-        18px;
+    gap: 18px;
 }
 
-
-/* =========================================================
-   FREQUENCY CARD
-========================================================= */
 
 .frequency-card {
 
-    position:
-        relative;
+    position: relative;
 
-    min-height:
-        270px;
+    isolation: isolate;
 
-    overflow:
-        hidden;
+    min-height: 310px;
 
-    display:
-        flex;
+    display: flex;
 
-    flex-direction:
-        column;
+    flex-direction: column;
 
-    justify-content:
-        flex-end;
+    justify-content: flex-end;
 
-    padding:
-        30px;
+    padding: 28px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.12);
+    overflow: hidden;
 
-    border-radius:
-        22px;
+    border: 1px solid rgba(255,255,255,.09);
 
-    isolation:
-        isolate;
+    border-radius: 18px;
 
-    background:
-        #111;
-
-    transition:
-        transform .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
+    background: #0b1110;
 }
 
-
-.frequency-card:hover {
-
-    transform:
-        translateY(-6px);
-
-    border-color:
-        rgba(242,215,143,.48);
-
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.4);
-}
-
-
-/* BACKGROUND IMAGE */
 
 .frequency-card::before {
 
@@ -916,31 +816,23 @@ header {
 
     z-index: -2;
 
-    background-image:
-        var(--frequency-bg);
+    background-image: var(--frequency-bg);
 
-    background-size:
-        cover;
+    background-size: cover;
 
-    background-position:
-        center;
+    background-position: center;
 
-    transform:
-        scale(1.02);
+    transform: scale(1.02);
 
-    transition:
-        transform .5s ease;
+    transition: transform .5s ease;
 }
 
 
 .frequency-card:hover::before {
 
-    transform:
-        scale(1.07);
+    transform: scale(1.07);
 }
 
-
-/* DARK IMAGE OVERLAY */
 
 .frequency-card::after {
 
@@ -953,7 +845,6 @@ header {
     z-index: -1;
 
     background:
-
         linear-gradient(
             to top,
             rgba(3,7,7,.97) 0%,
@@ -964,90 +855,63 @@ header {
 }
 
 
-/* CARD CONTENT */
-
 .frequency-number {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        baseline;
+    align-items: baseline;
 
-    gap:
-        5px;
+    gap: 5px;
 
-    margin-bottom:
-        5px;
+    margin-bottom: 5px;
 
-    color:
-        var(--gold-light);
+    color: var(--gold-light);
 
-    font-family:
-        'Cormorant Garamond',
-        serif;
+    font-family: 'Cormorant Garamond', serif;
 
-    font-size:
-        46px;
+    font-size: 46px;
 
-    font-weight:
-        600;
+    font-weight: 600;
 
-    line-height:
-        1;
+    line-height: 1;
 }
 
 
 .frequency-number small {
 
-    font-family:
-        'Lato',
-        sans-serif;
+    font-family: 'Lato', sans-serif;
 
-    font-size:
-        14px;
+    font-size: 14px;
 
-    font-weight:
-        700;
+    font-weight: 700;
 
-    letter-spacing:
-        1px;
+    letter-spacing: 1px;
 }
 
 
 .frequency-card h3 {
 
-    margin:
-        0 0 9px;
+    margin: 0 0 9px;
 
-    color:
-        var(--cream);
+    color: var(--cream);
 
-    font-family:
-        'Cormorant Garamond',
-        serif;
+    font-family: 'Cormorant Garamond', serif;
 
-    font-size:
-        28px;
+    font-size: 28px;
 
-    line-height:
-        1.05;
+    line-height: 1.05;
 }
 
 
 .frequency-card p {
 
-    margin:
-        0;
+    margin: 0;
 
-    color:
-        rgba(255,255,255,.72);
+    color: rgba(255,255,255,.72);
 
-    font-size:
-        13px;
+    font-size: 13px;
 
-    line-height:
-        1.65;
+    line-height: 1.65;
 }
 
 
@@ -1057,8 +921,7 @@ header {
 
 .frequency-card.featured {
 
-    border-color:
-        rgba(242,215,143,.42);
+    border-color: rgba(242,215,143,.42);
 
     box-shadow:
         inset 0 0 0 1px
@@ -1068,52 +931,37 @@ header {
 
 .frequency-card.featured .frequency-number {
 
-    font-size:
-        54px;
+    font-size: 54px;
 }
 
 
 .frequency-badge {
 
-    position:
-        absolute;
+    position: absolute;
 
-    top:
-        20px;
+    top: 20px;
 
-    right:
-        20px;
+    right: 20px;
 
-    padding:
-        6px 11px;
+    padding: 6px 11px;
 
-    border-radius:
-        999px;
+    border-radius: 999px;
 
-    background:
-        rgba(212,175,90,.15);
+    background: rgba(212,175,90,.15);
 
-    border:
-        1px solid
-        rgba(242,215,143,.38);
+    border: 1px solid rgba(242,215,143,.38);
 
-    color:
-        var(--gold-light);
+    color: var(--gold-light);
 
-    font-size:
-        9px;
+    font-size: 9px;
 
-    font-weight:
-        700;
+    font-weight: 700;
 
-    letter-spacing:
-        1.5px;
+    letter-spacing: 1.5px;
 
-    text-transform:
-        uppercase;
+    text-transform: uppercase;
 
-    backdrop-filter:
-        blur(7px);
+    backdrop-filter: blur(7px);
 }
 
 
@@ -1123,52 +971,35 @@ header {
 
 .special-frequency-grid {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
 
-    gap:
-        18px;
+    gap: 18px;
 
-    margin-top:
-        18px;
+    margin-top: 18px;
 }
 
 
 .special-card {
 
-    position:
-        relative;
+    position: relative;
 
-    min-height:
-        270px;
+    min-height: 280px;
 
-    overflow:
-        hidden;
+    display: flex;
 
-    padding:
-        35px;
+    align-items: flex-end;
 
-    display:
-        flex;
+    overflow: hidden;
 
-    flex-direction:
-        column;
+    border: 1px solid rgba(255,255,255,.09);
 
-    justify-content:
-        flex-end;
+    border-radius: 18px;
 
-    border-radius:
-        22px;
+    background: #0b1110;
 
-    border:
-        1px solid
-        rgba(255,255,255,.1);
-
-    background:
-        #101515;
+    isolation: isolate;
 }
 
 
@@ -1176,23 +1007,25 @@ header {
 
     content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        0;
+    inset: 0;
 
-    background-image:
-        var(--special-bg);
+    z-index: -2;
 
-    background-size:
-        cover;
+    background-image: var(--special-bg);
 
-    background-position:
-        center;
+    background-size: cover;
 
-    z-index:
-        0;
+    background-position: center;
+
+    transition: transform .5s ease;
+}
+
+
+.special-card:hover::before {
+
+    transform: scale(1.06);
 }
 
 
@@ -1200,277 +1033,180 @@ header {
 
     content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        0;
+    inset: 0;
+
+    z-index: -1;
 
     background:
         linear-gradient(
             to top,
-            rgba(3,7,7,.97),
-            rgba(3,7,7,.62),
-            rgba(3,7,7,.25)
+            rgba(3,7,7,.96),
+            rgba(3,7,7,.35)
         );
-
-    z-index:
-        1;
 }
 
 
 .special-content {
 
-    position:
-        relative;
-
-    z-index:
-        2;
+    padding: 30px;
 }
 
 
 .special-number {
 
-    color:
-        var(--gold-light);
+    margin-bottom: 8px;
 
-    font-family:
-        'Cormorant Garamond',
-        serif;
+    color: var(--gold-light);
 
-    font-size:
-        55px;
+    font-family: 'Cormorant Garamond', serif;
 
-    line-height:
-        1;
+    font-size: 48px;
 
-    margin-bottom:
-        8px;
+    font-weight: 600;
 }
 
 
-.special-card h3 {
+.special-content h3 {
 
-    margin:
-        0 0 8px;
+    margin-bottom: 10px;
 
-    font-family:
-        'Cormorant Garamond',
-        serif;
+    color: var(--cream);
 
-    font-size:
-        30px;
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 28px;
 }
 
 
-.special-card p {
+.special-content p {
 
-    margin:
-        0;
+    color: rgba(255,255,255,.72);
 
-    max-width:
-        500px;
+    font-size: 13px;
 
-    color:
-        rgba(255,255,255,.7);
-
-    font-size:
-        13px;
+    line-height: 1.65;
 }
 
 
 /* =========================================================
-   WHY LISTEN
+   USES
 ========================================================= */
 
 .uses-grid {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
 
-    gap:
-        18px;
+    gap: 18px;
 }
 
 
 .use-card {
 
-    padding:
-        32px;
+    padding: 30px;
 
-    border:
-        1px solid
-        var(--border);
+    border: 1px solid rgba(255,255,255,.07);
 
-    border-radius:
-        20px;
+    border-radius: 16px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.035),
-            rgba(255,255,255,.01)
-        );
+    background: rgba(255,255,255,.025);
 }
 
 
 .use-icon {
 
-    margin-bottom:
-        15px;
+    margin-bottom: 18px;
 
-    color:
-        var(--gold-light);
+    color: var(--gold-light);
 
-    font-size:
-        26px;
+    font-size: 27px;
 }
 
 
 .use-card h3 {
 
-    margin:
-        0 0 10px;
+    margin-bottom: 12px;
 
-    font-family:
-        'Cormorant Garamond',
-        serif;
+    color: var(--cream);
 
-    font-size:
-        30px;
+    font-family: 'Cormorant Garamond', serif;
 
-    line-height:
-        1.05;
+    font-size: 28px;
+
+    line-height: 1.1;
 }
 
 
 .use-card p {
 
-    margin:
-        0;
+    color: var(--muted);
 
-    color:
-        var(--muted);
+    font-size: 13px;
 
-    font-size:
-        14px;
-
-    line-height:
-        1.75;
+    line-height: 1.75;
 }
 
 
 /* =========================================================
-   528 SECTION
+   528 HZ FEATURE
 ========================================================= */
 
 .feature-section {
 
-    position:
-        relative;
+    position: relative;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
-    padding:
-        80px 60px;
+    padding: 80px;
 
-    border:
-        1px solid
-        rgba(212,175,90,.18);
+    border: 1px solid rgba(255,255,255,.08);
 
-    border-radius:
-        26px;
+    border-radius: 22px;
 
     background:
         radial-gradient(
-            circle at 75% 25%,
-            rgba(212,175,90,.14),
-            transparent 35%
+            circle at 80% 30%,
+            rgba(212,175,90,.12),
+            transparent 45%
         ),
         linear-gradient(
             135deg,
-            #0b1211,
-            #101717
+            #0c1412,
+            #080c0b
         );
-}
-
-
-.feature-section::before {
-
-    content:
-        "528";
-
-    position:
-        absolute;
-
-    right:
-        -20px;
-
-    bottom:
-        -80px;
-
-    color:
-        rgba(212,175,90,.035);
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        340px;
-
-    font-weight:
-        700;
-
-    line-height:
-        1;
 }
 
 
 .feature-section-content {
 
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    max-width:
-        760px;
+    max-width: 700px;
 }
 
 
 .feature-section h2 {
 
-    margin:
-        0 0 18px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(45px,5vw,65px);
-
-    line-height:
-        .98;
+    margin-bottom: 25px;
 }
 
 
 .feature-section p {
 
-    max-width:
-        700px;
+    margin-bottom: 18px;
 
-    color:
-        var(--muted);
+    color: var(--muted);
 
-    line-height:
-        1.85;
+    font-size: 15px;
+
+    line-height: 1.85;
+}
+
+
+.feature-section .btn {
+
+    margin-top: 12px;
 }
 
 
@@ -1480,159 +1216,126 @@ header {
 
 .app-section {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns: 1fr 420px;
 
-    gap:
-        50px;
+    align-items: center;
 
-    align-items:
-        center;
+    gap: 80px;
 }
 
 
 .app-copy h2 {
 
-    margin:
-        0 0 18px;
+    margin-bottom: 22px;
 
-    font-family:
-        'Cormorant Garamond',
-        serif;
+    color: var(--cream);
 
-    font-size:
-        clamp(44px,5vw,62px);
+    font-family: 'Playfair Display', serif;
 
-    line-height:
-        1;
+    font-size: clamp(34px,5vw,50px);
+
+    line-height: 1.08;
 }
 
 
-.app-copy p {
+.app-copy > p {
 
-    color:
-        var(--muted);
+    margin-bottom: 30px;
 
-    line-height:
-        1.8;
+    color: var(--muted);
+
+    font-size: 16px;
 }
 
 
 .app-features {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
 
-    gap:
-        14px;
+    gap: 16px;
 
-    margin:
-        28px 0;
+    margin-bottom: 30px;
 }
 
 
 .app-feature {
 
-    padding:
-        18px;
+    display: flex;
 
-    border:
-        1px solid
-        var(--border);
+    flex-direction: column;
 
-    border-radius:
-        14px;
+    gap: 4px;
 
-    background:
-        rgba(255,255,255,.02);
+    padding: 16px;
+
+    border-left: 1px solid rgba(212,175,90,.3);
+
+    background: rgba(255,255,255,.025);
 }
 
 
 .app-feature strong {
 
-    display:
-        block;
+    color: var(--gold-light);
 
-    margin-bottom:
-        4px;
+    font-family: 'DM Sans', sans-serif;
 
-    color:
-        var(--gold-light);
-
-    font-size:
-        12px;
+    font-size: 13px;
 }
 
 
 .app-feature span {
 
-    color:
-        rgba(255,255,255,.5);
+    color: rgba(255,255,255,.55);
 
-    font-size:
-        11px;
+    font-size: 12px;
+
+    line-height: 1.5;
 }
 
 
-/* APP VISUAL */
-
 .app-visual {
 
-    position:
-        relative;
+    display: flex;
 
-    min-height:
-        520px;
+    align-items: center;
 
-    display:
-        flex;
+    justify-content: center;
 
-    align-items:
-        center;
+    min-height: 520px;
 
-    justify-content:
-        center;
+    padding: 25px;
 
-    border-radius:
-        25px;
+    border: 1px solid rgba(255,255,255,.08);
 
-    overflow:
-        hidden;
+    border-radius: 24px;
 
     background:
         radial-gradient(
             circle,
-            rgba(212,175,90,.14),
-            transparent 55%
+            rgba(212,175,90,.08),
+            transparent 65%
         );
 }
 
 
 .app-visual img {
 
-    max-height:
-        520px;
+    max-height: 500px;
 
-    width:
-        auto;
+    width: auto;
 
-    max-width:
-        80%;
+    margin: 0 auto;
 
-    object-fit:
-        contain;
+    object-fit: contain;
 
-    filter:
-        drop-shadow(
-            0 25px 45px
-            rgba(0,0,0,.5)
-        );
+    filter: drop-shadow(
+        0 30px 60px rgba(0,0,0,.5)
+    );
 }
 
 
@@ -1642,72 +1345,59 @@ header {
 
 .steps {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
 
-    gap:
-        20px;
+    gap: 18px;
 }
 
 
 .step {
 
-    padding:
-        30px;
+    padding: 35px;
 
-    border-top:
-        1px solid
-        rgba(212,175,90,.35);
+    border-top: 1px solid rgba(212,175,90,.3);
+
+    background: rgba(255,255,255,.025);
 }
 
 
 .step-number {
 
-    margin-bottom:
-        14px;
+    margin-bottom: 22px;
 
-    color:
-        var(--gold);
+    color: var(--gold);
 
-    font-family:
-        'Cormorant Garamond',
-        serif;
+    font-family: 'DM Sans', sans-serif;
 
-    font-size:
-        45px;
+    font-size: 12px;
 
-    line-height:
-        1;
+    font-weight: 700;
+
+    letter-spacing: 2px;
 }
 
 
 .step h3 {
 
-    margin:
-        0 0 10px;
+    margin-bottom: 12px;
 
-    font-family:
-        'Cormorant Garamond',
-        serif;
+    color: var(--cream);
 
-    font-size:
-        28px;
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 29px;
 }
 
 
 .step p {
 
-    margin:
-        0;
+    color: var(--muted);
 
-    color:
-        var(--muted);
+    font-size: 13px;
 
-    font-size:
-        14px;
+    line-height: 1.75;
 }
 
 
@@ -1717,74 +1407,47 @@ header {
 
 .science {
 
-    max-width:
-        900px;
+    max-width: 850px;
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 
-    padding:
-        35px;
+    padding: 40px;
 
-    border:
-        1px solid
-        var(--border);
+    border: 1px solid rgba(255,255,255,.07);
 
-    border-radius:
-        20px;
+    border-radius: 18px;
 
-    background:
-        #0c1010;
-}
-
-
-.science h2 {
-
-    margin:
-        0 0 18px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        40px;
+    background: rgba(255,255,255,.025);
 }
 
 
 .science p {
 
-    color:
-        var(--muted);
+    margin-bottom: 18px;
 
-    font-size:
-        14px;
+    color: var(--muted);
 
-    line-height:
-        1.85;
+    font-size: 14px;
+
+    line-height: 1.85;
 }
 
 
 .science-note {
 
-    margin-top:
-        20px;
+    margin-top: 25px;
 
-    padding:
-        18px 20px;
+    padding: 20px;
 
-    border-left:
-        2px solid
-        var(--gold);
+    border-left: 2px solid var(--gold);
 
-    background:
-        rgba(212,175,90,.04);
+    background: rgba(212,175,90,.05);
 
-    color:
-        rgba(255,255,255,.58);
+    color: rgba(255,255,255,.72);
 
-    font-size:
-        13px;
+    font-size: 13px;
+
+    line-height: 1.75;
 }
 
 
@@ -1794,82 +1457,71 @@ header {
 
 .faq {
 
-    max-width:
-        850px;
+    max-width: 850px;
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 }
 
 
 details {
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+    padding: 22px 0;
 }
 
 
 summary {
 
-    padding:
-        22px 0;
+    cursor: pointer;
 
-    cursor:
-        pointer;
+    list-style: none;
 
-    color:
-        rgba(255,255,255,.9);
+    color: var(--cream);
 
-    font-family:
-        'Cormorant Garamond',
-        serif;
+    font-family: 'Playfair Display', serif;
 
-    font-size:
-        24px;
-
-    list-style:
-        none;
+    font-size: 21px;
 }
 
 
 summary::-webkit-details-marker {
+
     display: none;
 }
 
 
 summary::after {
 
-    content:
-        "+";
+    content: "+";
 
-    float:
-        right;
+    float: right;
 
-    color:
-        var(--gold);
+    color: var(--gold);
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 22px;
 }
 
 
 details[open] summary::after {
-    content:
-        "−";
+
+    content: "−";
 }
 
 
 details p {
 
-    margin:
-        0 0 22px;
+    max-width: 760px;
 
-    color:
-        var(--muted);
+    padding-top: 14px;
 
-    font-size:
-        14px;
+    color: var(--muted);
 
-    line-height:
-        1.8;
+    font-size: 14px;
+
+    line-height: 1.8;
 }
 
 
@@ -1879,62 +1531,44 @@ details p {
 
 .final-cta {
 
-    max-width:
-        1100px;
+    max-width: 900px;
 
-    margin:
-        20px auto 100px;
+    margin: 30px auto 100px;
 
-    padding:
-        90px 30px;
+    padding: 100px 50px;
 
-    text-align:
-        center;
+    text-align: center;
 
-    border:
-        1px solid
-        rgba(212,175,90,.18);
+    border: 1px solid rgba(255,255,255,.07);
 
-    border-radius:
-        28px;
+    border-radius: 22px;
 
     background:
         radial-gradient(
-            circle at 50% 0%,
-            rgba(212,175,90,.13),
-            transparent 55%
-        ),
-        #0d1111;
+            circle at 50% 50%,
+            rgba(212,175,90,.10),
+            transparent 60%
+        );
 }
 
 
 .final-cta h2 {
 
-    margin:
-        0 0 15px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(44px,5vw,64px);
-
-    line-height:
-        1;
+    margin-bottom: 20px;
 }
 
 
 .final-cta p {
 
-    max-width:
-        650px;
+    max-width: 700px;
 
-    margin:
-        0 auto 30px;
+    margin: 0 auto 30px;
 
-    color:
-        var(--muted);
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.8;
 }
 
 
@@ -1944,118 +1578,103 @@ details p {
 
 footer {
 
-    padding:
-        60px 5% 30px;
+    padding: 65px 5% 30px;
 
-    background:
-        #050707;
+    border-top: 1px solid rgba(255,255,255,.06);
 
-    border-top:
-        1px solid
-        rgba(255,255,255,.05);
+    background: #050705;
 }
 
 
 .footer-inner {
 
-    max-width:
-        var(--max-width);
+    max-width: 1180px;
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        1.5fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
 
-    gap:
-        40px;
+    gap: 50px;
+
+    padding-bottom: 50px;
+}
+
+
+.footer-brand {
+
+    max-width: 330px;
+}
+
+
+.footer-brand .logo {
+
+    margin-bottom: 18px;
 }
 
 
 .footer-brand p {
 
-    max-width:
-        310px;
+    color: var(--muted);
 
-    color:
-        rgba(255,255,255,.42);
-
-    font-size:
-        13px;
+    font-size: 13px;
 }
 
 
 .footer-column h4 {
 
-    margin:
-        0 0 15px;
+    margin-bottom: 17px;
 
-    color:
-        var(--gold-light);
+    color: var(--gold-light);
 
-    font-size:
-        11px;
+    font-size: 12px;
 
-    letter-spacing:
-        2px;
+    font-weight: 700;
 
-    text-transform:
-        uppercase;
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
 }
 
 
 .footer-column a {
 
-    display:
-        block;
+    display: block;
 
-    margin-bottom:
-        9px;
+    margin-bottom: 10px;
 
-    color:
-        rgba(255,255,255,.5);
+    color: var(--muted);
 
-    text-decoration:
-        none;
+    font-size: 13px;
 
-    font-size:
-        13px;
+    text-decoration: none;
+
+    transition: color .2s ease;
 }
 
 
 .footer-column a:hover {
 
-    color:
-        var(--gold-light);
+    color: var(--gold-light);
 }
 
 
 .footer-bottom {
 
-    max-width:
-        var(--max-width);
+    max-width: 1180px;
 
-    margin:
-        45px auto 0;
+    margin: 0 auto;
 
-    padding-top:
-        22px;
+    padding-top: 25px;
 
-    border-top:
-        1px solid
-        rgba(255,255,255,.05);
+    border-top: 1px solid rgba(255,255,255,.06);
 
-    color:
-        rgba(255,255,255,.3);
+    color: #777b75;
 
-    font-size:
-        12px;
+    font-size: 12px;
 
-    text-align:
-        center;
+    text-align: center;
 }
 
 
@@ -2065,177 +1684,237 @@ footer {
 
 @media (max-width: 950px) {
 
+    .nav-links {
+
+        gap: 18px;
+    }
+
     .frequency-grid {
-        grid-template-columns:
-            repeat(2,1fr);
+
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .uses-grid {
+
+        grid-template-columns: repeat(2,1fr);
     }
 
     .app-section {
-        grid-template-columns:
-            1fr;
+
+        grid-template-columns: 1fr;
     }
 
     .app-visual {
-        order:
-            -1;
+
+        order: -1;
+
+        max-width: 500px;
+
+        width: 100%;
+
+        margin: 0 auto;
     }
 
     .steps {
-        grid-template-columns:
-            1fr;
+
+        grid-template-columns: 1fr;
     }
 
     .footer-inner {
-        grid-template-columns:
-            1fr 1fr;
+
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 
 /* =========================================================
-   MOBILE
+   MOBILE — MASTER HEADER VERSION 1
 ========================================================= */
 
 @media (max-width: 700px) {
 
     header {
-        height:
-            68px;
 
-        padding:
-            0 5%;
+        position: sticky;
+
+        top: 0;
+
+        height: 74px;
+
+        padding: 0 5%;
     }
 
 
     .logo {
-        font-size:
-            12px;
 
-        letter-spacing:
-            1.5px;
+        font-family: 'DM Sans', sans-serif;
+
+        font-size: 12px;
+
+        font-weight: 600;
+
+        letter-spacing: 1.6px;
+    }
+
+
+    .logo img {
+
+        width: 30px;
+
+        height: 30px;
+
+        border-radius: 7px;
+
+        object-fit: cover;
     }
 
 
     .menu-toggle {
-        display:
-            block;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
     }
 
 
     .nav-links {
 
-        position:
-            absolute;
+        position: absolute;
 
-        top:
-            68px;
+        top: 74px;
 
-        left:
-            0;
+        left: 0;
 
-        width:
-            100%;
+        width: 100%;
 
-        display:
-            flex;
+        display: flex;
 
-        flex-direction:
-            column;
+        flex-direction: column;
 
-        align-items:
-            stretch;
+        align-items: stretch;
 
-        gap:
-            0;
+        gap: 0;
 
-        background:
-            rgba(6,8,8,.98);
+        max-height: 0;
 
-        max-height:
-            0;
+        overflow: hidden;
 
-        overflow:
-            hidden;
+        padding: 0;
+
+        background: rgba(7,9,9,0.98);
+
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+
+        box-shadow: 0 20px 50px rgba(0,0,0,0.35);
 
         transition:
-            max-height .35s ease;
+            max-height .35s ease,
+            padding .2s ease;
     }
 
 
     .nav-links.active {
 
-        max-height:
-            calc(100vh - 68px);
+        max-height: calc(100vh - 74px);
 
-        overflow-y:
-            auto;
+        overflow-y: auto;
 
-        padding-bottom:
-            15px;
+        padding: 10px 0 20px;
     }
 
 
     .nav-links > a,
-    .dropdown {
+    .nav-links .dropdown {
 
-        width:
-            100%;
+        width: 100%;
 
-        padding:
-            15px 5%;
+        padding: 15px 5%;
 
-        border-bottom:
-            1px solid
-            rgba(255,255,255,.05);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+
+    .nav-links > a {
+
+        color: #bfc2bb;
+
+        font-family: 'DM Sans', sans-serif;
+
+        font-size: 14px;
+
+        font-weight: 500;
     }
 
 
     .dropdown-toggle {
 
-        justify-content:
-            space-between;
+        width: 100%;
+
+        justify-content: space-between;
+
+        padding: 0;
+
+        color: #bfc2bb;
+
+        font-family: 'DM Sans', sans-serif;
+
+        font-size: 14px;
+
+        font-weight: 500;
+    }
+
+
+    .dropdown-arrow {
+
+        font-size: 9px;
     }
 
 
     .dropdown-content {
 
-        position:
-            static;
+        position: static;
 
-        display:
-            none;
+        display: none;
 
-        min-width:
-            0;
+        min-width: 0;
 
-        padding:
-            8px 0 0 12px;
+        padding: 8px 0 0 12px;
 
-        background:
-            transparent;
+        background: transparent;
 
-        border:
-            0;
+        border: 0;
 
-        box-shadow:
-            none;
+        box-shadow: none;
 
-        opacity:
-            1;
+        opacity: 1;
 
-        visibility:
-            visible;
+        visibility: visible;
 
-        transform:
-            none;
+        transform: none;
     }
 
 
-    .dropdown.mobile-active
-    .dropdown-content {
+    .dropdown.mobile-active .dropdown-content {
 
-        display:
-            block;
+        display: block;
+    }
+
+
+    .dropdown-content a {
+
+        display: block;
+
+        padding: 11px 10px;
+
+        color: #969a93;
+
+        font-family: 'DM Sans', sans-serif;
+
+        font-size: 13px;
+
+        border-radius: 8px;
     }
 
 
@@ -2243,83 +1922,155 @@ footer {
 
     .hero {
 
-        min-height:
-            720px;
+        min-height: 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        margin-top: 0;
     }
 
 
     .hero-background {
 
-        object-position:
-            62% center;
+        position: relative;
+
+        inset: auto;
+
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 16 / 10;
+
+        object-fit: cover;
+
+        object-position: 62% center;
+
+        order: 1;
     }
 
 
     .hero-overlay {
 
-        background:
-
-            linear-gradient(
-                90deg,
-                rgba(3,7,7,.94) 0%,
-                rgba(3,7,7,.80) 48%,
-                rgba(3,7,7,.36) 100%
-            );
+        display: none;
     }
 
 
     .hero-content {
 
-        padding:
-            120px 24px 140px;
+        order: 2;
+
+        padding: 55px 24px 45px;
+
+        background: #060808;
+    }
+
+
+    .hero-copy {
+
+        max-width: 680px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+
+    .hero-eyebrow {
+
+        justify-content: center;
+
+        margin-bottom: 18px;
+    }
+
+
+    .hero-eyebrow::before {
+
+        display: none;
     }
 
 
     .hero h1 {
 
-        font-size:
-            clamp(54px,15vw,76px);
+        font-size: clamp(50px,15vw,72px);
+
+        line-height: .92;
+
+        letter-spacing: -1.5px;
+
+        margin-bottom: 22px;
     }
 
 
     .hero-description {
 
-        font-size:
-            15px;
+        max-width: 620px;
+
+        margin: 0 auto 28px;
+
+        font-size: 15px;
+
+        line-height: 1.75;
+
+        text-shadow: none;
     }
 
 
     .hero-buttons {
 
-        flex-direction:
-            column;
+        justify-content: center;
 
-        align-items:
-            flex-start;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        max-width: 360px;
+
+        margin: 0 auto;
+    }
+
+
+    .hero-buttons .btn {
+
+        width: 100%;
+    }
+
+
+    .hero-meta {
+
+        margin-top: 18px;
     }
 
 
     .hero-usp {
 
-        padding:
-            14px 20px;
+        position: relative;
+
+        order: 3;
+
+        padding: 14px 20px;
+
+        background: #0b1010;
+
+        border-top: 1px solid rgba(255,255,255,.08);
     }
 
 
     .hero-usp-inner {
 
-        gap:
-            12px 25px;
+        gap: 14px 22px;
 
-        justify-content:
-            flex-start;
+        justify-content: center;
+
+        flex-wrap: wrap;
     }
 
 
     .hero-usp-item {
 
-        font-size:
-            10px;
+        font-size: 10px;
     }
 
 
@@ -2327,99 +2078,124 @@ footer {
 
     .section {
 
-        padding:
-            75px 20px;
+        padding: 75px 20px;
     }
 
 
     .intro {
 
-        padding:
-            80px 22px 40px;
+        padding: 80px 22px 40px;
     }
 
 
-    /* FREQUENCY CARDS */
-
     .frequency-grid {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
 
     .frequency-card {
 
-        min-height:
-            250px;
+        min-height: 250px;
     }
 
 
     .special-frequency-grid {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
 
     .uses-grid {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
 
     .feature-section {
 
-        padding:
-            55px 28px;
+        padding: 55px 28px;
     }
 
 
     .app-features {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
 
     .app-visual {
 
-        min-height:
-            400px;
+        min-height: 400px;
     }
 
 
     .app-visual img {
 
-        max-height:
-            400px;
+        max-height: 400px;
     }
 
 
     .science {
 
-        padding:
-            28px 22px;
+        padding: 28px 22px;
     }
 
 
     .final-cta {
 
-        margin:
-            10px 20px 70px;
+        margin: 10px 20px 70px;
 
-        padding:
-            70px 24px;
+        padding: 70px 24px;
     }
 
 
     .footer-inner {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
+
+    footer {
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero-background {
+
+        aspect-ratio: 16 / 10;
+    }
+
+
+    .hero h1 {
+
+        font-size: clamp(44px,12vw,60px);
+    }
+
+
+    .hero-description {
+
+        font-size: 15px;
+    }
+
+
+    .intro h2,
+    .section-header h2,
+    .feature-section h2,
+    .final-cta h2 {
+
+        font-size: 35px;
+    }
 }
 
 
@@ -2430,274 +2206,13 @@ footer {
 @media (prefers-reduced-motion: reduce) {
 
     html {
-        scroll-behavior:
-            auto;
+
+        scroll-behavior: auto;
     }
 
     * {
-        transition-duration:
-            .01ms !important;
-    }
-}
 
-
-/* =========================================================
-   MOBILE UX — MATCH OUR APPS LAYOUT
-   Image first, content second. Designed for one-hand mobile
-   browsing with generous spacing and clear CTAs.
-========================================================= */
-@media (max-width: 700px) {
-    header {
-        position: sticky !important;
-        top: 0;
-        height: 74px !important;
-        padding: 0 5% !important;
-    }
-
-    .logo {
-        font-family: "DM Sans", sans-serif !important;
-        font-size: 12px !important;
-        font-weight: 600 !important;
-        letter-spacing: 1.6px !important;
-    }
-
-    .logo img {
-        width: 30px !important;
-        height: 30px !important;
-        border-radius: 7px !important;
-        object-fit: cover;
-    }
-
-    .menu-toggle {
-        display: block !important;
-        font-family: "DM Sans", sans-serif;
-        font-size: 28px !important;
-        line-height: 1;
-        padding: 8px;
-    }
-
-    .nav-links {
-        position: absolute !important;
-        top: 74px !important;
-        left: 0 !important;
-        width: 100% !important;
-        max-height: 0 !important;
-        overflow: hidden !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 0 !important;
-        padding: 0 !important;
-        background: rgba(7,9,8,0.98) !important;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-        transition: max-height .35s ease, padding .2s ease !important;
-    }
-
-    .nav-links.active {
-        max-height: calc(100vh - 74px) !important;
-        overflow-y: auto !important;
-        padding: 10px 0 20px !important;
-    }
-
-    .nav-links > a,
-    .nav-links .dropdown {
-        width: 100% !important;
-        padding: 15px 5% !important;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .nav-links > a {
-        color: #bfc2bb !important;
-        font-size: 14px !important;
-        font-weight: 500 !important;
-    }
-
-    .dropdown-toggle {
-        width: 100% !important;
-        justify-content: space-between !important;
-        font-size: 14px !important;
-        font-weight: 500 !important;
-        padding: 0 !important;
-    }
-
-    .dropdown-content {
-        position: static !important;
-        display: none !important;
-        min-width: 0 !important;
-        padding: 8px 0 0 12px !important;
-        background: transparent !important;
-        border: 0 !important;
-        box-shadow: none !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: none !important;
-    }
-
-    .dropdown.mobile-active .dropdown-content {
-        display: block !important;
-    }
-
-    .dropdown-content a {
-        display: block;
-        padding: 11px 10px;
-        color: #969a93;
-        font-size: 13px;
-        border-radius: 8px;
-    }
-
-    /* The important UX change: image first, copy below it. */
-    .hero {
-        min-height: 0 !important;
-        height: auto !important;
-        display: block !important;
-        aspect-ratio: auto !important;
-        overflow: hidden;
-        background: #070908 !important;
-    }
-
-    .hero-background {
-        position: relative !important;
-        inset: auto !important;
-        display: block !important;
-        width: 100% !important;
-        height: auto !important;
-        aspect-ratio: 16 / 10 !important;
-        object-fit: cover !important;
-        object-position: center center !important;
-        z-index: 0 !important;
-    }
-
-    .hero-overlay {
-        display: none !important;
-    }
-
-    .hero-content {
-        position: relative !important;
-        z-index: 2 !important;
-        width: 100% !important;
-        max-width: none !important;
-        margin: 0 !important;
-        padding: 76px 5% 64px !important;
-        background:
-            radial-gradient(circle at 50% 0%, rgba(216,189,120,0.08), transparent 48%),
-            #070908 !important;
-    }
-
-    .hero-copy {
-        max-width: 850px !important;
-        margin: 0 auto !important;
-        text-align: center !important;
-    }
-
-    .hero-eyebrow {
-        justify-content: center !important;
-        margin-bottom: 18px !important;
-        font-family: "DM Sans", sans-serif !important;
-        font-size: 11px !important;
-        letter-spacing: 3px !important;
-    }
-
-    .hero-eyebrow::before {
-        display: none !important;
-    }
-
-    .hero h1 {
-        font-family: "Playfair Display", serif !important;
-        font-size: clamp(40px, 11vw, 58px) !important;
-        line-height: 1.08 !important;
-        letter-spacing: -0.5px !important;
-        margin: 0 0 24px !important;
-        text-shadow: none !important;
-    }
-
-    .hero-description {
-        max-width: 720px !important;
-        margin: 0 auto 30px !important;
-        color: #d1cec4 !important;
-        font-family: "DM Sans", sans-serif !important;
-        font-size: 16px !important;
-        font-weight: 400 !important;
-        line-height: 1.75 !important;
-        text-shadow: none !important;
-    }
-
-    .hero-buttons {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 12px !important;
-        max-width: 420px !important;
-        margin: 0 auto !important;
-    }
-
-    .hero-buttons .btn {
-        width: 100% !important;
-        min-height: 52px !important;
-        font-size: 14px !important;
-    }
-
-    .hero-meta {
-        margin-top: 20px !important;
-        color: #969a93 !important;
-        font-size: 12px !important;
-    }
-
-    .hero-usp {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 14px 5% !important;
-        background: #0b0e0f !important;
-        border-top: 1px solid rgba(255,255,255,.05);
-    }
-
-    .hero-usp-inner {
-        gap: 12px 22px !important;
-        justify-content: center !important;
-    }
-
-    .hero-usp-item {
-        font-size: 10px !important;
-    }
-
-    .section,
-    .intro {
-        padding-left: 5% !important;
-        padding-right: 5% !important;
-    }
-
-    .intro {
-        padding-top: 75px !important;
-        padding-bottom: 60px !important;
-    }
-
-    .section-header h2,
-    .intro h2 {
-        font-family: "Playfair Display", serif !important;
-    }
-
-    footer {
-        padding-left: 5% !important;
-        padding-right: 5% !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-background {
-        aspect-ratio: 16 / 10 !important;
-    }
-
-    .hero-content {
-        padding-top: 68px !important;
-        padding-bottom: 58px !important;
-    }
-
-    .hero h1 {
-        font-size: clamp(39px, 11vw, 52px) !important;
-    }
-
-    .hero-description {
-        font-size: 15.5px !important;
+        transition-duration: 0.01ms !important;
     }
 }
 
@@ -2705,125 +2220,1392 @@ footer {
 
 </head>
 
+
 <body>
 
+
 <!-- =========================================================
-     HEADER
+     SITEWIDE HEADER — MASTER VERSION 1
 ========================================================= -->
 
 <header>
 
-<a href="/" class="logo">
+    <a href="/" class="logo">
 
-    <img
-        src="android-chrome-512x512.png"
-        alt="Meditation Bell Timer">
+        <img
+            src="/android-chrome-192x192.png"
+            alt="Meditation Bell Timer"
+        >
 
-    MEDITATION BELL TIMER
+        <span>
+            MEDITATION BELL TIMER
+        </span>
 
-</a>
-
-
-<button
-    class="menu-toggle"
-    id="mobile-menu-btn"
-    aria-label="Open navigation menu"
-    aria-expanded="false"
-    aria-controls="nav-links">
-
-    ☰
-
-</button>
-
-
-<nav
-    class="nav-links"
-    id="nav-links">
-
-
-    <a href="/our-apps.html">
-        Our Apps
     </a>
 
 
-    <a href="/solfeggio-healing-frequencies.html">
-        Solfeggio Frequencies
-    </a>
+    <button
+        class="menu-toggle"
+        id="mobile-menu-btn"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+    >
+        ☰
+    </button>
 
 
-    <div class="dropdown">
+    <nav
+        class="nav-links"
+        id="nav-links"
+        aria-label="Main navigation"
+    >
 
-        <a href="#"
-           class="dropdown-toggle">
+        <a href="/">
+            Home
+        </a>
 
-            Resources
-            <span>▼</span>
+        <a href="/timer.html">
+            Free Timer
+        </a>
 
+        <a href="/our-apps.html">
+            Our Apps
+        </a>
+
+        <a href="/solfeggio-healing-frequencies.html">
+            Solfeggio
+        </a>
+
+        <a href="/best-meditation-sounds">
+            Sounds
         </a>
 
 
-        <div class="dropdown-content">
+        <div class="dropdown">
 
-            <a href="/brown-noise-for-adhd-focus">
-                Brown Noise for ADHD Focus
+            <a
+                href="#"
+                class="dropdown-toggle"
+                aria-haspopup="true"
+            >
+
+                Resources
+
+                <span class="dropdown-arrow">
+                    ▼
+                </span>
+
             </a>
 
-            <a href="/meditation-timer-for-adhd">
-                Meditation Timer for ADHD
-            </a>
 
-            <a href="/white-noise-meditation-timer">
-                White Noise Timer
-            </a>
+            <div class="dropdown-content">
 
-            <a href="/sleep-meditation-sounds">
-                Sleep Meditation Sounds
-            </a>
+                <a href="/sleep-meditation-sounds">
+                    Sleep Meditation Sounds
+                </a>
 
-            <a href="/solfeggio-healing-frequencies.html">
-                Solfeggio Frequencies
-            </a>
+                <a href="/brown-noise-for-adhd-focus">
+                    Brown Noise for ADHD Focus
+                </a>
 
-            <a href="/our-apps.html">
-                Our Apps
-            </a>
+                <a href="/white-noise-meditation-timer">
+                    White Noise Meditation Timer
+                </a>
+
+                <a href="/meditation-timer-for-adhd">
+                    Meditation Timer for ADHD
+                </a>
+
+                <a href="/meditation-timer-for-adhd-focus">
+                    Meditation Timer for ADHD Focus
+                </a>
+
+                <a href="/how-to-use-a-meditation-timer">
+                    How To Use A Meditation Timer
+                </a>
+
+                <a href="/how-long-should-you-meditate">
+                    How Long Should You Meditate?
+                </a>
+
+                <a href="/meditation-timer-vs-guided-meditation">
+                    Timer vs Guided Meditation
+                </a>
+
+                <a href="/pomodoro-meditation-method">
+                    Pomodoro Meditation Method
+                </a>
+
+                <a href="/how-tibetan-singing-bowls-work">
+                    How Tibetan Singing Bowls Work
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <img
+        class="hero-background"
+        src="assets/solfeggio-hero.webp"
+        alt="Solfeggio frequency meditation and sound environment"
+        fetchpriority="high"
+    >
+
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-copy">
+
+            <div class="hero-eyebrow">
+                Sound • Meditation • Mindfulness
+            </div>
+
+
+            <h1>
+
+                Explore the
+                <br>
+
+                <span>
+                    Solfeggio Frequencies.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Discover a focused collection of frequencies for
+                meditation, relaxation, sleep, mindfulness and
+                concentration — from 174 Hz to 963 Hz, plus
+                432 Hz, 4 Hz Delta and 40 Hz Gamma.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                >
+                    Explore the App
+                </a>
+
+
+                <a
+                    href="#frequencies"
+                    class="btn btn-secondary"
+                >
+                    Explore Frequencies ↓
+                </a>
+
+            </div>
+
+
+            <div class="hero-meta">
+
+                Pure sound • No ads • No subscription • 100% offline
+
+            </div>
 
         </div>
 
     </div>
 
 
-    <div class="dropdown">
+    <div class="hero-usp">
 
-        <a href="#"
-           class="dropdown-toggle">
+        <div class="hero-usp-inner">
 
-            Articles
-            <span>▼</span>
+            <div class="hero-usp-item">
+                <strong>12</strong> Frequency Options
+            </div>
 
-        </a>
+            <div class="hero-usp-item">
+                <strong>174–963 Hz</strong> Full Solfeggio Range
+            </div>
+
+            <div class="hero-usp-item">
+                <strong>4 Hz</strong> Delta
+            </div>
+
+            <div class="hero-usp-item">
+                <strong>40 Hz</strong> Gamma
+            </div>
+
+            <div class="hero-usp-item">
+                <strong>432 Hz</strong> Alternative Tuning
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-        <div class="dropdown-content">
+<!-- =========================================================
+     INTRO
+========================================================= -->
 
-            <a href="/how-to-use-a-meditation-timer">
-                How To Use A Meditation Timer
+<section class="intro">
+
+    <span class="section-label">
+        Understanding Solfeggio
+    </span>
+
+
+    <h2>
+        A world of frequency and sound.
+    </h2>
+
+
+    <p>
+
+        Solfeggio frequencies are a collection of tones traditionally
+        associated with meditation, spiritual practice, sound healing
+        and personal wellbeing. Different frequencies have developed
+        their own traditions and associations, with 528 Hz perhaps
+        being the best known.
+
+        Today, many people listen to these frequencies while
+        meditating, practising mindfulness, relaxing, studying,
+        reading or preparing for sleep.
+
+        The experience is highly personal. Rather than thinking of a
+        frequency as a medical treatment, it can be useful to think
+        of frequency listening as another tool for creating a calm,
+        intentional environment.
+
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     FREQUENCY LIBRARY
+========================================================= -->
+
+<section
+    class="section"
+    id="frequencies"
+>
+
+    <div class="section-header">
+
+        <span class="section-label">
+            The Frequency Library
+        </span>
+
+
+        <h2>
+            Explore the Solfeggio Scale.
+        </h2>
+
+
+        <p>
+
+            Each frequency has its own history, character and popular
+            associations. Explore the collection and discover which
+            sounds work best for your own listening routine.
+
+        </p>
+
+    </div>
+
+
+    <div class="frequency-grid">
+
+
+        <article
+            class="frequency-card"
+            style="--frequency-bg:url('assets/174hz_bg.webp');"
+        >
+
+            <div class="frequency-number">
+                174 <small>Hz</small>
+            </div>
+
+            <h3>
+                Grounding &amp; Relaxation
+            </h3>
+
+            <p>
+                Often associated with grounding, comfort and creating
+                a peaceful listening environment during meditation
+                and relaxation.
+            </p>
+
+        </article>
+
+
+        <article
+            class="frequency-card"
+            style="--frequency-bg:url('assets/285hz_bg.webp');"
+        >
+
+            <div class="frequency-number">
+                285 <small>Hz</small>
+            </div>
+
+            <h3>
+                Restoration &amp; Calm
+            </h3>
+
+            <p>
+                Traditionally associated with restoration and a sense
+                of balance. Often used during quiet reflection and
+                relaxation.
+            </p>
+
+        </article>
+
+
+        <article
+            class="frequency-card"
+            style="--frequency-bg:url('assets/396hz_bg.webp');"
+        >
+
+            <div class="frequency-number">
+                396 <small>Hz</small>
+            </div>
+
+            <h3>
+                Release &amp; Grounding
+            </h3>
+
+            <p>
+                Commonly associated with releasing tension, fear and
+                negative thoughts as part of a reflective meditation
+                practice.
+            </p>
+
+        </article>
+
+
+        <article
+            class="frequency-card"
+            style="--frequency-bg:url('assets/417hz_bg.webp');"
+        >
+
+            <div class="frequency-number">
+                417 <small>Hz</small>
+            </div>
+
+            <h3>
+                Change &amp; Renewal
+            </h3>
+
+            <p>
+                Often described as a frequency for transition,
+                change and creating a fresh mental space.
+            </p>
+
+        </article>
+
+
+        <article
+            class="frequency-card"
+            style="--frequency-bg:url('assets/432hz_bg.webp');"
+        >
+
+            <div class="frequency-number">
+                432 <small>Hz</small>
+            </div>
+
+            <h3>
+                Harmony &amp; Relaxation
+            </h3>
+
+            <p>
+                A popular alternative tuning frequency that many
+                listeners describe as warm, natural and relaxing.
+            </p>
+
+        </article>
+
+
+        <article
+            class="frequency-card featured"
+            style="--frequency-bg:url('assets/528hz_bg.webp');"
+        >
+
+            <div class="frequency-badge">
+                Most Recognised
+            </div>
+
+            <div class="frequency-number">
+                528 <small>Hz</small>
+            </div>
+
+            <h3>
+                Love &amp; Positive Energy
+            </h3>
+
+            <p>
+                One of the most recognised Solfeggio frequencies,
+                traditionally associated with love, positivity,
+                transformation and harmony.
+            </p>
+
+        </article>
+
+
+        <article
+            class="frequency-card"
+            style="--frequency-bg:url('assets/639hz_bg.webp');"
+        >
+
+            <div class="frequency-number">
+                639 <small>Hz</small>
+            </div>
+
+            <h3>
+                Connection &amp; Relationships
+            </h3>
+
+            <p>
+                Commonly associated with connection, communication,
+                compassion and interpersonal harmony.
+            </p>
+
+        </article>
+
+
+        <article
+            class="frequency-card"
+            style="--frequency-bg:url('assets/741hz_bg.webp');"
+        >
+
+            <div class="frequency-number">
+                741 <small>Hz</small>
+            </div>
+
+            <h3>
+                Clarity &amp; Expression
+            </h3>
+
+            <p>
+                Often used during meditation with associations of
+                clarity, expression, creativity and clearing mental
+                distractions.
+            </p>
+
+        </article>
+
+
+        <article
+            class="frequency-card"
+            style="--frequency-bg:url('assets/852hz_bg.webp');"
+        >
+
+            <div class="frequency-number">
+                852 <small>Hz</small>
+            </div>
+
+            <h3>
+                Awareness &amp; Intuition
+            </h3>
+
+            <p>
+                Traditionally associated with awareness, intuition
+                and deeper contemplative practices.
+            </p>
+
+        </article>
+
+
+        <article
+            class="frequency-card"
+            style="--frequency-bg:url('assets/963hz_bg.webp');"
+        >
+
+            <div class="frequency-number">
+                963 <small>Hz</small>
+            </div>
+
+            <h3>
+                Higher Awareness
+            </h3>
+
+            <p>
+                One of the highest commonly discussed Solfeggio
+                frequencies, associated with contemplation,
+                awareness and spiritual practice.
+            </p>
+
+        </article>
+
+    </div>
+
+
+    <!-- SPECIAL FREQUENCIES -->
+
+    <div class="special-frequency-grid">
+
+
+        <article
+            class="special-card"
+            style="--special-bg:url('assets/4hz_bg.webp');"
+        >
+
+            <div class="special-content">
+
+                <div class="special-number">
+                    4 Hz
+                </div>
+
+                <h3>
+                    Delta • Sleep
+                </h3>
+
+                <p>
+                    A very low-frequency option associated with the
+                    Delta range commonly discussed in connection with
+                    deep sleep and nighttime relaxation.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article
+            class="special-card"
+            style="--special-bg:url('assets/40hz_bg.webp');"
+        >
+
+            <div class="special-content">
+
+                <div class="special-number">
+                    40 Hz
+                </div>
+
+                <h3>
+                    Gamma • Focus
+                </h3>
+
+                <p>
+                    A Gamma-range frequency included as an option for
+                    people experimenting with focused listening,
+                    study and concentration.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY LISTEN
+========================================================= -->
+
+<section class="section">
+
+    <div class="section-header">
+
+        <span class="section-label">
+            Why Listen?
+        </span>
+
+
+        <h2>
+            How frequencies can fit into your routine.
+        </h2>
+
+
+        <p>
+            Frequency listening can be a simple way to create a more
+            intentional sound environment.
+        </p>
+
+    </div>
+
+
+    <div class="uses-grid">
+
+
+        <article class="use-card">
+
+            <div class="use-icon">◌</div>
+
+            <h3>
+                Meditation
+            </h3>
+
+            <p>
+                Use a steady frequency as an auditory anchor during
+                meditation. Instead of following a guided voice, allow
+                the sound to remain quietly in the background while
+                you concentrate on breathing and awareness.
+            </p>
+
+        </article>
+
+
+        <article class="use-card">
+
+            <div class="use-icon">☾</div>
+
+            <h3>
+                Sleep &amp; Nighttime Relaxation
+            </h3>
+
+            <p>
+                Calming audio can form part of a consistent evening
+                wind-down routine. Low-frequency listening, including
+                the 4 Hz Delta option, can be explored as part of a
+                quiet pre-sleep environment.
+            </p>
+
+        </article>
+
+
+        <article class="use-card">
+
+            <div class="use-icon">◎</div>
+
+            <h3>
+                Stress &amp; Relaxation
+            </h3>
+
+            <p>
+                Music and calming sound can help create a more
+                relaxing environment. Solfeggio frequencies can
+                provide a simple alternative to busy playlists or
+                spoken meditation content.
+            </p>
+
+        </article>
+
+
+        <article class="use-card">
+
+            <div class="use-icon">⌁</div>
+
+            <h3>
+                Mindfulness
+            </h3>
+
+            <p>
+                A continuous tone can give your attention something
+                simple to return to when your thoughts begin to
+                wander, making it useful during mindfulness and
+                breathing exercises.
+            </p>
+
+        </article>
+
+
+        <article class="use-card">
+
+            <div class="use-icon">✦</div>
+
+            <h3>
+                Focus &amp; Study
+            </h3>
+
+            <p>
+                Some people prefer steady, unobtrusive sound while
+                reading, studying or working. The 40 Hz Gamma option
+                gives you another frequency to experiment with during
+                focused sessions.
+            </p>
+
+        </article>
+
+
+        <article class="use-card">
+
+            <div class="use-icon">◒</div>
+
+            <h3>
+                Yoga &amp; Breathwork
+            </h3>
+
+            <p>
+                Add a continuous frequency to yoga, stretching,
+                breathwork or personal reflection sessions to create
+                a consistent atmosphere without spoken instructions.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     528 HZ FEATURE
+========================================================= -->
+
+<section class="section">
+
+    <div class="feature-section">
+
+        <div class="feature-section-content">
+
+            <span class="section-label">
+                The Famous 528 Hz Frequency
+            </span>
+
+
+            <h2>
+                Why is 528 Hz so popular?
+            </h2>
+
+
+            <p>
+                528 Hz is probably the most widely recognised of the
+                modern Solfeggio frequencies. It is often referred to
+                as the “Love Frequency” and has become particularly
+                popular in meditation, relaxation and sound-healing
+                communities.
+            </p>
+
+
+            <p>
+                Many listeners simply enjoy its tone and use it as a
+                calming background during meditation, yoga, relaxation
+                or quiet reflection. Its popularity makes 528 Hz an
+                interesting frequency to explore, while individual
+                experiences naturally vary.
+            </p>
+
+
+            <a
+                href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+            >
+                Listen to 528 Hz →
             </a>
 
-            <a href="/meditation-timer-vs-guided-meditation">
-                Timer vs Guided Meditation
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     APP
+========================================================= -->
+
+<section class="section">
+
+    <div class="app-section">
+
+
+        <div class="app-copy">
+
+            <span class="section-label">
+                Solfeggio Healing Frequencies App
+            </span>
+
+
+            <h2>
+                A simpler way to explore frequency sound.
+            </h2>
+
+
+            <p>
+                No complicated courses. No social feeds. Just choose
+                a frequency, set your session and listen.
+            </p>
+
+
+            <div class="app-features">
+
+
+                <div class="app-feature">
+
+                    <strong>
+                        12 Frequencies
+                    </strong>
+
+                    <span>
+                        Full Solfeggio collection plus additional options.
+                    </span>
+
+                </div>
+
+
+                <div class="app-feature">
+
+                    <strong>
+                        174–963 Hz
+                    </strong>
+
+                    <span>
+                        The complete Solfeggio range.
+                    </span>
+
+                </div>
+
+
+                <div class="app-feature">
+
+                    <strong>
+                        4 Hz Delta
+                    </strong>
+
+                    <span>
+                        Low-frequency sleep-focused listening.
+                    </span>
+
+                </div>
+
+
+                <div class="app-feature">
+
+                    <strong>
+                        40 Hz Gamma
+                    </strong>
+
+                    <span>
+                        An additional option for focus and study.
+                    </span>
+
+                </div>
+
+
+                <div class="app-feature">
+
+                    <strong>
+                        100% Offline
+                    </strong>
+
+                    <span>
+                        Listen without streaming or buffering.
+                    </span>
+
+                </div>
+
+
+                <div class="app-feature">
+
+                    <strong>
+                        No Ads
+                    </strong>
+
+                    <span>
+                        A clean, uninterrupted listening experience.
+                    </span>
+
+                </div>
+
+
+                <div class="app-feature">
+
+                    <strong>
+                        No Subscription
+                    </strong>
+
+                    <span>
+                        No recurring monthly subscription.
+                    </span>
+
+                </div>
+
+
+                <div class="app-feature">
+
+                    <strong>
+                        No Account
+                    </strong>
+
+                    <span>
+                        Open the app and start listening.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+            >
+                Explore Solfeggio App →
             </a>
 
-            <a href="/how-long-should-you-meditate">
-                How Long Should You Meditate
+        </div>
+
+
+        <div class="app-visual">
+
+            <img
+                src="assets/solfeggio-app-screen.webp"
+                alt="Solfeggio Healing Frequencies app interface"
+                loading="lazy"
+                onerror="this.style.display='none'"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     THREE STEPS
+========================================================= -->
+
+<section class="section">
+
+    <div class="section-header">
+
+        <span class="section-label">
+            Keep It Simple
+        </span>
+
+
+        <h2>
+            Start listening in three steps.
+        </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <article class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>
+                Choose a Frequency
+            </h3>
+
+            <p>
+                Explore the Solfeggio frequencies, 432 Hz,
+                4 Hz Delta or 40 Hz Gamma.
+            </p>
+
+        </article>
+
+
+        <article class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>
+                Set Your Session
+            </h3>
+
+            <p>
+                Choose a session length that suits your meditation,
+                relaxation, sleep or focus routine.
+            </p>
+
+        </article>
+
+
+        <article class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>
+                Press Play
+            </h3>
+
+            <p>
+                Put down your phone, close your eyes and let the sound
+                become part of your environment.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SCIENCE
+========================================================= -->
+
+<section class="section">
+
+    <div class="section-header">
+
+        <span class="section-label">
+            Evidence &amp; Context
+        </span>
+
+
+        <h2>
+            What does the science say?
+        </h2>
+
+    </div>
+
+
+    <div class="science">
+
+
+        <p>
+            It is important to distinguish between the broader
+            benefits of music, relaxation and meditation and claims
+            specifically attributed to individual Solfeggio
+            frequencies.
+        </p>
+
+
+        <p>
+            Research has found that music-based interventions can
+            have beneficial effects on psychological and physiological
+            measures of stress, while research into meditation has
+            also found benefits for areas such as anxiety and
+            psychological wellbeing.
+        </p>
+
+
+        <p>
+            However, strong clinical evidence that a particular
+            Solfeggio frequency can directly heal a disease or produce
+            a specific medical outcome is currently limited.
+            Solfeggio listening is therefore best viewed as a
+            complementary wellness practice, not a medical treatment.
+        </p>
+
+
+        <div class="science-note">
+            Frequency listening is an individual experience. Choose
+            sounds that you enjoy and that help create the environment
+            you want for meditation, relaxation, sleep or focus.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section class="section">
+
+    <div class="section-header">
+
+        <span class="section-label">
+            Frequently Asked
+        </span>
+
+
+        <h2>
+            Solfeggio questions.
+        </h2>
+
+    </div>
+
+
+    <div class="faq">
+
+
+        <details>
+
+            <summary>
+                What are Solfeggio frequencies?
+            </summary>
+
+            <p>
+                Solfeggio frequencies are a collection of tones
+                traditionally associated with meditation, spiritual
+                practice, sound healing and personal wellbeing.
+                Different frequencies have developed their own
+                popular associations and listening traditions.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                What is 528 Hz?
+            </summary>
+
+            <p>
+                528 Hz is one of the best-known modern Solfeggio
+                frequencies. It is often called the “Love Frequency”
+                and is popular in meditation, relaxation and
+                sound-healing communities.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                What is 432 Hz?
+            </summary>
+
+            <p>
+                432 Hz is a popular alternative tuning frequency.
+                Many listeners describe it as warm, natural or
+                relaxing, although listening preferences vary
+                considerably between individuals.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                What is 4 Hz Delta?
+            </summary>
+
+            <p>
+                4 Hz sits within the Delta range of very low
+                frequencies commonly discussed in connection with
+                deep sleep and nighttime relaxation. It is included
+                as a sleep-focused listening option.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                What is 40 Hz Gamma?
+            </summary>
+
+            <p>
+                40 Hz is within the Gamma range and is included as
+                an option for people experimenting with focused
+                listening, study and concentration.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Can Solfeggio frequencies heal medical conditions?
+            </summary>
+
+            <p>
+                Solfeggio frequencies should not be treated as a
+                medical treatment. Evidence for specific medical
+                effects from individual Solfeggio frequencies is
+                limited. They can instead be viewed as part of a
+                personal relaxation, meditation or wellness routine.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Does the Solfeggio app work offline?
+            </summary>
+
+            <p>
+                Yes. The app is designed for 100% offline listening,
+                without streaming, buffering or an internet connection.
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="final-cta">
+
+    <span class="section-label">
+        Find Your Frequency
+    </span>
+
+
+    <h2>
+        Explore. Listen. Find what works for you.
+    </h2>
+
+
+    <p>
+        Explore Solfeggio frequencies for meditation, relaxation,
+        sleep, mindfulness and focus with a beautifully simple
+        frequency player designed to stay out of your way.
+    </p>
+
+
+    <a
+        href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+    >
+        Explore Solfeggio Healing Frequencies →
+    </a>
+
+</section>
+
+
+<!-- =========================================================
+     SITEWIDE FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+
+        <div class="footer-brand">
+
+            <a href="/" class="logo">
+
+                <img
+                    src="/android-chrome-192x192.png"
+                    alt="Meditation Bell Timer"
+                >
+
+                <span>
+                    MEDITATION BELL TIMER
+                </span>
+
+            </a>
+
+
+            <p>
+                Simple digital tools for meditation,
+                mindfulness, sleep, focus and quiet moments.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Apps
+            </h4>
+
+            <a href="/our-apps.html">
+                Our Apps
+            </a>
+
+            <a
+                href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Meditation Bell &amp; Zen Timer
+            </a>
+
+            <a
+                href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Solfeggio Frequencies
+            </a>
+
+            <a
+                href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Sound Bath Zen
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Resources
+            </h4>
+
+            <a href="/solfeggio-healing-frequencies.html">
+                Solfeggio Frequencies
+            </a>
+
+            <a href="/brown-noise-for-adhd-focus">
+                Brown Noise &amp; Focus
+            </a>
+
+            <a href="/sleep-meditation-sounds">
+                Sleep Meditation Sounds
             </a>
 
             <a href="/best-meditation-sounds">
                 Best Meditation Sounds
             </a>
 
-            <a href="/meditation-timer-for-adhd-focus">
-                Meditation Timer For ADHD Focus
+            <a href="/how-to-use-a-meditation-timer">
+                How To Use A Meditation Timer
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Guides
+            </h4>
+
+            <a href="/how-to-use-a-meditation-timer">
+                How To Use A Meditation Timer
+            </a>
+
+            <a href="/how-long-should-you-meditate">
+                How Long Should You Meditate?
+            </a>
+
+            <a href="/meditation-timer-vs-guided-meditation">
+                Timer vs Guided Meditation
             </a>
 
             <a href="/pomodoro-meditation-method">
@@ -2838,1461 +3620,241 @@ footer {
 
     </div>
 
-</nav>
 
-</header>
+    <div class="footer-bottom">
 
-<!-- =========================================================
-     HERO
-     
-     IMPORTANT:
-     Upload your new text-free hero image as:
-
-     assets/solfeggio-hero.webp
-
-     The webpage text is overlaid separately.
-========================================================= -->
-
-<section class="hero">
-
-<img
-    class="hero-background"
-    src="assets/solfeggio-hero.webp"
-    alt="Solfeggio frequency meditation and sound environment"
-    fetchpriority="high"
->
-
-
-<div class="hero-overlay"></div>
-
-
-<div class="hero-content">
-
-    <div class="hero-copy">
-
-
-        <div class="hero-eyebrow">
-            Sound • Meditation • Mindfulness
-        </div>
-
-
-        <h1>
-
-            Explore the
-            <br>
-
-            <span>
-                Solfeggio Frequencies.
-            </span>
-
-        </h1>
-
-
-        <p class="hero-description">
-
-            Discover a focused collection of frequencies for
-            meditation, relaxation, sleep, mindfulness and
-            concentration — from 174 Hz to 963 Hz, plus
-            432 Hz, 4 Hz Delta and 40 Hz Gamma.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-
-            <a
-                href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-primary">
-
-                Explore the App
-
-            </a>
-
-
-            <a
-                href="#frequencies"
-                class="btn btn-secondary">
-
-                Explore Frequencies ↓
-
-            </a>
-
-
-        </div>
-
-
-        <div class="hero-meta">
-
-            Pure sound • No ads • No subscription • 100% offline
-
-        </div>
-
+        © 2026 Meditation Bell Timer. All rights reserved.
 
     </div>
-
-</div>
-
-
-<div class="hero-usp">
-
-    <div class="hero-usp-inner">
-
-        <div class="hero-usp-item">
-            <strong>12</strong> Frequency Options
-        </div>
-
-        <div class="hero-usp-item">
-            <strong>174–963 Hz</strong> Full Solfeggio Range
-        </div>
-
-        <div class="hero-usp-item">
-            <strong>4 Hz</strong> Delta
-        </div>
-
-        <div class="hero-usp-item">
-            <strong>40 Hz</strong> Gamma
-        </div>
-
-        <div class="hero-usp-item">
-            <strong>432 Hz</strong> Alternative Tuning
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     INTRO
-========================================================= -->
-
-<section class="intro">
-
-<span class="section-label">
-    Understanding Solfeggio
-</span>
-
-
-<h2>
-    A world of frequency and sound.
-</h2>
-
-
-<p>
-
-    Solfeggio frequencies are a collection of tones traditionally
-    associated with meditation, spiritual practice, sound healing
-    and personal wellbeing. Different frequencies have developed
-    their own traditions and associations, with 528 Hz perhaps
-    being the best known.
-
-    Today, many people listen to these frequencies while
-    meditating, practising mindfulness, relaxing, studying,
-    reading or preparing for sleep.
-
-    The experience is highly personal. Rather than thinking of a
-    frequency as a medical treatment, it can be useful to think
-    of frequency listening as another tool for creating a calm,
-    intentional environment.
-
-</p>
-
-</section>
-
-<!-- =========================================================
-     FREQUENCY LIBRARY
-========================================================= -->
-
-<section
-    class="section"
-    id="frequencies">
-
-<div class="section-header">
-
-    <span class="section-label">
-        The Frequency Library
-    </span>
-
-
-    <h2>
-        Explore the Solfeggio Scale.
-    </h2>
-
-
-    <p>
-
-        Each frequency has its own history, character and popular
-        associations. Explore the collection and discover which
-        sounds work best for your own listening routine.
-
-    </p>
-
-</div>
-
-
-
-<div class="frequency-grid">
-
-
-    <!-- 174 -->
-
-    <article
-        class="frequency-card"
-        style="--frequency-bg:url('assets/174hz_bg.webp');">
-
-        <div class="frequency-number">
-            174 <small>Hz</small>
-        </div>
-
-        <h3>
-            Grounding &amp; Relaxation
-        </h3>
-
-        <p>
-            Often associated with grounding, comfort and creating
-            a peaceful listening environment during meditation
-            and relaxation.
-        </p>
-
-    </article>
-
-
-    <!-- 285 -->
-
-    <article
-        class="frequency-card"
-        style="--frequency-bg:url('assets/285hz_bg.webp');">
-
-        <div class="frequency-number">
-            285 <small>Hz</small>
-        </div>
-
-        <h3>
-            Restoration &amp; Calm
-        </h3>
-
-        <p>
-            Traditionally associated with restoration and a sense
-            of balance. Often used during quiet reflection and
-            relaxation.
-        </p>
-
-    </article>
-
-
-    <!-- 396 -->
-
-    <article
-        class="frequency-card"
-        style="--frequency-bg:url('assets/396hz_bg.webp');">
-
-        <div class="frequency-number">
-            396 <small>Hz</small>
-        </div>
-
-        <h3>
-            Release &amp; Grounding
-        </h3>
-
-        <p>
-            Commonly associated with releasing tension, fear and
-            negative thoughts as part of a reflective meditation
-            practice.
-        </p>
-
-    </article>
-
-
-    <!-- 417 -->
-
-    <article
-        class="frequency-card"
-        style="--frequency-bg:url('assets/417hz_bg.webp');">
-
-        <div class="frequency-number">
-            417 <small>Hz</small>
-        </div>
-
-        <h3>
-            Change &amp; Renewal
-        </h3>
-
-        <p>
-            Often described as a frequency for transition,
-            change and creating a fresh mental space.
-        </p>
-
-    </article>
-
-
-    <!-- 432 -->
-
-    <article
-        class="frequency-card"
-        style="--frequency-bg:url('assets/432hz_bg.webp');">
-
-        <div class="frequency-number">
-            432 <small>Hz</small>
-        </div>
-
-        <h3>
-            Harmony &amp; Relaxation
-        </h3>
-
-        <p>
-            A popular alternative tuning frequency that many
-            listeners describe as warm, natural and relaxing.
-        </p>
-
-    </article>
-
-
-    <!-- 528 -->
-
-    <article
-        class="frequency-card featured"
-        style="--frequency-bg:url('assets/528hz_bg.webp');">
-
-        <div class="frequency-badge">
-            Most Recognised
-        </div>
-
-        <div class="frequency-number">
-            528 <small>Hz</small>
-        </div>
-
-        <h3>
-            Love &amp; Positive Energy
-        </h3>
-
-        <p>
-            One of the most recognised Solfeggio frequencies,
-            traditionally associated with love, positivity,
-            transformation and harmony.
-        </p>
-
-    </article>
-
-
-    <!-- 639 -->
-
-    <article
-        class="frequency-card"
-        style="--frequency-bg:url('assets/639hz_bg.webp');">
-
-        <div class="frequency-number">
-            639 <small>Hz</small>
-        </div>
-
-        <h3>
-            Connection &amp; Relationships
-        </h3>
-
-        <p>
-            Commonly associated with connection, communication,
-            compassion and interpersonal harmony.
-        </p>
-
-    </article>
-
-
-    <!-- 741 -->
-
-    <article
-        class="frequency-card"
-        style="--frequency-bg:url('assets/741hz_bg.webp');">
-
-        <div class="frequency-number">
-            741 <small>Hz</small>
-        </div>
-
-        <h3>
-            Clarity &amp; Expression
-        </h3>
-
-        <p>
-            Often used during meditation with associations of
-            clarity, expression, creativity and clearing mental
-            distractions.
-        </p>
-
-    </article>
-
-
-    <!-- 852 -->
-
-    <article
-        class="frequency-card"
-        style="--frequency-bg:url('assets/852hz_bg.webp');">
-
-        <div class="frequency-number">
-            852 <small>Hz</small>
-        </div>
-
-        <h3>
-            Awareness &amp; Intuition
-        </h3>
-
-        <p>
-            Traditionally associated with awareness, intuition
-            and deeper contemplative practices.
-        </p>
-
-    </article>
-
-
-    <!-- 963 -->
-
-    <article
-        class="frequency-card"
-        style="--frequency-bg:url('assets/963hz_bg.webp');">
-
-        <div class="frequency-number">
-            963 <small>Hz</small>
-        </div>
-
-        <h3>
-            Higher Awareness
-        </h3>
-
-        <p>
-            One of the highest commonly discussed Solfeggio
-            frequencies, associated with contemplation,
-            awareness and spiritual practice.
-        </p>
-
-    </article>
-
-
-</div>
-
-
-
-<!-- SPECIAL FREQUENCIES -->
-
-<div class="special-frequency-grid">
-
-
-    <!-- 4 Hz -->
-
-    <article
-        class="special-card"
-        style="--special-bg:url('assets/4hz_bg.webp');">
-
-        <div class="special-content">
-
-            <div class="special-number">
-                4 Hz
-            </div>
-
-            <h3>
-                Delta • Sleep
-            </h3>
-
-            <p>
-                A very low-frequency option associated with the
-                Delta range commonly discussed in connection with
-                deep sleep and nighttime relaxation.
-            </p>
-
-        </div>
-
-    </article>
-
-
-    <!-- 40 Hz -->
-
-    <article
-        class="special-card"
-        style="--special-bg:url('assets/40hz_bg.webp');">
-
-        <div class="special-content">
-
-            <div class="special-number">
-                40 Hz
-            </div>
-
-            <h3>
-                Gamma • Focus
-            </h3>
-
-            <p>
-                A Gamma-range frequency included as an option for
-                people experimenting with focused listening,
-                study and concentration.
-            </p>
-
-        </div>
-
-    </article>
-
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     WHY LISTEN
-========================================================= -->
-
-<section class="section">
-
-<div class="section-header">
-
-    <span class="section-label">
-        Why Listen?
-    </span>
-
-
-    <h2>
-        How frequencies can fit into your routine.
-    </h2>
-
-
-    <p>
-
-        Frequency listening can be a simple way to create a more
-        intentional sound environment.
-
-    </p>
-
-</div>
-
-
-<div class="uses-grid">
-
-
-    <article class="use-card">
-
-        <div class="use-icon">◌</div>
-
-        <h3>
-            Meditation
-        </h3>
-
-        <p>
-            Use a steady frequency as an auditory anchor during
-            meditation. Instead of following a guided voice, allow
-            the sound to remain quietly in the background while
-            you concentrate on breathing and awareness.
-        </p>
-
-    </article>
-
-
-    <article class="use-card">
-
-        <div class="use-icon">☾</div>
-
-        <h3>
-            Sleep &amp; Nighttime Relaxation
-        </h3>
-
-        <p>
-            Calming audio can form part of a consistent evening
-            wind-down routine. Low-frequency listening, including
-            the 4 Hz Delta option, can be explored as part of a
-            quiet pre-sleep environment.
-        </p>
-
-    </article>
-
-
-    <article class="use-card">
-
-        <div class="use-icon">◎</div>
-
-        <h3>
-            Stress &amp; Relaxation
-        </h3>
-
-        <p>
-            Music and calming sound can help create a more
-            relaxing environment. Solfeggio frequencies can
-            provide a simple alternative to busy playlists or
-            spoken meditation content.
-        </p>
-
-    </article>
-
-
-    <article class="use-card">
-
-        <div class="use-icon">⌁</div>
-
-        <h3>
-            Mindfulness
-        </h3>
-
-        <p>
-            A continuous tone can give your attention something
-            simple to return to when your thoughts begin to
-            wander, making it useful during mindfulness and
-            breathing exercises.
-        </p>
-
-    </article>
-
-
-    <article class="use-card">
-
-        <div class="use-icon">✦</div>
-
-        <h3>
-            Focus &amp; Study
-        </h3>
-
-        <p>
-            Some people prefer steady, unobtrusive sound while
-            reading, studying or working. The 40 Hz Gamma option
-            gives you another frequency to experiment with during
-            focused sessions.
-        </p>
-
-    </article>
-
-
-    <article class="use-card">
-
-        <div class="use-icon">◒</div>
-
-        <h3>
-            Yoga &amp; Breathwork
-        </h3>
-
-        <p>
-            Add a continuous frequency to yoga, stretching,
-            breathwork or personal reflection sessions to create
-            a consistent atmosphere without spoken instructions.
-        </p>
-
-    </article>
-
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     528 HZ FEATURE
-========================================================= -->
-
-<section class="section">
-
-<div class="feature-section">
-
-    <div class="feature-section-content">
-
-        <span class="section-label">
-            The Famous 528 Hz Frequency
-        </span>
-
-
-        <h2>
-            Why is 528 Hz so popular?
-        </h2>
-
-
-        <p>
-
-            528 Hz is probably the most widely recognised of the
-            modern Solfeggio frequencies. It is often referred to
-            as the “Love Frequency” and has become particularly
-            popular in meditation, relaxation and sound-healing
-            communities.
-
-        </p>
-
-
-        <p>
-
-            Many listeners simply enjoy its tone and use it as a
-            calming background during meditation, yoga, relaxation
-            or quiet reflection. Its popularity makes 528 Hz an
-            interesting frequency to explore, while individual
-            experiences naturally vary.
-
-        </p>
-
-
-        <a
-            href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary">
-
-            Listen to 528 Hz →
-
-        </a>
-
-    </div>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     APP
-========================================================= -->
-
-<section class="section">
-
-<div class="app-section">
-
-
-    <div class="app-copy">
-
-
-        <span class="section-label">
-            Solfeggio Healing Frequencies App
-        </span>
-
-
-        <h2>
-            A simpler way to explore frequency sound.
-        </h2>
-
-
-        <p>
-
-            No complicated courses. No social feeds. Just choose
-            a frequency, set your session and listen.
-
-        </p>
-
-
-        <div class="app-features">
-
-
-            <div class="app-feature">
-
-                <strong>
-                    12 Frequencies
-                </strong>
-
-                <span>
-                    Full Solfeggio collection plus additional options.
-                </span>
-
-            </div>
-
-
-            <div class="app-feature">
-
-                <strong>
-                    174–963 Hz
-                </strong>
-
-                <span>
-                    The complete Solfeggio range.
-                </span>
-
-            </div>
-
-
-            <div class="app-feature">
-
-                <strong>
-                    4 Hz Delta
-                </strong>
-
-                <span>
-                    Low-frequency sleep-focused listening.
-                </span>
-
-            </div>
-
-
-            <div class="app-feature">
-
-                <strong>
-                    40 Hz Gamma
-                </strong>
-
-                <span>
-                    An additional option for focus and study.
-                </span>
-
-            </div>
-
-
-            <div class="app-feature">
-
-                <strong>
-                    100% Offline
-                </strong>
-
-                <span>
-                    Listen without streaming or buffering.
-                </span>
-
-            </div>
-
-
-            <div class="app-feature">
-
-                <strong>
-                    No Ads
-                </strong>
-
-                <span>
-                    A clean, uninterrupted listening experience.
-                </span>
-
-            </div>
-
-
-            <div class="app-feature">
-
-                <strong>
-                    No Subscription
-                </strong>
-
-                <span>
-                    No recurring monthly subscription.
-                </span>
-
-            </div>
-
-
-            <div class="app-feature">
-
-                <strong>
-                    No Account
-                </strong>
-
-                <span>
-                    Open the app and start listening.
-                </span>
-
-            </div>
-
-
-        </div>
-
-
-        <a
-            href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary">
-
-            Explore Solfeggio App →
-
-        </a>
-
-
-    </div>
-
-
-
-    <div class="app-visual">
-
-        <img
-            src="assets/solfeggio-app-screen.webp"
-            alt="Solfeggio Healing Frequencies app interface"
-            loading="lazy"
-            onerror="this.style.display='none'"
-        >
-
-    </div>
-
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     THREE STEPS
-========================================================= -->
-
-<section class="section">
-
-<div class="section-header">
-
-    <span class="section-label">
-        Keep It Simple
-    </span>
-
-
-    <h2>
-        Start listening in three steps.
-    </h2>
-
-</div>
-
-
-<div class="steps">
-
-
-    <article class="step">
-
-        <div class="step-number">
-            01
-        </div>
-
-        <h3>
-            Choose a Frequency
-        </h3>
-
-        <p>
-            Explore the Solfeggio frequencies, 432 Hz,
-            4 Hz Delta or 40 Hz Gamma.
-        </p>
-
-    </article>
-
-
-    <article class="step">
-
-        <div class="step-number">
-            02
-        </div>
-
-        <h3>
-            Set Your Session
-        </h3>
-
-        <p>
-            Choose a session length that suits your meditation,
-            relaxation, sleep or focus routine.
-        </p>
-
-    </article>
-
-
-    <article class="step">
-
-        <div class="step-number">
-            03
-        </div>
-
-        <h3>
-            Press Play
-        </h3>
-
-        <p>
-            Put down your phone, close your eyes and let the sound
-            become part of your environment.
-        </p>
-
-    </article>
-
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     SCIENCE
-========================================================= -->
-
-<section class="section">
-
-<div class="section-header">
-
-    <span class="section-label">
-        Evidence &amp; Context
-    </span>
-
-
-    <h2>
-        What does the science say?
-    </h2>
-
-</div>
-
-
-<div class="science">
-
-
-    <p>
-
-        It is important to distinguish between the broader
-        benefits of music, relaxation and meditation and claims
-        specifically attributed to individual Solfeggio
-        frequencies.
-
-    </p>
-
-
-    <p>
-
-        Research has found that music-based interventions can
-        have beneficial effects on psychological and physiological
-        measures of stress, while research into meditation has
-        also found benefits for areas such as anxiety and
-        psychological wellbeing.
-
-    </p>
-
-
-    <p>
-
-        However, strong clinical evidence that a particular
-        Solfeggio frequency can directly heal a disease or produce
-        a specific medical outcome is currently limited.
-        Solfeggio listening is therefore best viewed as a
-        complementary wellness practice, not a medical treatment.
-
-    </p>
-
-
-    <div class="science-note">
-
-        Frequency listening is an individual experience. Choose
-        sounds that you enjoy and that help create the environment
-        you want for meditation, relaxation, sleep or focus.
-
-    </div>
-
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     FAQ
-========================================================= -->
-
-<section class="section">
-
-<div class="section-header">
-
-    <span class="section-label">
-        Frequently Asked
-    </span>
-
-
-    <h2>
-        Solfeggio questions.
-    </h2>
-
-</div>
-
-
-<div class="faq">
-
-
-    <details>
-
-        <summary>
-            What are Solfeggio frequencies?
-        </summary>
-
-        <p>
-
-            Solfeggio frequencies are a collection of tones
-            traditionally associated with meditation, spiritual
-            practice, sound healing and personal wellbeing.
-            Different frequencies have developed their own
-            popular associations and listening traditions.
-
-        </p>
-
-    </details>
-
-
-    <details>
-
-        <summary>
-            What is 528 Hz?
-        </summary>
-
-        <p>
-
-            528 Hz is one of the best-known modern Solfeggio
-            frequencies. It is often called the “Love Frequency”
-            and is popular in meditation, relaxation and
-            sound-healing communities.
-
-        </p>
-
-    </details>
-
-
-    <details>
-
-        <summary>
-            What is 432 Hz?
-        </summary>
-
-        <p>
-
-            432 Hz is a popular alternative tuning frequency.
-            Many listeners describe it as warm, natural or
-            relaxing, although listening preferences vary
-            considerably between individuals.
-
-        </p>
-
-    </details>
-
-
-    <details>
-
-        <summary>
-            What is 4 Hz Delta?
-        </summary>
-
-        <p>
-
-            4 Hz sits within the Delta range of very low
-            frequencies commonly discussed in connection with
-            deep sleep and nighttime relaxation. It is included
-            as a sleep-focused listening option.
-
-        </p>
-
-    </details>
-
-
-    <details>
-
-        <summary>
-            What is 40 Hz Gamma?
-        </summary>
-
-        <p>
-
-            40 Hz is within the Gamma range and is included as
-            an option for people experimenting with focused
-            listening, study and concentration.
-
-        </p>
-
-    </details>
-
-
-    <details>
-
-        <summary>
-            Can Solfeggio frequencies heal medical conditions?
-        </summary>
-
-        <p>
-
-            Solfeggio frequencies should not be treated as a
-            medical treatment. Evidence for specific medical
-            effects from individual Solfeggio frequencies is
-            limited. They can instead be viewed as part of a
-            personal relaxation, meditation or wellness routine.
-
-        </p>
-
-    </details>
-
-
-    <details>
-
-        <summary>
-            Does the Solfeggio app work offline?
-        </summary>
-
-        <p>
-
-            Yes. The app is designed for 100% offline listening,
-            without streaming, buffering or an internet connection.
-
-        </p>
-
-    </details>
-
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     FINAL CTA
-========================================================= -->
-
-<section class="final-cta">
-
-<span class="section-label">
-    Find Your Frequency
-</span>
-
-
-<h2>
-    Explore. Listen. Find what works for you.
-</h2>
-
-
-<p>
-
-    Explore Solfeggio frequencies for meditation, relaxation,
-    sleep, mindfulness and focus with a beautifully simple
-    frequency player designed to stay out of your way.
-
-</p>
-
-
-<a
-    href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="btn btn-primary">
-
-    Explore Solfeggio Healing Frequencies →
-
-</a>
-
-</section>
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
-
-<div class="footer-inner">
-
-
-    <div class="footer-brand">
-
-        <a href="/" class="logo">
-
-            <img
-                src="android-chrome-512x512.png"
-                alt="Meditation Bell Timer">
-
-            MEDITATION BELL TIMER
-
-        </a>
-
-
-        <p>
-
-            Simple digital tools for meditation,
-            mindfulness, sleep, focus and quiet moments.
-
-        </p>
-
-    </div>
-
-
-    <div class="footer-column">
-
-        <h4>
-            Apps
-        </h4>
-
-        <a href="/our-apps.html">
-            Our Apps
-        </a>
-
-        <a
-            href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            Meditation Bell &amp; Zen Timer
-
-        </a>
-
-        <a
-            href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            Solfeggio Frequencies
-
-        </a>
-
-        <a
-            href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            Sound Bath Zen
-
-        </a>
-
-    </div>
-
-
-    <div class="footer-column">
-
-        <h4>
-            Resources
-        </h4>
-
-        <a href="/solfeggio-healing-frequencies.html">
-            Solfeggio Frequencies
-        </a>
-
-        <a href="/brown-noise-for-adhd-focus">
-            Brown Noise &amp; Focus
-        </a>
-
-        <a href="/sleep-meditation-sounds">
-            Sleep Meditation Sounds
-        </a>
-
-        <a href="/best-meditation-sounds">
-            Best Meditation Sounds
-        </a>
-
-        <a href="/how-to-use-a-meditation-timer">
-            How To Use A Meditation Timer
-        </a>
-
-    </div>
-
-
-    <div class="footer-column">
-
-        <h4>
-            Company
-        </h4>
-
-        <a href="/our-apps.html">
-            Our Apps
-        </a>
-
-        <a href="/privacy.html">
-            Privacy Policy
-        </a>
-
-        <a href="/timer.html">
-            Web Timer
-        </a>
-
-    </div>
-
-
-</div>
-
-
-<div class="footer-bottom">
-
-    © 2026 Meditation Bell Timer. All rights reserved.
-
-</div>
 
 </footer>
 
+
 <!-- =========================================================
-     MOBILE NAVIGATION
+     SITEWIDE NAVIGATION JAVASCRIPT — MASTER VERSION 1
 ========================================================= -->
 
 <script>
 
-const mobileMenuButton =
-    document.getElementById('mobile-menu-btn');
+(function () {
 
-const navigation =
-    document.getElementById('nav-links');
+    const mobileMenuButton =
+        document.getElementById('mobile-menu-btn');
+
+    const navigation =
+        document.getElementById('nav-links');
+
+    const dropdowns =
+        document.querySelectorAll('.dropdown');
 
 
-mobileMenuButton.addEventListener(
-    'click',
-    function() {
-
-        const active =
-            navigation.classList.toggle('active');
-
-        mobileMenuButton.setAttribute(
-            'aria-expanded',
-            active ? 'true' : 'false'
-        );
-
+    if (!mobileMenuButton || !navigation) {
+        return;
     }
-);
 
 
-document
-    .querySelectorAll('.dropdown-toggle')
-    .forEach(function(toggle) {
+    /* =====================================================
+       OPEN / CLOSE MOBILE MENU
+    ===================================================== */
 
-        toggle.addEventListener(
-            'click',
-            function(event) {
+    mobileMenuButton.addEventListener(
+        'click',
+        function () {
 
-                if (window.innerWidth <= 700) {
+            const isOpen =
+                navigation.classList.toggle('active');
 
-                    event.preventDefault();
-
-                    const dropdown =
-                        toggle.closest('.dropdown');
-
-                    dropdown.classList.toggle(
-                        'mobile-active'
-                    );
-
-                }
-
-            }
-        );
-
-    });
-
-
-document
-    .querySelectorAll(
-        '#nav-links a:not(.dropdown-toggle)'
-    )
-    .forEach(function(link) {
-
-        link.addEventListener(
-            'click',
-            function() {
-
-                if (window.innerWidth <= 700) {
-
-                    navigation.classList.remove(
-                        'active'
-                    );
-
-                    mobileMenuButton.setAttribute(
-                        'aria-expanded',
-                        'false'
-                    );
-
-                }
-
-            }
-        );
-
-    });
-
-
-window.addEventListener(
-    'resize',
-    function() {
-
-        if (window.innerWidth > 700) {
-
-            navigation.classList.remove(
-                'active'
-            );
 
             mobileMenuButton.setAttribute(
                 'aria-expanded',
-                'false'
+                isOpen ? 'true' : 'false'
             );
 
-            document
-                .querySelectorAll('.dropdown')
-                .forEach(function(dropdown) {
 
-                    dropdown.classList.remove(
-                        'mobile-active'
-                    );
+            mobileMenuButton.setAttribute(
+                'aria-label',
+                isOpen
+                    ? 'Close navigation menu'
+                    : 'Open navigation menu'
+            );
 
-                });
+
+            mobileMenuButton.textContent =
+                isOpen ? '×' : '☰';
 
         }
+    );
 
-    }
-);
+
+    /* =====================================================
+       MOBILE DROPDOWN
+    ===================================================== */
+
+    document
+        .querySelectorAll('.dropdown-toggle')
+        .forEach(function(toggle) {
+
+            toggle.addEventListener(
+                'click',
+                function(event) {
+
+                    if (window.innerWidth <= 700) {
+
+                        event.preventDefault();
+
+                        const dropdown =
+                            toggle.closest('.dropdown');
+
+                        dropdown.classList.toggle(
+                            'mobile-active'
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       CLOSE MENU WHEN NORMAL LINK IS CLICKED
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            '#nav-links a:not(.dropdown-toggle)'
+        )
+        .forEach(function(link) {
+
+            link.addEventListener(
+                'click',
+                function() {
+
+                    if (window.innerWidth <= 700) {
+
+                        navigation.classList.remove(
+                            'active'
+                        );
+
+
+                        mobileMenuButton.setAttribute(
+                            'aria-expanded',
+                            'false'
+                        );
+
+
+                        mobileMenuButton.setAttribute(
+                            'aria-label',
+                            'Open navigation menu'
+                        );
+
+
+                        mobileMenuButton.textContent =
+                            '☰';
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       CLOSE MENU WHEN CLICKING OUTSIDE
+    ===================================================== */
+
+    document.addEventListener(
+        'click',
+        function(event) {
+
+            if (window.innerWidth > 700) {
+                return;
+            }
+
+
+            if (
+                !navigation.contains(event.target) &&
+                !mobileMenuButton.contains(event.target)
+            ) {
+
+                navigation.classList.remove(
+                    'active'
+                );
+
+
+                mobileMenuButton.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+
+
+                mobileMenuButton.setAttribute(
+                    'aria-label',
+                    'Open navigation menu'
+                );
+
+
+                mobileMenuButton.textContent =
+                    '☰';
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       RESET MOBILE STATE WHEN RETURNING TO DESKTOP
+    ===================================================== */
+
+    window.addEventListener(
+        'resize',
+        function() {
+
+            if (window.innerWidth > 700) {
+
+                navigation.classList.remove(
+                    'active'
+                );
+
+
+                mobileMenuButton.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+
+
+                mobileMenuButton.setAttribute(
+                    'aria-label',
+                    'Open navigation menu'
+                );
+
+
+                mobileMenuButton.textContent =
+                    '☰';
+
+
+                dropdowns.forEach(
+                    function(dropdown) {
+
+                        dropdown.classList.remove(
+                            'mobile-active'
+                        );
+
+                    }
+                );
+
+            }
+
+        }
+    );
+
+})();
 
 </script>
+
 
 <!-- =========================================================
      STRUCTURED DATA
@@ -4315,6 +3877,7 @@ window.addEventListener(
 
 </script>
 
+
 <script type="application/ld+json">
 
 {
@@ -4333,6 +3896,7 @@ window.addEventListener(
 }
 
 </script>
+
 
 </body>
 
