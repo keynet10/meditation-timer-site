@@ -1,297 +1,2268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meditation Timer for ADHD: A Distraction-Free Mindfulness Tool</title>
-    <meta name="description" content="Traditional meditation can be overwhelming for ADHD brains. Discover how interval bells and gapless ambient sounds can help you build a sustainable mindfulness practice.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #e0e0e0;
-            font-family: 'Lato', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+<title>Meditation Timer for ADHD | Focus, Calm & Simple Mindfulness</title>
 
-        /* --- NAVIGATION --- */
-        header {
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(18, 18, 18, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .logo {
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: #fff;
-        }
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        .nav-links a.nav-item {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 700;
-            transition: color 0.3s;
-            display: flex;
-            align-items: center;
-        }
-        .nav-links a.nav-item:hover { color: #81D4FA; }
+<meta name="description" content="A simple meditation timer for ADHD, focus and mindfulness. Use short timed sessions, gentle bells and calming sounds with Meditation Bell Timer.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://meditationbelltimer.com/meditation-timer-for-adhd">
 
-        /* --- DROPDOWN MENU (DESKTOP) --- */
-        .dropdown { position: relative; display: inline-block; }
-        .dropdown-toggle {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            transition: color 0.3s;
-        }
-        .dropdown-toggle:hover { color: #81D4FA; }
-        .dropdown-content {
-            display: none; position: absolute; background-color: #1e1e1e;
-            min-width: 240px; box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
-            border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
-            z-index: 101; top: 100%; left: 50%; transform: translateX(-50%);
-            padding: 10px 0; margin-top: 10px;
-        }
-        .dropdown::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 15px; }
-        .dropdown-content a {
-            color: rgba(255, 255, 255, 0.7); padding: 12px 20px; text-decoration: none;
-            display: block; text-align: left; transition: all 0.2s; font-weight: 400; font-size: 14px;
-        }
-        .dropdown-content a:hover { background-color: rgba(255, 255, 255, 0.05); color: #fff; }
+<meta property="og:title" content="Meditation Timer for ADHD | Focus, Calm & Simple Mindfulness">
+<meta property="og:description" content="Discover a simple meditation timer designed for short, focused and distraction-free mindfulness sessions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://meditationbelltimer.com/meditation-timer-for-adhd">
 
-        @media (min-width: 901px) {
-            .dropdown:hover .dropdown-content { display: block; animation: fadeIn 0.3s ease; }
-        }
-        @keyframes fadeIn { from { opacity: 0; transform: translate(-50%, -10px); } to { opacity: 1; transform: translate(-50%, 0); } }
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/android-chrome-192x192.png">
 
-        .menu-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; padding: 5px; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
-        /* --- RESPONSIVE MOBILE MENU --- */
-        @media (max-width: 900px) {
-            .menu-toggle { display: block; }
-            .nav-links {
-                display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
-                background: rgba(18, 18, 18, 0.98); border-bottom: 1px solid rgba(255,255,255,0.1);
-                max-height: 0; overflow-y: hidden; transition: max-height 0.4s ease-out; align-items: flex-start; padding: 0;
-            }
-            .nav-links.active { max-height: calc(100vh - 80px); overflow-y: auto; padding: 10px 0 20px 0; }
-            .nav-links > a.nav-item, .dropdown { width: 100%; padding: 15px 5%; font-size: 18px; box-sizing: border-box; border-bottom: 1px solid rgba(255,255,255,0.05); }
-            .dropdown-toggle { font-size: 18px; }
-            .dropdown-content { position: static; display: none; background: transparent; box-shadow: none; border: none; transform: none; min-width: 100%; margin-top: 0; padding: 10px 0 0 15px; }
-            .dropdown.mobile-active .dropdown-content { display: block; }
-            .dropdown-content a { padding: 10px 0; font-size: 16px; border-bottom: none; }
-        }
+<style>
 
-        /* --- ARTICLE LAYOUT --- */
-        .article-container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        h1 { font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.2; }
-        h2 { font-size: 28px; font-weight: 400; color: #fff; margin-top: 40px; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
-        h3 { font-size: 20px; font-weight: 700; margin-top: 30px; }
-        p, ul { font-size: 18px; margin-bottom: 20px; color: #b0b0b0; }
-        li { margin-bottom: 10px; }
-        .subtitle { font-size: 20px; font-weight: 300; color: #81D4FA; margin-bottom: 40px; }
+:root {
+  --black: #070909;
+  --navy: #0b1113;
+  --gold: #d4af5a;
+  --gold-light: #f2d78f;
+  --cream: #f7f1e5;
+  --white: #ffffff;
+  --muted: rgba(255,255,255,0.68);
+  --border: rgba(255,255,255,0.08);
+  --max-width: 1180px;
+}
 
-        /* --- SCREENSHOT CAROUSEL --- */
-        .carousel-wrapper { margin: 40px 0; position: relative; }
-        .carousel-container { display: flex; overflow-x: auto; gap: 20px; padding: 20px 0; scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory; scroll-behavior: smooth; }
-        .carousel-container::-webkit-scrollbar { display: none; }
-        .carousel-item { flex: 0 0 auto; width: 240px; scroll-snap-align: center; border-radius: 20px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.6); background-color: #121212; overflow: hidden; }
-        .carousel-item img { width: 100%; height: auto; display: block; }
+/* =========================================================
+   RESET
+========================================================= */
 
-        /* --- CTA BOX --- */
-        .cta-box { background-color: #121212; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 30px; text-align: center; margin: 40px 0; }
-        .cta-box h3 { margin-top: 0; color: #fff; font-size: 24px; }
-        .btn-container { display: flex; gap: 20px; justify-content: center; align-items: center; margin-top: 25px; flex-wrap: wrap; }
-        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 0 28px; height: 54px; border-radius: 30px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; font-size: 16px; box-sizing: border-box; }
-        .btn-primary { background-color: #81D4FA; color: #121212; }
-        .btn-primary:hover { background-color: #4fc3f7; transform: translateY(-2px); }
-        .play-store-badge img { height: 54px; width: auto; display: block; transition: transform 0.2s ease-in-out; }
-        .play-store-badge:hover img { transform: scale(1.05); }
+* {
+  box-sizing: border-box;
+}
 
-        footer { text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.5); font-size: 14px; }
-    </style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================================
+   SITE HEADER
+========================================================= */
+
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background: rgba(7,9,9,0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  white-space: nowrap;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links > a,
+header .dropdown-toggle {
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.nav-links > a:hover,
+header .dropdown-toggle:hover {
+  color: var(--gold-light);
+}
+
+header .dropdown {
+  position: relative;
+}
+
+header .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+header .dropdown-arrow {
+  font-size: 9px;
+  opacity: 0.65;
+  transition: transform 0.2s ease;
+}
+
+header .dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+header .dropdown-content {
+  position: absolute;
+  top: calc(100% + 17px);
+  right: 0;
+  min-width: 270px;
+  padding: 9px;
+  background: rgba(10,13,14,0.98);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.55);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+header .dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+header .dropdown-content a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: rgba(255,255,255,0.68);
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+header .dropdown-content a:hover {
+  background: rgba(212,175,90,0.08);
+  color: var(--gold-light);
+}
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+  min-height: 650px;
+  padding: 150px 5% 100px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 72% 35%, rgba(212,175,90,0.11), transparent 30%),
+    radial-gradient(circle at 85% 75%, rgba(30,70,65,0.20), transparent 35%),
+    linear-gradient(135deg, #070909 0%, #0a1012 55%, #080b0c 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -160px;
+  top: 100px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,175,90,0.08);
+  box-shadow:
+    0 0 0 70px rgba(212,175,90,0.025),
+    0 0 0 140px rgba(212,175,90,0.015);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  color: var(--gold-light);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  margin: 0 0 24px;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 7vw, 88px);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -1px;
+}
+
+.hero h1 span {
+  color: var(--gold-light);
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 0 35px;
+  color: rgba(255,255,255,0.70);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: #101010;
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--cream);
+  background: rgba(255,255,255,0.025);
+}
+
+.btn-secondary:hover {
+  border-color: rgba(212,175,90,0.45);
+  background: rgba(212,175,90,0.06);
+}
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 105px 0;
+}
+
+.section-dark {
+  background: #090d0f;
+}
+
+.section-header {
+  max-width: 760px;
+  margin-bottom: 55px;
+}
+
+.section-label {
+  display: block;
+  margin-bottom: 15px;
+  color: var(--gold-light);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-header h2 {
+  margin: 0 0 18px;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 5vw, 62px);
+  font-weight: 500;
+  line-height: 1.02;
+}
+
+.section-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+/* =========================================================
+   INTRO GRID
+========================================================= */
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.intro-copy h3 {
+  margin: 0 0 20px;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.intro-copy p {
+  color: rgba(255,255,255,0.68);
+  font-size: 16px;
+}
+
+.intro-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.focus-panel {
+  position: relative;
+  padding: 42px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(212,175,90,0.08), transparent 35%),
+    linear-gradient(145deg, #0d1416, #090c0d);
+}
+
+.focus-ring {
+  width: 190px;
+  height: 190px;
+  margin: 0 auto 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(212,175,90,0.35);
+  box-shadow:
+    0 0 0 18px rgba(212,175,90,0.035),
+    0 0 0 38px rgba(212,175,90,0.02);
+}
+
+.focus-ring-inner {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212,175,90,0.06);
+  border: 1px solid rgba(212,175,90,0.18);
+  color: var(--gold-light);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+}
+
+.focus-panel h3 {
+  margin: 0 0 10px;
+  text-align: center;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 31px;
+  font-weight: 500;
+}
+
+.focus-panel p {
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.benefit-card {
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.018);
+}
+
+.benefit-number {
+  color: var(--gold);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.benefit-card h3 {
+  margin: 22px 0 12px;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.benefit-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================================================
+   FEATURE PANEL
+========================================================= */
+
+.feature-panel {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 65px;
+  align-items: center;
+  padding: 65px;
+  border: 1px solid rgba(212,175,90,0.13);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 15% 50%, rgba(212,175,90,0.07), transparent 35%),
+    #0b1113;
+}
+
+.feature-panel h2 {
+  margin: 0 0 20px;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.feature-panel p {
+  color: var(--muted);
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 0;
+  margin: 25px 0 0;
+  list-style: none;
+}
+
+.feature-list li {
+  padding: 14px 15px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  color: rgba(255,255,255,0.72);
+  font-size: 13px;
+  background: rgba(255,255,255,0.018);
+}
+
+.feature-list li::before {
+  content: "✓";
+  margin-right: 9px;
+  color: var(--gold);
+}
+
+/* =========================================================
+   SIMPLE SESSION GUIDE
+========================================================= */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.step {
+  padding: 30px 25px;
+  border-top: 1px solid rgba(212,175,90,0.3);
+  background: rgba(255,255,255,0.015);
+}
+
+.step-number {
+  color: var(--gold-light);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.step h3 {
+  margin: 18px 0 10px;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================================================
+   CALL TO ACTION
+========================================================= */
+
+.cta {
+  padding: 100px 30px;
+  text-align: center;
+  background:
+    radial-gradient(circle at center, rgba(212,175,90,0.10), transparent 42%),
+    #080b0c;
+}
+
+.cta-inner {
+  max-width: 760px;
+  margin: auto;
+}
+
+.cta h2 {
+  margin: 0 0 18px;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.cta p {
+  margin: 0 auto 30px;
+  max-width: 620px;
+  color: var(--muted);
+}
+
+/* =========================================================
+   APP COLLECTION
+========================================================= */
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.app-card {
+  padding: 34px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #0b1012;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-card.featured {
+  border-color: rgba(212,175,90,0.24);
+  background:
+    linear-gradient(145deg, rgba(212,175,90,0.07), transparent 50%),
+    #0b1012;
+}
+
+.app-tag {
+  color: var(--gold-light);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.app-card h3 {
+  margin: 18px 0 13px;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.app-card p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.app-card ul {
+  margin: 0 0 25px;
+  padding-left: 18px;
+  color: rgba(255,255,255,0.66);
+  font-size: 13px;
+}
+
+.app-card li {
+  margin-bottom: 6px;
+}
+
+.text-link {
+  color: var(--gold-light);
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.text-link:hover {
+  color: white;
+}
+
+/* =========================================================
+   RELATED RESOURCES
+========================================================= */
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.resource-card {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: rgba(255,255,255,0.015);
+  text-decoration: none;
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(212,175,90,0.25);
+}
+
+.resource-card span {
+  color: var(--gold);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.resource-card h3 {
+  margin: 15px 0 8px;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.resource-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  padding: 55px 5% 35px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: #050707;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 35px;
+}
+
+.footer-brand {
+  max-width: 400px;
+}
+
+.footer-brand .logo {
+  display: inline-flex;
+  margin-bottom: 18px;
+}
+
+.footer-brand p {
+  margin: 0;
+  color: rgba(255,255,255,0.48);
+  font-size: 13px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 25px;
+  align-content: flex-start;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.52);
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+}
+
+.footer-links a:hover {
+  color: var(--gold-light);
+}
+
+.footer-bottom {
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.35);
+  font-size: 11px;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .intro-grid,
+  .feature-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-grid,
+  .app-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .feature-panel {
+    padding: 45px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  header {
+    position: sticky;
+    top: 0;
+    height: 74px;
+    padding: 0 5%;
+  }
+
+  .logo {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+  }
+
+  .logo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    object-fit: cover;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 74px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    background: rgba(7,9,9,0.98);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    transition: max-height .35s ease, padding .2s ease;
+  }
+
+  .nav-links.active {
+    max-height: calc(100vh - 74px);
+    overflow-y: auto;
+    padding: 10px 0 20px;
+  }
+
+  .nav-links > a,
+  .nav-links .dropdown {
+    width: 100%;
+    padding: 15px 5%;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .nav-links > a {
+    color: #bfc2bb;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  header .dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
+    color: #bfc2bb;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  header .dropdown-arrow {
+    font-size: 9px;
+  }
+
+  header .dropdown-content {
+    position: static;
+    display: none;
+    min-width: 0;
+    padding: 8px 0 0 12px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  header .dropdown.mobile-active .dropdown-content {
+    display: block;
+  }
+
+  header .dropdown-content a {
+    display: block;
+    padding: 11px 10px;
+    color: #969a93;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 85px 5% 85px;
+  }
+
+  .hero h1 {
+    font-size: 57px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .section-header {
+    margin-bottom: 38px;
+  }
+
+  .section-header h2 {
+    font-size: 46px;
+  }
+
+  .intro-grid,
+  .benefit-grid,
+  .feature-panel,
+  .steps,
+  .app-grid,
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-grid {
+    gap: 40px;
+  }
+
+  .feature-panel {
+    padding: 32px 25px;
+  }
+
+  .feature-panel h2 {
+    font-size: 42px;
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  .app-card {
+    padding: 30px;
+  }
+
+  .cta {
+    padding: 80px 20px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
-        <a href="/" class="logo">
-            <img src="android-chrome-512x512.png" alt="Meditation Bell Timer Logo" style="width: 24px; height: 24px; border-radius: 4px;">
-            MEDITATION BELL TIMER
+<!-- =========================================================
+     SITE HEADER
+========================================================= -->
+
+<header>
+
+  <a href="/" class="logo">
+    <img src="/android-chrome-192x192.png" alt="Meditation Bell Timer">
+    <span>MEDITATION BELL TIMER</span>
+  </a>
+
+  <button
+    class="menu-toggle"
+    id="mobile-menu-btn"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="nav-links">
+    ☰
+  </button>
+
+  <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+
+    <a href="/">Home</a>
+
+    <a href="/timer.html">Free Timer</a>
+
+    <a href="/our-apps.html">Our Apps</a>
+
+    <a href="/solfeggio-healing-frequencies.html">Solfeggio</a>
+
+    <a href="/best-meditation-sounds">Sounds</a>
+
+    <div class="dropdown">
+
+      <a href="#" class="dropdown-toggle" aria-haspopup="true">
+        Resources
+        <span class="dropdown-arrow">▼</span>
+      </a>
+
+      <div class="dropdown-content">
+
+        <a href="/sleep-meditation-sounds">
+          Sleep Meditation Sounds
         </a>
-        
-        <button class="menu-toggle" id="mobile-menu-btn">
-            <span class="material-icons">menu</span>
-        </button>
 
-        <nav class="nav-links" id="nav-links">
-            <div class="dropdown">
-                <a href="#" class="dropdown-toggle" style="cursor: pointer; justify-content: space-between; width: 100%;">
-                    Resources <span class="material-icons" style="font-size: 18px;">expand_more</span>
-                </a>
-                <div class="dropdown-content">
-                    <a href="/brown-noise-for-adhd-focus">Brown Noise for ADHD Focus</a>
-                    <a href="/meditation-timer-for-adhd">Meditation Timer for ADHD</a>
-                    <a href="/white-noise-meditation-timer">White Noise Timer</a>
-                    <a href="/sleep-meditation-sounds">Sleep Meditation Sounds</a>
-                </div>
-            </div>
+        <a href="/brown-noise-for-adhd-focus">
+          Brown Noise for ADHD Focus
+        </a>
 
-            <div class="dropdown">
-                <a href="#" class="dropdown-toggle" style="cursor: pointer; justify-content: space-between; width: 100%;">
-                    Articles <span class="material-icons" style="font-size: 18px;">expand_more</span>
-                </a>
-                <div class="dropdown-content">
-                    <a href="/how-to-use-a-meditation-timer">How To Use A Meditation Timer</a>
-                    <a href="/meditation-timer-vs-guided-meditation">Timer vs Guided Meditation</a>
-                    <a href="/how-long-should-you-meditate">How Long Should You Meditate</a>
-                    <a href="/best-meditation-sounds">Best Meditation Sounds</a>
-                    <a href="/meditation-timer-for-adhd-focus">Meditation Timer For ADHD Focus</a>
-                    <a href="/pomodoro-meditation-method">Pomodoro Meditation Method</a>
-                    <a href="/how-tibetan-singing-bowls-work">How Tibetan Singing Bowls Work</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+        <a href="/white-noise-meditation-timer">
+          White Noise Meditation Timer
+        </a>
 
-    <div class="article-container">
-        <h1>Meditation Timer for ADHD: A Distraction-Free Mindfulness Tool</h1>
-        <div class="subtitle">Why the standard "sit in silence" approach fails neurodivergent brains, and how to build a practice that actually works.</div>
+        <a href="/meditation-timer-for-adhd">
+          Meditation Timer for ADHD
+        </a>
 
-        <p>For an ADHD brain, the instruction to "just sit in silence and empty your mind" often sounds like a cruel joke. Without external stimulation, a quiet room becomes incredibly loud. Your internal monologue takes over, mental checklists multiply, and within minutes, you feel more restless and anxious than when you started.</p>
+        <a href="/meditation-timer-for-adhd-focus">
+          Meditation Timer for ADHD Focus
+        </a>
 
-        <p>But mindfulness is incredibly beneficial for executive dysfunction. The trick isn't forcing your brain to endure pure silence—it's giving your brain the right kind of acoustic anchors to keep it from drifting.</p>
+        <a href="/how-to-use-a-meditation-timer">
+          How To Use A Meditation Timer
+        </a>
 
-        <div class="carousel-wrapper">
-            <div class="carousel-container">
-                <div class="carousel-item"><img src="assets/Screenshot1.jpg" alt="Meditation Bell Timer App Interface"></div>
-                <div class="carousel-item"><img src="assets/Screenshot2.jpg" alt="Pitch Black UI Mode"></div>
-                <div class="carousel-item"><img src="assets/Screenshot3.jpg" alt="Brown Noise and Ambient Sounds"></div>
-                <div class="carousel-item"><img src="assets/Screenshot4.jpg" alt="Offline Gapless Meditation Timer"></div>
-            </div>
-        </div>
+        <a href="/how-long-should-you-meditate">
+          How Long Should You Meditate?
+        </a>
 
-        <h2>Why Traditional Meditation Apps Fail ADHD Users</h2>
-        <p>Most popular meditation apps are actively hostile to neurodivergent focus. They are packed with daily streaks, push notifications, social leaderboards, and complex home screens. If you forget to meditate for a day, you lose your "streak," triggering rejection sensitive dysphoria (RSD) and making you want to abandon the app entirely.</p>
-        <p>Furthermore, many apps force you to listen to guided vocal tracks. For someone with ADHD, listening to someone speak can feel like a chore or a podcast, completely ruining the opportunity to disconnect.</p>
+        <a href="/meditation-timer-vs-guided-meditation">
+          Timer vs Guided Meditation
+        </a>
 
-        <div class="cta-box">
-            <h3>Try Our ADHD-Friendly Timer</h3>
-            <p>No streaks, no vocal guides, no subscriptions. Just pure ambient sound and interval bells to keep you grounded. Try it completely free.</p>
-            <div class="btn-container">
-                <a href="timer.html" class="btn btn-primary">
-                    <span class="material-icons">web</span> Try Web Version
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer" target="_blank" rel="noopener noreferrer" class="play-store-badge">
-                    <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"/>
-                </a>
-            </div>
-        </div>
+        <a href="/pomodoro-meditation-method">
+          Pomodoro Meditation Method
+        </a>
 
-        <h2>The Solution: Audio Masking and Interval Bells</h2>
-        <p>To build a successful mindfulness routine with ADHD, you need to swap the silence for structure. Here is how to hack your meditation sessions:</p>
-        
-        <h3>1. Use Constant Ambient Sound (Audio Masking)</h3>
-        <p>Instead of silence, run a constant background track like Brown Noise, heavy rain, or crashing waves. This occupies the "background processor" of your brain, satisfying its need for stimulation without distracting your primary focus. It also drowns out sudden household noises that would normally break your concentration.</p>
+        <a href="/how-tibetan-singing-bowls-work">
+          How Tibetan Singing Bowls Work
+        </a>
 
-        <h3>2. Set Recurring Interval Bells</h3>
-        <p>Time blindness is a core symptom of ADHD. Sitting with your eyes closed for 15 minutes can feel like an eternity. By setting a Tibetan Bell to strike every 3 or 5 minutes, you give your brain a gentle, recurring anchor. When your mind inevitably wanders, the bell serves as a non-judgmental cue to return to your breath. It breaks a daunting session into manageable, bite-sized pieces.</p>
-
-        <h2>Why We Built Meditation Bell Timer</h2>
-        <p>We built <strong>Meditation Bell Timer</strong> because we were exhausted by the bloated, subscription-heavy wellness industry. We wanted a tool, not a lifestyle brand.</p>
-        
-        <p>Our app is specifically designed to eliminate distractions. It features a deep-black, AMOLED-friendly interface so your screen won't light up the room. It operates 100% offline, meaning you can put your phone in airplane mode and completely detach from notifications. Most importantly, our audio engine is entirely gapless—meaning there are no jarring clicks or pauses when the audio loops.</p>
-
-        <p>We firmly believe in a "Try for free, pay once" model. You can download the app and use it completely free. If you find it helpful and want infinite session durations, it's a single, one-time payment to unlock it permanently. No $10/month subscriptions, ever.</p>
-
-        <div class="cta-box">
-            <h3>Stop Renting Your Peace of Mind</h3>
-            <p>Build a sustainable practice with a tool designed to respect your focus and your wallet.</p>
-            <div class="btn-container">
-                <a href="timer.html" class="btn btn-primary">
-                    <span class="material-icons">web</span> Try Web Version
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer" target="_blank" rel="noopener noreferrer" class="play-store-badge">
-                    <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"/>
-                </a>
-            </div>
-        </div>
+      </div>
 
     </div>
 
-        <footer>
+  </nav>
 
-        <div class="social-links">
-            <a href="https://www.youtube.com/@MeditationBellTimer" target="_blank">
-                <i class="fa-brands fa-youtube" style="font-size: 18px;"></i> YouTube
-            </a>
-            <a href="https://www.instagram.com/meditationbelltimer/" target="_blank">
-                <i class="fa-brands fa-instagram" style="font-size: 18px;"></i> Instagram
-            </a>
-            <a href="https://www.tiktok.com/@meditationbelltimer" target="_blank">
-                <i class="fa-brands fa-tiktok" style="font-size: 18px;"></i> TikTok
-            </a>
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main>
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="hero-content">
+
+      <span class="eyebrow">
+        Focus · Mindfulness · ADHD
+      </span>
+
+      <h1>
+        Meditation Timer<br>
+        <span>for ADHD</span>
+      </h1>
+
+      <p>
+        Meditation does not have to mean sitting still for
+        thirty minutes in complete silence. A simple timer
+        can make short, structured mindfulness sessions
+        easier to start, easier to follow and easier to finish.
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="/timer.html" class="btn btn-primary">
+          Try the Free Meditation Timer →
+        </a>
+
+        <a href="#our-apps" class="btn btn-secondary">
+          Explore Our Apps
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="intro-grid">
+
+      <div class="intro-copy">
+
+        <span class="section-label">
+          A simpler approach
+        </span>
+
+        <h3>
+          Meditation can be structured around your attention,
+          rather than against it.
+        </h3>
+
+        <p>
+          For people who find traditional meditation difficult,
+          the hardest part can sometimes be the beginning.
+          Deciding how long to sit, watching the clock and
+          wondering when the session will finish can all become
+          distractions.
+        </p>
+
+        <p>
+          A dedicated meditation timer removes much of that
+          decision-making. Set the session, choose your sounds
+          if you want them, and let the timer handle the ending.
+        </p>
+
+        <p>
+          <a href="/timer.html" class="text-link">
+            Try Meditation Bell Timer free →
+          </a>
+        </p>
+
+      </div>
+
+      <div class="focus-panel">
+
+        <div class="focus-ring">
+
+          <div class="focus-ring-inner">
+            05:00
+          </div>
+
         </div>
 
-        <div style="margin-bottom: 20px;">
-            <a href="privacy.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; transition: color 0.3s;" onmouseover="this.style.color='#81D4FA'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Privacy Policy</a>
+        <h3>
+          Start small
+        </h3>
+
+        <p>
+          A five-minute session can be a simple starting point
+          when longer meditation feels difficult.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY A TIMER
+========================================================= -->
+
+<section class="section section-dark">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <span class="section-label">
+        Why use a timer?
+      </span>
+
+      <h2>
+        Remove the friction from meditation.
+      </h2>
+
+      <p>
+        The goal is not to force yourself into a particular
+        style of meditation. It is to create a simple structure
+        that makes returning to the practice easier.
+      </p>
+
+    </div>
+
+    <div class="benefit-grid">
+
+      <article class="benefit-card">
+
+        <span class="benefit-number">01</span>
+
+        <h3>
+          No clock watching
+        </h3>
+
+        <p>
+          Set your session length before you begin and let the
+          timer signal when your practice is complete.
+        </p>
+
+      </article>
+
+
+      <article class="benefit-card">
+
+        <span class="benefit-number">02</span>
+
+        <h3>
+          Short sessions
+        </h3>
+
+        <p>
+          Start with a duration that feels manageable rather
+          than assuming meditation needs to take a long time.
+        </p>
+
+      </article>
+
+
+      <article class="benefit-card">
+
+        <span class="benefit-number">03</span>
+
+        <h3>
+          Less decision-making
+        </h3>
+
+        <p>
+          A repeatable timer routine gives your practice a
+          simple beginning, middle and end.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     APP FEATURE
+========================================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="feature-panel">
+
+      <div>
+
+        <span class="section-label">
+          Meditation Bell & Zen Timer
+        </span>
+
+        <h2>
+          A meditation timer without the clutter.
+        </h2>
+
+        <p>
+          Meditation Bell Timer was designed around a simple
+          idea: meditation should not require a complicated
+          interface.
+        </p>
+
+        <p>
+          Set a duration, optionally add interval bells and
+          choose an ambient soundscape. Then put the phone
+          down and focus on the session.
+        </p>
+
+        <p>
+          <a href="/timer.html" class="text-link">
+            Open the free timer →
+          </a>
+        </p>
+
+      </div>
+
+      <div>
+
+        <ul class="feature-list">
+
+          <li>Custom meditation duration</li>
+
+          <li>Tibetan bell intervals</li>
+
+          <li>12 immersive soundscapes</li>
+
+          <li>Brown Noise & focus sounds</li>
+
+          <li>Dark Screen mode</li>
+
+          <li>Offline listening</li>
+
+          <li>Simple minimalist interface</li>
+
+          <li>Designed for unguided practice</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HOW TO USE
+========================================================= -->
+
+<section class="section section-dark">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <span class="section-label">
+        A simple routine
+      </span>
+
+      <h2>
+        Build a meditation habit one session at a time.
+      </h2>
+
+      <p>
+        You do not need an elaborate routine. A consistent
+        starting point can be enough.
+      </p>
+
+    </div>
+
+
+    <div class="steps">
+
+      <article class="step">
+
+        <span class="step-number">
+          STEP 01
+        </span>
+
+        <h3>
+          Choose a duration
+        </h3>
+
+        <p>
+          Begin with a session length that feels realistic.
+          Five minutes is perfectly acceptable.
+        </p>
+
+      </article>
+
+
+      <article class="step">
+
+        <span class="step-number">
+          STEP 02
+        </span>
+
+        <h3>
+          Choose your sound
+        </h3>
+
+        <p>
+          Use silence, a meditation bell or one of the
+          available ambient soundscapes.
+        </p>
+
+      </article>
+
+
+      <article class="step">
+
+        <span class="step-number">
+          STEP 03
+        </span>
+
+        <h3>
+          Start the session
+        </h3>
+
+        <p>
+          Put the phone down and return your attention to
+          your chosen meditation practice.
+        </p>
+
+      </article>
+
+
+      <article class="step">
+
+        <span class="step-number">
+          STEP 04
+        </span>
+
+        <h3>
+          Let the timer finish
+        </h3>
+
+        <p>
+          The ending bell gives you a clear finish without
+          needing to check the clock.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOCUS SOUNDS
+========================================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="intro-grid">
+
+      <div class="focus-panel">
+
+        <div class="focus-ring">
+
+          <div class="focus-ring-inner">
+            ♪
+          </div>
+
         </div>
 
-        <p class="copyright">&copy; 2026 Meditation Bell Timer. All rights reserved.</p>
-    </footer>
+        <h3>
+          Sound can create a boundary.
+        </h3>
+
+        <p>
+          A consistent soundscape can help mark the beginning
+          and end of a focused session.
+        </p>
+
+      </div>
 
 
+      <div class="intro-copy">
 
-    <script>
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.getElementById('nav-links');
-        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        <span class="section-label">
+          Focus & sound
+        </span>
 
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.querySelector('.material-icons').innerText = navLinks.classList.contains('active') ? 'close' : 'menu';
-        });
+        <h3>
+          Choose the environment that works for you.
+        </h3>
 
-        dropdownToggles.forEach(toggle => {
-            toggle.addEventListener('click', (e) => {
-                if (window.innerWidth <= 900) {
-                    e.preventDefault();
-                    const parentDropdown = toggle.closest('.dropdown');
-                    parentDropdown.classList.toggle('mobile-active');
-                    
-                    const icon = toggle.querySelector('.material-icons');
-                    icon.innerText = parentDropdown.classList.contains('mobile-active') ? 'expand_less' : 'expand_more';
-                }
-            });
-        });
-    </script>
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b448b569267c44c2b0ce85f99a149e61"}'></script>
+        <p>
+          Some people prefer silence. Others find that a
+          consistent background sound makes it easier to settle
+          into a task or meditation session.
+        </p>
+
+        <p>
+          Meditation Bell Timer includes ambient soundscapes
+          alongside its timer and bell functions, allowing you
+          to create a simple environment without needing
+          multiple apps.
+        </p>
+
+        <p>
+          For concentration outside meditation, explore our
+          <a href="/brown-noise-for-adhd-focus" class="text-link">
+            Brown Noise for ADHD Focus
+          </a>
+          resource too.
+        </p>
+
+        <p>
+          <a href="/timer.html" class="text-link">
+            Try the Meditation Bell Timer →
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     MEDITATION TIMER CONNECTION
+========================================================= -->
+
+<section class="section section-dark">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <span class="section-label">
+        Timer + mindfulness
+      </span>
+
+      <h2>
+        A timer gives your attention somewhere to return to.
+      </h2>
+
+      <p>
+        Meditation is not about never becoming distracted.
+        When attention wanders, the practice is simply to notice
+        it and return.
+      </p>
+
+    </div>
+
+    <div class="feature-panel">
+
+      <div>
+
+        <h2>
+          Keep the process simple.
+        </h2>
+
+        <p>
+          Instead of worrying about whether you are meditating
+          correctly, establish a small routine that you can
+          repeat.
+        </p>
+
+        <p>
+          Choose your duration. Start the timer. Notice when
+          your attention wanders. Return to the breath, body,
+          sound or chosen object of attention.
+        </p>
+
+      </div>
+
+      <div>
+
+        <ul class="feature-list">
+
+          <li>Choose your own session length</li>
+
+          <li>Use interval bells if helpful</li>
+
+          <li>Listen to calming soundscapes</li>
+
+          <li>Keep the interface minimal</li>
+
+          <li>Use Dark Screen mode</li>
+
+          <li>Practice without a guide</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     APP COLLECTION
+========================================================= -->
+
+<section class="section" id="our-apps">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <span class="section-label">
+        The Meditation Bell Timer collection
+      </span>
+
+      <h2>
+        Three apps.
+        <br>
+        One calmer ecosystem.
+      </h2>
+
+      <p>
+        Different tools for different moments — from simple
+        meditation timing to frequency listening and fully
+        custom sound baths.
+      </p>
+
+    </div>
+
+
+    <div class="app-grid">
+
+      <article class="app-card featured">
+
+        <span class="app-tag">
+          Meditation · Focus · Sleep
+        </span>
+
+        <h3>
+          Meditation Bell &amp; Zen Timer
+        </h3>
+
+        <p>
+          Our original minimalist meditation timer,
+          combining custom session timing, Tibetan bells
+          and immersive ambient soundscapes.
+        </p>
+
+        <ul>
+
+          <li>Custom meditation timer</li>
+
+          <li>Tibetan bell intervals</li>
+
+          <li>12 immersive soundscapes</li>
+
+          <li>Brown Noise &amp; focus sounds</li>
+
+          <li>Dark Screen mode</li>
+
+          <li>Offline listening</li>
+
+        </ul>
+
+        <a
+          href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-link">
+
+          Explore Meditation Bell Timer →
+
+        </a>
+
+      </article>
+
+
+      <article class="app-card">
+
+        <span class="app-tag">
+          Frequencies · Meditation · Focus
+        </span>
+
+        <h3>
+          Solfeggio Frequencies Healing
+        </h3>
+
+        <p>
+          Explore a dedicated collection of Solfeggio
+          frequencies, including the traditional scale
+          alongside 432 Hz, 4 Hz Delta and 40 Hz Gamma.
+        </p>
+
+        <ul>
+
+          <li>12 frequency options</li>
+
+          <li>174 Hz – 963 Hz</li>
+
+          <li>432 Hz</li>
+
+          <li>4 Hz Delta</li>
+
+          <li>40 Hz Gamma</li>
+
+          <li>Minimalist black interface</li>
+
+        </ul>
+
+        <a
+          href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-link">
+
+          Explore Solfeggio Frequencies →
+
+        </a>
+
+      </article>
+
+
+      <article class="app-card">
+
+        <span class="app-tag">
+          Custom Sound Bath
+        </span>
+
+        <h3>
+          Sound Bath Zen
+        </h3>
+
+        <p>
+          Build your own sound bath by combining frequency
+          audio with calming ambient soundscapes and
+          controlling the two layers independently.
+        </p>
+
+        <ul>
+
+          <li>Two independent audio layers</li>
+
+          <li>Solfeggio &amp; brainwave frequencies</li>
+
+          <li>Nature &amp; ambient sounds</li>
+
+          <li>Independent volume controls</li>
+
+          <li>Saved presets</li>
+
+          <li>Long-form sessions</li>
+
+        </ul>
+
+        <a
+          href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-link">
+
+          Explore Sound Bath Zen →
+
+        </a>
+
+      </article>
+
+    </div>
+
+
+    <div style="text-align:center; margin-top:35px;">
+
+      <a
+        href="/our-apps.html"
+        class="text-link">
+
+        View All Three Apps →
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     REPEATED APP CTA
+========================================================= -->
+
+<section class="cta">
+
+  <div class="cta-inner">
+
+    <span class="section-label">
+      Start with five minutes
+    </span>
+
+    <h2>
+      Give your attention<br>
+      a place to land.
+    </h2>
+
+    <p>
+      Try the free Meditation Bell Timer and create a simple,
+      distraction-free meditation routine that fits around
+      your day.
+    </p>
+
+    <div class="hero-actions" style="justify-content:center;">
+
+      <a href="/timer.html" class="btn btn-primary">
+        Try the Free Timer →
+      </a>
+
+      <a href="/our-apps.html" class="btn btn-secondary">
+        Explore Our Apps
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     RELATED RESOURCES
+========================================================= -->
+
+<section class="section section-dark">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <span class="section-label">
+        Continue exploring
+      </span>
+
+      <h2>
+        More ways to build a focused practice.
+      </h2>
+
+      <p>
+        Explore the wider Meditation Bell Timer resource
+        collection and discover different ways to use sound,
+        timing and mindfulness.
+      </p>
+
+    </div>
+
+
+    <div class="resource-grid">
+
+      <a
+        href="/brown-noise-for-adhd-focus"
+        class="resource-card">
+
+        <span>
+          ADHD · Focus
+        </span>
+
+        <h3>
+          Brown Noise for ADHD Focus
+        </h3>
+
+        <p>
+          Explore brown noise as a simple background sound
+          for concentration and focused sessions.
+        </p>
+
+      </a>
+
+
+      <a
+        href="/white-noise-meditation-timer"
+        class="resource-card">
+
+        <span>
+          Sound · Focus
+        </span>
+
+        <h3>
+          White Noise Meditation Timer
+        </h3>
+
+        <p>
+          Combine consistent background sound with a simple
+          timed meditation routine.
+        </p>
+
+      </a>
+
+
+      <a
+        href="/meditation-timer-for-adhd-focus"
+        class="resource-card">
+
+        <span>
+          Focus · ADHD
+        </span>
+
+        <h3>
+          Meditation Timer for ADHD Focus
+        </h3>
+
+        <p>
+          Explore structured meditation sessions designed
+          around focus and attention.
+        </p>
+
+      </a>
+
+
+      <a
+        href="/how-to-use-a-meditation-timer"
+        class="resource-card">
+
+        <span>
+          Meditation
+        </span>
+
+        <h3>
+          How To Use A Meditation Timer
+        </h3>
+
+        <p>
+          A straightforward guide to setting up and using
+          a timed meditation practice.
+        </p>
+
+      </a>
+
+
+      <a
+        href="/meditation-timer-vs-guided-meditation"
+        class="resource-card">
+
+        <span>
+          Compare
+        </span>
+
+        <h3>
+          Timer vs Guided Meditation
+        </h3>
+
+        <p>
+          Explore the difference between unguided timed
+          meditation and guided sessions.
+        </p>
+
+      </a>
+
+
+      <a
+        href="/pomodoro-meditation-method"
+        class="resource-card">
+
+        <span>
+          Productivity
+        </span>
+
+        <h3>
+          Pomodoro Meditation Method
+        </h3>
+
+        <p>
+          Discover how timed focus periods and meditation
+          can fit together in a simple routine.
+        </p>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <a href="/" class="logo">
+
+          <img
+            src="/android-chrome-192x192.png"
+            alt="Meditation Bell Timer">
+
+          <span>
+            MEDITATION BELL TIMER
+          </span>
+
+        </a>
+
+        <p>
+          Simple tools for meditation, focus, sleep and
+          mindful listening. Designed to keep your practice
+          calm, private and distraction-free.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="/">
+          Home
+        </a>
+
+        <a href="/timer.html">
+          Free Timer
+        </a>
+
+        <a href="/our-apps.html">
+          Our Apps
+        </a>
+
+        <a href="/solfeggio-healing-frequencies.html">
+          Solfeggio
+        </a>
+
+        <a href="/best-meditation-sounds">
+          Sounds
+        </a>
+
+        <a href="/sleep-meditation-sounds">
+          Sleep Sounds
+        </a>
+
+        <a href="/brown-noise-for-adhd-focus">
+          Brown Noise
+        </a>
+
+        <a href="/white-noise-meditation-timer">
+          White Noise
+        </a>
+
+        <a href="/meditation-timer-for-adhd">
+          Meditation Timer for ADHD
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      © 2026 Meditation Bell Timer. All rights reserved.
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     MOBILE MENU JAVASCRIPT
+========================================================= -->
+
+<script>
+
+(function () {
+
+  const mobileMenuButton =
+    document.getElementById('mobile-menu-btn');
+
+  const navigation =
+    document.getElementById('nav-links');
+
+  const dropdowns =
+    document.querySelectorAll('header .dropdown');
+
+  if (!mobileMenuButton || !navigation) {
+    return;
+  }
+
+  mobileMenuButton.addEventListener('click', function () {
+
+    const isOpen =
+      navigation.classList.toggle('active');
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      isOpen ? 'true' : 'false'
+    );
+
+    mobileMenuButton.setAttribute(
+      'aria-label',
+      isOpen
+        ? 'Close navigation menu'
+        : 'Open navigation menu'
+    );
+
+    mobileMenuButton.textContent =
+      isOpen ? '×' : '☰';
+
+  });
+
+
+  document
+    .querySelectorAll('header .dropdown-toggle')
+    .forEach(function(toggle) {
+
+      toggle.addEventListener('click', function(event) {
+
+        if (window.innerWidth <= 700) {
+
+          event.preventDefault();
+
+          const dropdown =
+            toggle.closest('.dropdown');
+
+          dropdown.classList.toggle('mobile-active');
+
+        }
+
+      });
+
+    });
+
+
+  document
+    .querySelectorAll(
+      '#nav-links a:not(.dropdown-toggle)'
+    )
+    .forEach(function(link) {
+
+      link.addEventListener('click', function() {
+
+        if (window.innerWidth <= 700) {
+
+          navigation.classList.remove('active');
+
+          mobileMenuButton.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+          mobileMenuButton.setAttribute(
+            'aria-label',
+            'Open navigation menu'
+          );
+
+          mobileMenuButton.textContent = '☰';
+
+        }
+
+      });
+
+    });
+
+
+  document.addEventListener('click', function(event) {
+
+    if (window.innerWidth > 700) {
+      return;
+    }
+
+    if (
+      !navigation.contains(event.target) &&
+      !mobileMenuButton.contains(event.target)
+    ) {
+
+      navigation.classList.remove('active');
+
+      mobileMenuButton.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+      mobileMenuButton.setAttribute(
+        'aria-label',
+        'Open navigation menu'
+      );
+
+      mobileMenuButton.textContent = '☰';
+
+    }
+
+  });
+
+
+  window.addEventListener('resize', function() {
+
+    if (window.innerWidth > 700) {
+
+      navigation.classList.remove('active');
+
+      mobileMenuButton.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+      mobileMenuButton.setAttribute(
+        'aria-label',
+        'Open navigation menu'
+      );
+
+      mobileMenuButton.textContent = '☰';
+
+      dropdowns.forEach(function(dropdown) {
+
+        dropdown.classList.remove(
+          'mobile-active'
+        );
+
+      });
+
+    }
+
+  });
+
+})();
+
+</script>
+
 </body>
 </html>
