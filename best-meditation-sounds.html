@@ -51,7 +51,7 @@ content="https://meditationbelltimer.com/assets/bowl_bg.webp">
 <!-- FONTS --><link rel="preconnect"
       href="https://fonts.googleapis.com"><link rel="preconnect"
       href="https://fonts.gstatic.com"
-      crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;700&display=swap"
+      crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;700&family=DM+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"><style>
 
 /* =========================================================
@@ -124,64 +124,247 @@ a {
 }
 
 
+
 /* =========================================================
-   HEADER — SITE WIDE
+   SITE-WIDE HEADER / NAVIGATION — MASTER VERSION 1
 ========================================================= */
 
 header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background: rgba(7,9,9,0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  white-space: nowrap;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links > a,
+.dropdown-toggle {
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.nav-links > a:hover,
+.dropdown-toggle:hover {
+  color: var(--gold-light);
+}
+
+.dropdown { position: relative; }
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  font-size: 9px;
+  opacity: 0.65;
+  transition: transform 0.2s ease;
+}
+
+.dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  position: absolute;
+  top: calc(100% + 17px);
+  right: 0;
+  min-width: 270px;
+  padding: 9px;
+  background: rgba(10,13,14,0.98);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.55);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: rgba(255,255,255,0.68);
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background: rgba(212,175,90,0.08);
+  color: var(--gold-light);
+}
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  header {
     position: sticky;
-
     top: 0;
+    height: 74px;
+    padding: 0 5%;
+  }
 
-    z-index: 1000;
+  .logo {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+  }
 
-    width: 100%;
+  .logo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    object-fit: cover;
+  }
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(5,8,8,0.96),
-            rgba(5,8,8,0.90)
-        );
-
-    backdrop-filter: blur(16px);
-
-    -webkit-backdrop-filter: blur(16px);
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.055);
-}
-
-.nav {
-
-    width: 100%;
-
-    max-width:
-        var(--max-width);
-
-    min-height: 78px;
-
-    margin: 0 auto;
-
-    padding:
-        0 30px;
-
+  .menu-toggle {
     display: flex;
-
     align-items: center;
+    justify-content: center;
+  }
 
+  .nav-links {
+    position: absolute;
+    top: 74px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    background: rgba(7,9,9,0.98);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    transition: max-height .35s ease, padding .2s ease;
+  }
+
+  .nav-links.active {
+    max-height: calc(100vh - 74px);
+    overflow-y: auto;
+    padding: 10px 0 20px;
+  }
+
+  .nav-links > a,
+  .nav-links .dropdown {
+    width: 100%;
+    padding: 15px 5%;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .nav-links > a {
+    color: #bfc2bb;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
     justify-content: space-between;
+    padding: 0;
+    color: #bfc2bb;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
 
-    gap: 30px;
+  .dropdown-arrow {
+    font-size: 9px;
+  }
+
+  .dropdown-content {
+    position: static;
+    display: none;
+    min-width: 0;
+    padding: 8px 0 0 12px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .dropdown.mobile-active .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 11px 10px;
+    color: #969a93;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    border-radius: 8px;
+  }
 }
 
 
-/* =========================================================
-   BRAND / LOGO
-========================================================= */
-
+/* Footer brand styling preserved from original page */
 .brand {
 
     display: flex;
@@ -223,250 +406,6 @@ header {
 .brand span {
     display: block;
 }
-
-
-/* =========================================================
-   DESKTOP NAVIGATION
-========================================================= */
-
-.nav-links {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 28px;
-}
-
-.nav-links > a,
-.dropdown-toggle {
-
-    color:
-        rgba(255,255,255,0.72);
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    transition:
-        color 0.25s ease;
-}
-
-.nav-links > a:hover,
-.dropdown-toggle:hover {
-
-    color:
-        var(--gold-light);
-}
-
-
-/* =========================================================
-   DROPDOWN
-========================================================= */
-
-.dropdown {
-
-    position: relative;
-}
-
-.dropdown-toggle {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 6px;
-
-    cursor: pointer;
-
-    background: transparent;
-
-    border: 0;
-
-    font-family: inherit;
-}
-
-.dropdown-arrow {
-
-    font-size: 10px;
-
-    opacity: 0.65;
-
-    transition:
-        transform 0.25s ease;
-}
-
-.dropdown:hover
-.dropdown-arrow {
-
-    transform:
-        rotate(180deg);
-}
-
-.dropdown-content {
-
-    position: absolute;
-
-    top:
-        calc(100% + 15px);
-
-    right: 0;
-
-    min-width: 250px;
-
-    padding: 10px;
-
-    background:
-        rgba(10,13,14,0.98);
-
-    border:
-        1px solid
-        rgba(255,255,255,0.08);
-
-    border-radius: 13px;
-
-    box-shadow:
-        0 25px 70px
-        rgba(0,0,0,0.55);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform:
-        translateY(-8px);
-
-    transition:
-        opacity 0.2s ease,
-        transform 0.2s ease,
-        visibility 0.2s ease;
-}
-
-.dropdown:hover
-.dropdown-content {
-
-    opacity: 1;
-
-    visibility: visible;
-
-    transform:
-        translateY(0);
-}
-
-.dropdown-content a {
-
-    display: block;
-
-    padding:
-        10px 12px;
-
-    border-radius: 8px;
-
-    color:
-        rgba(255,255,255,0.68);
-
-    text-decoration: none;
-
-    font-size: 13px;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
-}
-
-.dropdown-content a:hover {
-
-    background:
-        rgba(212,175,90,0.08);
-
-    color:
-        var(--gold-light);
-}
-
-
-/* =========================================================
-   MOBILE MENU BUTTON
-========================================================= */
-
-.menu-toggle {
-
-    display: none;
-
-    width: 44px;
-
-    height: 44px;
-
-    padding: 0;
-
-    border: 0;
-
-    background: transparent;
-
-    color: white;
-
-    cursor: pointer;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-shrink: 0;
-}
-
-.menu-icon {
-
-    width: 29px;
-
-    height: 21px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-}
-
-.menu-icon span {
-
-    display: block;
-
-    width: 100%;
-
-    height: 2px;
-
-    background: white;
-
-    border-radius: 2px;
-
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
-}
-
-.menu-toggle.active
-.menu-icon span:nth-child(1) {
-
-    transform:
-        translateY(9.5px)
-        rotate(45deg);
-}
-
-.menu-toggle.active
-.menu-icon span:nth-child(2) {
-
-    opacity: 0;
-}
-
-.menu-toggle.active
-.menu-icon span:nth-child(3) {
-
-    transform:
-        translateY(-9.5px)
-        rotate(-45deg);
-}
-
 
 /* =========================================================
    MAIN
@@ -1369,254 +1308,38 @@ footer {
    MOBILE
 ========================================================= */
 
+
 @media (max-width: 900px) {
 
-    .nav {
-        min-height:
-            68px;
-
-        padding:
-            0 20px;
-    }
-
-    .brand {
-        font-size:
-            13px;
-
-        letter-spacing:
-            1.7px;
-    }
-
-    .brand img {
-        width:
-            30px;
-
-        height:
-            30px;
-
-        flex-basis:
-            30px;
-    }
-
-    .menu-toggle {
-        display:
-            flex;
-    }
-
-    .nav-links {
-
-        position:
-            absolute;
-
-        top:
-            68px;
-
-        left:
-            0;
-
-        width:
-            100%;
-
-        display:
-            flex;
-
-        flex-direction:
-            column;
-
-        align-items:
-            stretch;
-
-        gap:
-            0;
-
-        padding:
-            8px 0 15px;
-
-        background:
-            rgba(7,9,9,0.98);
-
-        border-bottom:
-            1px solid
-            rgba(255,255,255,0.07);
-
-        box-shadow:
-            0 25px 50px
-            rgba(0,0,0,0.45);
-
-        max-height:
-            0;
-
-        overflow:
-            hidden;
-
-        opacity:
-            0;
-
-        pointer-events:
-            none;
-
-        transition:
-            max-height 0.35s ease,
-            opacity 0.25s ease;
-    }
-
-    .nav-links.active {
-
-        max-height:
-            calc(100vh - 68px);
-
-        opacity:
-            1;
-
-        pointer-events:
-            auto;
-
-        overflow-y:
-            auto;
-    }
-
-    .nav-links > a,
-    .dropdown-toggle {
-
-        width:
-            100%;
-
-        min-height:
-            48px;
-
-        padding:
-            0 22px;
-
-        display:
-            flex;
-
-        align-items:
-            center;
-
-        justify-content:
-            space-between;
-
-        font-size:
-            14px;
-    }
-
-    .dropdown {
-
-        width:
-            100%;
-    }
-
-    .dropdown-content {
-
-        position:
-            static;
-
-        min-width:
-            0;
-
-        width:
-            100%;
-
-        padding:
-            0;
-
-        background:
-            rgba(255,255,255,0.025);
-
-        border:
-            0;
-
-        border-radius:
-            0;
-
-        box-shadow:
-            none;
-
-        opacity:
-            1;
-
-        visibility:
-            visible;
-
-        transform:
-            none;
-
-        max-height:
-            0;
-
-        overflow:
-            hidden;
-
-        transition:
-            max-height 0.3s ease;
-    }
-
-    .dropdown.mobile-active
-    .dropdown-content {
-
-        max-height:
-            500px;
-    }
-
-    .dropdown-content a {
-
-        min-height:
-            43px;
-
-        display:
-            flex;
-
-        align-items:
-            center;
-
-        padding:
-            0 38px;
-
-        font-size:
-            13px;
-
-        border-radius:
-            0;
-    }
-
     main {
-
         padding:
             0 20px 70px;
     }
 
     .article-layout {
-
         grid-template-columns:
             1fr;
-
         gap:
             25px;
     }
 
     .toc {
-
         position:
             relative;
-
         top:
             auto;
-
         order:
             -1;
     }
 
     .sound-grid {
-
         grid-template-columns:
             1fr;
     }
 
     .footer-inner {
-
         grid-template-columns:
             1fr 1fr;
-
         gap:
             35px 25px;
     }
@@ -1627,163 +1350,104 @@ footer {
    SMALL MOBILE
 ========================================================= */
 
+
 @media (max-width: 520px) {
 
-    .nav {
-
-        padding:
-            0 15px;
-    }
-
-    .brand {
-
-        font-size:
-            12px;
-
-        letter-spacing:
-            1.45px;
-
-        gap:
-            8px;
-    }
-
-    .brand img {
-
-        width:
-            28px;
-
-        height:
-            28px;
-
-        flex-basis:
-            28px;
-
-        border-radius:
-            6px;
-    }
-
     main {
-
         padding:
             0 15px 60px;
     }
 
     .breadcrumbs {
-
         padding:
             22px 0 14px;
-
         font-size:
             13px;
     }
 
     .hero {
-
         min-height:
             500px;
-
         border-radius:
             18px;
-
         margin-bottom:
             35px;
     }
 
     .hero-content {
-
         padding:
             30px 22px 32px;
     }
 
     .eyebrow {
-
         font-size:
             10px;
-
         letter-spacing:
             2.4px;
-
         margin-bottom:
             15px;
     }
 
     .hero h1 {
-
         font-size:
             clamp(43px, 13vw, 60px);
-
         line-height:
             0.96;
-
         margin-bottom:
             21px;
     }
 
     .hero p {
-
         font-size:
             15px;
-
         line-height:
             1.75;
     }
 
     article h2 {
-
         font-size:
             38px;
-
         margin-top:
             48px;
     }
 
     article h3 {
-
         font-size:
             19px;
     }
 
     article p {
-
         font-size:
             15px;
-
         line-height:
             1.8;
     }
 
     .intro {
-
         font-size:
             18px;
-
         line-height:
             1.8;
     }
 
     .sound-image {
-
         height:
             205px;
     }
 
     .sound-body {
-
         padding:
             18px;
     }
 
     .cta {
-
         padding:
             32px 20px;
     }
 
     .footer-inner {
-
         grid-template-columns:
             1fr;
-
         gap:
             30px;
     }
@@ -1914,176 +1578,51 @@ footer {
         }
     ]
 }
-</script></head><body><!-- =========================================================
-     SITE-WIDE HEADER
-========================================================= --><header><nav class="nav"><a
-    href="/"
-    class="brand"
-    aria-label="Meditation Bell Timer home">
+</script></head><body><header>
+  <a href="/" class="logo">
+    <img src="/android-chrome-192x192.png" alt="Meditation Bell Timer">
+    <span>MEDITATION BELL TIMER</span>
+  </a>
 
-    <img
-        src="/android-chrome-192x192.png"
-        alt="Meditation Bell Timer">
-
-    <span>
-        MEDITATION BELL TIMER
-    </span>
-
-</a>
-
-
-<button
+  <button
     class="menu-toggle"
     id="mobile-menu-btn"
+    type="button"
     aria-label="Open navigation menu"
     aria-expanded="false"
     aria-controls="nav-links">
+    ☰
+  </button>
 
-    <span class="menu-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-    </span>
-
-</button>
-
-
-<nav
-    class="nav-links"
-    id="nav-links"
-    aria-label="Main navigation">
-
-
-    <a href="/our-apps.html">
-        Our Apps
-    </a>
-
-
-    <a href="/solfeggio-healing-frequencies.html">
-        Solfeggio Frequencies
-    </a>
-
+  <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/timer.html">Free Timer</a>
+    <a href="/our-apps.html">Our Apps</a>
+    <a href="/solfeggio-healing-frequencies.html">Solfeggio</a>
+    <a href="/best-meditation-sounds">Sounds</a>
 
     <div class="dropdown">
+      <a href="#" class="dropdown-toggle" aria-haspopup="true">
+        Resources
+        <span class="dropdown-arrow">▼</span>
+      </a>
 
-        <button
-            class="dropdown-toggle"
-            type="button"
-            aria-expanded="false">
-
-            <span>
-                Resources
-            </span>
-
-            <span class="dropdown-arrow">
-                ▼
-            </span>
-
-        </button>
-
-
-        <div class="dropdown-content">
-
-
-            <a href="/timer.html">
-                Free Meditation Timer
-            </a>
-
-
-            <a href="/brown-noise-for-adhd-focus">
-                Brown Noise for ADHD Focus
-            </a>
-
-
-            <a href="/meditation-timer-for-adhd">
-                Meditation Timer for ADHD
-            </a>
-
-
-            <a href="/white-noise-meditation-timer">
-                White Noise Timer
-            </a>
-
-
-            <a href="/sleep-meditation-sounds">
-                Sleep Meditation Sounds
-            </a>
-
-
-            <a href="/solfeggio-healing-frequencies.html">
-                Solfeggio Frequencies
-            </a>
-
-
-        </div>
-
+      <div class="dropdown-content">
+        <a href="/sleep-meditation-sounds">Sleep Meditation Sounds</a>
+        <a href="/brown-noise-for-adhd-focus">Brown Noise for ADHD Focus</a>
+        <a href="/white-noise-meditation-timer">White Noise Meditation Timer</a>
+        <a href="/meditation-timer-for-adhd">Meditation Timer for ADHD</a>
+        <a href="/meditation-timer-for-adhd-focus">Meditation Timer for ADHD Focus</a>
+        <a href="/how-to-use-a-meditation-timer">How To Use A Meditation Timer</a>
+        <a href="/how-long-should-you-meditate">How Long Should You Meditate?</a>
+        <a href="/meditation-timer-vs-guided-meditation">Timer vs Guided Meditation</a>
+        <a href="/pomodoro-meditation-method">Pomodoro Meditation Method</a>
+        <a href="/how-tibetan-singing-bowls-work">How Tibetan Singing Bowls Work</a>
+      </div>
     </div>
-
-
-    <div class="dropdown">
-
-        <button
-            class="dropdown-toggle"
-            type="button"
-            aria-expanded="false">
-
-            <span>
-                Articles
-            </span>
-
-            <span class="dropdown-arrow">
-                ▼
-            </span>
-
-        </button>
-
-
-        <div class="dropdown-content">
-
-
-            <a href="/how-to-use-a-meditation-timer">
-                How To Use A Meditation Timer
-            </a>
-
-
-            <a href="/meditation-timer-vs-guided-meditation">
-                Timer vs Guided Meditation
-            </a>
-
-
-            <a href="/how-long-should-you-meditate">
-                How Long Should You Meditate
-            </a>
-
-
-            <a href="/best-meditation-sounds">
-                Best Meditation Sounds
-            </a>
-
-
-            <a href="/meditation-timer-for-adhd-focus">
-                Meditation Timer For ADHD Focus
-            </a>
-
-
-            <a href="/pomodoro-meditation-method">
-                Pomodoro Meditation Method
-            </a>
-
-
-            <a href="/how-tibetan-singing-bowls-work">
-                How Tibetan Singing Bowls Work
-            </a>
-
-
-        </div>
-
-    </div>
-
-
-</nav>
-
-</nav></header><!-- =========================================================
+  </nav>
+</header>
+<!-- =========================================================
      MAIN
 ========================================================= --><main><!-- BREADCRUMBS -->
 
@@ -3520,180 +3059,114 @@ footer {
 </div>
 
 </footer><!-- =========================================================
-     MOBILE NAVIGATION
-========================================================= --><script>
-
+     SITE-WIDE MOBILE NAVIGATION — MASTER VERSION 1
+========================================================= -->
+<script>
 (function () {
+  const mobileMenuButton = document.getElementById('mobile-menu-btn');
+  const navigation = document.getElementById('nav-links');
+  const dropdowns = document.querySelectorAll('.dropdown');
 
-    const mobileMenuButton =
-        document.getElementById('mobile-menu-btn');
+  if (!mobileMenuButton || !navigation) {
+    return;
+  }
 
-    const navigation =
-        document.getElementById('nav-links');
+  mobileMenuButton.addEventListener('click', function () {
+    const isOpen = navigation.classList.toggle('active');
 
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      isOpen ? 'true' : 'false'
+    );
 
-    if (!mobileMenuButton || !navigation) {
-        return;
+    mobileMenuButton.setAttribute(
+      'aria-label',
+      isOpen ? 'Close navigation menu' : 'Open navigation menu'
+    );
+
+    mobileMenuButton.textContent = isOpen ? '×' : '☰';
+  });
+
+  document
+    .querySelectorAll('.dropdown-toggle')
+    .forEach(function(toggle) {
+      toggle.addEventListener('click', function(event) {
+        if (window.innerWidth <= 700) {
+          event.preventDefault();
+          const dropdown = toggle.closest('.dropdown');
+          dropdown.classList.toggle('mobile-active');
+        }
+      });
+    });
+
+  document
+    .querySelectorAll('#nav-links a:not(.dropdown-toggle)')
+    .forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 700) {
+          navigation.classList.remove('active');
+
+          mobileMenuButton.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+          mobileMenuButton.setAttribute(
+            'aria-label',
+            'Open navigation menu'
+          );
+
+          mobileMenuButton.textContent = '☰';
+        }
+      });
+    });
+
+  document.addEventListener('click', function(event) {
+    if (window.innerWidth > 700) {
+      return;
     }
 
+    if (
+      !navigation.contains(event.target) &&
+      !mobileMenuButton.contains(event.target)
+    ) {
+      navigation.classList.remove('active');
 
-    /* =====================================================
-       MOBILE MENU
-    ===================================================== */
+      mobileMenuButton.setAttribute(
+        'aria-expanded',
+        'false'
+      );
 
-    mobileMenuButton.addEventListener(
-        'click',
-        function () {
+      mobileMenuButton.setAttribute(
+        'aria-label',
+        'Open navigation menu'
+      );
 
-            const active =
-                navigation.classList.toggle('active');
+      mobileMenuButton.textContent = '☰';
+    }
+  });
 
-            mobileMenuButton.classList.toggle(
-                'active',
-                active
-            );
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 700) {
+      navigation.classList.remove('active');
 
-            mobileMenuButton.setAttribute(
-                'aria-expanded',
-                active ? 'true' : 'false'
-            );
+      mobileMenuButton.setAttribute(
+        'aria-expanded',
+        'false'
+      );
 
-            mobileMenuButton.setAttribute(
-                'aria-label',
-                active
-                    ? 'Close navigation menu'
-                    : 'Open navigation menu'
-            );
+      mobileMenuButton.setAttribute(
+        'aria-label',
+        'Open navigation menu'
+      );
 
-        }
-    );
+      mobileMenuButton.textContent = '☰';
 
-
-    /* =====================================================
-       MOBILE DROPDOWNS
-    ===================================================== */
-
-    document
-        .querySelectorAll('.dropdown-toggle')
-        .forEach(function (toggle) {
-
-            toggle.addEventListener(
-                'click',
-                function (event) {
-
-                    if (window.innerWidth <= 900) {
-
-                        event.preventDefault();
-
-                        const dropdown =
-                            toggle.closest('.dropdown');
-
-                        const active =
-                            dropdown.classList.toggle(
-                                'mobile-active'
-                            );
-
-                        toggle.setAttribute(
-                            'aria-expanded',
-                            active
-                                ? 'true'
-                                : 'false'
-                        );
-
-                    }
-
-                }
-            );
-
-        });
-
-
-    /* =====================================================
-       CLOSE MENU WHEN LINK CLICKED
-    ===================================================== */
-
-    document
-        .querySelectorAll(
-            '#nav-links a'
-        )
-        .forEach(function (link) {
-
-            link.addEventListener(
-                'click',
-                function () {
-
-                    if (window.innerWidth <= 900) {
-
-                        navigation.classList.remove(
-                            'active'
-                        );
-
-                        mobileMenuButton.classList.remove(
-                            'active'
-                        );
-
-                        mobileMenuButton.setAttribute(
-                            'aria-expanded',
-                            'false'
-                        );
-
-                        mobileMenuButton.setAttribute(
-                            'aria-label',
-                            'Open navigation menu'
-                        );
-
-                    }
-
-                }
-            );
-
-        });
-
-
-    /* =====================================================
-       RESET ON DESKTOP
-    ===================================================== */
-
-    window.addEventListener(
-        'resize',
-        function () {
-
-            if (window.innerWidth > 900) {
-
-                navigation.classList.remove(
-                    'active'
-                );
-
-                mobileMenuButton.classList.remove(
-                    'active'
-                );
-
-                mobileMenuButton.setAttribute(
-                    'aria-expanded',
-                    'false'
-                );
-
-                mobileMenuButton.setAttribute(
-                    'aria-label',
-                    'Open navigation menu'
-                );
-
-                document
-                    .querySelectorAll('.dropdown')
-                    .forEach(function (dropdown) {
-
-                        dropdown.classList.remove(
-                            'mobile-active'
-                        );
-
-                    });
-
-            }
-
-        }
-    );
-
+      dropdowns.forEach(function(dropdown) {
+        dropdown.classList.remove('mobile-active');
+      });
+    }
+  });
 })();
-
 </script></body>
 </html>
