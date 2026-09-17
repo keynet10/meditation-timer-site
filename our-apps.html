@@ -5,23 +5,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Apps | Meditation, Solfeggio & Sound Bath Wellness Apps</title>
+<title>Our Apps | Meditation, Solfeggio & Sound Bath Apps</title>
 
-<meta name="description" content="Explore the Meditation Bell Timer, Solfeggio Healing Frequencies and Sound Bath Zen apps. Simple, distraction-free wellness tools for meditation, sleep, focus and relaxation.">
+<meta name="description" content="Explore Meditation Bell Timer, Solfeggio Healing Frequencies and Sound Bath Zen — simple wellness apps for meditation, sleep, focus, relaxation and mindful listening.">
 
 <link rel="canonical" href="https://meditationbelltimer.com/our-apps.html">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Our Apps | Simple Tools for a Calmer Life">
-<meta property="og:description" content="Explore our collection of simple, distraction-free wellness apps for meditation, sleep, focus and relaxation.">
+<meta property="og:title" content="Our Apps | Meditation, Solfeggio & Sound Bath Apps">
+<meta property="og:description" content="Explore three simple, distraction-free apps for meditation, sleep, focus, relaxation, frequencies and personalised sound baths.">
 <meta property="og:url" content="https://meditationbelltimer.com/our-apps.html">
 <meta property="og:image" content="https://meditationbelltimer.com/assets/solfeggio-hero.webp">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Our Apps | Simple Tools for a Calmer Life">
-<meta name="twitter:description" content="Meditation, Solfeggio frequencies and personalised sound baths — simple wellness tools without the clutter.">
+<meta name="twitter:title" content="Our Apps | Meditation, Solfeggio & Sound Bath Apps">
+<meta name="twitter:description" content="Explore simple apps for meditation, sleep, focus, relaxation, Solfeggio frequencies and personalised sound baths.">
 <meta name="twitter:image" content="https://meditationbelltimer.com/assets/solfeggio-hero.webp">
 
 <!-- Favicon -->
@@ -1344,16 +1344,129 @@ footer {
 
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Our Apps",
-    "url": "https://meditationbelltimer.com/our-apps.html",
-    "description": "A collection of simple wellness apps for meditation, sleep, focus, relaxation and sound.",
-    "publisher": {
-        "@type": "Organization",
-        "name": "Future Home Tek",
-        "url": "https://meditationbelltimer.com/"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://meditationbelltimer.com/#organization",
+      "name": "Future Home Tek",
+      "url": "https://meditationbelltimer.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://meditationbelltimer.com/android-chrome-192x192.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://meditationbelltimer.com/#website",
+      "url": "https://meditationbelltimer.com/",
+      "name": "Meditation Bell Timer",
+      "publisher": {
+        "@id": "https://meditationbelltimer.com/#organization"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://meditationbelltimer.com/our-apps.html#webpage",
+      "name": "Our Apps | Meditation, Solfeggio & Sound Bath Apps",
+      "url": "https://meditationbelltimer.com/our-apps.html",
+      "description": "Explore simple wellness apps from Future Home Tek for meditation, sleep, focus, relaxation, frequencies and personalised sound baths.",
+      "isPartOf": {
+        "@id": "https://meditationbelltimer.com/#website"
+      },
+      "publisher": {
+        "@id": "https://meditationbelltimer.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://meditationbelltimer.com/our-apps.html#app-list"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://meditationbelltimer.com/our-apps.html#app-list",
+      "name": "Future Home Tek meditation and wellness apps",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Meditation Bell Timer",
+          "url": "https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Solfeggio Healing Frequencies",
+          "url": "https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sound Bath Zen",
+          "url": "https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://meditationbelltimer.com/our-apps.html#meditation-bell-timer",
+      "name": "Meditation Bell Timer",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Android",
+      "description": "A simple meditation timer with Tibetan bells, interval chimes, ambient soundscapes and a distraction-free dark interface.",
+      "url": "https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer",
+      "publisher": {
+        "@id": "https://meditationbelltimer.com/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://meditationbelltimer.com/our-apps.html#solfeggio",
+      "name": "Solfeggio Healing Frequencies",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Android",
+      "description": "A focused listening app featuring Solfeggio frequencies alongside 432 Hz, 4 Hz Delta and 40 Hz Gamma.",
+      "url": "https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies",
+      "publisher": {
+        "@id": "https://meditationbelltimer.com/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://meditationbelltimer.com/our-apps.html#sound-bath-zen",
+      "name": "Sound Bath Zen",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Android",
+      "description": "A sound bath app for combining frequency audio with calming ambient sounds and creating personalised listening sessions.",
+      "url": "https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen",
+      "publisher": {
+        "@id": "https://meditationbelltimer.com/#organization"
+      }
     }
+  ]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://meditationbelltimer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Apps",
+      "item": "https://meditationbelltimer.com/our-apps.html"
+    }
+  ]
 }
 </script>
 
@@ -1419,8 +1532,12 @@ footer {
             Solfeggio
         </a>
 
-        <a href="/best-meditation-sounds">
+        <a href="/best-meditation-sounds.html">
             Sounds
+        </a>
+
+        <a href="/about-us.html">
+            About Us
         </a>
 
 
@@ -1441,43 +1558,43 @@ footer {
 
             <div class="dropdown-content">
 
-                <a href="/sleep-meditation-sounds">
+                <a href="/sleep-meditation-sounds.html">
                     Sleep Meditation Sounds
                 </a>
 
-                <a href="/brown-noise-for-adhd-focus">
+                <a href="/brown-noise-for-adhd-focus.html">
                     Brown Noise for ADHD Focus
                 </a>
 
-                <a href="/white-noise-meditation-timer">
+                <a href="/white-noise-meditation-timer.html">
                     White Noise Meditation Timer
                 </a>
 
-                <a href="/meditation-timer-for-adhd">
+                <a href="/meditation-timer-for-adhd.html">
                     Meditation Timer for ADHD
                 </a>
 
-                <a href="/meditation-timer-for-adhd-focus">
+                <a href="/meditation-timer-for-adhd-focus.html">
                     Meditation Timer for ADHD Focus
                 </a>
 
-                <a href="/how-to-use-a-meditation-timer">
+                <a href="/how-to-use-a-meditation-timer.html">
                     How To Use A Meditation Timer
                 </a>
 
-                <a href="/how-long-should-you-meditate">
+                <a href="/how-long-should-you-meditate.html">
                     How Long Should You Meditate?
                 </a>
 
-                <a href="/meditation-timer-vs-guided-meditation">
+                <a href="/meditation-timer-vs-guided-meditation.html">
                     Timer vs Guided Meditation
                 </a>
 
-                <a href="/pomodoro-meditation-method">
+                <a href="/pomodoro-meditation-method.html">
                     Pomodoro Meditation Method
                 </a>
 
-                <a href="/how-tibetan-singing-bowls-work">
+                <a href="/how-tibetan-singing-bowls-work.html">
                     How Tibetan Singing Bowls Work
                 </a>
 
@@ -1529,10 +1646,32 @@ footer {
         </h2>
 
         <p>
-            Three beautifully simple apps designed around one idea:
-            give you the tools you need for meditation, relaxation,
-            sleep and focus — without turning wellness into another
-            complicated digital experience.
+            Three beautifully simple wellness apps designed around one idea:
+            give you practical tools for meditation, relaxation, sleep,
+            focus and mindful listening — without turning wellness into
+            another complicated digital experience.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTRODUCTION
+========================================================= -->
+
+<section class="intro" style="padding-top:0; padding-bottom:55px;">
+
+    <div class="container intro-inner">
+
+        <p>
+            Whether you want a free meditation timer, a dedicated
+            Solfeggio frequency library or a custom sound bath,
+            the Future Home Tek collection is built around simple,
+            focused listening. Explore each app below and choose
+            the experience that fits the way you want to meditate,
+            relax, sleep or focus.
         </p>
 
     </div>
@@ -2213,11 +2352,11 @@ footer {
                     Our Apps
                 </a>
 
-                <a href="/best-meditation-sounds">
+                <a href="/best-meditation-sounds.html">
                     Best Meditation Sounds
                 </a>
 
-                <a href="/sleep-meditation-sounds">
+                <a href="/sleep-meditation-sounds.html">
                     Sleep Meditation Sounds
                 </a>
 
@@ -2267,23 +2406,31 @@ footer {
                     Solfeggio Frequencies
                 </a>
 
-                <a href="/brown-noise-for-adhd-focus">
+                <a href="/about-us.html">
+                    About Us
+                </a>
+
+                <a href="/privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="/brown-noise-for-adhd-focus.html">
                     Brown Noise for Focus
                 </a>
 
-                <a href="/white-noise-meditation-timer">
+                <a href="/white-noise-meditation-timer.html">
                     White Noise Timer
                 </a>
 
-                <a href="/how-to-use-a-meditation-timer">
+                <a href="/how-to-use-a-meditation-timer.html">
                     How to Use a Meditation Timer
                 </a>
 
-                <a href="/how-long-should-you-meditate">
+                <a href="/how-long-should-you-meditate.html">
                     How Long Should You Meditate?
                 </a>
 
-                <a href="/how-tibetan-singing-bowls-work">
+                <a href="/how-tibetan-singing-bowls-work.html">
                     How Tibetan Singing Bowls Work
                 </a>
 
