@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Future Home Tek – Meditation & Wellness Apps</title>
+<meta name="description" content="Discover the story behind Future Home Tek and the simple idea that inspired Meditation Bell Timer, Solfeggio Healing Frequencies and Soundbath Zen.">
+<link rel="canonical" href="https://meditationbelltimer.com/about-us">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="About Us | Future Home Tek – Meditation & Wellness Apps">
+<meta property="og:description" content="Discover the story behind Future Home Tek and the simple idea that inspired Meditation Bell Timer, Solfeggio Healing Frequencies and Soundbath Zen.">
+<meta property="og:url" content="https://meditationbelltimer.com/about-us">
+<meta property="og:image" content="https://meditationbelltimer.com/android-chrome-512x512.png">
+
+<meta name="theme-color" content="#0d1117">
+
+<style>
+:root{
+    --bg:#0d1117;
+    --bg-soft:#111821;
+    --card:#151e28;
+    --card-border:rgba(255,255,255,.08);
+    --text:#f4f1e8;
+    --muted:#b9b7b0;
+    --accent:#d8bd78;
+    --accent-soft:#ead9a6;
+    --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.7;
+}
+a{color:var(--accent-soft);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{width:min(92%,var(--max));margin:auto}
+
+/* Header */
+.site-header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(13,17,23,.96);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+}
+.nav{
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+.logo{
+    color:var(--text);
+    font-size:1.15rem;
+    font-weight:700;
+    letter-spacing:.04em;
+    white-space:nowrap;
+}
+.logo:hover{text-decoration:none}
+.menu{
+    display:flex;
+    align-items:center;
+    gap:26px;
+}
+.menu a{
+    color:#ddd9cf;
+    font-size:.94rem;
+}
+.menu a:hover{color:var(--accent-soft);text-decoration:none}
+.menu-toggle{
+    display:none;
+    background:none;
+    border:1px solid rgba(255,255,255,.18);
+    color:var(--text);
+    border-radius:8px;
+    padding:8px 11px;
+    cursor:pointer;
+}
+
+/* Hero */
+.hero{
+    position:relative;
+    padding:110px 0 95px;
+    text-align:center;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 50% 20%,rgba(216,189,120,.16),transparent 38%),
+      linear-gradient(180deg,#111821 0%,#0d1117 100%);
+}
+.hero:after{
+    content:"";
+    position:absolute;
+    width:500px;height:500px;
+    border:1px solid rgba(216,189,120,.12);
+    border-radius:50%;
+    left:50%;top:50%;
+    transform:translate(-50%,-30%);
+    pointer-events:none;
+}
+.hero-content{position:relative;z-index:1;max-width:850px;margin:auto}
+.eyebrow{
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.78rem;
+    font-weight:700;
+    margin-bottom:18px;
+}
+h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(2.6rem,6vw,4.7rem);
+    line-height:1.08;
+    font-weight:400;
+    margin:0 0 24px;
+}
+.hero p{
+    max-width:760px;
+    margin:0 auto;
+    color:var(--muted);
+    font-size:1.16rem;
+}
+
+/* Main */
+.section{padding:85px 0}
+.section.alt{background:var(--bg-soft)}
+.section-heading{
+    max-width:780px;
+    margin:0 auto 45px;
+    text-align:center;
+}
+h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(2rem,4vw,3rem);
+    line-height:1.2;
+    font-weight:400;
+    margin:0 0 18px;
+}
+h3{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:1.45rem;
+    font-weight:400;
+    margin:0 0 12px;
+}
+.lead{
+    color:var(--muted);
+    font-size:1.08rem;
+}
+.story{
+    max-width:820px;
+    margin:auto;
+}
+.story p{color:#d0cec7;font-size:1.06rem}
+.story p:first-child:first-letter{
+    font-family:Georgia,"Times New Roman",serif;
+    float:left;
+    font-size:4.2rem;
+    line-height:.8;
+    padding:8px 10px 0 0;
+    color:var(--accent);
+}
+.quote{
+    margin:42px 0;
+    padding:30px 35px;
+    border-left:2px solid var(--accent);
+    background:rgba(216,189,120,.06);
+}
+.quote p{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:1.65rem;
+    line-height:1.45;
+    color:var(--text);
+    margin:0;
+}
+
+/* Philosophy cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+.card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:30px;
+}
+.card .number{
+    color:var(--accent);
+    font-size:.78rem;
+    letter-spacing:.15em;
+    font-weight:700;
+    margin-bottom:18px;
+}
+.card p{color:var(--muted);margin:0}
+
+/* Timeline */
+.timeline{
+    max-width:900px;
+    margin:auto;
+    position:relative;
+}
+.timeline:before{
+    content:"";
+    position:absolute;
+    left:22px;top:10px;bottom:10px;
+    width:1px;
+    background:rgba(216,189,120,.25);
+}
+.step{
+    position:relative;
+    display:grid;
+    grid-template-columns:46px 1fr;
+    gap:25px;
+    margin-bottom:38px;
+}
+.step:last-child{margin-bottom:0}
+.dot{
+    width:45px;height:45px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(216,189,120,.45);
+    background:var(--bg-soft);
+    color:var(--accent);
+    font-weight:700;
+    z-index:1;
+}
+.step-content{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    padding:25px 28px;
+}
+.step-content p{color:var(--muted);margin:0}
+.app-name{color:var(--accent-soft);font-weight:700}
+
+/* Apps */
+.app-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+.app-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+}
+.app-card p{color:var(--muted)}
+.app-card .button{margin-top:auto}
+.button{
+    display:inline-block;
+    border:1px solid rgba(216,189,120,.55);
+    color:var(--accent-soft);
+    padding:11px 18px;
+    border-radius:999px;
+    font-size:.9rem;
+    text-decoration:none;
+    width:max-content;
+}
+.button:hover{
+    background:rgba(216,189,120,.1);
+    text-decoration:none;
+}
+
+/* Contact */
+.contact{
+    text-align:center;
+    max-width:780px;
+    margin:auto;
+}
+.email{
+    display:inline-block;
+    margin-top:15px;
+    font-size:1.2rem;
+    color:var(--accent-soft);
+}
+
+/* Footer */
+footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:45px 0;
+    color:#8f8d87;
+    font-size:.9rem;
+}
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:25px;
+    align-items:center;
+}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap}
+.footer-links a{color:#aaa79f}
+
+/* Responsive */
+@media(max-width:800px){
+    .menu-toggle{display:block}
+    .menu{
+        display:none;
+        position:absolute;
+        top:72px;left:0;right:0;
+        background:#0d1117;
+        border-bottom:1px solid rgba(255,255,255,.08);
+        padding:18px 4%;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+    .menu.open{display:flex}
+    .cards,.app-grid{grid-template-columns:1fr}
+    .hero{padding:85px 0 75px}
+    .section{padding:65px 0}
+    .footer-inner{flex-direction:column;align-items:flex-start}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"AboutPage",
+  "name":"About Future Home Tek",
+  "url":"https://meditationbelltimer.com/about-us",
+  "description":"Discover the story behind Future Home Tek and the simple idea that inspired Meditation Bell Timer, Solfeggio Healing Frequencies and Soundbath Zen.",
+  "publisher":{
+    "@type":"Organization",
+    "name":"Future Home Tek",
+    "url":"https://meditationbelltimer.com/",
+    "logo":{
+      "@type":"ImageObject",
+      "url":"https://meditationbelltimer.com/android-chrome-512x512.png"
+    }
+  },
+  "mainEntity":{
+    "@type":"Organization",
+    "name":"Future Home Tek",
+    "url":"https://meditationbelltimer.com/",
+    "email":"mailto:futurehometek@gmail.com"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Home",
+      "item":"https://meditationbelltimer.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"About Us",
+      "item":"https://meditationbelltimer.com/about-us"
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="/">Meditation Bell Timer</a>
+    <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">Menu</button>
+    <nav class="menu" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/timer">Timer</a>
+      <a href="/solfeggio-healing-frequencies">Solfeggio Frequencies</a>
+      <a href="/our-apps">Our Apps</a>
+      <a href="/best-meditation-sounds">Sounds</a>
+      <a href="/about-us">About Us</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-content">
+    <div class="eyebrow">Future Home Tek</div>
+    <h1>About Us</h1>
+    <p>Simple apps for meditation, relaxation, sleep and focused listening — created from a simple idea: sometimes less is more.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">The Story</div>
+      <h2>It Started With a Simple Idea</h2>
+    </div>
+
+    <div class="story">
+      <p>I was looking for a simple meditation timer with interval bells. I didn't want a massive app filled with guided meditations, streaks, social engagement or features I didn't need. I simply wanted to set a meditation time, have a bell at intervals and get on with my practice.</p>
+
+      <p>I couldn't find the app I was looking for, so I decided to create it myself. That became <strong>Meditation Bell Timer</strong>.</p>
+
+      <div class="quote">
+        <p>“I wasn't looking for a complicated wellness platform. I just wanted a simple timer that did what I needed.”</p>
+      </div>
+
+      <p>What started as a personal solution worked so well that I began thinking about other ways simple sound-based tools could be used for meditation, relaxation and mindful listening.</p>
+
+      <p>That led me to explore Solfeggio frequencies. I found the ideas surrounding frequencies fascinating and decided to create <strong>Solfeggio Healing Frequencies</strong>, giving people a straightforward way to explore and listen to a range of frequencies.</p>
+
+      <p>Then the two ideas came together. I wanted to combine frequencies with the calming atmosphere of ambient nature sounds, allowing people to create their own sound environment. That became <strong>Soundbath Zen</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Our Journey</div>
+      <h2>From One Simple App to Three</h2>
+      <p class="lead">Each app grew from the ideas and experiences that came before it.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="step">
+        <div class="dot">01</div>
+        <div class="step-content">
+          <h3>Meditation Bell Timer</h3>
+          <p>The starting point: a simple timer with interval bells and calming sounds, created for people who want an uncomplicated way to structure an unguided meditation session.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="dot">02</div>
+        <div class="step-content">
+          <h3>Solfeggio Healing Frequencies</h3>
+          <p>Curiosity about frequencies led to an app dedicated to exploring and listening to Solfeggio frequencies and other frequency-based sounds.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="dot">03</div>
+        <div class="step-content">
+          <h3>Soundbath Zen</h3>
+          <p>The next step was bringing the ideas together: frequencies combined with ambient nature sounds, giving users the freedom to create their own sound bath experience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Our Philosophy</div>
+      <h2>Meditation Doesn't Have to Be Complicated</h2>
+      <p class="lead">The philosophy behind Future Home Tek is straightforward: create useful tools that stay out of the way.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="number">01 — SIMPLE</div>
+        <h3>Keep It Simple</h3>
+        <p>We focus on the features that are genuinely useful. A timer should be easy to set. A sound should be easy to play. The experience should feel calm rather than complicated.</p>
+      </article>
+
+      <article class="card">
+        <div class="number">02 — YOUR PRACTICE</div>
+        <h3>You Stay in Control</h3>
+        <p>There is no single right way to meditate. Our apps are designed to give you tools and choices while leaving the practice itself in your hands.</p>
+      </article>
+
+      <article class="card">
+        <div class="number">03 — LESS DISTRACTION</div>
+        <h3>Quiet by Design</h3>
+        <p>We believe meditation and mindful listening work best when the technology becomes part of the background rather than the centre of attention.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">The Apps</div>
+      <h2>Explore Future Home Tek</h2>
+      <p class="lead">Three different approaches, connected by the same preference for simple, focused experiences.</p>
+    </div>
+
+    <div class="app-grid">
+      <article class="app-card">
+        <h3>Meditation Bell Timer</h3>
+        <p>A simple meditation timer with interval bells, adjustable session times and calming ambient sounds for unguided meditation, relaxation and focus.</p>
+        <a class="button" href="https://play.google.com/store/apps/details?id=com.keynet.meditation_bell_timer" target="_blank" rel="noopener">View on Google Play</a>
+      </article>
+
+      <article class="app-card">
+        <h3>Solfeggio Healing Frequencies</h3>
+        <p>Explore Solfeggio frequencies from 174 Hz to 963 Hz alongside additional frequency options for listening, relaxation, meditation and focus.</p>
+        <a class="button" href="https://play.google.com/store/apps/details?id=com.futurehometek.solfeggiohealingfrequencies" target="_blank" rel="noopener">View on Google Play</a>
+      </article>
+
+      <article class="app-card">
+        <h3>Soundbath Zen</h3>
+        <p>Combine frequencies with calming ambient sounds and create your own sound bath experience for meditation, relaxation, sleep and mindful listening.</p>
+        <a class="button" href="https://play.google.com/store/apps/details?id=com.futurehometek.soundbathzen" target="_blank" rel="noopener">View on Google Play</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="story">
+      <div class="section-heading" style="text-align:left;margin-left:0;margin-right:0;">
+        <div class="eyebrow">Designed for Real Life</div>
+        <h2>Tools, Not Complicated Programmes</h2>
+      </div>
+
+      <p>Whether you have five minutes to pause during the day, want a gentle sound in the background while you relax, or want to create a longer sound session before sleep, the aim is the same: provide straightforward tools that you can use in the way that suits you.</p>
+
+      <p>You can also explore our <a href="/best-meditation-sounds">guide to the best meditation sounds</a> if you're looking for ideas on choosing sounds for meditation, relaxation, sleep or focus.</p>
+
+      <p>Future Home Tek is an independent developer, and these apps continue to evolve from the same principle that started everything: build something useful, keep it simple and let the user decide how to use it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container contact">
+    <div class="eyebrow">Get in Touch</div>
+    <h2>We'd Love to Hear From You</h2>
+    <p class="lead">Have a question, suggestion or simply want to get in touch? You can contact Future Home Tek directly.</p>
+    <a class="email" href="mailto:futurehometek@gmail.com">futurehometek@gmail.com</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact">
+    <div class="eyebrow">Start Exploring</div>
+    <h2>Find Your Own Way to Listen, Relax and Focus</h2>
+    <p class="lead">Explore the Meditation Bell Timer sound library or discover the full collection of Future Home Tek apps.</p>
+    <p>
+      <a class="button" href="/best-meditation-sounds">Explore Meditation Sounds</a>
+      &nbsp;
+      <a class="button" href="/our-apps">View Our Apps</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© 2026 Future Home Tek. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/our-apps">Our Apps</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="mailto:futurehometek@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+toggle.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+</script>
+
+</body>
+</html>
