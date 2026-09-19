@@ -978,253 +978,108 @@ header .dropdown-content a:hover {
 
 /* =========================================================
    HERO
+   DETACHED IMAGE — MATCHES OUR APPS STYLE
 ========================================================= */
 
 .hero {
-
-    position:
-        relative;
-
-    min-height:
-        760px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    overflow:
-        hidden;
-
-    background:
-        #070909;
-
+    position: relative;
+    background: #070909;
+    overflow: hidden;
 }
-
-
-.hero-background {
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    width:
-        100%;
-
-    height:
-        100%;
-
-    object-fit:
-        cover;
-
-    object-position:
-        center;
-
-}
-
-
-.hero-overlay {
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(3,7,7,0.94) 0%,
-            rgba(3,7,7,0.80) 43%,
-            rgba(3,7,7,0.38) 100%
-        ),
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,0.25),
-            rgba(0,0,0,0.25)
-        );
-
-}
-
-
-.hero::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        auto 0 0;
-
-    height:
-        180px;
-
-    background:
-        linear-gradient(
-            transparent,
-            var(--black)
-        );
-
-    pointer-events:
-        none;
-
-}
-
 
 .hero-content {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    width:
-        100%;
-
-    max-width:
-        var(--max-width);
-
-    margin:
-        0 auto;
-
-    padding:
-        135px 5% 105px;
-
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 135px 5% 72px;
 }
-
 
 .hero-copy {
-
-    max-width:
-        670px;
-
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
 }
-
 
 .hero-eyebrow {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        10px;
-
-    margin-bottom:
-        18px;
-
-    color:
-        var(--gold-light);
-
-    font-size:
-        11px;
-
-    font-weight:
-        600;
-
-    letter-spacing:
-        3px;
-
-    text-transform:
-        uppercase;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-
-.hero-eyebrow::before {
-
-    content:
-        "";
-
-    width:
-        28px;
-
-    height:
-        1px;
-
-    background:
-        var(--gold);
-
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
 }
-
 
 .hero h1 {
-
-    margin:
-        0 0 25px;
-
-    color:
-        var(--cream);
-
-    font-family:
-        'Playfair Display',
-        serif;
-
-    font-size:
-        clamp(54px,7vw,82px);
-
-    font-weight:
-        600;
-
-    line-height:
-        0.98;
-
-    letter-spacing:
-        -1.8px;
-
+    margin: 0 0 25px;
+    color: var(--cream);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(54px,7vw,82px);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -1.8px;
 }
-
 
 .hero h1 span {
-
-    color:
-        var(--gold-light);
-
+    color: var(--gold-light);
 }
-
 
 .hero-description {
-
-    max-width:
-        600px;
-
-    margin:
-        0 0 31px;
-
-    color:
-        rgba(255,255,255,0.78);
-
-    font-size:
-        17px;
-
-    line-height:
-        1.8;
-
+    max-width: 680px;
+    margin: 0 auto 31px;
+    color: rgba(255,255,255,0.78);
+    font-size: 17px;
+    line-height: 1.8;
 }
 
+.hero-buttons {
+    justify-content: center;
+}
 
 .hero-meta {
+    margin-top: 19px;
+    color: rgba(255,255,255,0.52);
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
 
-    margin-top:
-        19px;
+.hero-image-wrap {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    background: #0d1213;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.38);
+}
 
-    color:
-        rgba(255,255,255,0.52);
+.hero-image-wrap img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
 
-    font-size:
-        11px;
-
-    letter-spacing:
-        0.5px;
-
+.hero::after {
+    content: "";
+    display: block;
+    height: 55px;
+    background: linear-gradient(transparent, var(--black));
+    pointer-events: none;
 }
 
 
@@ -2864,128 +2719,59 @@ footer {
 
     /* HERO */
 
-    .hero {
-
-        min-height:
-            720px;
-
-    }
-
-
-    .hero-background {
-
-        object-position:
-            62% center;
-
-    }
-
-
-    .hero-overlay {
-
-        background:
-            linear-gradient(
-                90deg,
-                rgba(3,7,7,.95) 0%,
-                rgba(3,7,7,.82) 52%,
-                rgba(3,7,7,.40) 100%
-            );
-
-    }
-
-
     .hero-content {
-
-        padding:
-            105px 24px 125px;
-
+        padding: 105px 24px 55px;
     }
-
 
     .hero-copy {
-
-        max-width:
-            850px;
-
+        max-width: 850px;
     }
-
 
     .hero-eyebrow {
-
-        justify-content:
-            center;
-
+        justify-content: center;
     }
 
-
-    .hero-eyebrow::before {
-
-        display:
-            none;
-
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+        display: none;
     }
-
 
     .hero h1 {
-
-        text-align:
-            center;
-
-        font-size:
-            clamp(48px,14vw,70px);
-
+        text-align: center;
+        font-size: clamp(48px,14vw,70px);
     }
-
 
     .hero-description {
-
-        max-width:
-            720px;
-
-        margin:
-            0 auto 28px;
-
-        text-align:
-            center;
-
-        font-size:
-            15px;
-
+        max-width: 720px;
+        margin: 0 auto 28px;
+        text-align: center;
+        font-size: 15px;
     }
-
 
     .hero-buttons {
-
-        flex-direction:
-            column;
-
-        align-items:
-            stretch;
-
-        max-width:
-            420px;
-
-        margin:
-            0 auto;
-
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 420px;
+        margin: 0 auto;
     }
-
 
     .hero-buttons .btn {
-
-        width:
-            100%;
-
-        min-height:
-            52px;
-
+        width: 100%;
+        min-height: 52px;
     }
 
-
     .hero-meta {
+        text-align: center;
+    }
 
-        text-align:
-            center;
+    .hero-image-wrap {
+        width: 90%;
+        border-radius: 14px;
+    }
 
+    .hero-image-wrap img {
+        aspect-ratio: 16 / 10;
+        object-position: center;
     }
 
 
@@ -3349,7 +3135,7 @@ footer {
             Sounds
         </a>
 
-        <a href="/about-us">
+        <a href="/about-us.html">
             About Us
         </a>
 
@@ -3429,21 +3215,7 @@ footer {
      HERO
 ========================================================= -->
 
-<section
-    class="hero"
-    aria-labelledby="hero-title"
->
-
-    <img
-        class="hero-background"
-        src="assets/hero-meditation-bowl.webp"
-        alt="Tibetan singing bowl in a peaceful mountain landscape"
-        fetchpriority="high"
-    >
-
-
-    <div class="hero-overlay"></div>
-
+<section class="hero" aria-labelledby="hero-title">
 
     <div class="hero-content">
 
@@ -3453,28 +3225,18 @@ footer {
                 A simpler way to slow down
             </div>
 
-
             <h1 id="hero-title">
-
                 Meditation,
                 <br>
-
-                <span>
-                    without the noise.
-                </span>
-
+                <span>without the noise.</span>
             </h1>
 
-
             <p class="hero-description">
-
                 A beautifully simple meditation timer for
                 mindfulness, sleep, focus and quiet moments.
                 Set your time, choose your sound and let
                 the screen disappear.
-
             </p>
-
 
             <div class="hero-buttons">
 
@@ -3487,25 +3249,28 @@ footer {
                     Get the App →
                 </a>
 
-
-                <a
-                    href="/timer.html"
-                    class="btn btn-secondary"
-                >
+                <a href="/timer.html" class="btn btn-secondary">
                     Try the Free Web Timer
                 </a>
 
             </div>
 
-
             <div class="hero-meta">
-
                 Simple. Private. Offline.
                 Designed to stay out of your way.
-
             </div>
 
         </div>
+
+    </div>
+
+    <div class="hero-image-wrap">
+
+        <img
+            src="assets/hero-meditation-bowl.webp"
+            alt="Tibetan singing bowl in a peaceful mountain landscape"
+            fetchpriority="high"
+        >
 
     </div>
 
@@ -5353,12 +5118,12 @@ footer {
             </a>
 
 
-            <a href="/about-us">
+            <a href="/about-us.html">
                 About Us
             </a>
 
 
-            <a href="/privacy">
+            <a href="/privacy.html">
                 Privacy Policy
             </a>
 
