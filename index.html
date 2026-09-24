@@ -1064,34 +1064,39 @@ header .dropdown-content a:hover {
 
 /* =========================================================
    HERO
-   DETACHED IMAGE — MATCHES OUR APPS STYLE
+   DESKTOP: SOLFEGGIO-STYLE BLENDED IMAGE HERO
+   MOBILE: RETAINS SEPARATE IMAGE BELOW COPY
 ========================================================= */
 
 .hero {
     position: relative;
+    min-height: 690px;
     background: #070909;
     overflow: hidden;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     width: 100%;
     max-width: var(--max-width);
+    min-height: 690px;
     margin: 0 auto;
-    padding: 135px 5% 72px;
+    padding: 150px 5% 95px;
+    display: flex;
+    align-items: center;
 }
 
 .hero-copy {
-    max-width: 780px;
-    margin: 0 auto;
-    text-align: center;
+    max-width: 700px;
+    margin: 0;
+    text-align: left;
 }
 
 .hero-eyebrow {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
     margin-bottom: 18px;
     color: var(--gold-light);
@@ -1101,12 +1106,15 @@ header .dropdown-content a:hover {
     text-transform: uppercase;
 }
 
-.hero-eyebrow::before,
-.hero-eyebrow::after {
+.hero-eyebrow::before {
     content: "";
     width: 28px;
     height: 1px;
     background: var(--gold);
+}
+
+.hero-eyebrow::after {
+    display: none;
 }
 
 .hero h1 {
@@ -1124,46 +1132,75 @@ header .dropdown-content a:hover {
 }
 
 .hero-description {
-    max-width: 680px;
-    margin: 0 auto 31px;
-    color: rgba(255,255,255,0.78);
+    max-width: 650px;
+    margin: 0 0 31px;
+    color: rgba(255,255,255,0.82);
     font-size: 17px;
     line-height: 1.8;
 }
 
 .hero-buttons {
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .hero-meta {
     margin-top: 19px;
-    color: rgba(255,255,255,0.52);
+    color: rgba(255,255,255,0.58);
     font-size: 11px;
     letter-spacing: 0.5px;
 }
 
 .hero-image-wrap {
-    width: min(1180px, 90%);
-    margin: 0 auto;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    margin: 0;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 18px;
+    border: 0;
+    border-radius: 0;
     background: #0d1213;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.38);
+    box-shadow: none;
+}
+
+.hero-image-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,7,7,0.96) 0%,
+            rgba(3,7,7,0.88) 34%,
+            rgba(3,7,7,0.62) 57%,
+            rgba(3,7,7,0.18) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(7,9,9,0.82) 0%,
+            transparent 28%,
+            transparent 72%,
+            rgba(7,9,9,0.30) 100%
+        );
+    pointer-events: none;
 }
 
 .hero-image-wrap img {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    height: auto;
+    height: 100%;
+    aspect-ratio: auto;
     object-fit: cover;
     object-position: center;
 }
 
 .hero::after {
     content: "";
-    display: block;
-    height: 55px;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 90px;
     background: linear-gradient(transparent, var(--black));
     pointer-events: none;
 }
@@ -2803,14 +2840,22 @@ footer {
     }
 
 
-    /* HERO */
+    /* HERO — KEEP THE SEPARATE IMAGE LAYOUT ON MOBILE */
+
+    .hero {
+        min-height: 0;
+    }
 
     .hero-content {
+        min-height: 0;
         padding: 105px 24px 55px;
+        display: block;
     }
 
     .hero-copy {
         max-width: 850px;
+        margin: 0 auto;
+        text-align: center;
     }
 
     .hero-eyebrow {
@@ -2851,13 +2896,37 @@ footer {
     }
 
     .hero-image-wrap {
+        position: relative;
+        inset: auto;
+        z-index: 1;
         width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.08);
         border-radius: 14px;
+        background: #0d1213;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.38);
+    }
+
+    .hero-image-wrap::after {
+        display: none;
     }
 
     .hero-image-wrap img {
+        width: 100%;
+        height: auto;
         aspect-ratio: 16 / 10;
+        object-fit: cover;
         object-position: center;
+    }
+
+    .hero::after {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        height: 55px;
+        background: linear-gradient(transparent, var(--black));
     }
 
 
@@ -3068,14 +3137,6 @@ footer {
 ========================================================= */
 
 @media (max-width:480px) {
-
-    .hero-background {
-
-        aspect-ratio:
-            16 / 10;
-
-    }
-
 
     .hero-content {
 
