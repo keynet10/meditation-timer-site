@@ -326,49 +326,133 @@ header {
 
 /* =========================================================
    HERO
+   DESKTOP: SOLFEGGIO-STYLE BLENDED IMAGE HERO
+   MOBILE: RETAINS SEPARATE IMAGE-ONLY HERO
 ========================================================= */
 
 .hero {
     position: relative;
-
     width: 100%;
-
-    aspect-ratio: 16 / 9;
-
+    min-height: 690px;
     overflow: hidden;
-
     background: #050706;
-
     margin-top: 74px;
 }
 
 .hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
     display: block;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     object-position: center center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 7, 5, 0.96) 0%,
+            rgba(4, 7, 5, 0.88) 30%,
+            rgba(4, 7, 5, 0.58) 53%,
+            rgba(4, 7, 5, 0.16) 78%,
+            rgba(4, 7, 5, 0.08) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(5, 7, 6, 0.88) 0%,
+            transparent 28%,
+            transparent 72%,
+            rgba(5, 7, 6, 0.28) 100%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    max-width: var(--max-width);
+    min-height: 690px;
+    margin: 0 auto;
+    padding: 150px 5% 95px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-copy {
+    max-width: 700px;
+    margin: 0;
+    text-align: left;
+}
+
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.hero-copy h1 {
+    max-width: 700px;
+    margin: 0 0 24px;
+    color: var(--cream);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(50px, 6vw, 76px);
+    line-height: 1.04;
+    font-weight: 500;
+    text-shadow: 0 8px 35px rgba(0,0,0,0.35);
+}
+
+.hero-copy h1 span {
+    color: var(--gold-light);
+}
+
+.hero-description {
+    max-width: 650px;
+    margin: 0 0 28px;
+    color: rgba(255,255,255,0.82);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.hero-meta {
+    color: rgba(255,255,255,0.56);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
 }
 
 .hero::after {
     content: "";
-
     position: absolute;
-
-    inset: 0;
-
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    height: 90px;
     pointer-events: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(4, 7, 5, 0.08) 0%,
-            rgba(4, 7, 5, 0.00) 55%,
-            rgba(4, 7, 5, 0.12) 100%
-        );
+    background: linear-gradient(transparent, var(--black));
 }
 
 
@@ -1264,16 +1348,29 @@ footer {
         border-radius: 8px;
     }
 
+    /* Mobile keeps the image separate and uncluttered */
     .hero {
         margin-top: 0;
-
+        min-height: 0;
         aspect-ratio: 16 / 10;
     }
 
     .hero-image {
+        position: relative;
+        inset: auto;
+        z-index: 1;
+        width: 100%;
         height: 100%;
-
         object-fit: cover;
+    }
+
+    .hero::before,
+    .hero::after {
+        display: none;
+    }
+
+    .hero-content {
+        display: none;
     }
 
     h2 {
@@ -1643,18 +1740,43 @@ footer {
 
 <section
     class="hero"
-    aria-label="Our wellness apps"
+    aria-labelledby="hero-title"
 >
 
     <img
         class="hero-image"
         src="/assets/solfeggio-hero.webp"
         alt="Meditation, Solfeggio frequency and sound bath wellness apps"
+        fetchpriority="high"
     >
 
-    <h1 class="sr-only">
-        Meditation Apps for Android – Meditation Timer, Solfeggio Frequencies & Sound Bath
-    </h1>
+    <div class="hero-content">
+        <div class="hero-copy">
+
+            <div class="hero-eyebrow">
+                Future Home Tek · Android Wellness Apps
+            </div>
+
+            <h1 id="hero-title">
+                Meditation Apps
+                <br>
+                <span>for Calm, Focus &amp; Better Sleep.</span>
+            </h1>
+
+            <p class="hero-description">
+                Explore three simple Android apps for meditation,
+                Solfeggio frequencies and personalised sound baths.
+                Choose the experience that fits the way you want to
+                meditate, relax, sleep or focus.
+            </p>
+
+            <div class="hero-meta">
+                Simple. Private. Offline.
+                &nbsp; Designed to stay out of your way.
+            </div>
+
+        </div>
+    </div>
 
 </section>
 
